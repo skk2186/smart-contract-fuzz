@@ -3,7 +3,8 @@
 set -u
 set -o pipefail
 
-ROOT="$HOME/smart-contract-fuzzing"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 MANIFEST="results/formal-b2/manifest.tsv"
 RUN_ROOT="results/formal-b2/runs"
 
