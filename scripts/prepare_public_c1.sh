@@ -3,7 +3,8 @@
 set -u
 set -o pipefail
 
-ROOT="$HOME/smart-contract-fuzzing"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 RESULT_ROOT="results/public-benchmarks/c1/preparation"
 HARNESS_ROOT="contracts/harnesses/public-c1"
 
