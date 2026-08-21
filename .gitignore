@@ -13,3 +13,9 @@ results/formal/overhead-v2/artifacts/
 # Historical binary checkpoints are inventoried by the repository freeze,
 # but are not stored again in Git.
 checkpoints/*.tar.gz
+
+# Agent/runtime workspaces. New raw runs must not be written into frozen evidence.
+work/
+results/_work/
+results/_runtime/
+results/_scratch/
