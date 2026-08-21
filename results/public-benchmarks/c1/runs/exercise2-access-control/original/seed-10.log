@@ -1,0 +1,51 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=original
+COMPILER=0.8.20
+SEED=10
+CONTRACT_FILE=contracts/public-benchmarks/raw/exercise2/solution.sol
+CONTRACT_NAME=TestToken
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T16:09:42+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:09:42.84] Compiling `contracts/public-benchmarks/raw/exercise2/solution.sol`... Done! (0.317028693s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/raw/exercise2/solution.sol:TestToken
+[2026-07-28 16:09:43.16] Running slither on `contracts/public-benchmarks/raw/exercise2/solution.sol`... Done! (0.419297256s)
+[2026-07-28 16:09:43.59] [Worker 0] New coverage: 211 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 16:09:43.59] [Worker 0] New coverage: 467 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 16:09:43.59] [Worker 0] New coverage: 499 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 16:09:43.59] [Worker 0] New coverage: 524 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 16:09:43.60] [Worker 0] Test echidna_no_transfer falsified!
+  Call sequence:
+TestToken.Owner() Time delay: 521319 seconds Block delay: 15369
+TestToken.Owner() Time delay: 112444 seconds Block delay: 11942
+TestToken.resume() Time delay: 332369 seconds Block delay: 1362
+
+[2026-07-28 16:09:43.60] [Worker 0] New coverage: 549 instr, 1 contracts, 5 seqs in corpus
+[2026-07-28 16:09:44.17] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:09:44.17] [status] tests: 1/1, fuzzing: 90/100000, values: [], cov: 549, corpus: 5, gas/s: 1708279
+echidna_no_transfer: failed!💥  
+  Call sequence:
+    TestToken.Owner()
+    TestToken.resume()
+
+Traces: 
+
+
+Unique instructions: 549
+Unique codehashes: 1
+Corpus size: 5
+Seed: 10
+Total calls: 90
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.39
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:09:44+08:00
+PUBLIC_C1_RUN_COMPLETED=1

@@ -1,0 +1,6 @@
+Warning: Function state mutability can be restricted to view
+  --> contracts/harnesses/matched-random-v1/reset-example/candidate-033.sol:23:5:
+   |
+23 |     function echidna_value_safe() public returns (bool) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+

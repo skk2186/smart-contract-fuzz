@@ -1,0 +1,12 @@
+cohort	benchmark	source_file	target_contract	compiler	sequence_json	harness_config	semantic_classification
+formal	branch-value	contracts/benchmarks/BranchValueExample.sol	BranchValueExample	0.8.20	results/formal/candidates/branch-value/full.json	configs/formal-harness-seq1.yaml	supported
+formal	noisy-four-step	contracts/benchmarks/NoisyFourStepExample.sol	NoisyFourStepExample	0.8.20	results/formal/candidates/noisy-four-step/full.json	configs/formal-harness-seq1.yaml	supported
+formal	repeated-call	contracts/benchmarks/RepeatedCallExample.sol	RepeatedCallExample	0.8.20	results/formal/candidates/repeated-call/full.json	configs/formal-harness-seq1.yaml	supported
+formal	reset-example	contracts/benchmarks/ResetExample.sol	ResetExample	0.8.20	results/formal/candidates/reset-example/full.json	configs/formal-harness-seq1.yaml	supported
+formal-b2	alternative-path	contracts/benchmarks/AlternativePathExample.sol	AlternativePathExample	0.8.20	results/formal-b2/preparation/alternative-path/full-sequences.json	configs/formal-b2-alternative-harness.yaml	supported
+formal-b2	multi-property	contracts/benchmarks/MultiPropertyExample.sol	MultiPropertyExample	0.8.20	results/formal-b2/preparation/multi-property/full-sequences.json	configs/formal-b2-multi-harness.yaml	supported
+public-c1	echidna-flags	contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol	PublicEchidnaFlagsTarget	0.8.20	results/public-benchmarks/c1/preparation/echidna-flags/full.json	configs/public-c1-harness.yaml	supported
+public-c1	echidna-multi	contracts/public-benchmarks/raw/echidna/multi.sol	C	0.8.20	results/public-benchmarks/c1/preparation/echidna-multi/full.json	configs/public-c1-harness.yaml	supported
+public-c1	exercise2-access-control	contracts/public-benchmarks/raw/exercise2/solution.sol	TestToken	0.8.20	results/public-benchmarks/c1/preparation/exercise2-access-control/full.json	configs/public-c1-harness.yaml	conditional
+public-c1	smartbugs-multifunc	contracts/public-benchmarks/adapted/SmartBugsMultiFuncEchidna.sol	SmartBugsMultiFuncEchidna	0.4.25	results/public-benchmarks/c1/preparation/smartbugs-multifunc/full.json	configs/public-c1-harness.yaml	supported
+public-c1	smartbugs-onefunc	contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol	SmartBugsOneFuncEchidna	0.4.25	results/public-benchmarks/c1/preparation/smartbugs-onefunc/full.json	configs/public-c1-harness.yaml	supported

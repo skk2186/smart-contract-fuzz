@@ -1,0 +1,42 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=dependency-k10
+SEED=13
+CONTRACT_FILE=contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol
+CONTRACT_NAME=NoisyFourStepDependencyHarness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T14:58:03+08:00
+
+[2026-07-27 14:58:03.17] Compiling `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.323744588s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:NoisyFourStepDependencyHarness
+[2026-07-27 14:58:03.50] Running slither on `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.444389292s)
+[2026-07-27 14:58:03.95] [Worker 0] New coverage: 628 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 14:58:03.96] [Worker 0] New coverage: 935 instr, 2 contracts, 2 seqs in corpus
+[2026-07-27 14:58:03.96] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyHarness.dependency_sequence_6(115792089237316195423570985008687907853269984665640564039457584007913129639835) Time delay: 3 seconds Block delay: 1088
+
+[2026-07-27 14:58:03.96] [Worker 0] New coverage: 1377 instr, 2 contracts, 3 seqs in corpus
+[2026-07-27 14:58:05.29] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:58:05.29] [status] tests: 1/1, fuzzing: 6/100000, values: [], cov: 1377, corpus: 3, gas/s: 405017
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyHarness.dependency_sequence_6(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 1377
+Unique codehashes: 2
+Corpus size: 3
+Seed: 13
+Total calls: 6
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.20
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:58:05+08:00
+FORMAL_RUN_COMPLETED=1

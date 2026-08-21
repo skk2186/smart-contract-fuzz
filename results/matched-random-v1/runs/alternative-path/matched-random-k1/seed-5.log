@@ -1,0 +1,50 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal-b2
+BENCHMARK=alternative-path
+METHOD=matched-random-k1
+SEED=5
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o008
+SELECTED_CANDIDATE_INDICES=2
+SELECTION_SHA256=3b8477eadd641ce033276dc453fb3b8197587bd8e3fb9663822eba4bf5c02889
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/alternative-path/candidate-002.sol
+CONTRACT_NAME=MatchedRandomV1AlternativePathC002Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-b2-alternative-harness.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:30:06+08:00
+[2026-08-06 11:30:06.93] Compiling `contracts/harnesses/matched-random-v1/alternative-path/candidate-002.sol`... Done! (0.136350523s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/alternative-path/candidate-002.sol:MatchedRandomV1AlternativePathC002Harness
+[2026-08-06 11:30:07.07] Running slither on `contracts/harnesses/matched-random-v1/alternative-path/candidate-002.sol`... Done! (0.220531381s)
+[2026-08-06 11:30:07.30] [Worker 0] New coverage: 657 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:30:07.30] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+MatchedRandomV1AlternativePathC002Harness.matched_random_sequence_1(12010931158939726062591496187351340644146035876046063888367491) Time delay: 322374 seconds Block delay: 2
+
+[2026-08-06 11:30:08.61] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:30:08.61] [status] tests: 1/1, fuzzing: 4/100000, values: [], cov: 657, corpus: 1, gas/s: 238404
+echidna_value_safe: failed!💥  
+  Call sequence:
+    MatchedRandomV1AlternativePathC002Harness.matched_random_sequence_1(101)
+
+Traces: 
+call [1mAlternativePathExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/alternative-path/candidate-002.sol:23)[0m
+ └╴← (false)
+
+
+Unique instructions: 657
+Unique codehashes: 2
+Corpus size: 1
+Seed: 5
+Total calls: 4
+
+
+EXIT_CODE=1
+END_TIME=2026-08-06T11:30:08+08:00
+PROCESS_WALL_SECONDS=1.753744
+MATCHED_RANDOM_RUN_STATUS=falsified
+MATCHED_RANDOM_RUN_COMPLETED=1

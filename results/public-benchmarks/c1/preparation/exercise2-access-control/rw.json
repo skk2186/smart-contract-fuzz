@@ -1,0 +1,140 @@
+{
+  "TestToken": {
+    "transfer(address,uint256)": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused",
+        "Token.balances"
+      ],
+      "write": [
+        "Token.balances"
+      ]
+    },
+    "paused()": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused"
+      ],
+      "write": []
+    },
+    "pause()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    },
+    "resume()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    },
+    "Owner()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "Ownable.owner"
+      ]
+    },
+    "echidna_no_transfer()": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused"
+      ],
+      "write": []
+    }
+  },
+  "Ownable": {
+    "Owner()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "Ownable.owner"
+      ]
+    }
+  },
+  "Pausable": {
+    "Owner()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "Ownable.owner"
+      ]
+    },
+    "paused()": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused"
+      ],
+      "write": []
+    },
+    "pause()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    },
+    "resume()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    }
+  },
+  "Token": {
+    "paused()": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused"
+      ],
+      "write": []
+    },
+    "pause()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    },
+    "resume()": {
+      "visibility": "public",
+      "read": [
+        "Ownable.owner"
+      ],
+      "write": [
+        "Pausable._paused"
+      ]
+    },
+    "Owner()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "Ownable.owner"
+      ]
+    },
+    "transfer(address,uint256)": {
+      "visibility": "public",
+      "read": [
+        "Pausable._paused",
+        "Token.balances"
+      ],
+      "write": [
+        "Token.balances"
+      ]
+    }
+  }
+}

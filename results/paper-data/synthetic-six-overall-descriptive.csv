@@ -1,0 +1,3 @@
+aggregation_scope,method,benchmarks,runs,falsified_runs,budget_exhausted_runs,success_rate,pooled_significance_test,denominator_unit,interpretation_note
+descriptive_across_heterogeneous_benchmarks,Original,6,180,171,9,0.95,not_performed,runs,"Descriptive total only; batches, seqLen, property count, and stopOnFail are not fully homogeneous"
+descriptive_across_heterogeneous_benchmarks,Full-K1,6,180,180,0,1.0,not_performed,runs,"Descriptive total only; batches, seqLen, property count, and stopOnFail are not fully homogeneous"

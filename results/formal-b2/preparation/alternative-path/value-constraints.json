@@ -1,0 +1,106 @@
+{
+  "AlternativePathExample": {
+    "state_variables": [
+      "stage",
+      "value"
+    ],
+    "functions": {
+      "openRouteA()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "openRouteB()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "openWrongRoute()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 9,
+              "raw": "9"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "confirm()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            },
+            "condition": "stage == 1"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "execute(uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            },
+            "condition": "stage == 2"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "value",
+            "expression": "x",
+            "node_expression": "value = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

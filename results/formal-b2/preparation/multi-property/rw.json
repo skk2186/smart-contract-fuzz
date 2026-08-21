@@ -1,0 +1,44 @@
+{
+  "MultiPropertyExample": {
+    "prepare()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "MultiPropertyExample.stage"
+      ]
+    },
+    "authorize()": {
+      "visibility": "public",
+      "read": [
+        "MultiPropertyExample.stage"
+      ],
+      "write": [
+        "MultiPropertyExample.stage"
+      ]
+    },
+    "execute(uint256,uint256)": {
+      "visibility": "public",
+      "read": [
+        "MultiPropertyExample.stage"
+      ],
+      "write": [
+        "MultiPropertyExample.valueA",
+        "MultiPropertyExample.valueB"
+      ]
+    },
+    "echidna_value_a_safe()": {
+      "visibility": "public",
+      "read": [
+        "MultiPropertyExample.valueA"
+      ],
+      "write": []
+    },
+    "echidna_value_b_safe()": {
+      "visibility": "public",
+      "read": [
+        "MultiPropertyExample.valueB"
+      ],
+      "write": []
+    }
+  }
+}

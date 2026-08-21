@@ -1,0 +1,120 @@
+{
+  "RepeatedCallExample": {
+    "state_variables": [
+      "depositCount",
+      "noiseA",
+      "noiseB",
+      "unlocked",
+      "value"
+    ],
+    "functions": {
+      "deposit()": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "depositCount",
+            "operator": "<",
+            "value": {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            },
+            "condition": "depositCount < 2"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "unlock()": {
+        "constant_writes": {
+          "unlocked": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "depositCount",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            },
+            "condition": "depositCount == 2"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "withdraw(uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "unlocked",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "unlocked"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "value",
+            "expression": "x",
+            "node_expression": "value = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise1(uint256)": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "x",
+            "node_expression": "noiseA = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise2()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseB",
+            "expression": "noiseA + 1",
+            "node_expression": "noiseB = noiseA + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise3()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "noiseB + 1",
+            "node_expression": "noiseA = noiseB + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

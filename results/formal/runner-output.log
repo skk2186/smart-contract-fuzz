@@ -1,0 +1,557 @@
+
+==================================================
+Group 1/15
+Benchmark : noisy-four-step
+Method    : original
+Contract  : NoisyFourStepExample
+==================================================
+Running: noisy-four-step/original/seed-1
+Running: noisy-four-step/original/seed-2
+Running: noisy-four-step/original/seed-3
+Running: noisy-four-step/original/seed-4
+Running: noisy-four-step/original/seed-5
+Running: noisy-four-step/original/seed-6
+Running: noisy-four-step/original/seed-7
+Running: noisy-four-step/original/seed-8
+Running: noisy-four-step/original/seed-9
+Running: noisy-four-step/original/seed-10
+Running: noisy-four-step/original/seed-11
+Running: noisy-four-step/original/seed-12
+Running: noisy-four-step/original/seed-13
+Running: noisy-four-step/original/seed-14
+Running: noisy-four-step/original/seed-15
+Running: noisy-four-step/original/seed-16
+Running: noisy-four-step/original/seed-17
+Running: noisy-four-step/original/seed-18
+Running: noisy-four-step/original/seed-19
+Running: noisy-four-step/original/seed-20
+Running: noisy-four-step/original/seed-21
+Running: noisy-four-step/original/seed-22
+Running: noisy-four-step/original/seed-23
+Running: noisy-four-step/original/seed-24
+Running: noisy-four-step/original/seed-25
+Running: noisy-four-step/original/seed-26
+Running: noisy-four-step/original/seed-27
+Running: noisy-four-step/original/seed-28
+Running: noisy-four-step/original/seed-29
+Running: noisy-four-step/original/seed-30
+
+==================================================
+Group 2/15
+Benchmark : noisy-four-step
+Method    : dependency-k10
+Contract  : NoisyFourStepDependencyHarness
+==================================================
+Running: noisy-four-step/dependency-k10/seed-1
+Running: noisy-four-step/dependency-k10/seed-2
+Running: noisy-four-step/dependency-k10/seed-3
+Running: noisy-four-step/dependency-k10/seed-4
+Running: noisy-four-step/dependency-k10/seed-5
+Running: noisy-four-step/dependency-k10/seed-6
+Running: noisy-four-step/dependency-k10/seed-7
+Running: noisy-four-step/dependency-k10/seed-8
+Running: noisy-four-step/dependency-k10/seed-9
+Running: noisy-four-step/dependency-k10/seed-10
+Running: noisy-four-step/dependency-k10/seed-11
+Running: noisy-four-step/dependency-k10/seed-12
+Running: noisy-four-step/dependency-k10/seed-13
+Running: noisy-four-step/dependency-k10/seed-14
+Running: noisy-four-step/dependency-k10/seed-15
+Running: noisy-four-step/dependency-k10/seed-16
+Running: noisy-four-step/dependency-k10/seed-17
+Running: noisy-four-step/dependency-k10/seed-18
+Running: noisy-four-step/dependency-k10/seed-19
+Running: noisy-four-step/dependency-k10/seed-20
+Running: noisy-four-step/dependency-k10/seed-21
+Running: noisy-four-step/dependency-k10/seed-22
+Running: noisy-four-step/dependency-k10/seed-23
+Running: noisy-four-step/dependency-k10/seed-24
+Running: noisy-four-step/dependency-k10/seed-25
+Running: noisy-four-step/dependency-k10/seed-26
+Running: noisy-four-step/dependency-k10/seed-27
+Running: noisy-four-step/dependency-k10/seed-28
+Running: noisy-four-step/dependency-k10/seed-29
+Running: noisy-four-step/dependency-k10/seed-30
+
+==================================================
+Group 3/15
+Benchmark : noisy-four-step
+Method    : property-k1
+Contract  : NoisyFourStepPropertyHarness
+==================================================
+Running: noisy-four-step/property-k1/seed-1
+Running: noisy-four-step/property-k1/seed-2
+Running: noisy-four-step/property-k1/seed-3
+Running: noisy-four-step/property-k1/seed-4
+Running: noisy-four-step/property-k1/seed-5
+Running: noisy-four-step/property-k1/seed-6
+Running: noisy-four-step/property-k1/seed-7
+Running: noisy-four-step/property-k1/seed-8
+Running: noisy-four-step/property-k1/seed-9
+Running: noisy-four-step/property-k1/seed-10
+Running: noisy-four-step/property-k1/seed-11
+Running: noisy-four-step/property-k1/seed-12
+Running: noisy-four-step/property-k1/seed-13
+Running: noisy-four-step/property-k1/seed-14
+Running: noisy-four-step/property-k1/seed-15
+Running: noisy-four-step/property-k1/seed-16
+Running: noisy-four-step/property-k1/seed-17
+Running: noisy-four-step/property-k1/seed-18
+Running: noisy-four-step/property-k1/seed-19
+Running: noisy-four-step/property-k1/seed-20
+Running: noisy-four-step/property-k1/seed-21
+Running: noisy-four-step/property-k1/seed-22
+Running: noisy-four-step/property-k1/seed-23
+Running: noisy-four-step/property-k1/seed-24
+Running: noisy-four-step/property-k1/seed-25
+Running: noisy-four-step/property-k1/seed-26
+Running: noisy-four-step/property-k1/seed-27
+Running: noisy-four-step/property-k1/seed-28
+Running: noisy-four-step/property-k1/seed-29
+Running: noisy-four-step/property-k1/seed-30
+
+==================================================
+Group 4/15
+Benchmark : noisy-four-step
+Method    : full-k1
+Contract  : NoisyFourStepFullK1Harness
+==================================================
+Running: noisy-four-step/full-k1/seed-1
+Running: noisy-four-step/full-k1/seed-2
+Running: noisy-four-step/full-k1/seed-3
+Running: noisy-four-step/full-k1/seed-4
+Running: noisy-four-step/full-k1/seed-5
+Running: noisy-four-step/full-k1/seed-6
+Running: noisy-four-step/full-k1/seed-7
+Running: noisy-four-step/full-k1/seed-8
+Running: noisy-four-step/full-k1/seed-9
+Running: noisy-four-step/full-k1/seed-10
+Running: noisy-four-step/full-k1/seed-11
+Running: noisy-four-step/full-k1/seed-12
+Running: noisy-four-step/full-k1/seed-13
+Running: noisy-four-step/full-k1/seed-14
+Running: noisy-four-step/full-k1/seed-15
+Running: noisy-four-step/full-k1/seed-16
+Running: noisy-four-step/full-k1/seed-17
+Running: noisy-four-step/full-k1/seed-18
+Running: noisy-four-step/full-k1/seed-19
+Running: noisy-four-step/full-k1/seed-20
+Running: noisy-four-step/full-k1/seed-21
+Running: noisy-four-step/full-k1/seed-22
+Running: noisy-four-step/full-k1/seed-23
+Running: noisy-four-step/full-k1/seed-24
+Running: noisy-four-step/full-k1/seed-25
+Running: noisy-four-step/full-k1/seed-26
+Running: noisy-four-step/full-k1/seed-27
+Running: noisy-four-step/full-k1/seed-28
+Running: noisy-four-step/full-k1/seed-29
+Running: noisy-four-step/full-k1/seed-30
+
+==================================================
+Group 5/15
+Benchmark : reset-example
+Method    : original
+Contract  : ResetExample
+==================================================
+Running: reset-example/original/seed-1
+Running: reset-example/original/seed-2
+Running: reset-example/original/seed-3
+Running: reset-example/original/seed-4
+Running: reset-example/original/seed-5
+Running: reset-example/original/seed-6
+Running: reset-example/original/seed-7
+Running: reset-example/original/seed-8
+Running: reset-example/original/seed-9
+Running: reset-example/original/seed-10
+Running: reset-example/original/seed-11
+Running: reset-example/original/seed-12
+Running: reset-example/original/seed-13
+Running: reset-example/original/seed-14
+Running: reset-example/original/seed-15
+Running: reset-example/original/seed-16
+Running: reset-example/original/seed-17
+Running: reset-example/original/seed-18
+Running: reset-example/original/seed-19
+Running: reset-example/original/seed-20
+Running: reset-example/original/seed-21
+Running: reset-example/original/seed-22
+Running: reset-example/original/seed-23
+Running: reset-example/original/seed-24
+Running: reset-example/original/seed-25
+Running: reset-example/original/seed-26
+Running: reset-example/original/seed-27
+Running: reset-example/original/seed-28
+Running: reset-example/original/seed-29
+Running: reset-example/original/seed-30
+
+==================================================
+Group 6/15
+Benchmark : reset-example
+Method    : dependency-k10
+Contract  : ResetDependencyK10Harness
+==================================================
+Running: reset-example/dependency-k10/seed-1
+Running: reset-example/dependency-k10/seed-2
+Running: reset-example/dependency-k10/seed-3
+Running: reset-example/dependency-k10/seed-4
+Running: reset-example/dependency-k10/seed-5
+Running: reset-example/dependency-k10/seed-6
+Running: reset-example/dependency-k10/seed-7
+Running: reset-example/dependency-k10/seed-8
+Running: reset-example/dependency-k10/seed-9
+Running: reset-example/dependency-k10/seed-10
+Running: reset-example/dependency-k10/seed-11
+Running: reset-example/dependency-k10/seed-12
+Running: reset-example/dependency-k10/seed-13
+Running: reset-example/dependency-k10/seed-14
+Running: reset-example/dependency-k10/seed-15
+Running: reset-example/dependency-k10/seed-16
+Running: reset-example/dependency-k10/seed-17
+Running: reset-example/dependency-k10/seed-18
+Running: reset-example/dependency-k10/seed-19
+Running: reset-example/dependency-k10/seed-20
+Running: reset-example/dependency-k10/seed-21
+Running: reset-example/dependency-k10/seed-22
+Running: reset-example/dependency-k10/seed-23
+Running: reset-example/dependency-k10/seed-24
+Running: reset-example/dependency-k10/seed-25
+Running: reset-example/dependency-k10/seed-26
+Running: reset-example/dependency-k10/seed-27
+Running: reset-example/dependency-k10/seed-28
+Running: reset-example/dependency-k10/seed-29
+Running: reset-example/dependency-k10/seed-30
+
+==================================================
+Group 7/15
+Benchmark : reset-example
+Method    : property-k1
+Contract  : ResetPropertyK1Harness
+==================================================
+Running: reset-example/property-k1/seed-1
+Running: reset-example/property-k1/seed-2
+Running: reset-example/property-k1/seed-3
+Running: reset-example/property-k1/seed-4
+Running: reset-example/property-k1/seed-5
+Running: reset-example/property-k1/seed-6
+Running: reset-example/property-k1/seed-7
+Running: reset-example/property-k1/seed-8
+Running: reset-example/property-k1/seed-9
+Running: reset-example/property-k1/seed-10
+Running: reset-example/property-k1/seed-11
+Running: reset-example/property-k1/seed-12
+Running: reset-example/property-k1/seed-13
+Running: reset-example/property-k1/seed-14
+Running: reset-example/property-k1/seed-15
+Running: reset-example/property-k1/seed-16
+Running: reset-example/property-k1/seed-17
+Running: reset-example/property-k1/seed-18
+Running: reset-example/property-k1/seed-19
+Running: reset-example/property-k1/seed-20
+Running: reset-example/property-k1/seed-21
+Running: reset-example/property-k1/seed-22
+Running: reset-example/property-k1/seed-23
+Running: reset-example/property-k1/seed-24
+Running: reset-example/property-k1/seed-25
+Running: reset-example/property-k1/seed-26
+Running: reset-example/property-k1/seed-27
+Running: reset-example/property-k1/seed-28
+Running: reset-example/property-k1/seed-29
+Running: reset-example/property-k1/seed-30
+
+==================================================
+Group 8/15
+Benchmark : reset-example
+Method    : full-k1
+Contract  : ResetFullK1Harness
+==================================================
+Running: reset-example/full-k1/seed-1
+Running: reset-example/full-k1/seed-2
+Running: reset-example/full-k1/seed-3
+Running: reset-example/full-k1/seed-4
+Running: reset-example/full-k1/seed-5
+Running: reset-example/full-k1/seed-6
+Running: reset-example/full-k1/seed-7
+Running: reset-example/full-k1/seed-8
+Running: reset-example/full-k1/seed-9
+Running: reset-example/full-k1/seed-10
+Running: reset-example/full-k1/seed-11
+Running: reset-example/full-k1/seed-12
+Running: reset-example/full-k1/seed-13
+Running: reset-example/full-k1/seed-14
+Running: reset-example/full-k1/seed-15
+Running: reset-example/full-k1/seed-16
+Running: reset-example/full-k1/seed-17
+Running: reset-example/full-k1/seed-18
+Running: reset-example/full-k1/seed-19
+Running: reset-example/full-k1/seed-20
+Running: reset-example/full-k1/seed-21
+Running: reset-example/full-k1/seed-22
+Running: reset-example/full-k1/seed-23
+Running: reset-example/full-k1/seed-24
+Running: reset-example/full-k1/seed-25
+Running: reset-example/full-k1/seed-26
+Running: reset-example/full-k1/seed-27
+Running: reset-example/full-k1/seed-28
+Running: reset-example/full-k1/seed-29
+Running: reset-example/full-k1/seed-30
+
+==================================================
+Group 9/15
+Benchmark : branch-value
+Method    : original
+Contract  : BranchValueExample
+==================================================
+Running: branch-value/original/seed-1
+Running: branch-value/original/seed-2
+Running: branch-value/original/seed-3
+Running: branch-value/original/seed-4
+Running: branch-value/original/seed-5
+Running: branch-value/original/seed-6
+Running: branch-value/original/seed-7
+Running: branch-value/original/seed-8
+Running: branch-value/original/seed-9
+Running: branch-value/original/seed-10
+Running: branch-value/original/seed-11
+Running: branch-value/original/seed-12
+Running: branch-value/original/seed-13
+Running: branch-value/original/seed-14
+Running: branch-value/original/seed-15
+Running: branch-value/original/seed-16
+Running: branch-value/original/seed-17
+Running: branch-value/original/seed-18
+Running: branch-value/original/seed-19
+Running: branch-value/original/seed-20
+Running: branch-value/original/seed-21
+Running: branch-value/original/seed-22
+Running: branch-value/original/seed-23
+Running: branch-value/original/seed-24
+Running: branch-value/original/seed-25
+Running: branch-value/original/seed-26
+Running: branch-value/original/seed-27
+Running: branch-value/original/seed-28
+Running: branch-value/original/seed-29
+Running: branch-value/original/seed-30
+
+==================================================
+Group 10/15
+Benchmark : branch-value
+Method    : property-k1
+Contract  : BranchValuePropertyK1Harness
+==================================================
+Running: branch-value/property-k1/seed-1
+Running: branch-value/property-k1/seed-2
+Running: branch-value/property-k1/seed-3
+Running: branch-value/property-k1/seed-4
+Running: branch-value/property-k1/seed-5
+Running: branch-value/property-k1/seed-6
+Running: branch-value/property-k1/seed-7
+Running: branch-value/property-k1/seed-8
+Running: branch-value/property-k1/seed-9
+Running: branch-value/property-k1/seed-10
+Running: branch-value/property-k1/seed-11
+Running: branch-value/property-k1/seed-12
+Running: branch-value/property-k1/seed-13
+Running: branch-value/property-k1/seed-14
+Running: branch-value/property-k1/seed-15
+Running: branch-value/property-k1/seed-16
+Running: branch-value/property-k1/seed-17
+Running: branch-value/property-k1/seed-18
+Running: branch-value/property-k1/seed-19
+Running: branch-value/property-k1/seed-20
+Running: branch-value/property-k1/seed-21
+Running: branch-value/property-k1/seed-22
+Running: branch-value/property-k1/seed-23
+Running: branch-value/property-k1/seed-24
+Running: branch-value/property-k1/seed-25
+Running: branch-value/property-k1/seed-26
+Running: branch-value/property-k1/seed-27
+Running: branch-value/property-k1/seed-28
+Running: branch-value/property-k1/seed-29
+Running: branch-value/property-k1/seed-30
+
+==================================================
+Group 11/15
+Benchmark : branch-value
+Method    : value-k1
+Contract  : BranchValueValueGuidedK1Harness
+==================================================
+Running: branch-value/value-k1/seed-1
+Running: branch-value/value-k1/seed-2
+Running: branch-value/value-k1/seed-3
+Running: branch-value/value-k1/seed-4
+Running: branch-value/value-k1/seed-5
+Running: branch-value/value-k1/seed-6
+Running: branch-value/value-k1/seed-7
+Running: branch-value/value-k1/seed-8
+Running: branch-value/value-k1/seed-9
+Running: branch-value/value-k1/seed-10
+Running: branch-value/value-k1/seed-11
+Running: branch-value/value-k1/seed-12
+Running: branch-value/value-k1/seed-13
+Running: branch-value/value-k1/seed-14
+Running: branch-value/value-k1/seed-15
+Running: branch-value/value-k1/seed-16
+Running: branch-value/value-k1/seed-17
+Running: branch-value/value-k1/seed-18
+Running: branch-value/value-k1/seed-19
+Running: branch-value/value-k1/seed-20
+Running: branch-value/value-k1/seed-21
+Running: branch-value/value-k1/seed-22
+Running: branch-value/value-k1/seed-23
+Running: branch-value/value-k1/seed-24
+Running: branch-value/value-k1/seed-25
+Running: branch-value/value-k1/seed-26
+Running: branch-value/value-k1/seed-27
+Running: branch-value/value-k1/seed-28
+Running: branch-value/value-k1/seed-29
+Running: branch-value/value-k1/seed-30
+
+==================================================
+Group 12/15
+Benchmark : branch-value
+Method    : full-k1
+Contract  : BranchValueFullK1Harness
+==================================================
+Running: branch-value/full-k1/seed-1
+Running: branch-value/full-k1/seed-2
+Running: branch-value/full-k1/seed-3
+Running: branch-value/full-k1/seed-4
+Running: branch-value/full-k1/seed-5
+Running: branch-value/full-k1/seed-6
+Running: branch-value/full-k1/seed-7
+Running: branch-value/full-k1/seed-8
+Running: branch-value/full-k1/seed-9
+Running: branch-value/full-k1/seed-10
+Running: branch-value/full-k1/seed-11
+Running: branch-value/full-k1/seed-12
+Running: branch-value/full-k1/seed-13
+Running: branch-value/full-k1/seed-14
+Running: branch-value/full-k1/seed-15
+Running: branch-value/full-k1/seed-16
+Running: branch-value/full-k1/seed-17
+Running: branch-value/full-k1/seed-18
+Running: branch-value/full-k1/seed-19
+Running: branch-value/full-k1/seed-20
+Running: branch-value/full-k1/seed-21
+Running: branch-value/full-k1/seed-22
+Running: branch-value/full-k1/seed-23
+Running: branch-value/full-k1/seed-24
+Running: branch-value/full-k1/seed-25
+Running: branch-value/full-k1/seed-26
+Running: branch-value/full-k1/seed-27
+Running: branch-value/full-k1/seed-28
+Running: branch-value/full-k1/seed-29
+Running: branch-value/full-k1/seed-30
+
+==================================================
+Group 13/15
+Benchmark : repeated-call
+Method    : original
+Contract  : RepeatedCallExample
+==================================================
+Running: repeated-call/original/seed-1
+Running: repeated-call/original/seed-2
+Running: repeated-call/original/seed-3
+Running: repeated-call/original/seed-4
+Running: repeated-call/original/seed-5
+Running: repeated-call/original/seed-6
+Running: repeated-call/original/seed-7
+Running: repeated-call/original/seed-8
+Running: repeated-call/original/seed-9
+Running: repeated-call/original/seed-10
+Running: repeated-call/original/seed-11
+Running: repeated-call/original/seed-12
+Running: repeated-call/original/seed-13
+Running: repeated-call/original/seed-14
+Running: repeated-call/original/seed-15
+Running: repeated-call/original/seed-16
+Running: repeated-call/original/seed-17
+Running: repeated-call/original/seed-18
+Running: repeated-call/original/seed-19
+Running: repeated-call/original/seed-20
+Running: repeated-call/original/seed-21
+Running: repeated-call/original/seed-22
+Running: repeated-call/original/seed-23
+Running: repeated-call/original/seed-24
+Running: repeated-call/original/seed-25
+Running: repeated-call/original/seed-26
+Running: repeated-call/original/seed-27
+Running: repeated-call/original/seed-28
+Running: repeated-call/original/seed-29
+Running: repeated-call/original/seed-30
+
+==================================================
+Group 14/15
+Benchmark : repeated-call
+Method    : value-no-repeat-k1
+Contract  : RepeatedCallVisits1K1Harness
+==================================================
+Running: repeated-call/value-no-repeat-k1/seed-1
+Running: repeated-call/value-no-repeat-k1/seed-2
+Running: repeated-call/value-no-repeat-k1/seed-3
+Running: repeated-call/value-no-repeat-k1/seed-4
+Running: repeated-call/value-no-repeat-k1/seed-5
+Running: repeated-call/value-no-repeat-k1/seed-6
+Running: repeated-call/value-no-repeat-k1/seed-7
+Running: repeated-call/value-no-repeat-k1/seed-8
+Running: repeated-call/value-no-repeat-k1/seed-9
+Running: repeated-call/value-no-repeat-k1/seed-10
+Running: repeated-call/value-no-repeat-k1/seed-11
+Running: repeated-call/value-no-repeat-k1/seed-12
+Running: repeated-call/value-no-repeat-k1/seed-13
+Running: repeated-call/value-no-repeat-k1/seed-14
+Running: repeated-call/value-no-repeat-k1/seed-15
+Running: repeated-call/value-no-repeat-k1/seed-16
+Running: repeated-call/value-no-repeat-k1/seed-17
+Running: repeated-call/value-no-repeat-k1/seed-18
+Running: repeated-call/value-no-repeat-k1/seed-19
+Running: repeated-call/value-no-repeat-k1/seed-20
+Running: repeated-call/value-no-repeat-k1/seed-21
+Running: repeated-call/value-no-repeat-k1/seed-22
+Running: repeated-call/value-no-repeat-k1/seed-23
+Running: repeated-call/value-no-repeat-k1/seed-24
+Running: repeated-call/value-no-repeat-k1/seed-25
+Running: repeated-call/value-no-repeat-k1/seed-26
+Running: repeated-call/value-no-repeat-k1/seed-27
+Running: repeated-call/value-no-repeat-k1/seed-28
+Running: repeated-call/value-no-repeat-k1/seed-29
+Running: repeated-call/value-no-repeat-k1/seed-30
+
+==================================================
+Group 15/15
+Benchmark : repeated-call
+Method    : full-k1
+Contract  : RepeatedCallFullK1Harness
+==================================================
+Running: repeated-call/full-k1/seed-1
+Running: repeated-call/full-k1/seed-2
+Running: repeated-call/full-k1/seed-3
+Running: repeated-call/full-k1/seed-4
+Running: repeated-call/full-k1/seed-5
+Running: repeated-call/full-k1/seed-6
+Running: repeated-call/full-k1/seed-7
+Running: repeated-call/full-k1/seed-8
+Running: repeated-call/full-k1/seed-9
+Running: repeated-call/full-k1/seed-10
+Running: repeated-call/full-k1/seed-11
+Running: repeated-call/full-k1/seed-12
+Running: repeated-call/full-k1/seed-13
+Running: repeated-call/full-k1/seed-14
+Running: repeated-call/full-k1/seed-15
+Running: repeated-call/full-k1/seed-16
+Running: repeated-call/full-k1/seed-17
+Running: repeated-call/full-k1/seed-18
+Running: repeated-call/full-k1/seed-19
+Running: repeated-call/full-k1/seed-20
+Running: repeated-call/full-k1/seed-21
+Running: repeated-call/full-k1/seed-22
+Running: repeated-call/full-k1/seed-23
+Running: repeated-call/full-k1/seed-24
+Running: repeated-call/full-k1/seed-25
+Running: repeated-call/full-k1/seed-26
+Running: repeated-call/full-k1/seed-27
+Running: repeated-call/full-k1/seed-28
+Running: repeated-call/full-k1/seed-29
+Running: repeated-call/full-k1/seed-30
+
+All formal experiment groups completed.

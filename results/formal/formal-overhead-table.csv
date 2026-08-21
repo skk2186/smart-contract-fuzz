@@ -1,0 +1,5 @@
+benchmark,dependency_paths,property_paths,repeat_paths,full_correct_rank,analysis_harness_median_seconds,analysis_harness_iqr,compilation_median_seconds,total_preparation_median_seconds
+noisy-four-step,30,3,3,1,1.206793,"[1.196451, 1.223195]",0.105469,1.311646
+reset-example,37,19,33,1,1.218394,"[1.213774, 1.221274]",0.106471,1.324163
+branch-value,18,7,7,1,1.205131,"[1.198832, 1.219546]",0.104849,1.310297
+repeated-call,7,2,3,1,1.200131,"[1.191969, 1.206247]",0.105699,1.304164

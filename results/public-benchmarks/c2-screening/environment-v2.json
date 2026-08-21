@@ -1,0 +1,7 @@
+{
+  "crytic_compile_contract_fuzz": "0.3.11",
+  "docker": "cli_present_runtime_unavailable",
+  "echidna": "Echidna 2.3.2",
+  "slither_contract_fuzz": "0.11.5",
+  "solc": "Version: 0.8.20+commit.a1b79de6.Linux.g++"
+}

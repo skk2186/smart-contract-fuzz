@@ -1,0 +1,180 @@
+{
+  "NoisyFourStepExample": {
+    "state_variables": [
+      "approved",
+      "funded",
+      "noiseA",
+      "noiseB",
+      "noiseC",
+      "registered",
+      "value"
+    ],
+    "functions": {
+      "register()": {
+        "constant_writes": {
+          "registered": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "deposit()": {
+        "constant_writes": {
+          "funded": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "registered",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "registered"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "approve()": {
+        "constant_writes": {
+          "approved": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "funded",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "funded"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "withdraw(uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "approved",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "approved"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "value",
+            "expression": "x",
+            "node_expression": "value = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise1(uint256)": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "x",
+            "node_expression": "noiseA = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise2()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseB",
+            "expression": "noiseA + 1",
+            "node_expression": "noiseB = noiseA + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise3()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseC",
+            "expression": "noiseB + 1",
+            "node_expression": "noiseC = noiseB + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise4()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "noiseC",
+            "node_expression": "noiseA = noiseC"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise5(uint256)": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseB",
+            "expression": "x",
+            "node_expression": "noiseB = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise6()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseC",
+            "expression": "noiseC + 1",
+            "node_expression": "noiseC = noiseC + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

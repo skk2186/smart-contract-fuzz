@@ -1,0 +1,84 @@
+{
+  "ResetExample": {
+    "begin()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "stage"
+      ]
+    },
+    "authorize()": {
+      "visibility": "public",
+      "read": [
+        "stage"
+      ],
+      "write": [
+        "stage"
+      ]
+    },
+    "commit()": {
+      "visibility": "public",
+      "read": [
+        "stage"
+      ],
+      "write": [
+        "stage"
+      ]
+    },
+    "execute(uint256)": {
+      "visibility": "public",
+      "read": [
+        "stage"
+      ],
+      "write": [
+        "value"
+      ]
+    },
+    "reset()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "stage"
+      ]
+    },
+    "poison()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "stage"
+      ]
+    },
+    "noise1(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "noiseA"
+      ]
+    },
+    "noise2()": {
+      "visibility": "public",
+      "read": [
+        "noiseA"
+      ],
+      "write": [
+        "noiseB"
+      ]
+    },
+    "noise3()": {
+      "visibility": "public",
+      "read": [
+        "noiseB"
+      ],
+      "write": [
+        "noiseA"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "value"
+      ],
+      "write": []
+    }
+  }
+}

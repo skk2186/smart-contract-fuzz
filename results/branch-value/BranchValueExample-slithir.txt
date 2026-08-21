@@ -1,0 +1,47 @@
+        Function BranchValueExample.prepareBadA() (*)
+                Expression: gate = 0
+                IRs:
+                        gate(uint256) := 0(uint256)
+        Function BranchValueExample.prepareBadB() (*)
+                Expression: gate = 1
+                IRs:
+                        gate(uint256) := 1(uint256)
+        Function BranchValueExample.prepareBadC() (*)
+                Expression: gate = 6
+                IRs:
+                        gate(uint256) := 6(uint256)
+        Function BranchValueExample.prepareBadD() (*)
+                Expression: gate = 8
+                IRs:
+                        gate(uint256) := 8(uint256)
+        Function BranchValueExample.prepareGood() (*)
+                Expression: gate = 7
+                IRs:
+                        gate(uint256) := 7(uint256)
+        Function BranchValueExample.unlock() (*)
+                Expression: require(bool,string)(gate == 7,incorrect gate)
+                IRs:
+                        TMP_0(bool) = gate == 7
+                        TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,incorrect gate)
+                Expression: unlocked = true
+                IRs:
+                        unlocked(bool) := True(bool)
+        Function BranchValueExample.activate() (*)
+                Expression: require(bool,string)(unlocked,not unlocked)
+                IRs:
+                        TMP_2(None) = SOLIDITY_CALL require(bool,string)(unlocked,not unlocked)
+                Expression: active = true
+                IRs:
+                        active(bool) := True(bool)
+        Function BranchValueExample.trigger(uint256) (*)
+                Expression: require(bool,string)(active,not active)
+                IRs:
+                        TMP_3(None) = SOLIDITY_CALL require(bool,string)(active,not active)
+                Expression: value = x
+                IRs:
+                        value(uint256) := x(uint256)
+        Function BranchValueExample.echidna_value_safe() (*)
+                Expression: value <= 100
+                IRs:
+                        TMP_4(bool) = value <= 100
+                        RETURN TMP_4

@@ -1,0 +1,12 @@
+cohort,benchmark,candidate_count,top_k,planned_runs,degenerate_same_as_full,min_candidate_inclusions,max_candidate_inclusions,top_ranked_candidate_inclusions,sequence_json,semantic_classification
+formal,branch-value,7,1,30,0,4,5,4,results/formal/candidates/branch-value/full.json,supported
+formal,noisy-four-step,3,1,30,0,10,10,10,results/formal/candidates/noisy-four-step/full.json,supported
+formal,repeated-call,3,1,30,0,10,10,10,results/formal/candidates/repeated-call/full.json,supported
+formal,reset-example,33,1,30,0,0,1,1,results/formal/candidates/reset-example/full.json,supported
+formal-b2,alternative-path,11,1,30,0,2,3,3,results/formal-b2/preparation/alternative-path/full-sequences.json,supported
+formal-b2,multi-property,5,1,30,0,6,6,6,results/formal-b2/preparation/multi-property/full-sequences.json,supported
+public-c1,echidna-flags,1,1,0,1,0,0,0,results/public-benchmarks/c1/preparation/echidna-flags/full.json,supported
+public-c1,echidna-multi,2,1,30,0,15,15,15,results/public-benchmarks/c1/preparation/echidna-multi/full.json,supported
+public-c1,exercise2-access-control,2,1,30,0,15,15,15,results/public-benchmarks/c1/preparation/exercise2-access-control/full.json,conditional
+public-c1,smartbugs-multifunc,3,1,30,0,10,10,10,results/public-benchmarks/c1/preparation/smartbugs-multifunc/full.json,supported
+public-c1,smartbugs-onefunc,1,1,0,1,0,0,0,results/public-benchmarks/c1/preparation/smartbugs-onefunc/full.json,supported

@@ -1,0 +1,50 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=repeated-call
+METHOD=matched-random-k1
+SEED=9
+SCHEDULE_SEED=20260805
+SELECTION_ID=b02-o001
+SELECTED_CANDIDATE_INDICES=1
+SELECTION_SHA256=fbec2845463e8b30318a9aee73853201bd0768e6d5e87b4961308bfdf23eb1ab
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/repeated-call/candidate-001.sol
+CONTRACT_NAME=MatchedRandomV1RepeatedCallC001Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:20:37+08:00
+[2026-08-06 11:20:37.46] Compiling `contracts/harnesses/matched-random-v1/repeated-call/candidate-001.sol`... Done! (0.121401593s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/repeated-call/candidate-001.sol:MatchedRandomV1RepeatedCallC001Harness
+[2026-08-06 11:20:37.58] Running slither on `contracts/harnesses/matched-random-v1/repeated-call/candidate-001.sol`... Done! (0.219312794s)
+[2026-08-06 11:20:37.82] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+MatchedRandomV1RepeatedCallC001Harness.matched_random_sequence_1(73419726351671794325285110970965495120825881189938350048477327697861818150338) Time delay: 512439 seconds Block delay: 8447
+
+[2026-08-06 11:20:37.82] [Worker 0] New coverage: 794 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:20:39.31] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:20:39.31] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 794, corpus: 1, gas/s: 61600
+echidna_value_safe: failed!💥  
+  Call sequence:
+    MatchedRandomV1RepeatedCallC001Harness.matched_random_sequence_1(101)
+
+Traces: 
+call [1mRepeatedCallExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/repeated-call/candidate-001.sol:24)[0m
+ └╴← (false)
+
+
+Unique instructions: 794
+Unique codehashes: 2
+Corpus size: 1
+Seed: 9
+Total calls: 2
+
+
+EXIT_CODE=1
+END_TIME=2026-08-06T11:20:39+08:00
+PROCESS_WALL_SECONDS=1.942615
+MATCHED_RANDOM_RUN_STATUS=falsified
+MATCHED_RANDOM_RUN_COMPLETED=1

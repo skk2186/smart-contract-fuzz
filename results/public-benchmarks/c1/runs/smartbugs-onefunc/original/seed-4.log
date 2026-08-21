@@ -1,0 +1,48 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-onefunc
+METHOD=original
+COMPILER=0.4.25
+SEED=4
+CONTRACT_FILE=contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol
+CONTRACT_NAME=SmartBugsOneFuncEchidna
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T19:53:57+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.25+commit.59dbf8f1.Linux.g++
+
+[2026-07-28 19:53:57.22] Compiling `contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol`... Done! (0.329329549s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol:SmartBugsOneFuncEchidna
+[2026-07-28 19:53:57.55] Running slither on `contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol`... Done! (0.432142125s)
+[2026-07-28 19:53:58.00] [Worker 0] Test echidna_count_does_not_underflow falsified!
+  Call sequence:
+SmartBugsOneFuncEchidna.run(272504363338328174572623641334121758069769320395) Time delay: 521319 seconds Block delay: 59552
+SmartBugsOneFuncEchidna.run(63828487537694795940197795710001897288942466166187651793) Time delay: 463587 seconds Block delay: 38350
+
+[2026-07-28 19:53:58.00] [Worker 0] New coverage: 120 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 19:53:58.61] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 19:53:58.61] [status] tests: 1/1, fuzzing: 5/100000, values: [], cov: 120, corpus: 1, gas/s: 121503
+echidna_count_does_not_underflow: failed!💥  
+  Call sequence:
+    SmartBugsOneFuncEchidna.run(0)
+    SmartBugsOneFuncEchidna.run(2)
+
+Traces: 
+
+
+Unique instructions: 120
+Unique codehashes: 1
+Corpus size: 1
+Seed: 4
+Total calls: 5
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.44
+
+EXIT_CODE=1
+END_TIME=2026-07-28T19:53:58+08:00
+
+PUBLIC_C1_RUN_STATUS=valid
+PUBLIC_C1_RUN_COMPLETED=1

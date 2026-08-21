@@ -1,0 +1,51 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-flags
+METHOD=original
+COMPILER=0.8.20
+SEED=1
+CONTRACT_FILE=contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol
+CONTRACT_NAME=PublicEchidnaFlagsTarget
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T16:05:56+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:05:56.62] Compiling `contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol`... Done! (0.311341597s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:PublicEchidnaFlagsTarget
+[2026-07-28 16:05:56.93] Running slither on `contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol`... Done! (0.425464528s)
+[2026-07-28 16:05:57.37] [Worker 0] New coverage: 341 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 16:05:57.37] [Worker 0] New coverage: 353 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 16:05:57.39] [Worker 0] New coverage: 374 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 16:05:57.44] [Worker 0] Test echidna_sometimesfalse falsified!
+  Call sequence:
+PublicEchidnaFlagsTarget.set0(4370000) Time delay: 322367 seconds Block delay: 5015
+PublicEchidnaFlagsTarget.set1(100) Time delay: 547623 seconds Block delay: 57086
+
+[2026-07-28 16:05:57.44] [Worker 0] New coverage: 395 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 16:05:58.63] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:05:58.63] [status] tests: 1/1, fuzzing: 258/100000, values: [], cov: 395, corpus: 4, gas/s: 4646845
+echidna_sometimesfalse: failed!💥  
+  Call sequence:
+    PublicEchidnaFlagsTarget.set0(97800)
+    PublicEchidnaFlagsTarget.set1(0)
+
+Traces: 
+emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:38)[0m
+emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:39)[0m
+
+
+Unique instructions: 395
+Unique codehashes: 1
+Corpus size: 4
+Seed: 1
+Total calls: 258
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.08
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:05:58+08:00
+PUBLIC_C1_RUN_COMPLETED=1

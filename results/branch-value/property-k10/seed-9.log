@@ -1,0 +1,33 @@
+[2026-07-23 00:02:28.66] Compiling `contracts/harnesses/branch-value/BranchValuePropertyK10Harness.sol`... Done! (0.307163664s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/branch-value/BranchValuePropertyK10Harness.sol:BranchValuePropertyK10Harness
+[2026-07-23 00:02:28.97] Running slither on `contracts/harnesses/branch-value/BranchValuePropertyK10Harness.sol`... Done! (0.417600678s)
+[2026-07-23 00:02:29.40] [Worker 0] New coverage: 415 instr, 2 contracts, 1 seqs in corpus
+[2026-07-23 00:02:29.40] [Worker 0] New coverage: 577 instr, 2 contracts, 2 seqs in corpus
+[2026-07-23 00:02:29.40] [Worker 0] New coverage: 725 instr, 2 contracts, 3 seqs in corpus
+[2026-07-23 00:02:29.40] [Worker 0] New coverage: 903 instr, 2 contracts, 4 seqs in corpus
+[2026-07-23 00:02:29.41] [Worker 0] New coverage: 1060 instr, 2 contracts, 5 seqs in corpus
+[2026-07-23 00:02:29.41] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValuePropertyK10Harness.property_sequence_5(52743459661506739328617419490122444782480512388957496691656114780397539515976) Time delay: 277232 seconds Block delay: 6
+
+[2026-07-23 00:02:29.41] [Worker 0] New coverage: 1512 instr, 2 contracts, 6 seqs in corpus
+[2026-07-23 00:02:30.69] [Worker 0] Test limit reached. Stopping.
+[2026-07-23 00:02:30.69] [status] tests: 1/1, fuzzing: 30/100000, values: [], cov: 1512, corpus: 6, gas/s: 786201
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValuePropertyK10Harness.property_sequence_5(101)
+
+Traces: 
+call [1mBranchValueExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/branch-value/BranchValuePropertyK10Harness.sol:93)[0m
+ └╴← (false)
+
+
+Unique instructions: 1512
+Unique codehashes: 2
+Corpus size: 6
+Seed: 9
+Total calls: 30
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.10
+EXIT_CODE=1

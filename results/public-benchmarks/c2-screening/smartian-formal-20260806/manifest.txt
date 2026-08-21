@@ -1,0 +1,10 @@
+date=2026-08-06
+smartian_commit=eca1ed1d60c88ec5402055a05b59174b7288264c
+dotnet_sdk=8.0.423
+solidity_compiler=/home/skk/.solc-select/artifacts/solc-0.4.25/solc-0.4.25
+solidity_version=0.4.25+commit.59dbf8f1.Linux.g++
+smartian_dll=/home/skk/smart-contract-fuzzing/baselines/smartian/src/bin/Release/net8.0/Smartian.dll
+timelimit_sec=30
+repeats_per_target=30
+seed_control=SMARTIAN CLI exposes no seed option; run_id is recorded instead
+success_definition=bug directory contains an IntegerBug (IB) artifact

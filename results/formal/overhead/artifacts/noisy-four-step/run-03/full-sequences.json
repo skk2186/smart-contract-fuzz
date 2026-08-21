@@ -1,0 +1,337 @@
+{
+  "NoisyFourStepExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 3,
+    "retained_path_count": 3,
+    "dfs_expansions": 3,
+    "paths": [
+      {
+        "sequence": [
+          "register()",
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 18,
+        "length": 4,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "register()",
+            "target": "deposit()",
+            "score": 2,
+            "write_read_variables": [
+              "registered"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1,
+        "property_score": 6,
+        "value_adjustment": 12,
+        "value_score": 18,
+        "value_matches": 3,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "register()",
+            "target": "deposit()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "registered",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "funded",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "approved",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 12,
+        "length": 3,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2,
+        "property_score": 4,
+        "value_adjustment": 8,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "funded",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "approved",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      },
+      {
+        "sequence": [
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 6,
+        "length": 2,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3,
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "approved",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 3
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

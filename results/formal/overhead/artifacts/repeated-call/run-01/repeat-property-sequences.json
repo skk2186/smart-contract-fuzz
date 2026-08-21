@@ -1,0 +1,123 @@
+{
+  "RepeatedCallExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 3,
+    "retained_path_count": 3,
+    "dfs_expansions": 3,
+    "paths": [
+      {
+        "sequence": [
+          "deposit()",
+          "deposit()",
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "score": 7,
+        "length": 4,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "deposit()": 2
+        },
+        "edges": [
+          {
+            "source": "deposit()",
+            "target": "deposit()",
+            "score": 3,
+            "write_read_variables": [
+              "depositCount"
+            ],
+            "write_write_variables": [
+              "depositCount"
+            ]
+          },
+          {
+            "source": "deposit()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "depositCount"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "score": 4,
+        "length": 3,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "deposit()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "depositCount"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "unlock()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      }
+    ]
+  }
+}

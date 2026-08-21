@@ -1,0 +1,125 @@
+{
+  "C": {
+    "state_variables": [
+      "state1",
+      "state2",
+      "state3"
+    ],
+    "functions": {
+      "f(uint256)": {
+        "constant_writes": {
+          "state1": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": [
+          {
+            "condition": "x == 12",
+            "node_expression": "require(bool)(x == 12)"
+          }
+        ]
+      },
+      "g(uint256)": {
+        "constant_writes": {
+          "state2": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "state1",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "state1"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": [
+          {
+            "condition": "y == 8",
+            "node_expression": "require(bool)(y == 8)"
+          }
+        ]
+      },
+      "h(uint256)": {
+        "constant_writes": {
+          "state3": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "state2",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "state2"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "ul(uint256)": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "echidna_state3()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "slitherConstructorVariables()": {
+        "constant_writes": {
+          "state1": [
+            {
+              "kind": "bool",
+              "value": false,
+              "raw": "false"
+            }
+          ],
+          "state2": [
+            {
+              "kind": "bool",
+              "value": false,
+              "raw": "false"
+            }
+          ],
+          "state3": [
+            {
+              "kind": "bool",
+              "value": false,
+              "raw": "false"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

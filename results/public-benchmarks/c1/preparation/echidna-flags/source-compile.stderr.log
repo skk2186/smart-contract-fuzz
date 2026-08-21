@@ -1,0 +1,12 @@
+Warning: Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:19:47:
+   |
+19 |     function set0(int256 val) public returns (bool) {
+   |                                               ^^^^
+
+Warning: Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:25:47:
+   |
+25 |     function set1(int256 val) public returns (bool) {
+   |                                               ^^^^
+

@@ -1,0 +1,28 @@
+[2026-07-22 21:30:07.49] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.312721513s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:NoisyFourStepDependencyK10Harness
+[2026-07-22 21:30:07.82] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.419635069s)
+[2026-07-22 21:30:08.25] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyK10Harness.dependency_sequence_6(15392680355014092282939399238825149636753886221798650921372929192913755151048) Time delay: 573960 seconds Block delay: 45819
+
+[2026-07-22 21:30:08.25] [Worker 0] New coverage: 778 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:30:09.56] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:30:09.56] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 778, corpus: 1, gas/s: 121637
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyK10Harness.dependency_sequence_6(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 778
+Unique codehashes: 2
+Corpus size: 1
+Seed: 27
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.13
+EXIT_CODE=1

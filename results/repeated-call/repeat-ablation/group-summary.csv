@@ -1,0 +1,3 @@
+method,runs,falsified_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+visits-1-k1,30,0,0.0,,,,12.77
+visits-2-k1,30,30,1.0,2.0,2.5,0.4,2.135

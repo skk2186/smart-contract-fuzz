@@ -1,0 +1,54 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-flags
+METHOD=original
+COMPILER=0.8.20
+SEED=28
+CONTRACT_FILE=contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol
+CONTRACT_NAME=PublicEchidnaFlagsTarget
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T16:07:03+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:07:03.13] Compiling `contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol`... Done! (0.305037769s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:PublicEchidnaFlagsTarget
+[2026-07-28 16:07:03.44] Running slither on `contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol`... Done! (0.404534665s)
+[2026-07-28 16:07:03.85] [Worker 0] New coverage: 341 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 16:07:03.86] [Worker 0] New coverage: 353 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 16:07:03.88] [Worker 0] New coverage: 356 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 16:07:03.89] [Worker 0] New coverage: 377 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 16:07:03.95] [Worker 0] Test echidna_sometimesfalse falsified!
+  Call sequence:
+PublicEchidnaFlagsTarget.set0(0) Time delay: 209930 seconds Block delay: 46422
+PublicEchidnaFlagsTarget.set1(8) Time delay: 67960 seconds Block delay: 57466
+PublicEchidnaFlagsTarget.set1(19707513023461246112850159391601431552567216718662556116227159112938103566372) Time delay: 569114 seconds Block delay: 23722
+PublicEchidnaFlagsTarget.set1(9987462008853110136467075086631290485534317404068379349827104657192102631530) Time delay: 521319 seconds Block delay: 54155
+
+[2026-07-28 16:07:03.95] [Worker 0] New coverage: 398 instr, 1 contracts, 5 seqs in corpus
+[2026-07-28 16:07:05.15] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:07:05.15] [status] tests: 1/1, fuzzing: 423/100000, values: [], cov: 398, corpus: 5, gas/s: 7508876
+echidna_sometimesfalse: failed!💥  
+  Call sequence:
+    PublicEchidnaFlagsTarget.set0(0)
+    PublicEchidnaFlagsTarget.set1(58528692037793942237681713866307103682536058231145792570)
+
+Traces: 
+emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:38)[0m
+emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:39)[0m
+
+
+Unique instructions: 398
+Unique codehashes: 1
+Corpus size: 5
+Seed: 28
+Total calls: 423
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.08
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:07:05+08:00
+PUBLIC_C1_RUN_COMPLETED=1

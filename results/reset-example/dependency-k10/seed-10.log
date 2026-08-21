@@ -1,0 +1,37 @@
+[2026-07-22 22:51:37.96] Compiling `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.304566092s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:ResetDependencyK10Harness
+[2026-07-22 22:51:38.27] Running slither on `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.408859544s)
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 535 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 702 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 817 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 1119 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 1234 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 1349 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 22:51:38.70] [Worker 0] New coverage: 1477 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 22:51:38.71] [Worker 0] New coverage: 1605 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 22:51:38.71] [Worker 0] New coverage: 1733 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 22:51:38.72] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetDependencyK10Harness.dependency_sequence_6(83698548992798238396466165968945783072348741086322510008850641298259563141275) Time delay: 521319 seconds Block delay: 4771
+
+[2026-07-22 22:51:38.72] [Worker 0] New coverage: 2180 instr, 2 contracts, 10 seqs in corpus
+[2026-07-22 22:51:39.95] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:51:39.95] [status] tests: 1/1, fuzzing: 77/100000, values: [], cov: 2180, corpus: 10, gas/s: 2172126
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetDependencyK10Harness.dependency_sequence_6(102)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:125)[0m
+ └╴← (false)
+
+
+Unique instructions: 2180
+Unique codehashes: 2
+Corpus size: 10
+Seed: 10
+Total calls: 77
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.06
+EXIT_CODE=1

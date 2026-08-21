@@ -1,0 +1,17 @@
+{
+  "all_passed": true,
+  "expected_properties": [
+    "echidna_smartbugs_multifunc_trace_agrees",
+    "echidna_smartbugs_onefunc_trace_agrees"
+  ],
+  "interpretation": {
+    "trace_replay": "the fixed known successful trace produced the expected property-relevant final state on direct and generated-Harness paths"
+  },
+  "passed_properties": [
+    "echidna_smartbugs_multifunc_trace_agrees",
+    "echidna_smartbugs_onefunc_trace_agrees"
+  ],
+  "profile": "public-v4-replay",
+  "schema_version": 1,
+  "scope": "local semantic regression; not a vulnerability benchmark or full equivalence proof"
+}

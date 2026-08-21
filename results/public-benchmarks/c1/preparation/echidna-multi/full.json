@@ -1,0 +1,192 @@
+{
+  "C": {
+    "property_functions": [
+      "echidna_state3()"
+    ],
+    "property_variables": [
+      "C.state3"
+    ],
+    "target_functions": [
+      "h(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 2,
+    "retained_path_count": 2,
+    "dfs_expansions": 2,
+    "paths": [
+      {
+        "sequence": [
+          "f(uint256)",
+          "g(uint256)",
+          "h(uint256)"
+        ],
+        "score": 12,
+        "length": 3,
+        "target_function": "h(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "f(uint256)",
+            "target": "g(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state1"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state2"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1,
+        "property_score": 4,
+        "value_adjustment": 8,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "f(uint256)",
+            "target": "g(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "state1",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "state2",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "g(uint256)",
+          "h(uint256)"
+        ],
+        "score": 6,
+        "length": 2,
+        "target_function": "h(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state2"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2,
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "state2",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+[2026-07-22 21:12:13.72] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.296092787s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol:NoisyFourStepDependencyK3Harness
+[2026-07-22 21:12:14.02] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.40186332s)
+[2026-07-22 21:12:14.43] [Worker 0] New coverage: 551 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:12:14.44] [Worker 0] New coverage: 790 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:12:14.44] [Worker 0] New coverage: 1217 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:12:14.46] [Worker 0] New coverage: 1237 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:12:14.47] [Worker 0] New coverage: 1244 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:12:15.17] [Worker 0] New coverage: 1375 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:12:15.39] [Worker 0] New coverage: 1378 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:12:17.43] [status] tests: 0/1, fuzzing: 15683/100000, values: [], cov: 1378, corpus: 7, gas/s: 349880461
+[2026-07-22 21:12:20.43] [status] tests: 0/1, fuzzing: 32998/100000, values: [], cov: 1378, corpus: 7, gas/s: 384540425
+[2026-07-22 21:12:23.44] [status] tests: 0/1, fuzzing: 49967/100000, values: [], cov: 1378, corpus: 7, gas/s: 378617674
+[2026-07-22 21:12:26.44] [status] tests: 0/1, fuzzing: 66913/100000, values: [], cov: 1378, corpus: 7, gas/s: 375924500
+[2026-07-22 21:12:29.44] [status] tests: 0/1, fuzzing: 83778/100000, values: [], cov: 1378, corpus: 7, gas/s: 374435478
+[2026-07-22 21:12:32.38] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:12:32.38] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 1378, corpus: 7, gas/s: 360156471
+echidna_value_safe: passing
+
+Unique instructions: 1378
+Unique codehashes: 2
+Corpus size: 7
+Seed: 8
+Total calls: 100000
+
+PROCESS_WALL_SECONDS=18.72
+EXIT_CODE=0

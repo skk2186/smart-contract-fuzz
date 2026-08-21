@@ -1,0 +1,76 @@
+{
+  "repository": "https://github.com/SoftSec-KAIST/Smartian",
+  "smartian_commit": "eca1ed1d60c88ec5402055a05b59174b7288264c",
+  "target_framework": "net8.0",
+  "dotnet_sdk": "8.0.423",
+  "dotnet_path": ".tools/dotnet/dotnet",
+  "submodules": {
+    "nethermind": {
+      "commit": "7d661364f0f7097f17a8e6206a9a797acf94c649",
+      "working_tree_complete": "required_sources_present",
+      "dirichlet_commit": "18e90482b8839db442cbfb5e172a952893a60078"
+    },
+    "EVMAnalysis/B2R2": {
+      "commit": "409a9c1e0886810b6a7b4d7fba4e8dd0f647722b",
+      "working_tree_complete": "required_sources_present",
+      "docs_submodule": "skipped_repository_not_found"
+    }
+  },
+  "build": {
+    "smartian_dll_present": true,
+    "smartian_dll": "baselines/smartian/src/bin/Release/net8.0/Smartian.dll",
+    "runtime_status": "runtime_available_smoke_passed",
+    "last_restore_error": null,
+    "build_warnings": 9
+  },
+  "smoke": {
+    "command": "fuzz -p examples/bc/IB.bin -a examples/abi/IB.abi -t 1 -o <temporary-dir> -v 0",
+    "exit_code": 0,
+    "result": "analysis_and_one_second_fuzz_smoke_passed",
+    "output_dir": "/tmp/smartian-smoke-Oc4cwU"
+  },
+  "network_attempts": {
+    "main_repository": "completed",
+    "submodule_git_objects": "sparse_worktree_with_required_sources",
+    "codeload_archives": "interrupted_before_complete_download"
+  },
+  "fuzzing_started": false,
+  "calibration": {
+    "status": "completed_bounded_calibration",
+    "manifest": "results/public-benchmarks/c2-screening/smartian-calibration.tsv",
+    "summary": "results/public-benchmarks/c2-screening/smartian-calibration-summary.json",
+    "timelimit_sec": 5,
+    "cases": ["IB", "BD_false", "MS_true"],
+    "all_exit_codes_zero": true,
+    "repeatability_runs": 9,
+    "repeatability_completion_markers": 9,
+    "formal_c2_comparable": false
+  },
+  "oracle_alignment_preflight": {
+    "status": "independent_property_replay_verified_for_two_integer_candidates",
+    "manifest": "results/public-benchmarks/c2-screening/smartian-oracle-alignment.tsv",
+    "summary": "results/public-benchmarks/c2-screening/smartian-oracle-alignment.json",
+    "smartbugs_integer_candidates": 2,
+    "smartian_integer_bug_runs_exit_zero": true,
+    "echidna_independent_replay": "passed_expected_falsification_exit_1",
+    "echidna_slither_warning": true,
+    "formal_c2_comparable": false,
+    "formal_freeze_proposal": "results/public-benchmarks/c2-screening/smartian-formal-freeze-proposal.json",
+    "formal_batch_started": true,
+    "formal_batch_completed": true,
+    "formal_batch_root": "results/public-benchmarks/c2-screening/smartian-formal-20260806",
+    "formal_batch_runs": 60,
+    "formal_batch_completed_runs": 60,
+    "formal_batch_integer_bug_runs": 60,
+    "formal_batch_exit_zero_runs": 60,
+    "formal_batch_c2_denominator_changed": false
+  },
+  "descriptive_comparison": {
+    "status": "completed_no_cross_tool_inference",
+    "report": "results/public-benchmarks/c2-screening/SMARTIAN_VS_C1_REPORT.md",
+    "data": "results/public-benchmarks/c2-screening/smartian-vs-c1-descriptive.csv",
+    "targets": 2,
+    "all_methods_observed_success_rate": "30/30_for_each_target",
+    "c2_denominator_changed": false
+  }
+}

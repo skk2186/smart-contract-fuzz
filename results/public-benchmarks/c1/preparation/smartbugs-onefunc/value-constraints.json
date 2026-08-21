@@ -1,0 +1,57 @@
+{
+  "SmartBugsOneFuncEchidna": {
+    "state_variables": [
+      "count",
+      "initialized"
+    ],
+    "functions": {
+      "run(uint256)": {
+        "constant_writes": {
+          "initialized": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "initialized",
+            "expression": "= 0",
+            "node_expression": "initialized == 0"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_count_does_not_underflow()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "slitherConstructorVariables()": {
+        "constant_writes": {
+          "initialized": [
+            {
+              "kind": "int",
+              "value": 0,
+              "raw": "0"
+            }
+          ],
+          "count": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

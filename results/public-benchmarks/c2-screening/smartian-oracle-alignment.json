@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-06",
+  "purpose": "oracle/property alignment preflight; not formal C2 fuzzing",
+  "solidity_compiler": "/home/skk/.solc-select/artifacts/solc-0.4.25/solc-0.4.25",
+  "smartian_commit": "eca1ed1d60c88ec5402055a05b59174b7288264c",
+  "smartian_budget_sec": 10,
+  "aligned_candidates": [
+    {
+      "candidate_id": "smartbugs-multifunc",
+      "property": "echidna_count_does_not_underflow",
+      "property_predicate": "count <= 1",
+      "smartian_oracle": "IntegerBug",
+      "exit_code": 0,
+      "bug_file": "id-00000-IB_00000",
+      "trace": ["init()", "run(25)"],
+      "semantic_reason": "count starts at 1; init enables run; run(25) wraps uint256 subtraction",
+      "echidna": {
+        "test_limit": 100,
+        "exit_code": 1,
+        "result": "property_falsified",
+        "trace": ["init()", "run(2)"]
+      }
+    },
+    {
+      "candidate_id": "smartbugs-onefunc",
+      "property": "echidna_count_does_not_underflow",
+      "property_predicate": "count <= 1",
+      "smartian_oracle": "IntegerBug",
+      "exit_code": 0,
+      "bug_file": "id-00000-IB_00000",
+      "trace": ["run(0)", "run(25)"],
+      "semantic_reason": "first run initializes; second run(25) wraps uint256 subtraction",
+      "echidna": {
+        "test_limit": 100,
+        "exit_code": 1,
+        "result": "property_falsified",
+        "trace": ["run(0)", "run(2)"]
+      }
+    }
+  ],
+  "blocked_candidates": [
+    {"candidate_id": "echidna-multi", "reason": "no native SMARTIAN oracle for generic state invariant"},
+    {"candidate_id": "echidna-flags", "reason": "no native SMARTIAN oracle for boolean flag transition"},
+    {"candidate_id": "exercise2-access-control", "reason": "no native SMARTIAN oracle for paused-state property"}
+  ],
+  "echidna_cross_check": {
+    "status": "passed_expected_falsification",
+    "command": "echidna <source> --test-limit 100 --format text",
+    "echidna_version": "2.3.2",
+    "crytic_compile_version": "0.4.2",
+    "exit_codes": [1, 1],
+    "result": "both_integer_properties_falsified",
+    "environment": "/tmp/echidna-tools with direct Solidity 0.4.25 binary",
+    "warnings": ["slither_not_found; Echidna property execution still completed"]
+  },
+  "formal_c2_inclusion": false,
+  "next_gate": "freeze formal budget, sender/transaction semantics, and candidate inclusion decision; do not infer detection rate from this single replay"
+}

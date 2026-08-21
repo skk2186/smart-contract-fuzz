@@ -1,0 +1,16 @@
+benchmark,method,runs,falsified,budget_exhausted,success_rate,wilson_95_lower,wilson_95_upper
+echidna-flags,original,30,30,0,1,0.886486606826031,1
+echidna-flags,full-k1,30,30,0,1,0.886486606826031,1
+echidna-flags,full-k5,30,30,0,1,0.886486606826031,1
+echidna-multi,original,30,24,6,0.8,0.626943035868518,0.904948928227101
+echidna-multi,full-k1,30,30,0,1,0.886486606826031,1
+echidna-multi,full-k5,30,29,1,0.966666666666667,0.833296090085908,0.994091409618387
+exercise2-access-control,original,30,30,0,1,0.886486606826031,1
+exercise2-access-control,full-k1,30,0,30,0,0,0.113513393173969
+exercise2-access-control,full-k5,30,30,0,1,0.886486606826031,1
+smartbugs-multifunc,original,30,30,0,1,0.886486606826031,1
+smartbugs-multifunc,full-k1,30,30,0,1,0.886486606826031,1
+smartbugs-multifunc,full-k5,30,30,0,1,0.886486606826031,1
+smartbugs-onefunc,original,30,30,0,1,0.886486606826031,1
+smartbugs-onefunc,full-k1,30,30,0,1,0.886486606826031,1
+smartbugs-onefunc,full-k5,30,30,0,1,0.886486606826031,1

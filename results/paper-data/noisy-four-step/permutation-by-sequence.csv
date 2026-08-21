@@ -1,0 +1,25 @@
+harness_id,sequence,is_correct_order,runs,falsified_runs,success_rate
+1,register -> deposit -> approve -> withdraw,True,5,5,1.0
+2,register -> deposit -> withdraw -> approve,False,5,0,0.0
+3,register -> approve -> deposit -> withdraw,False,5,0,0.0
+4,register -> approve -> withdraw -> deposit,False,5,0,0.0
+5,register -> withdraw -> deposit -> approve,False,5,0,0.0
+6,register -> withdraw -> approve -> deposit,False,5,0,0.0
+7,deposit -> register -> approve -> withdraw,False,5,0,0.0
+8,deposit -> register -> withdraw -> approve,False,5,0,0.0
+9,deposit -> approve -> register -> withdraw,False,5,0,0.0
+10,deposit -> approve -> withdraw -> register,False,5,0,0.0
+11,deposit -> withdraw -> register -> approve,False,5,0,0.0
+12,deposit -> withdraw -> approve -> register,False,5,0,0.0
+13,approve -> register -> deposit -> withdraw,False,5,0,0.0
+14,approve -> register -> withdraw -> deposit,False,5,0,0.0
+15,approve -> deposit -> register -> withdraw,False,5,0,0.0
+16,approve -> deposit -> withdraw -> register,False,5,0,0.0
+17,approve -> withdraw -> register -> deposit,False,5,0,0.0
+18,approve -> withdraw -> deposit -> register,False,5,0,0.0
+19,withdraw -> register -> deposit -> approve,False,5,0,0.0
+20,withdraw -> register -> approve -> deposit,False,5,0,0.0
+21,withdraw -> deposit -> register -> approve,False,5,0,0.0
+22,withdraw -> deposit -> approve -> register,False,5,0,0.0
+23,withdraw -> approve -> register -> deposit,False,5,0,0.0
+24,withdraw -> approve -> deposit -> register,False,5,0,0.0

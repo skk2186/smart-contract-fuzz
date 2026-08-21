@@ -1,0 +1,40 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=property-k1
+SEED=27
+CONTRACT_FILE=contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol
+CONTRACT_NAME=NoisyFourStepPropertyHarness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T14:59:39+08:00
+
+[2026-07-27 14:59:39.95] Compiling `contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol`... Done! (0.313944455s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol:NoisyFourStepPropertyHarness
+[2026-07-27 14:59:40.26] Running slither on `contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol`... Done! (0.425955472s)
+[2026-07-27 14:59:40.70] [Worker 0] New coverage: 758 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 14:59:40.70] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepPropertyHarness.property_guided_sequence_1(115792089237316195423570985008687907853269984665640564039457584007913129639934) Time delay: 322275 seconds Block delay: 45261
+
+[2026-07-27 14:59:42.02] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:59:42.02] [status] tests: 1/1, fuzzing: 7/100000, values: [], cov: 758, corpus: 1, gas/s: 363903
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepPropertyHarness.property_guided_sequence_1(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 758
+Unique codehashes: 2
+Corpus size: 1
+Seed: 27
+Total calls: 7
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.15
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:59:42+08:00
+FORMAL_RUN_COMPLETED=1

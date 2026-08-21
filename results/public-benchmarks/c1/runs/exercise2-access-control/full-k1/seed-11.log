@@ -1,0 +1,40 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=full-k1
+COMPILER=0.8.20
+SEED=11
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol
+CONTRACT_NAME=PublicExercise2FullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:12:39+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:12:39.15] Compiling `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.319711328s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol:PublicExercise2FullK1Harness
+[2026-07-28 16:12:39.47] Running slither on `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.425709374s)
+[2026-07-28 16:12:39.91] [Worker 0] New coverage: 450 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:12:40.31] [Worker 0] New coverage: 586 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:12:40.44] [Worker 0] New coverage: 589 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:12:42.91] [status] tests: 0/1, fuzzing: 21218/100000, values: [], cov: 589, corpus: 3, gas/s: 103436592
+[2026-07-28 16:12:45.91] [status] tests: 0/1, fuzzing: 44205/100000, values: [], cov: 589, corpus: 3, gas/s: 111687691
+[2026-07-28 16:12:48.91] [status] tests: 0/1, fuzzing: 66795/100000, values: [], cov: 589, corpus: 3, gas/s: 109441070
+[2026-07-28 16:12:51.92] [status] tests: 0/1, fuzzing: 89327/100000, values: [], cov: 589, corpus: 3, gas/s: 109766314
+[2026-07-28 16:12:53.34] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:12:53.34] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 589, corpus: 3, gas/s: 155492881
+echidna_no_transfer: passing
+
+Unique instructions: 589
+Unique codehashes: 2
+Corpus size: 3
+Seed: 11
+Total calls: 100000
+
+PROCESS_WALL_SECONDS=14.26
+
+EXIT_CODE=0
+END_TIME=2026-07-28T16:12:53+08:00
+PUBLIC_C1_RUN_COMPLETED=1

@@ -1,0 +1,67 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+START_TIME=2026-07-27T14:11:48+08:00
+
+===== GIT =====
+
+===== TOOL VERSIONS =====
+Echidna 2.3.2
+0.11.5
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+Python 3.11.15
+
+===== SYSTEM =====
+Linux DESKTOP-KQD226K 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Byte Order:                              Little Endian
+Address sizes:                           39 bits physical, 48 bits virtual
+CPU(s):                                  16
+On-line CPU(s) list:                     0-15
+Thread(s) per core:                      2
+Core(s) per socket:                      8
+Socket(s):                               1
+NUMA node(s):                            1
+Vendor ID:                               GenuineIntel
+CPU family:                              6
+Model:                                   141
+Model name:                              11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+Stepping:                                1
+CPU MHz:                                 2304.007
+BogoMIPS:                                4608.01
+Virtualization:                          VT-x
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               384 KiB
+L1i cache:                               256 KiB
+L2 cache:                                10 MiB
+L3 cache:                                24 MiB
+NUMA node0 CPU(s):                       0-15
+Vulnerability Gather data sampling:      Unknown: Dependent on hypervisor status
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid movdiri movdir64b fsrm avx512_vp2intersect md_clear ibt flush_l1d arch_capabilities
+              total        used        free      shared  buff/cache   available
+Mem:          7.6Gi       1.7Gi       5.5Gi       3.0Mi       486Mi       5.8Gi
+Swap:         2.0Gi          0B       2.0Gi
+
+===== CONFIG HASHES =====
+c1ab2c5c41c7b59bc1d7edae44217a01f5c4dbf9961f0c45e0a1e507206e3aa6  configs/formal-original-seq4.yaml
+25bd337307349e94a7b6b54ef129be76a6fdc7f0d49e414dd1c022f039787e78  configs/formal-harness-seq1.yaml
+07b8039852ca5727f42a22f91de1abe6e96985010e8768c26b419be09645e63b  results/formal/manifest.tsv

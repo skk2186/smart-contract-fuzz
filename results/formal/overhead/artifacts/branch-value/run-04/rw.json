@@ -1,0 +1,73 @@
+{
+  "BranchValueExample": {
+    "prepareBadA()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "gate"
+      ]
+    },
+    "prepareBadB()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "gate"
+      ]
+    },
+    "prepareBadC()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "gate"
+      ]
+    },
+    "prepareBadD()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "gate"
+      ]
+    },
+    "prepareGood()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "gate"
+      ]
+    },
+    "unlock()": {
+      "visibility": "public",
+      "read": [
+        "gate"
+      ],
+      "write": [
+        "unlocked"
+      ]
+    },
+    "activate()": {
+      "visibility": "public",
+      "read": [
+        "unlocked"
+      ],
+      "write": [
+        "active"
+      ]
+    },
+    "trigger(uint256)": {
+      "visibility": "public",
+      "read": [
+        "active"
+      ],
+      "write": [
+        "value"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "value"
+      ],
+      "write": []
+    }
+  }
+}

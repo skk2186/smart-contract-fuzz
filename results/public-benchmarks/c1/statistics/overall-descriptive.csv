@@ -1,0 +1,4 @@
+method,total_runs,total_falsified,total_budget_exhausted,pooled_descriptive_rate,macro_average_success_rate,benchmarks_with_30_of_30,benchmarks_with_any_budget_exhaustion,interpretation_scope
+original,150,144,6,0.96,0.96,4,1,Descriptive across five heterogeneous benchmarks; not a pooled inferential claim.
+full-k1,150,120,30,0.8,0.8,4,1,Descriptive across five heterogeneous benchmarks; not a pooled inferential claim.
+full-k5,150,149,1,0.993333333333333,0.993333333333333,4,1,Descriptive across five heterogeneous benchmarks; not a pooled inferential claim.

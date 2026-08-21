@@ -1,0 +1,23 @@
+[2026-07-21 11:18:46.40] Compiling `contracts/harnesses/random/NoisyFourStepRandomHarness-10.sol`... Done! (0.302894429s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/random/NoisyFourStepRandomHarness-10.sol:NoisyFourStepRandomHarness
+[2026-07-21 11:18:46.70] Running slither on `contracts/harnesses/random/NoisyFourStepRandomHarness-10.sol`... Done! (0.397113967s)
+[2026-07-21 11:18:47.11] [Worker 0] New coverage: 839 instr, 2 contracts, 1 seqs in corpus
+[2026-07-21 11:18:47.12] [Worker 0] New coverage: 970 instr, 2 contracts, 2 seqs in corpus
+[2026-07-21 11:18:47.46] [Worker 0] New coverage: 973 instr, 2 contracts, 3 seqs in corpus
+[2026-07-21 11:18:50.11] [status] tests: 0/1, fuzzing: 16112/100000, values: [], cov: 973, corpus: 3, gas/s: 299255791
+[2026-07-21 11:18:53.11] [status] tests: 0/1, fuzzing: 33640/100000, values: [], cov: 973, corpus: 3, gas/s: 325333680
+[2026-07-21 11:18:56.12] [status] tests: 0/1, fuzzing: 51043/100000, values: [], cov: 973, corpus: 3, gas/s: 321470181
+[2026-07-21 11:18:59.12] [status] tests: 0/1, fuzzing: 68041/100000, values: [], cov: 973, corpus: 3, gas/s: 315031695
+[2026-07-21 11:19:02.12] [status] tests: 0/1, fuzzing: 85423/100000, values: [], cov: 973, corpus: 3, gas/s: 320599830
+[2026-07-21 11:19:04.73] [Worker 0] Test limit reached. Stopping.
+[2026-07-21 11:19:04.73] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 973, corpus: 3, gas/s: 269733299
+echidna_value_safe: passing
+
+Unique instructions: 973
+Unique codehashes: 2
+Corpus size: 3
+Seed: 10
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=18.41
+EXIT_CODE=0

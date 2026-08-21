@@ -1,0 +1,53 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=multi-property
+METHOD=full-k1
+SEED=27
+CONTRACT_FILE=contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol
+CONTRACT_NAME=MultiPropertyFullK1Harness
+CONFIG_FILE=configs/formal-b2-multi-harness.yaml
+START_TIME=2026-07-27T20:19:13+08:00
+
+[2026-07-27 20:19:13.62] Compiling `contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol`... Done! (0.307349927s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:MultiPropertyFullK1Harness
+[2026-07-27 20:19:13.93] Running slither on `contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol`... Done! (0.414059599s)
+[2026-07-27 20:19:14.36] [Worker 0] New coverage: 699 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 20:19:14.37] [Worker 0] Test echidna_value_a_safe falsified!
+  Call sequence:
+MultiPropertyFullK1Harness.full_sequence_1(104096518742427461940718240266753535720025809437612382689957967742408413481065,199) Time delay: 136393 seconds Block delay: 59228
+
+[2026-07-27 20:19:15.64] [Worker 0] Test echidna_value_b_safe falsified!
+  Call sequence:
+MultiPropertyFullK1Harness.full_sequence_1(84384582096755884241952491369519885561726567,74090320850992075175689486560777383929826078086721764195248224827186838677230) Time delay: 100 seconds Block delay: 47075
+
+[2026-07-27 20:19:16.63] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:19:16.63] [status] tests: 2/2, fuzzing: 18/100000, values: [], cov: 699, corpus: 1, gas/s: 656800
+echidna_value_b_safe: failed!💥  
+  Call sequence:
+    MultiPropertyFullK1Harness.full_sequence_1(0,201)
+
+Traces: 
+call [1mMultiPropertyExample[0m::echidna_value_b_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:37)[0m
+ └╴← (false)
+
+echidna_value_a_safe: failed!💥  
+  Call sequence:
+    MultiPropertyFullK1Harness.full_sequence_1(101,0)
+
+Traces: 
+call [1mMultiPropertyExample[0m::echidna_value_a_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:29)[0m
+ └╴← (false)
+
+
+Unique instructions: 699
+Unique codehashes: 2
+Corpus size: 1
+Seed: 27
+Total calls: 18
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=3.08
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:19:16+08:00
+FORMAL_B2_RUN_COMPLETED=1

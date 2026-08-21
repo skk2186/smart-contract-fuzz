@@ -1,0 +1,36 @@
+[2026-07-22 21:29:50.08] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.318857247s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:NoisyFourStepDependencyK10Harness
+[2026-07-22 21:29:50.40] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.436750491s)
+[2026-07-22 21:29:50.85] [Worker 0] New coverage: 702 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:29:50.85] [Worker 0] New coverage: 1004 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:29:50.85] [Worker 0] New coverage: 1233 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:29:50.86] [Worker 0] New coverage: 1478 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:29:50.86] [Worker 0] New coverage: 1727 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:29:50.86] [Worker 0] New coverage: 1951 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:29:50.86] [Worker 0] New coverage: 2234 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:29:50.87] [Worker 0] New coverage: 2425 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 21:29:50.87] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyK10Harness.dependency_sequence_6(115792089237316195423570985008687907853269984665640564039457584007913129639933) Time delay: 153579 seconds Block delay: 2526
+
+[2026-07-22 21:29:50.87] [Worker 0] New coverage: 2847 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 21:29:52.22] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:29:52.22] [status] tests: 1/1, fuzzing: 42/100000, values: [], cov: 2847, corpus: 9, gas/s: 2953792
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyK10Harness.dependency_sequence_6(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 2847
+Unique codehashes: 2
+Corpus size: 9
+Seed: 19
+Total calls: 42
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.20
+EXIT_CODE=1

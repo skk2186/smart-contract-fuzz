@@ -1,0 +1,169 @@
+{
+  "ResetExample": {
+    "state_variables": [
+      "noiseA",
+      "noiseB",
+      "stage",
+      "value"
+    ],
+    "functions": {
+      "begin()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "authorize()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            },
+            "condition": "stage == 1"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "commit()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 3,
+              "raw": "3"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            },
+            "condition": "stage == 2"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "execute(uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 3,
+              "raw": "3"
+            },
+            "condition": "stage == 3"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "value",
+            "expression": "x",
+            "node_expression": "value = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "reset()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "poison()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 255,
+              "raw": "255"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "noise1(uint256)": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "x",
+            "node_expression": "noiseA = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise2()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseB",
+            "expression": "noiseA + 1",
+            "node_expression": "noiseB = noiseA + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "noise3()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "noiseA",
+            "expression": "noiseB + 1",
+            "node_expression": "noiseA = noiseB + 1"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

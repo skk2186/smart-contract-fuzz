@@ -1,0 +1,22 @@
+{
+  "SmartBugsOneFuncEchidna": {
+    "run(uint256)": {
+      "visibility": "public",
+      "read": [
+        "SmartBugsOneFuncEchidna.count",
+        "SmartBugsOneFuncEchidna.initialized"
+      ],
+      "write": [
+        "SmartBugsOneFuncEchidna.count",
+        "SmartBugsOneFuncEchidna.initialized"
+      ]
+    },
+    "echidna_count_does_not_underflow()": {
+      "visibility": "public",
+      "read": [
+        "SmartBugsOneFuncEchidna.count"
+      ],
+      "write": []
+    }
+  }
+}

@@ -1,0 +1,16 @@
+benchmark	method	contract_file	contract_name	config_file
+noisy-four-step	original	contracts/benchmarks/NoisyFourStepExample.sol	NoisyFourStepExample	configs/formal-original-seq4.yaml
+noisy-four-step	dependency-k10	contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol	NoisyFourStepDependencyHarness	configs/formal-harness-seq1.yaml
+noisy-four-step	property-k1	contracts/harnesses/property-generated/NoisyFourStepPropertyHarness.sol	NoisyFourStepPropertyHarness	configs/formal-harness-seq1.yaml
+noisy-four-step	full-k1	contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol	NoisyFourStepFullK1Harness	configs/formal-harness-seq1.yaml
+reset-example	original	contracts/benchmarks/ResetExample.sol	ResetExample	configs/formal-original-seq4.yaml
+reset-example	dependency-k10	contracts/harnesses/reset-example/ResetDependencyK10Harness.sol	ResetDependencyK10Harness	configs/formal-harness-seq1.yaml
+reset-example	property-k1	contracts/harnesses/reset-example/ResetPropertyK1Harness.sol	ResetPropertyK1Harness	configs/formal-harness-seq1.yaml
+reset-example	full-k1	contracts/harnesses/formal/ResetFullK1Harness.sol	ResetFullK1Harness	configs/formal-harness-seq1.yaml
+branch-value	original	contracts/benchmarks/BranchValueExample.sol	BranchValueExample	configs/formal-original-seq4.yaml
+branch-value	property-k1	contracts/harnesses/branch-value/BranchValuePropertyK1Harness.sol	BranchValuePropertyK1Harness	configs/formal-harness-seq1.yaml
+branch-value	value-k1	contracts/harnesses/value-generated/BranchValueValueGuidedK1Harness.sol	BranchValueValueGuidedK1Harness	configs/formal-harness-seq1.yaml
+branch-value	full-k1	contracts/harnesses/formal/BranchValueFullK1Harness.sol	BranchValueFullK1Harness	configs/formal-harness-seq1.yaml
+repeated-call	original	contracts/benchmarks/RepeatedCallExample.sol	RepeatedCallExample	configs/formal-original-seq4.yaml
+repeated-call	value-no-repeat-k1	contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol	RepeatedCallVisits1K1Harness	configs/formal-harness-seq1.yaml
+repeated-call	full-k1	contracts/harnesses/formal/RepeatedCallFullK1Harness.sol	RepeatedCallFullK1Harness	configs/formal-harness-seq1.yaml

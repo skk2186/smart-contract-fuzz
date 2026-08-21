@@ -1,0 +1,38 @@
+[2026-07-22 23:42:01.01] Compiling `contracts/benchmarks/BranchValueExample.sol`... Done! (0.299182769s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/BranchValueExample.sol:BranchValueExample
+[2026-07-22 23:42:01.32] Running slither on `contracts/benchmarks/BranchValueExample.sol`... Done! (0.405255015s)
+[2026-07-22 23:42:01.73] [Worker 0] New coverage: 248 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 23:42:01.73] [Worker 0] New coverage: 521 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 23:42:01.73] [Worker 0] New coverage: 535 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 23:42:01.74] [Worker 0] New coverage: 560 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 23:42:01.75] [Worker 0] New coverage: 627 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 23:42:01.79] [Worker 0] New coverage: 652 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 23:42:01.84] [Worker 0] New coverage: 663 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 23:42:01.86] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueExample.prepareGood() from: 0x0000000000000000000000000000000000020000 Time delay: 237022 seconds Block delay: 5237
+BranchValueExample.unlock() from: 0x0000000000000000000000000000000000030000 Time delay: 525476 seconds Block delay: 3
+BranchValueExample.activate() from: 0x0000000000000000000000000000000000010000 Time delay: 103 seconds Block delay: 9966
+BranchValueExample.trigger(17974680654437032748714435377156877277110019335430028582483828592049294284375) from: 0x0000000000000000000000000000000000020000 Time delay: 554465 seconds Block delay: 36859
+
+[2026-07-22 23:42:02.85] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 23:42:02.85] [status] tests: 1/1, fuzzing: 1309/100000, values: [], cov: 663, corpus: 7, gas/s: 31293861
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueExample.prepareGood()
+    BranchValueExample.unlock()
+    BranchValueExample.activate()
+    BranchValueExample.trigger(101)
+
+Traces: 
+
+
+Unique instructions: 663
+Unique codehashes: 1
+Corpus size: 7
+Seed: 14
+Total calls: 1309
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.90
+EXIT_CODE=1

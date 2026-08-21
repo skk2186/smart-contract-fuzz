@@ -1,0 +1,7 @@
+testMode: property
+testLimit: 20000
+seqLen: 5
+timeout: 30
+workers: 1
+corpusDir: results/corpus-smoke
+format: text

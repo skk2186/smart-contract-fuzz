@@ -1,0 +1,13 @@
+{
+  "method_version": "Full-v1.0",
+  "repetitions": 10,
+  "max_path_length": 4,
+  "max_function_visits": 2,
+  "top_k": 1,
+  "benchmarks": [
+    "noisy-four-step",
+    "reset-example",
+    "branch-value",
+    "repeated-call"
+  ]
+}

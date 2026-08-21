@@ -1,0 +1,39 @@
+[2026-07-22 23:41:19.33] Compiling `contracts/benchmarks/BranchValueExample.sol`... Done! (0.338696273s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/BranchValueExample.sol:BranchValueExample
+[2026-07-22 23:41:19.67] Running slither on `contracts/benchmarks/BranchValueExample.sol`... Done! (0.454314086s)
+[2026-07-22 23:41:20.14] [Worker 0] New coverage: 119 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 23:41:20.14] [Worker 0] New coverage: 138 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 23:41:20.14] [Worker 0] New coverage: 335 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 23:41:20.14] [Worker 0] New coverage: 422 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 23:41:20.14] [Worker 0] New coverage: 516 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 23:41:20.15] [Worker 0] New coverage: 535 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 23:41:20.21] [Worker 0] New coverage: 560 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 23:41:20.21] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueExample.prepareGood() from: 0x0000000000000000000000000000000000030000 Time delay: 45142 seconds Block delay: 6191
+BranchValueExample.unlock() from: 0x0000000000000000000000000000000000030000 Time delay: 159717 seconds Block delay: 5054
+BranchValueExample.activate() from: 0x0000000000000000000000000000000000010000 Time delay: 136392 seconds Block delay: 23978
+BranchValueExample.trigger(1524785993) from: 0x0000000000000000000000000000000000010000 Time delay: 224875 seconds Block delay: 42101
+
+[2026-07-22 23:41:20.21] [Worker 0] New coverage: 596 instr, 1 contracts, 8 seqs in corpus
+[2026-07-22 23:41:21.47] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 23:41:21.47] [status] tests: 1/1, fuzzing: 451/100000, values: [], cov: 596, corpus: 8, gas/s: 10380644
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueExample.prepareGood()
+    BranchValueExample.unlock()
+    BranchValueExample.activate()
+    BranchValueExample.trigger(101)
+
+Traces: 
+
+
+Unique instructions: 596
+Unique codehashes: 1
+Corpus size: 8
+Seed: 1
+Total calls: 451
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.19
+EXIT_CODE=1

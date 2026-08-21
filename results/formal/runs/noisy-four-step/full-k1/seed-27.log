@@ -1,0 +1,40 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=full-k1
+SEED=27
+CONTRACT_FILE=contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol
+CONTRACT_NAME=NoisyFourStepFullK1Harness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T15:00:44+08:00
+
+[2026-07-27 15:00:44.51] Compiling `contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol`... Done! (0.305560139s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol:NoisyFourStepFullK1Harness
+[2026-07-27 15:00:44.82] Running slither on `contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol`... Done! (0.417835372s)
+[2026-07-27 15:00:45.25] [Worker 0] New coverage: 758 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 15:00:45.25] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepFullK1Harness.full_sequence_1(115792089237316195423570985008687907853269984665640564039457584007913129639934) Time delay: 322275 seconds Block delay: 45261
+
+[2026-07-27 15:00:46.57] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:00:46.57] [status] tests: 1/1, fuzzing: 7/100000, values: [], cov: 758, corpus: 1, gas/s: 363903
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepFullK1Harness.full_sequence_1(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal/NoisyFourStepFullK1Harness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 758
+Unique codehashes: 2
+Corpus size: 1
+Seed: 27
+Total calls: 7
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.13
+
+EXIT_CODE=1
+END_TIME=2026-07-27T15:00:46+08:00
+FORMAL_RUN_COMPLETED=1

@@ -1,0 +1,13 @@
+[2026-08-05 22:48:18.54] Compiling `contracts/semantic-fixtures/PublicTraceReplayV4.sol`... Done! (0.14522546s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/semantic-fixtures/PublicTraceReplayV4.sol:PublicTraceReplayV4
+[2026-08-05 22:48:18.75] [Worker 0] Test limit reached. Stopping.
+[2026-08-05 22:48:18.75] [status] tests: 0/2, fuzzing: 26/25, values: [], cov: 0, corpus: 0, gas/s: 0
+echidna_smartbugs_multifunc_trace_agrees: passing
+echidna_smartbugs_onefunc_trace_agrees: passing
+
+Unique instructions: 0
+Unique codehashes: 0
+Corpus size: 0
+Seed: 1
+Total calls: 26
+

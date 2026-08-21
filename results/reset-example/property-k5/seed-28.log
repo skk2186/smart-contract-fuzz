@@ -1,0 +1,29 @@
+[2026-07-22 22:55:20.78] Compiling `contracts/harnesses/reset-example/ResetPropertyK5Harness.sol`... Done! (0.323663644s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetPropertyK5Harness.sol:ResetPropertyK5Harness
+[2026-07-22 22:55:21.11] Running slither on `contracts/harnesses/reset-example/ResetPropertyK5Harness.sol`... Done! (0.413257076s)
+[2026-07-22 22:55:21.53] [Worker 0] New coverage: 508 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:55:21.54] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetPropertyK5Harness.property_sequence_1(254) Time delay: 521319 seconds Block delay: 30256
+
+[2026-07-22 22:55:21.54] [Worker 0] New coverage: 1033 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:55:22.83] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:55:22.83] [status] tests: 1/1, fuzzing: 7/100000, values: [], cov: 1033, corpus: 2, gas/s: 187790
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetPropertyK5Harness.property_sequence_1(101)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetPropertyK5Harness.sol:74)[0m
+ └╴← (false)
+
+
+Unique instructions: 1033
+Unique codehashes: 2
+Corpus size: 2
+Seed: 28
+Total calls: 7
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.10
+EXIT_CODE=1

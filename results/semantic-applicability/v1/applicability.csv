@@ -1,0 +1,12 @@
+cohort,benchmark,source_file,target_contract,source_files_scanned,contract_declarations,constructor_parameters,msg_sender,tx_origin,msg_value,payable,block_number,block_timestamp,blockhash,delegatecall,low_level_call,ether_send_transfer,selfdestruct,contract_creation,address_keyed_mapping,fallback_or_receive,atomicity_caveat,classification,reasons,evidence
+formal,branch-value,contracts/benchmarks/BranchValueExample.sol,BranchValueExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+formal,noisy-four-step,contracts/benchmarks/NoisyFourStepExample.sol,NoisyFourStepExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+formal,repeated-call,contracts/benchmarks/RepeatedCallExample.sol,RepeatedCallExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+formal,reset-example,contracts/benchmarks/ResetExample.sol,ResetExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+formal-b2,alternative-path,contracts/benchmarks/AlternativePathExample.sol,AlternativePathExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+formal-b2,multi-property,contracts/benchmarks/MultiPropertyExample.sol,MultiPropertyExample,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+public-c1,echidna-flags,contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol,PublicEchidnaFlagsTarget,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+public-c1,echidna-multi,contracts/public-benchmarks/raw/echidna/multi.sol,C,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+public-c1,exercise2-access-control,contracts/public-benchmarks/raw/exercise2/solution.sol,TestToken,2,4,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,conditional,address_keyed_mapping;msg_sender,"{""address_keyed_mapping"":[""contracts/public-benchmarks/raw/exercise2/token.sol:39""],""msg_sender"":[""contracts/public-benchmarks/raw/exercise2/token.sol:5"",""contracts/public-benchmarks/raw/exercise2/token.sol:8"",""contracts/public-benchmarks/raw/exercise2/token.sol:12"",""contracts/public-benchmarks/raw/exercise2/token.sol:42""]}"
+public-c1,smartbugs-multifunc,contracts/public-benchmarks/adapted/SmartBugsMultiFuncEchidna.sol,SmartBugsMultiFuncEchidna,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}
+public-c1,smartbugs-onefunc,contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol,SmartBugsOneFuncEchidna,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,supported,atomicity_caveat,{}

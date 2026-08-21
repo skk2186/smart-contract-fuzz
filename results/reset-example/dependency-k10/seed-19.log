@@ -1,0 +1,36 @@
+[2026-07-22 22:51:56.52] Compiling `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.298176693s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:ResetDependencyK10Harness
+[2026-07-22 22:51:56.82] Running slither on `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.405455698s)
+[2026-07-22 22:51:57.24] [Worker 0] New coverage: 515 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 807 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 937 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 1080 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 1200 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 1315 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 1443 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 1605 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] New coverage: 2052 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 22:51:57.25] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetDependencyK10Harness.dependency_sequence_6(253) Time delay: 289607 seconds Block delay: 53678
+
+[2026-07-22 22:51:58.50] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:51:58.50] [status] tests: 1/1, fuzzing: 32/100000, values: [], cov: 2052, corpus: 9, gas/s: 1032639
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetDependencyK10Harness.dependency_sequence_6(101)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:125)[0m
+ └╴← (false)
+
+
+Unique instructions: 2052
+Unique codehashes: 2
+Corpus size: 9
+Seed: 19
+Total calls: 32
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.05
+EXIT_CODE=1

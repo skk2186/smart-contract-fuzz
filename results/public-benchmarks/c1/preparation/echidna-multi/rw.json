@@ -1,0 +1,41 @@
+{
+  "C": {
+    "f(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "C.state1"
+      ]
+    },
+    "g(uint256)": {
+      "visibility": "public",
+      "read": [
+        "C.state1"
+      ],
+      "write": [
+        "C.state2"
+      ]
+    },
+    "h(uint256)": {
+      "visibility": "public",
+      "read": [
+        "C.state2"
+      ],
+      "write": [
+        "C.state3"
+      ]
+    },
+    "ul(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": []
+    },
+    "echidna_state3()": {
+      "visibility": "public",
+      "read": [
+        "C.state3"
+      ],
+      "write": []
+    }
+  }
+}

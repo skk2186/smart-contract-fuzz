@@ -1,0 +1,14 @@
+[2026-08-05 22:48:07.42] Compiling `/home/skk/smart-contract-fuzzing/contracts/semantic-fixtures/HarnessSemanticDifferential.sol`... Done! (0.44893942s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/semantic-fixtures/HarnessSemanticDifferential.sol:HarnessSemanticDifferential
+[2026-08-05 22:48:07.98] [Worker 0] Test limit reached. Stopping.
+[2026-08-05 22:48:07.98] [status] tests: 0/3, fuzzing: 100/100, values: [], cov: 0, corpus: 0, gas/s: 0
+echidna_rollback_boundary_changes_behavior: passing
+echidna_caller_alternation_changes_behavior: passing
+echidna_same_caller_trace_is_equivalent: passing
+
+Unique instructions: 0
+Unique codehashes: 0
+Corpus size: 0
+Seed: 1
+Total calls: 100
+

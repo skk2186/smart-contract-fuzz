@@ -1,0 +1,48 @@
+[2026-07-22 22:50:57.78] Compiling `contracts/benchmarks/ResetExample.sol`... Done! (0.286156227s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/ResetExample.sol:ResetExample
+[2026-07-22 22:50:58.07] Running slither on `contracts/benchmarks/ResetExample.sol`... Done! (0.376625424s)
+[2026-07-22 22:50:58.46] [Worker 0] New coverage: 453 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 22:50:58.46] [Worker 0] New coverage: 508 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 22:50:58.46] [Worker 0] New coverage: 577 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 22:50:58.46] [Worker 0] New coverage: 679 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 22:50:58.47] [Worker 0] New coverage: 704 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 22:50:58.47] [Worker 0] New coverage: 726 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 22:50:58.48] [Worker 0] New coverage: 782 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 22:50:58.48] [Worker 0] New coverage: 785 instr, 1 contracts, 8 seqs in corpus
+[2026-07-22 22:50:58.51] [Worker 0] New coverage: 810 instr, 1 contracts, 9 seqs in corpus
+[2026-07-22 22:50:58.87] [Worker 0] New coverage: 835 instr, 1 contracts, 10 seqs in corpus
+[2026-07-22 22:50:59.06] [Worker 0] New coverage: 910 instr, 1 contracts, 11 seqs in corpus
+[2026-07-22 22:50:59.10] [Worker 0] New coverage: 935 instr, 1 contracts, 12 seqs in corpus
+[2026-07-22 22:50:59.17] [Worker 0] New coverage: 935 instr, 1 contracts, 13 seqs in corpus
+[2026-07-22 22:50:59.17] [Worker 0] New coverage: 935 instr, 1 contracts, 14 seqs in corpus
+[2026-07-22 22:51:00.73] [Worker 0] New coverage: 935 instr, 1 contracts, 15 seqs in corpus
+[2026-07-22 22:51:01.42] [Worker 0] New coverage: 946 instr, 1 contracts, 16 seqs in corpus
+[2026-07-22 22:51:01.46] [status] tests: 0/1, fuzzing: 51860/100000, values: [], cov: 946, corpus: 16, gas/s: 436393332
+[2026-07-22 22:51:01.48] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetExample.begin() from: 0x0000000000000000000000000000000000030000 Time delay: 103 seconds Block delay: 45819
+ResetExample.authorize() from: 0x0000000000000000000000000000000000030000 Time delay: 405856 seconds Block delay: 25984
+ResetExample.commit() from: 0x0000000000000000000000000000000000020000 Time delay: 383024 seconds Block delay: 59983
+ResetExample.execute(115792089237316195423570985008687907853269984665640564039457584007913129639931) from: 0x0000000000000000000000000000000000030000 Time delay: 450541 seconds Block delay: 48434
+
+[2026-07-22 22:51:02.39] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:51:02.39] [status] tests: 1/1, fuzzing: 52335/100000, values: [], cov: 946, corpus: 16, gas/s: 12047744
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetExample.begin()
+    ResetExample.authorize()
+    ResetExample.commit()
+    ResetExample.execute(101)
+
+Traces: 
+
+
+Unique instructions: 946
+Unique codehashes: 1
+Corpus size: 16
+Seed: 24
+Total calls: 52335
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=4.66
+EXIT_CODE=1

@@ -1,0 +1,80 @@
+[00:00:00:00] Fuzz target : /home/skk/smart-contract-fuzzing/results/public-benchmarks/c2-screening/smartian-formal-20260806/inputs/multi/SmartBugsMultiFuncEchidna.bin
+[00:00:00:00] Fuzzing starts at 10:10:01
+[00:00:00:00] Time limit : 30 s
+[DEBUG] Analyzing function constructor
+Found sstore(<0x0, { }, { }>, <0x0, { }, { }>) @ 0x8
+Found sstore(<0x1, { }, { }>, <0x1, { }, { }>) @ 0xc
+Record the use of <T, { }, { }> in JUMPI @ 13
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1 }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing function count
+Record the use of <T, { }, { }> in JUMPI @ 6e
+Found sload(<0x1, { }, { }>) @ 0x108
+count: Def = {  }, Use = {  }
+[DEBUG] Analyzing function echidna_count_does_not_underflow
+Record the use of <T, { }, { }> in JUMPI @ 99
+Found sload(<0x1, { }, { }>) @ 0x111
+echidna_count_does_not_underflow: Def = {  }, Use = {  }
+[DEBUG] Analyzing function run
+Record the use of <T, { }, { }> in JUMPI @ c8
+Found sload(<0x0, { }, { }>) @ 0x11c
+Record the use of <T, { }, { var_0 }> in JUMPI @ 122
+Found sload(<0x1, { }, { }>) @ 0x12f
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x136
+run: Def = { var_1 }, Use = { var_0, var_1 }
+[DEBUG] Analyzing function init
+Record the use of <T, { }, { }> in JUMPI @ f5
+Found sstore(<0x0, { }, { }>, <0x1, { }, { }>) @ 0x142
+init: Def = { var_0 }, Use = {  }
+================== < Def-Use Chain > ==================
+("init", "run")
+("run", "run")
+==================  < Candidate Sequences > ==================
+["init"; "run"; "run"]
+Number of def-use chains: 2
+Number of seeds: 1
+Avg length of seeds: 3.0
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:00] Tx#2 found IntegerBug at 130
+[00:00:00:00] [*] Save bug seed id-00000-IB_00000: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: init, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: run, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000019
+(    TX 3    ) Function: run, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:00:00:30] ===== Statistics =====
+[00:00:00:30] Total Executions: 57693
+[00:00:00:30] Deployment failures: 0
+[00:00:00:30] Test Cases: 4
+[00:00:00:30] Covered Edges: 23
+[00:00:00:30] Covered Instructions: 197
+[00:00:00:30] Covered Def-Use Chains: 4
+[00:00:00:30] Found Bugs:
+[00:00:00:30]   Assertion Failure: 0
+[00:00:00:30]   Arbitrary Write: 0
+[00:00:00:30]   Block state Dependency: 0
+[00:00:00:30]   Control Hijack: 0
+[00:00:00:30]   Ether Leak: 0
+[00:00:00:30]   Integer Bug: 1
+[00:00:00:30]   Mishandled Exception: 0
+[00:00:00:30]   Multiple Send: 0
+[00:00:00:30]   Reentrancy: 0
+[00:00:00:30]   Suicidal Contract: 0
+[00:00:00:30]   Transaction Origin Use: 0
+[00:00:00:30]   Freezing Ether: 0
+[00:00:00:30]   Requirement Violation: 0
+[00:00:00:30] Done, clean up and exit...

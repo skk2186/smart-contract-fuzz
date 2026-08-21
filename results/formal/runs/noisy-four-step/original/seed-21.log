@@ -1,0 +1,51 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=original
+SEED=21
+CONTRACT_FILE=contracts/benchmarks/NoisyFourStepExample.sol
+CONTRACT_NAME=NoisyFourStepExample
+CONFIG_FILE=configs/formal-original-seq4.yaml
+START_TIME=2026-07-27T14:57:02+08:00
+
+[2026-07-27 14:57:02.51] Compiling `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.31905179s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/NoisyFourStepExample.sol:NoisyFourStepExample
+[2026-07-27 14:57:02.83] Running slither on `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.420658174s)
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 312 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 447 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 474 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 507 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 601 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 14:57:03.26] [Worker 0] New coverage: 708 instr, 1 contracts, 6 seqs in corpus
+[2026-07-27 14:57:03.27] [Worker 0] New coverage: 733 instr, 1 contracts, 7 seqs in corpus
+[2026-07-27 14:57:03.31] [Worker 0] New coverage: 758 instr, 1 contracts, 8 seqs in corpus
+[2026-07-27 14:57:03.34] [Worker 0] New coverage: 771 instr, 1 contracts, 9 seqs in corpus
+[2026-07-27 14:57:03.41] [Worker 0] New coverage: 774 instr, 1 contracts, 10 seqs in corpus
+[2026-07-27 14:57:03.43] [Worker 0] New coverage: 849 instr, 1 contracts, 11 seqs in corpus
+[2026-07-27 14:57:03.51] [Worker 0] New coverage: 905 instr, 1 contracts, 12 seqs in corpus
+[2026-07-27 14:57:03.69] [Worker 0] New coverage: 930 instr, 1 contracts, 13 seqs in corpus
+[2026-07-27 14:57:03.78] [Worker 0] New coverage: 969 instr, 1 contracts, 14 seqs in corpus
+[2026-07-27 14:57:03.79] [Worker 0] New coverage: 969 instr, 1 contracts, 15 seqs in corpus
+[2026-07-27 14:57:03.94] [Worker 0] New coverage: 1003 instr, 1 contracts, 16 seqs in corpus
+[2026-07-27 14:57:04.03] [Worker 0] New coverage: 1028 instr, 1 contracts, 17 seqs in corpus
+[2026-07-27 14:57:04.17] [Worker 0] New coverage: 1028 instr, 1 contracts, 18 seqs in corpus
+[2026-07-27 14:57:04.19] [Worker 0] New coverage: 1053 instr, 1 contracts, 19 seqs in corpus
+[2026-07-27 14:57:04.59] [Worker 0] New coverage: 1053 instr, 1 contracts, 20 seqs in corpus
+[2026-07-27 14:57:04.62] [Worker 0] New coverage: 1053 instr, 1 contracts, 21 seqs in corpus
+[2026-07-27 14:57:06.26] [status] tests: 0/1, fuzzing: 47553/100000, values: [], cov: 1053, corpus: 21, gas/s: 416792431
+[2026-07-27 14:57:06.67] [Worker 0] New coverage: 1053 instr, 1 contracts, 22 seqs in corpus
+[2026-07-27 14:57:09.26] [status] tests: 0/1, fuzzing: 97905/100000, values: [], cov: 1053, corpus: 22, gas/s: 455774266
+[2026-07-27 14:57:09.39] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:57:09.39] [status] tests: 0/1, fuzzing: 100003/100000, values: [], cov: 1053, corpus: 22, gas/s: 0
+echidna_value_safe: passing
+
+Unique instructions: 1053
+Unique codehashes: 1
+Corpus size: 22
+Seed: 21
+Total calls: 100003
+
+PROCESS_WALL_SECONDS=6.94
+
+EXIT_CODE=0
+END_TIME=2026-07-27T14:57:09+08:00
+FORMAL_RUN_COMPLETED=1

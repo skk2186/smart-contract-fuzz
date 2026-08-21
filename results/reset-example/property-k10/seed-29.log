@@ -1,0 +1,37 @@
+[2026-07-22 22:56:27.70] Compiling `contracts/harnesses/reset-example/ResetPropertyK10Harness.sol`... Done! (0.298686163s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetPropertyK10Harness.sol:ResetPropertyK10Harness
+[2026-07-22 22:56:28.01] Running slither on `contracts/harnesses/reset-example/ResetPropertyK10Harness.sol`... Done! (0.417996286s)
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 529 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 702 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 840 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 1032 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 1199 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 22:56:28.44] [Worker 0] New coverage: 1327 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 22:56:28.45] [Worker 0] New coverage: 1773 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 22:56:28.45] [Worker 0] New coverage: 1847 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 22:56:28.45] [Worker 0] New coverage: 1980 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 22:56:28.45] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetPropertyK10Harness.property_sequence_1(17371838309544705170968414752650404948658390524949838668550832288165614114705) Time delay: 533079 seconds Block delay: 15367
+
+[2026-07-22 22:56:28.45] [Worker 0] New coverage: 2261 instr, 2 contracts, 10 seqs in corpus
+[2026-07-22 22:56:29.73] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:56:29.73] [status] tests: 1/1, fuzzing: 55/100000, values: [], cov: 2261, corpus: 10, gas/s: 1412583
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetPropertyK10Harness.property_sequence_1(101)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetPropertyK10Harness.sol:125)[0m
+ └╴← (false)
+
+
+Unique instructions: 2261
+Unique codehashes: 2
+Corpus size: 10
+Seed: 29
+Total calls: 55
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.10
+EXIT_CODE=1

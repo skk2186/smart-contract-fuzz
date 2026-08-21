@@ -1,0 +1,28 @@
+[2026-07-22 23:42:26.24] Compiling `contracts/benchmarks/BranchValueExample.sol`... Done! (0.299132046s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/BranchValueExample.sol:BranchValueExample
+[2026-07-22 23:42:26.54] Running slither on `contracts/benchmarks/BranchValueExample.sol`... Done! (0.40160168s)
+[2026-07-22 23:42:26.96] [Worker 0] New coverage: 355 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 23:42:26.96] [Worker 0] New coverage: 502 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 23:42:26.96] [Worker 0] New coverage: 541 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 23:42:26.96] [Worker 0] New coverage: 560 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 23:42:26.97] [Worker 0] New coverage: 563 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 23:42:26.98] [Worker 0] New coverage: 588 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 23:42:27.16] [Worker 0] New coverage: 644 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 23:42:27.72] [Worker 0] New coverage: 719 instr, 1 contracts, 8 seqs in corpus
+[2026-07-22 23:42:28.27] [Worker 0] New coverage: 759 instr, 1 contracts, 9 seqs in corpus
+[2026-07-22 23:42:28.54] [Worker 0] New coverage: 789 instr, 1 contracts, 10 seqs in corpus
+[2026-07-22 23:42:29.00] [Worker 0] New coverage: 789 instr, 1 contracts, 11 seqs in corpus
+[2026-07-22 23:42:29.90] [Worker 0] New coverage: 789 instr, 1 contracts, 12 seqs in corpus
+[2026-07-22 23:42:29.96] [status] tests: 0/1, fuzzing: 54521/100000, values: [], cov: 789, corpus: 12, gas/s: 405901775
+[2026-07-22 23:42:32.34] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 23:42:32.34] [status] tests: 0/1, fuzzing: 100002/100000, values: [], cov: 789, corpus: 12, gas/s: 509758037
+echidna_value_safe: passing
+
+Unique instructions: 789
+Unique codehashes: 1
+Corpus size: 12
+Seed: 21
+Total calls: 100002
+
+PROCESS_WALL_SECONDS=6.14
+EXIT_CODE=0

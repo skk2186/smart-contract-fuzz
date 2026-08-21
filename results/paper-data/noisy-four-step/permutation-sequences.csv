@@ -1,0 +1,25 @@
+harness_id,sequence,is_correct_order,file
+1,register -> deposit -> approve -> withdraw,True,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-01.sol
+2,register -> deposit -> withdraw -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-02.sol
+3,register -> approve -> deposit -> withdraw,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-03.sol
+4,register -> approve -> withdraw -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-04.sol
+5,register -> withdraw -> deposit -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-05.sol
+6,register -> withdraw -> approve -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-06.sol
+7,deposit -> register -> approve -> withdraw,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-07.sol
+8,deposit -> register -> withdraw -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-08.sol
+9,deposit -> approve -> register -> withdraw,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-09.sol
+10,deposit -> approve -> withdraw -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-10.sol
+11,deposit -> withdraw -> register -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-11.sol
+12,deposit -> withdraw -> approve -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-12.sol
+13,approve -> register -> deposit -> withdraw,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-13.sol
+14,approve -> register -> withdraw -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-14.sol
+15,approve -> deposit -> register -> withdraw,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-15.sol
+16,approve -> deposit -> withdraw -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-16.sol
+17,approve -> withdraw -> register -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-17.sol
+18,approve -> withdraw -> deposit -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-18.sol
+19,withdraw -> register -> deposit -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-19.sol
+20,withdraw -> register -> approve -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-20.sol
+21,withdraw -> deposit -> register -> approve,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-21.sol
+22,withdraw -> deposit -> approve -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-22.sol
+23,withdraw -> approve -> register -> deposit,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-23.sol
+24,withdraw -> approve -> deposit -> register,False,/home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-24.sol

@@ -1,0 +1,1093 @@
+{
+  "NoisyFourStepExample": {
+    "edges": [
+      {
+        "from": "register()",
+        "to": "deposit()",
+        "score": 2,
+        "write_read_variables": [
+          "registered"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "deposit()",
+        "to": "approve()",
+        "score": 2,
+        "write_read_variables": [
+          "funded"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "approve()",
+        "to": "withdraw(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "approved"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise1(uint256)",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseA"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise2()",
+        "to": "noise3()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseB"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise3()",
+        "to": "noise4()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseC"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise3()",
+        "to": "noise6()",
+        "score": 3,
+        "write_read_variables": [
+          "noiseC"
+        ],
+        "write_write_variables": [
+          "noiseC"
+        ]
+      },
+      {
+        "from": "noise4()",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseA"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise5(uint256)",
+        "to": "noise3()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseB"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise6()",
+        "to": "noise4()",
+        "score": 2,
+        "write_read_variables": [
+          "noiseC"
+        ],
+        "write_write_variables": []
+      }
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "noise5(uint256)",
+          "noise3()",
+          "noise6()",
+          "noise4()"
+        ],
+        "length": 4,
+        "score": 7,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise5(uint256)",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          },
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise4()",
+          "noise2()",
+          "noise3()",
+          "noise6()"
+        ],
+        "length": 4,
+        "score": 7,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise6()",
+          "noise4()",
+          "noise2()"
+        ],
+        "length": 4,
+        "score": 7,
+        "dependency_variables": [
+          "noiseA",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          },
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()",
+          "noise6()",
+          "noise4()"
+        ],
+        "length": 4,
+        "score": 7,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          },
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()",
+          "noise3()",
+          "noise6()"
+        ],
+        "length": 4,
+        "score": 7,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "register()",
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "approved",
+          "funded",
+          "registered"
+        ],
+        "dependencies": [
+          {
+            "from": "register()",
+            "to": "deposit()",
+            "score": 2,
+            "write_read_variables": [
+              "registered"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "deposit()",
+            "to": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "approve()",
+            "to": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise6()",
+          "noise4()",
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise5(uint256)",
+          "noise3()",
+          "noise4()",
+          "noise2()"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise5(uint256)",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()",
+          "noise3()",
+          "noise4()"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise5(uint256)",
+          "noise3()",
+          "noise6()"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise5(uint256)",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise6()",
+          "noise4()"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          },
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()",
+          "noise6()"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "register()",
+          "deposit()",
+          "approve()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "funded",
+          "registered"
+        ],
+        "dependencies": [
+          {
+            "from": "register()",
+            "to": "deposit()",
+            "score": 2,
+            "write_read_variables": [
+              "registered"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "deposit()",
+            "to": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise6()",
+          "noise4()",
+          "noise2()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseA",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise5(uint256)",
+          "noise3()",
+          "noise4()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise5(uint256)",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise4()",
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise4()",
+          "noise2()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseA",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()",
+          "noise4()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseB",
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "noiseA",
+          "noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "approved",
+          "funded"
+        ],
+        "dependencies": [
+          {
+            "from": "deposit()",
+            "to": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "approve()",
+            "to": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise6()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise6()",
+            "score": 3,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": [
+              "noiseC"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "register()",
+          "deposit()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "registered"
+        ],
+        "dependencies": [
+          {
+            "from": "register()",
+            "to": "deposit()",
+            "score": 2,
+            "write_read_variables": [
+              "registered"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise6()",
+          "noise4()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise6()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise5(uint256)",
+          "noise3()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise5(uint256)",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise4()",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise4()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise4()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseC"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise4()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseC"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "approve()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "funded"
+        ],
+        "dependencies": [
+          {
+            "from": "deposit()",
+            "to": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "approved"
+        ],
+        "dependencies": [
+          {
+            "from": "approve()",
+            "to": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      }
+    ]
+  }
+}

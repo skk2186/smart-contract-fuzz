@@ -1,0 +1,48 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal-b2
+BENCHMARK=multi-property
+METHOD=matched-random-k1
+SEED=26
+SCHEDULE_SEED=20260805
+SELECTION_ID=b05-o002
+SELECTED_CANDIDATE_INDICES=5
+SELECTION_SHA256=76f95434b3e0ddab83adf790edab89ab5f973c471e6ec11749d450f314e85bea
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/multi-property/candidate-005.sol
+CONTRACT_NAME=MatchedRandomV1MultiPropertyC005Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-b2-multi-harness.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_a_safe,echidna_value_b_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:40:17+08:00
+[2026-08-06 11:40:17.69] Compiling `contracts/harnesses/matched-random-v1/multi-property/candidate-005.sol`... Done! (0.14341843s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/multi-property/candidate-005.sol:MatchedRandomV1MultiPropertyC005Harness
+[2026-08-06 11:40:17.84] Running slither on `contracts/harnesses/matched-random-v1/multi-property/candidate-005.sol`... Done! (0.219342187s)
+[2026-08-06 11:40:18.07] [Worker 0] New coverage: 659 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:40:18.53] [Worker 0] New coverage: 805 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:40:18.94] [Worker 0] New coverage: 808 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:40:21.07] [status] tests: 0/2, fuzzing: 14649/100000, values: [], cov: 808, corpus: 3, gas/s: 161919621
+[2026-08-06 11:40:24.07] [status] tests: 0/2, fuzzing: 31270/100000, values: [], cov: 808, corpus: 3, gas/s: 184090981
+[2026-08-06 11:40:27.08] [status] tests: 0/2, fuzzing: 47928/100000, values: [], cov: 808, corpus: 3, gas/s: 184264530
+[2026-08-06 11:40:30.08] [status] tests: 0/2, fuzzing: 64329/100000, values: [], cov: 808, corpus: 3, gas/s: 181740834
+[2026-08-06 11:40:33.08] [status] tests: 0/2, fuzzing: 80587/100000, values: [], cov: 808, corpus: 3, gas/s: 180630528
+[2026-08-06 11:40:36.09] [status] tests: 0/2, fuzzing: 96897/100000, values: [], cov: 808, corpus: 3, gas/s: 179768742
+[2026-08-06 11:40:36.66] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:40:36.67] [status] tests: 0/2, fuzzing: 100000/100000, values: [], cov: 808, corpus: 3, gas/s: 104136471
+echidna_value_b_safe: passing
+echidna_value_a_safe: passing
+
+Unique instructions: 808
+Unique codehashes: 2
+Corpus size: 3
+Seed: 26
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:40:36+08:00
+PROCESS_WALL_SECONDS=19.040081
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

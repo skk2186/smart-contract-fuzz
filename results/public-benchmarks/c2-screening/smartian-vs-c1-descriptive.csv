@@ -1,0 +1,9 @@
+candidate_id,method,role,compiler,runs,completed,falsified,budget_exhausted,startup_or_incomplete,success_rate,median_fuzz_seconds,median_process_wall_seconds,success_semantics,comparability_note
+smartbugs-multifunc,original,c1_reference,0.4.25,30,30,30,0,0,1.0,0.45,1.40,Echidna Boolean property falsified,Existing C1 result
+smartbugs-multifunc,full-k1,c1_reference,0.4.25,30,30,30,0,0,1.0,0.46,1.90,Echidna Boolean property falsified,Existing C1 result
+smartbugs-multifunc,full-k5,c1_reference,0.4.25,30,30,30,0,0,1.0,0.46,1.89,Echidna Boolean property falsified,Existing C1 result
+smartbugs-multifunc,smartian_external_baseline,external_baseline,0.4.25,30,30,30,0,0,1.0,,30.00,IntegerBug trace validated against the same property,SMARTIAN 30-second wall budget; not seed-matched
+smartbugs-onefunc,original,c1_reference,0.4.25,30,30,30,0,0,1.0,0.45,1.46,Echidna Boolean property falsified,Existing C1 result
+smartbugs-onefunc,full-k1,c1_reference,0.4.25,30,30,30,0,0,1.0,0.46,1.75,Echidna Boolean property falsified,Existing C1 result
+smartbugs-onefunc,full-k5,c1_reference,0.4.25,30,30,30,0,0,1.0,0.46,1.75,Echidna Boolean property falsified,Existing C1 result
+smartbugs-onefunc,smartian_external_baseline,external_baseline,0.4.25,30,30,30,0,0,1.0,,30.00,IntegerBug trace validated against the same property,SMARTIAN 30-second wall budget; not seed-matched

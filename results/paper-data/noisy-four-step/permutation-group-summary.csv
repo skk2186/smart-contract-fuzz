@@ -1,0 +1,2 @@
+method,runs,falsified_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+permuted,120,5,0.0417,2.0,2.8,0.47,11.99

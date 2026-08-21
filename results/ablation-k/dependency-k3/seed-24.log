@@ -1,0 +1,28 @@
+[2026-07-22 21:17:14.47] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.303789245s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol:NoisyFourStepDependencyK3Harness
+[2026-07-22 21:17:14.78] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.39779866s)
+[2026-07-22 21:17:15.19] [Worker 0] New coverage: 696 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:17:15.19] [Worker 0] New coverage: 993 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:17:15.19] [Worker 0] New coverage: 1124 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:17:15.20] [Worker 0] New coverage: 1348 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:17:15.40] [Worker 0] New coverage: 1368 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:17:15.68] [Worker 0] New coverage: 1375 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:17:15.75] [Worker 0] New coverage: 1378 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:17:18.19] [status] tests: 0/1, fuzzing: 15869/100000, values: [], cov: 1378, corpus: 7, gas/s: 352193260
+[2026-07-22 21:17:21.19] [status] tests: 0/1, fuzzing: 32699/100000, values: [], cov: 1378, corpus: 7, gas/s: 372886349
+[2026-07-22 21:17:24.20] [status] tests: 0/1, fuzzing: 49398/100000, values: [], cov: 1378, corpus: 7, gas/s: 370030318
+[2026-07-22 21:17:27.20] [status] tests: 0/1, fuzzing: 66215/100000, values: [], cov: 1378, corpus: 7, gas/s: 372292236
+[2026-07-22 21:17:30.20] [status] tests: 0/1, fuzzing: 82686/100000, values: [], cov: 1378, corpus: 7, gas/s: 364260986
+[2026-07-22 21:17:33.21] [status] tests: 0/1, fuzzing: 99342/100000, values: [], cov: 1378, corpus: 7, gas/s: 368717963
+[2026-07-22 21:17:33.33] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:17:33.33] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 1378, corpus: 7, gas/s: 0
+echidna_value_safe: passing
+
+Unique instructions: 1378
+Unique codehashes: 2
+Corpus size: 7
+Seed: 24
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=18.92
+EXIT_CODE=0

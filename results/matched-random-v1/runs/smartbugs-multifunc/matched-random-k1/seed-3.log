@@ -1,0 +1,45 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=public-c1
+BENCHMARK=smartbugs-multifunc
+METHOD=matched-random-k1
+SEED=3
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o000
+SELECTED_CANDIDATE_INDICES=2
+SELECTION_SHA256=6db6ae40b12bbe61f5688dc4d7b8fec287ac97af96a4069ba66d6cee416cf4bb
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/smartbugs-multifunc/candidate-002.sol
+CONTRACT_NAME=MatchedRandomV1SmartbugsMultifuncC002Harness
+COMPILER_VERSION=0.4.25
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.4.25/solc-0.4.25
+CONFIG_FILE=configs/public-c1-harness.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_count_does_not_underflow
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:49:07+08:00
+[2026-08-06 11:49:07.61] Compiling `contracts/harnesses/matched-random-v1/smartbugs-multifunc/candidate-002.sol`... Done! (0.134501309s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/smartbugs-multifunc/candidate-002.sol:MatchedRandomV1SmartbugsMultifuncC002Harness
+[2026-08-06 11:49:07.75] Running slither on `contracts/harnesses/matched-random-v1/smartbugs-multifunc/candidate-002.sol`... Done! (0.212428081s)
+[2026-08-06 11:49:07.98] [Worker 0] New coverage: 366 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:49:08.05] [Worker 0] New coverage: 424 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:49:08.44] [Worker 0] New coverage: 427 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:49:10.97] [status] tests: 0/1, fuzzing: 23032/100000, values: [], cov: 427, corpus: 3, gas/s: 112803837
+[2026-08-06 11:49:13.98] [status] tests: 0/1, fuzzing: 48456/100000, values: [], cov: 427, corpus: 3, gas/s: 124854812
+[2026-08-06 11:49:16.98] [status] tests: 0/1, fuzzing: 73800/100000, values: [], cov: 427, corpus: 3, gas/s: 123575738
+[2026-08-06 11:49:19.98] [status] tests: 0/1, fuzzing: 99021/100000, values: [], cov: 427, corpus: 3, gas/s: 123554549
+[2026-08-06 11:49:20.10] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:49:20.10] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 427, corpus: 3, gas/s: 0
+echidna_count_does_not_underflow: passing
+
+Unique instructions: 427
+Unique codehashes: 2
+Corpus size: 3
+Seed: 3
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:49:20+08:00
+PROCESS_WALL_SECONDS=12.563944
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

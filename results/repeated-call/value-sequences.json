@@ -1,0 +1,144 @@
+{
+  "RepeatedCallExample": {
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "deposit()",
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 3,
+        "score": 8,
+        "dependency_variables": [
+          "depositCount",
+          "unlocked"
+        ],
+        "target_function": "withdraw(uint256)",
+        "property_score": 4,
+        "value_adjustment": 4,
+        "value_score": 8,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "deposit()",
+            "target": "unlock()",
+            "status": "not_applicable",
+            "match_count": 0,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "depositCount",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "reason": "source does not write required variable",
+                "status": "unrelated"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "withdraw(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 2,
+        "score": 6,
+        "dependency_variables": [
+          "unlocked"
+        ],
+        "target_function": "withdraw(uint256)",
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "unlock()",
+            "target": "withdraw(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

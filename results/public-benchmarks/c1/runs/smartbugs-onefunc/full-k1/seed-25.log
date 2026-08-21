@@ -1,0 +1,48 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-onefunc
+METHOD=full-k1
+COMPILER=0.4.25
+SEED=25
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol
+CONTRACT_NAME=PublicSmartBugsOneFuncFullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T19:55:25+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.25+commit.59dbf8f1.Linux.g++
+
+[2026-07-28 19:55:25.52] Compiling `contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol`... Done! (0.332694739s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol:PublicSmartBugsOneFuncFullK1Harness
+[2026-07-28 19:55:25.86] Running slither on `contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol`... Done! (0.447048457s)
+[2026-07-28 19:55:26.32] [Worker 0] Test echidna_count_does_not_underflow falsified!
+  Call sequence:
+PublicSmartBugsOneFuncFullK1Harness.full_sequence_1(59576726489646263020578252898212513257258584485310017834613929373736132327796,21211540451118116424083715599912154355335569147473840491534658947833898773613) Time delay: 49735 seconds Block delay: 60277
+
+[2026-07-28 19:55:26.32] [Worker 0] New coverage: 392 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 19:55:27.20] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 19:55:27.20] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 392, corpus: 1, gas/s: 77787
+echidna_count_does_not_underflow: failed!💥  
+  Call sequence:
+    PublicSmartBugsOneFuncFullK1Harness.full_sequence_1(0,2)
+
+Traces: 
+call [1mSmartBugsOneFuncEchidna[0m::echidna_count_does_not_underflow()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol:27)[0m
+ └╴← (false)
+
+
+Unique instructions: 392
+Unique codehashes: 2
+Corpus size: 1
+Seed: 25
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.74
+
+EXIT_CODE=1
+END_TIME=2026-07-28T19:55:27+08:00
+
+PUBLIC_C1_RUN_STATUS=valid
+PUBLIC_C1_RUN_COMPLETED=1

@@ -1,0 +1,84 @@
+{
+  "ResetExample": {
+    "begin()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "ResetExample.stage"
+      ]
+    },
+    "authorize()": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.stage"
+      ],
+      "write": [
+        "ResetExample.stage"
+      ]
+    },
+    "commit()": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.stage"
+      ],
+      "write": [
+        "ResetExample.stage"
+      ]
+    },
+    "execute(uint256)": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.stage"
+      ],
+      "write": [
+        "ResetExample.value"
+      ]
+    },
+    "reset()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "ResetExample.stage"
+      ]
+    },
+    "poison()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "ResetExample.stage"
+      ]
+    },
+    "noise1(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "ResetExample.noiseA"
+      ]
+    },
+    "noise2()": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.noiseA"
+      ],
+      "write": [
+        "ResetExample.noiseB"
+      ]
+    },
+    "noise3()": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.noiseB"
+      ],
+      "write": [
+        "ResetExample.noiseA"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "ResetExample.value"
+      ],
+      "write": []
+    }
+  }
+}

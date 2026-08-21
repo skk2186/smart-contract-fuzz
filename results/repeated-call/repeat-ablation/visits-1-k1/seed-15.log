@@ -1,0 +1,21 @@
+[2026-07-25 21:43:22.57] Compiling `contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol`... Done! (0.295689594s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol:RepeatedCallVisits1K1Harness
+[2026-07-25 21:43:22.87] Running slither on `contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol`... Done! (0.386094901s)
+[2026-07-25 21:43:23.27] [Worker 0] New coverage: 578 instr, 2 contracts, 1 seqs in corpus
+[2026-07-25 21:43:23.35] [Worker 0] New coverage: 581 instr, 2 contracts, 2 seqs in corpus
+[2026-07-25 21:43:23.46] [Worker 0] New coverage: 722 instr, 2 contracts, 3 seqs in corpus
+[2026-07-25 21:43:26.27] [status] tests: 0/1, fuzzing: 23205/100000, values: [], cov: 722, corpus: 3, gas/s: 253980271
+[2026-07-25 21:43:29.27] [status] tests: 0/1, fuzzing: 48541/100000, values: [], cov: 722, corpus: 3, gas/s: 278594314
+[2026-07-25 21:43:32.28] [status] tests: 0/1, fuzzing: 73881/100000, values: [], cov: 722, corpus: 3, gas/s: 279733319
+[2026-07-25 21:43:35.27] [Worker 0] Time limit reached. Stopping.
+[2026-07-25 21:43:35.27] [status] tests: 0/1, fuzzing: 98885/100000, values: [], cov: 722, corpus: 3, gas/s: 275480246
+echidna_value_safe: passing
+
+Unique instructions: 722
+Unique codehashes: 2
+Corpus size: 3
+Seed: 15
+Total calls: 98885
+
+PROCESS_WALL_SECONDS=12.76
+EXIT_CODE=0

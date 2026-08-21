@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+
+# Local toolchains and independently versioned third-party repositories.
+.tools/
+baselines/smartian/
+
+# Rebuildable compiler exports and generated overhead artifacts.
+crytic-export/
+contracts/harnesses/formal-overhead/
+results/formal/overhead-v2/artifacts/
+
+# Historical binary checkpoints are inventoried by the repository freeze,
+# but are not stored again in Git.
+checkpoints/*.tar.gz

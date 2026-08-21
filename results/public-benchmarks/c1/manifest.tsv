@@ -1,0 +1,16 @@
+benchmark	method	compiler	contract_file	contract_name	config_file
+echidna-multi	original	0.8.20	contracts/public-benchmarks/raw/echidna/multi.sol	C	configs/public-c1-original.yaml
+echidna-multi	full-k1	0.8.20	contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol	PublicEchidnaMultiFullK1Harness	configs/public-c1-harness.yaml
+echidna-multi	full-k5	0.8.20	contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol	PublicEchidnaMultiFullK5Harness	configs/public-c1-harness.yaml
+echidna-flags	original	0.8.20	contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol	PublicEchidnaFlagsTarget	configs/public-c1-original.yaml
+echidna-flags	full-k1	0.8.20	contracts/harnesses/public-c1/PublicEchidnaFlagsFullK1Harness.sol	PublicEchidnaFlagsFullK1Harness	configs/public-c1-harness.yaml
+echidna-flags	full-k5	0.8.20	contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol	PublicEchidnaFlagsFullK5Harness	configs/public-c1-harness.yaml
+exercise2-access-control	original	0.8.20	contracts/public-benchmarks/raw/exercise2/solution.sol	TestToken	configs/public-c1-original.yaml
+exercise2-access-control	full-k1	0.8.20	contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol	PublicExercise2FullK1Harness	configs/public-c1-harness.yaml
+exercise2-access-control	full-k5	0.8.20	contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol	PublicExercise2FullK5Harness	configs/public-c1-harness.yaml
+smartbugs-multifunc	original	0.4.25	contracts/public-benchmarks/adapted/SmartBugsMultiFuncEchidna.sol	SmartBugsMultiFuncEchidna	configs/public-c1-original.yaml
+smartbugs-multifunc	full-k1	0.4.25	contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK1Harness.sol	PublicSmartBugsMultiFuncFullK1Harness	configs/public-c1-harness.yaml
+smartbugs-multifunc	full-k5	0.4.25	contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol	PublicSmartBugsMultiFuncFullK5Harness	configs/public-c1-harness.yaml
+smartbugs-onefunc	original	0.4.25	contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol	SmartBugsOneFuncEchidna	configs/public-c1-original.yaml
+smartbugs-onefunc	full-k1	0.4.25	contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK1Harness.sol	PublicSmartBugsOneFuncFullK1Harness	configs/public-c1-harness.yaml
+smartbugs-onefunc	full-k5	0.4.25	contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol	PublicSmartBugsOneFuncFullK5Harness	configs/public-c1-harness.yaml

@@ -1,0 +1,65 @@
+{
+  "PublicEchidnaFlagsTarget": {
+    "state_variables": [
+      "flag0",
+      "flag1"
+    ],
+    "functions": {
+      "set0(int256)": {
+        "constant_writes": {
+          "flag0": [
+            {
+              "kind": "bool",
+              "value": false,
+              "raw": "false"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "set1(int256)": {
+        "constant_writes": {
+          "flag1": [
+            {
+              "kind": "bool",
+              "value": false,
+              "raw": "false"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "echidna_sometimesfalse()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "slitherConstructorVariables()": {
+        "constant_writes": {
+          "flag0": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ],
+          "flag1": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

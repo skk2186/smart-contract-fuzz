@@ -1,0 +1,181 @@
+
+==============================================
+Group 1/5
+Benchmark: alternative-path
+Method   : original
+==============================================
+Running alternative-path/original/seed-1
+Running alternative-path/original/seed-2
+Running alternative-path/original/seed-3
+Running alternative-path/original/seed-4
+Running alternative-path/original/seed-5
+Running alternative-path/original/seed-6
+Running alternative-path/original/seed-7
+Running alternative-path/original/seed-8
+Running alternative-path/original/seed-9
+Running alternative-path/original/seed-10
+Running alternative-path/original/seed-11
+Running alternative-path/original/seed-12
+Running alternative-path/original/seed-13
+Running alternative-path/original/seed-14
+Running alternative-path/original/seed-15
+Running alternative-path/original/seed-16
+Running alternative-path/original/seed-17
+Running alternative-path/original/seed-18
+Running alternative-path/original/seed-19
+Running alternative-path/original/seed-20
+Running alternative-path/original/seed-21
+Running alternative-path/original/seed-22
+Running alternative-path/original/seed-23
+Running alternative-path/original/seed-24
+Running alternative-path/original/seed-25
+Running alternative-path/original/seed-26
+Running alternative-path/original/seed-27
+Running alternative-path/original/seed-28
+Running alternative-path/original/seed-29
+Running alternative-path/original/seed-30
+
+==============================================
+Group 2/5
+Benchmark: alternative-path
+Method   : full-k1
+==============================================
+Running alternative-path/full-k1/seed-1
+Running alternative-path/full-k1/seed-2
+Running alternative-path/full-k1/seed-3
+Running alternative-path/full-k1/seed-4
+Running alternative-path/full-k1/seed-5
+Running alternative-path/full-k1/seed-6
+Running alternative-path/full-k1/seed-7
+Running alternative-path/full-k1/seed-8
+Running alternative-path/full-k1/seed-9
+Running alternative-path/full-k1/seed-10
+Running alternative-path/full-k1/seed-11
+Running alternative-path/full-k1/seed-12
+Running alternative-path/full-k1/seed-13
+Running alternative-path/full-k1/seed-14
+Running alternative-path/full-k1/seed-15
+Running alternative-path/full-k1/seed-16
+Running alternative-path/full-k1/seed-17
+Running alternative-path/full-k1/seed-18
+Running alternative-path/full-k1/seed-19
+Running alternative-path/full-k1/seed-20
+Running alternative-path/full-k1/seed-21
+Running alternative-path/full-k1/seed-22
+Running alternative-path/full-k1/seed-23
+Running alternative-path/full-k1/seed-24
+Running alternative-path/full-k1/seed-25
+Running alternative-path/full-k1/seed-26
+Running alternative-path/full-k1/seed-27
+Running alternative-path/full-k1/seed-28
+Running alternative-path/full-k1/seed-29
+Running alternative-path/full-k1/seed-30
+
+==============================================
+Group 3/5
+Benchmark: alternative-path
+Method   : full-k2
+==============================================
+Running alternative-path/full-k2/seed-1
+Running alternative-path/full-k2/seed-2
+Running alternative-path/full-k2/seed-3
+Running alternative-path/full-k2/seed-4
+Running alternative-path/full-k2/seed-5
+Running alternative-path/full-k2/seed-6
+Running alternative-path/full-k2/seed-7
+Running alternative-path/full-k2/seed-8
+Running alternative-path/full-k2/seed-9
+Running alternative-path/full-k2/seed-10
+Running alternative-path/full-k2/seed-11
+Running alternative-path/full-k2/seed-12
+Running alternative-path/full-k2/seed-13
+Running alternative-path/full-k2/seed-14
+Running alternative-path/full-k2/seed-15
+Running alternative-path/full-k2/seed-16
+Running alternative-path/full-k2/seed-17
+Running alternative-path/full-k2/seed-18
+Running alternative-path/full-k2/seed-19
+Running alternative-path/full-k2/seed-20
+Running alternative-path/full-k2/seed-21
+Running alternative-path/full-k2/seed-22
+Running alternative-path/full-k2/seed-23
+Running alternative-path/full-k2/seed-24
+Running alternative-path/full-k2/seed-25
+Running alternative-path/full-k2/seed-26
+Running alternative-path/full-k2/seed-27
+Running alternative-path/full-k2/seed-28
+Running alternative-path/full-k2/seed-29
+Running alternative-path/full-k2/seed-30
+
+==============================================
+Group 4/5
+Benchmark: multi-property
+Method   : original
+==============================================
+Running multi-property/original/seed-1
+Running multi-property/original/seed-2
+Running multi-property/original/seed-3
+Running multi-property/original/seed-4
+Running multi-property/original/seed-5
+Running multi-property/original/seed-6
+Running multi-property/original/seed-7
+Running multi-property/original/seed-8
+Running multi-property/original/seed-9
+Running multi-property/original/seed-10
+Running multi-property/original/seed-11
+Running multi-property/original/seed-12
+Running multi-property/original/seed-13
+Running multi-property/original/seed-14
+Running multi-property/original/seed-15
+Running multi-property/original/seed-16
+Running multi-property/original/seed-17
+Running multi-property/original/seed-18
+Running multi-property/original/seed-19
+Running multi-property/original/seed-20
+Running multi-property/original/seed-21
+Running multi-property/original/seed-22
+Running multi-property/original/seed-23
+Running multi-property/original/seed-24
+Running multi-property/original/seed-25
+Running multi-property/original/seed-26
+Running multi-property/original/seed-27
+Running multi-property/original/seed-28
+Running multi-property/original/seed-29
+Running multi-property/original/seed-30
+
+==============================================
+Group 5/5
+Benchmark: multi-property
+Method   : full-k1
+==============================================
+Running multi-property/full-k1/seed-1
+Running multi-property/full-k1/seed-2
+Running multi-property/full-k1/seed-3
+Running multi-property/full-k1/seed-4
+Running multi-property/full-k1/seed-5
+Running multi-property/full-k1/seed-6
+Running multi-property/full-k1/seed-7
+Running multi-property/full-k1/seed-8
+Running multi-property/full-k1/seed-9
+Running multi-property/full-k1/seed-10
+Running multi-property/full-k1/seed-11
+Running multi-property/full-k1/seed-12
+Running multi-property/full-k1/seed-13
+Running multi-property/full-k1/seed-14
+Running multi-property/full-k1/seed-15
+Running multi-property/full-k1/seed-16
+Running multi-property/full-k1/seed-17
+Running multi-property/full-k1/seed-18
+Running multi-property/full-k1/seed-19
+Running multi-property/full-k1/seed-20
+Running multi-property/full-k1/seed-21
+Running multi-property/full-k1/seed-22
+Running multi-property/full-k1/seed-23
+Running multi-property/full-k1/seed-24
+Running multi-property/full-k1/seed-25
+Running multi-property/full-k1/seed-26
+Running multi-property/full-k1/seed-27
+Running multi-property/full-k1/seed-28
+Running multi-property/full-k1/seed-29
+Running multi-property/full-k1/seed-30
+Formal B-2 experiments completed.

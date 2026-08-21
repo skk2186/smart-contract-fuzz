@@ -1,0 +1,28 @@
+{
+  "TestToken": {
+    "state_variables": [
+      "balances",
+      "owner"
+    ],
+    "functions": {
+      "echidna_no_transfer()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "slitherConstructorVariables()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [
+          {
+            "variable": "owner",
+            "expression": "msg.sender",
+            "node_expression": "owner = msg.sender"
+          }
+        ],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

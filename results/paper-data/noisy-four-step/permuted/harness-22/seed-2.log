@@ -1,0 +1,21 @@
+[2026-07-21 18:56:41.57] Compiling `contracts/harnesses/permuted/NoisyFourStepPermutationHarness-22.sol`... Done! (0.307600381s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/permuted/NoisyFourStepPermutationHarness-22.sol:NoisyFourStepPermutationHarness
+[2026-07-21 18:56:41.88] Running slither on `contracts/harnesses/permuted/NoisyFourStepPermutationHarness-22.sol`... Done! (0.402852393s)
+[2026-07-21 18:56:42.30] [Worker 0] New coverage: 519 instr, 2 contracts, 1 seqs in corpus
+[2026-07-21 18:56:42.46] [Worker 0] New coverage: 522 instr, 2 contracts, 2 seqs in corpus
+[2026-07-21 18:56:42.80] [Worker 0] New coverage: 663 instr, 2 contracts, 3 seqs in corpus
+[2026-07-21 18:56:45.30] [status] tests: 0/1, fuzzing: 25245/100000, values: [], cov: 663, corpus: 3, gas/s: 122269066
+[2026-07-21 18:56:48.30] [status] tests: 0/1, fuzzing: 53804/100000, values: [], cov: 663, corpus: 3, gas/s: 138092230
+[2026-07-21 18:56:51.30] [status] tests: 0/1, fuzzing: 81778/100000, values: [], cov: 663, corpus: 3, gas/s: 135743576
+[2026-07-21 18:56:53.32] [Worker 0] Test limit reached. Stopping.
+[2026-07-21 18:56:53.32] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 663, corpus: 3, gas/s: 132297213
+echidna_value_safe: passing
+
+Unique instructions: 663
+Unique codehashes: 2
+Corpus size: 3
+Seed: 2
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=11.82
+EXIT_CODE=0

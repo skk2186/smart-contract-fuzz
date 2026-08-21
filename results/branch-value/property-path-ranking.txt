@@ -1,0 +1,7 @@
+1: prepareBadA() -> unlock() -> activate() -> trigger(uint256) score=6
+2: prepareBadB() -> unlock() -> activate() -> trigger(uint256) score=6
+3: prepareBadC() -> unlock() -> activate() -> trigger(uint256) score=6
+4: prepareBadD() -> unlock() -> activate() -> trigger(uint256) score=6
+5: prepareGood() -> unlock() -> activate() -> trigger(uint256) score=6
+6: unlock() -> activate() -> trigger(uint256) score=4
+7: activate() -> trigger(uint256) score=2

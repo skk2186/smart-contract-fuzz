@@ -1,0 +1,63 @@
+{
+  "RepeatedCallExample": {
+    "deposit()": {
+      "visibility": "public",
+      "read": [
+        "depositCount"
+      ],
+      "write": [
+        "depositCount"
+      ]
+    },
+    "unlock()": {
+      "visibility": "public",
+      "read": [
+        "depositCount"
+      ],
+      "write": [
+        "unlocked"
+      ]
+    },
+    "withdraw(uint256)": {
+      "visibility": "public",
+      "read": [
+        "unlocked"
+      ],
+      "write": [
+        "value"
+      ]
+    },
+    "noise1(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "noiseA"
+      ]
+    },
+    "noise2()": {
+      "visibility": "public",
+      "read": [
+        "noiseA"
+      ],
+      "write": [
+        "noiseB"
+      ]
+    },
+    "noise3()": {
+      "visibility": "public",
+      "read": [
+        "noiseB"
+      ],
+      "write": [
+        "noiseA"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "value"
+      ],
+      "write": []
+    }
+  }
+}

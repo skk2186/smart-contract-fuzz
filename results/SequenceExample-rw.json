@@ -1,0 +1,27 @@
+{
+  "SequenceExample": {
+    "initialize()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "initialized"
+      ]
+    },
+    "update(uint256)": {
+      "visibility": "public",
+      "read": [
+        "initialized"
+      ],
+      "write": [
+        "value"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "value"
+      ],
+      "write": []
+    }
+  }
+}

@@ -1,0 +1,45 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=public-c1
+BENCHMARK=exercise2-access-control
+METHOD=matched-random-k1
+SEED=11
+SCHEDULE_SEED=20260805
+SELECTION_ID=b05-o000
+SELECTED_CANDIDATE_INDICES=1
+SELECTION_SHA256=f1bd12d1255c0d0dff8e53632a747477423e692a22761ab365022a24bd03ea08
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/exercise2-access-control/candidate-001.sol
+CONTRACT_NAME=MatchedRandomV1Exercise2AccessControlC001Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/public-c1-harness.yaml
+SEMANTIC_CLASSIFICATION=conditional
+EXPECTED_PROPERTIES=echidna_no_transfer
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:46:42+08:00
+[2026-08-06 11:46:42.05] Compiling `contracts/harnesses/matched-random-v1/exercise2-access-control/candidate-001.sol`... Done! (0.143465682s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/exercise2-access-control/candidate-001.sol:MatchedRandomV1Exercise2AccessControlC001Harness
+[2026-08-06 11:46:42.20] Running slither on `contracts/harnesses/matched-random-v1/exercise2-access-control/candidate-001.sol`... Done! (0.237224161s)
+[2026-08-06 11:46:42.45] [Worker 0] New coverage: 450 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:46:42.88] [Worker 0] New coverage: 586 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:46:43.02] [Worker 0] New coverage: 589 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:46:45.45] [status] tests: 0/1, fuzzing: 20896/100000, values: [], cov: 589, corpus: 3, gas/s: 101849470
+[2026-08-06 11:46:48.45] [status] tests: 0/1, fuzzing: 44340/100000, values: [], cov: 589, corpus: 3, gas/s: 113920607
+[2026-08-06 11:46:51.45] [status] tests: 0/1, fuzzing: 67456/100000, values: [], cov: 589, corpus: 3, gas/s: 111881954
+[2026-08-06 11:46:54.46] [status] tests: 0/1, fuzzing: 90354/100000, values: [], cov: 589, corpus: 3, gas/s: 111583294
+[2026-08-06 11:46:55.72] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:46:55.72] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 589, corpus: 3, gas/s: 140781905
+echidna_no_transfer: passing
+
+Unique instructions: 589
+Unique codehashes: 2
+Corpus size: 3
+Seed: 11
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:46:55+08:00
+PROCESS_WALL_SECONDS=13.730999
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

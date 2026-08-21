@@ -1,0 +1,49 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-multifunc
+METHOD=full-k5
+COMPILER=0.4.25
+SEED=22
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol
+CONTRACT_NAME=PublicSmartBugsMultiFuncFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T19:53:34+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.25+commit.59dbf8f1.Linux.g++
+
+[2026-07-28 19:53:34.50] Compiling `contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol`... Done! (0.364475277s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol:PublicSmartBugsMultiFuncFullK5Harness
+[2026-07-28 19:53:34.87] Running slither on `contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol`... Done! (0.487797984s)
+[2026-07-28 19:53:35.37] [Worker 0] New coverage: 386 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 19:53:35.37] [Worker 0] Test echidna_count_does_not_underflow falsified!
+  Call sequence:
+PublicSmartBugsMultiFuncFullK5Harness.full_sequence_1(79912522562255588141566266963933252164310584817045212184689373905968614748421,41400106879655643073307919642410584711381475138619301987820549722908268016901) Time delay: 322374 seconds Block delay: 59982
+
+[2026-07-28 19:53:35.37] [Worker 0] New coverage: 658 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 19:53:36.42] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 19:53:36.42] [status] tests: 1/1, fuzzing: 4/100000, values: [], cov: 658, corpus: 2, gas/s: 112379
+echidna_count_does_not_underflow: failed!💥  
+  Call sequence:
+    PublicSmartBugsMultiFuncFullK5Harness.full_sequence_1(0,2)
+
+Traces: 
+call [1mSmartBugsMultiFuncEchidna[0m::echidna_count_does_not_underflow()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol:46)[0m
+ └╴← (false)
+
+
+Unique instructions: 658
+Unique codehashes: 2
+Corpus size: 2
+Seed: 22
+Total calls: 4
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.99
+
+EXIT_CODE=1
+END_TIME=2026-07-28T19:53:36+08:00
+
+PUBLIC_C1_RUN_STATUS=valid
+PUBLIC_C1_RUN_COMPLETED=1

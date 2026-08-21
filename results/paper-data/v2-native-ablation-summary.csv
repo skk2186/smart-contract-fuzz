@@ -1,0 +1,21 @@
+experiment,benchmark,runs,falsified_runs,passed_or_budget_runs,startup_error_runs,success_rate,parameter_mode,interpretation
+V2-native,alternative-path,30,30,0,0,1.0000,neutral,path-only native seed
+V2-native,branch-value,30,18,12,0,0.6000,neutral,path-only native seed
+V2-native,echidna-multi,30,30,0,0,1.0000,neutral,path-only native seed
+V2-native,exercise2-access-control,30,30,0,0,1.0000,neutral,path-only native seed
+V2-native,multi-property-a,30,30,0,0,1.0000,neutral,property-a run-level outcome
+V2-native,multi-property-b,30,30,0,0,1.0000,neutral,property-b run-level outcome
+V2-native,noisy-four-step,30,7,23,0,0.2333,neutral,path-only native seed
+V2-native,repeated-call,30,22,8,0,0.7333,neutral,path-only native seed
+V2-native,reset-example,30,13,17,0,0.4333,neutral,path-only native seed
+V2-native,ALL-9-TASKS,270,210,60,0,0.7778,neutral,descriptive aggregate only
+V2-native,alternative-path,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,branch-value,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,echidna-multi,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,exercise2-access-control,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,multi-property-a,30,30,0,0,1.0000,violation-boundary,property-a run-level outcome
+V2-native,multi-property-b,30,30,0,0,1.0000,violation-boundary,property-b run-level outcome
+V2-native,noisy-four-step,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,repeated-call,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,reset-example,30,30,0,0,1.0000,violation-boundary,static violation value materialization
+V2-native,ALL-9-TASKS,270,270,0,0,1.0000,violation-boundary,descriptive aggregate only

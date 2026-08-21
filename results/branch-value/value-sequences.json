@@ -1,0 +1,744 @@
+{
+  "BranchValueExample": {
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "trigger(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "prepareGood()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 18,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 6,
+        "value_adjustment": 12,
+        "value_score": 18,
+        "value_matches": 3,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepareGood()",
+            "target": "unlock()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "gate",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 7,
+                  "raw": "7"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 7,
+                    "raw": "7"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 3,
+        "score": 12,
+        "dependency_variables": [
+          "active",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 4,
+        "value_adjustment": 8,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      },
+      {
+        "sequence": [
+          "prepareBadA()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepareBadA()",
+            "target": "unlock()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "gate",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 7,
+                  "raw": "7"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 3
+      },
+      {
+        "sequence": [
+          "prepareBadB()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepareBadB()",
+            "target": "unlock()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "gate",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 7,
+                  "raw": "7"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 4
+      },
+      {
+        "sequence": [
+          "prepareBadC()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepareBadC()",
+            "target": "unlock()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "gate",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 7,
+                  "raw": "7"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 6,
+                    "raw": "6"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 5
+      },
+      {
+        "sequence": [
+          "prepareBadD()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepareBadD()",
+            "target": "unlock()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "gate",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 7,
+                  "raw": "7"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 8,
+                    "raw": "8"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "unlocked",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 6
+      },
+      {
+        "sequence": [
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 2,
+        "score": 6,
+        "dependency_variables": [
+          "active"
+        ],
+        "target_function": "trigger(uint256)",
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "active",
+                "operator": "==",
+                "required_value": {
+                  "kind": "bool",
+                  "value": true,
+                  "raw": "true"
+                },
+                "written_values": [
+                  {
+                    "kind": "bool",
+                    "value": true,
+                    "raw": "true"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 7
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

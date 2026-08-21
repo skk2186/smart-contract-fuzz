@@ -1,0 +1,25 @@
+{
+  "all_passed": true,
+  "expected_properties": [
+    "echidna_branch_value_trace_agrees",
+    "echidna_noisy_trace_agrees",
+    "echidna_repeated_call_trace_agrees",
+    "echidna_reset_trace_agrees",
+    "echidna_alternative_path_trace_agrees",
+    "echidna_multi_property_trace_agrees"
+  ],
+  "interpretation": {
+    "trace_replay": "the fixed known successful trace produced the expected property-relevant final state on direct and generated-Harness paths"
+  },
+  "passed_properties": [
+    "echidna_branch_value_trace_agrees",
+    "echidna_noisy_trace_agrees",
+    "echidna_repeated_call_trace_agrees",
+    "echidna_reset_trace_agrees",
+    "echidna_alternative_path_trace_agrees",
+    "echidna_multi_property_trace_agrees"
+  ],
+  "profile": "formal-replay",
+  "schema_version": 1,
+  "scope": "local semantic regression; not a vulnerability benchmark or full equivalence proof"
+}

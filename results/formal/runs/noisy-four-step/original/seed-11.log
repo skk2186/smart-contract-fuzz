@@ -1,0 +1,53 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=original
+SEED=11
+CONTRACT_FILE=contracts/benchmarks/NoisyFourStepExample.sol
+CONTRACT_NAME=NoisyFourStepExample
+CONFIG_FILE=configs/formal-original-seq4.yaml
+START_TIME=2026-07-27T14:56:22+08:00
+
+[2026-07-27 14:56:22.98] Compiling `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.312605427s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/NoisyFourStepExample.sol:NoisyFourStepExample
+[2026-07-27 14:56:23.29] Running slither on `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.420791741s)
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 399 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 438 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 573 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 666 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 681 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 694 instr, 1 contracts, 6 seqs in corpus
+[2026-07-27 14:56:23.73] [Worker 0] New coverage: 721 instr, 1 contracts, 7 seqs in corpus
+[2026-07-27 14:56:23.74] [Worker 0] New coverage: 746 instr, 1 contracts, 8 seqs in corpus
+[2026-07-27 14:56:23.78] [Worker 0] New coverage: 771 instr, 1 contracts, 9 seqs in corpus
+[2026-07-27 14:56:23.84] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepExample.register() Time delay: 322374 seconds Block delay: 51001
+NoisyFourStepExample.deposit() Time delay: 136394 seconds Block delay: 58783
+NoisyFourStepExample.approve() Time delay: 225906 seconds Block delay: 12155
+NoisyFourStepExample.withdraw(102860849262565122654271005626211594715081416877973785523237460251214956809556) Time delay: 554465 seconds Block delay: 103
+
+[2026-07-27 14:56:23.84] [Worker 0] New coverage: 782 instr, 1 contracts, 10 seqs in corpus
+[2026-07-27 14:56:24.89] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:56:24.89] [status] tests: 1/1, fuzzing: 930/100000, values: [], cov: 782, corpus: 10, gas/s: 24839779
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepExample.register()
+    NoisyFourStepExample.deposit()
+    NoisyFourStepExample.approve()
+    NoisyFourStepExample.withdraw(101)
+
+Traces: 
+
+
+Unique instructions: 782
+Unique codehashes: 1
+Corpus size: 10
+Seed: 11
+Total calls: 930
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.96
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:56:24+08:00
+FORMAL_RUN_COMPLETED=1

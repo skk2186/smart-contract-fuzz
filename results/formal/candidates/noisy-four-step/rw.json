@@ -1,0 +1,95 @@
+{
+  "NoisyFourStepExample": {
+    "register()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "NoisyFourStepExample.registered"
+      ]
+    },
+    "deposit()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.registered"
+      ],
+      "write": [
+        "NoisyFourStepExample.funded"
+      ]
+    },
+    "approve()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.funded"
+      ],
+      "write": [
+        "NoisyFourStepExample.approved"
+      ]
+    },
+    "withdraw(uint256)": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.approved"
+      ],
+      "write": [
+        "NoisyFourStepExample.value"
+      ]
+    },
+    "noise1(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "NoisyFourStepExample.noiseA"
+      ]
+    },
+    "noise2()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.noiseA"
+      ],
+      "write": [
+        "NoisyFourStepExample.noiseB"
+      ]
+    },
+    "noise3()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.noiseB"
+      ],
+      "write": [
+        "NoisyFourStepExample.noiseC"
+      ]
+    },
+    "noise4()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.noiseC"
+      ],
+      "write": [
+        "NoisyFourStepExample.noiseA"
+      ]
+    },
+    "noise5(uint256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "NoisyFourStepExample.noiseB"
+      ]
+    },
+    "noise6()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.noiseC"
+      ],
+      "write": [
+        "NoisyFourStepExample.noiseC"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "NoisyFourStepExample.value"
+      ],
+      "write": []
+    }
+  }
+}

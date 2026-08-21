@@ -1,0 +1,158 @@
+
+===== CONTRACT BranchValueExample =====
+
+--- FUNCTION prepareBadA() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: gate = 0
+  IR_CLASS: Assignment
+  IR_TEXT : gate(uint256) := 0(uint256)
+  LVALUE: gate
+  RVALUE: 0
+  READ: [0]
+
+--- FUNCTION prepareBadB() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: gate = 1
+  IR_CLASS: Assignment
+  IR_TEXT : gate(uint256) := 1(uint256)
+  LVALUE: gate
+  RVALUE: 1
+  READ: [1]
+
+--- FUNCTION prepareBadC() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: gate = 6
+  IR_CLASS: Assignment
+  IR_TEXT : gate(uint256) := 6(uint256)
+  LVALUE: gate
+  RVALUE: 6
+  READ: [6]
+
+--- FUNCTION prepareBadD() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: gate = 8
+  IR_CLASS: Assignment
+  IR_TEXT : gate(uint256) := 8(uint256)
+  LVALUE: gate
+  RVALUE: 8
+  READ: [8]
+
+--- FUNCTION prepareGood() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: gate = 7
+  IR_CLASS: Assignment
+  IR_TEXT : gate(uint256) := 7(uint256)
+  LVALUE: gate
+  RVALUE: 7
+  READ: [7]
+
+--- FUNCTION unlock() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: require(bool,string)(gate == 7,incorrect gate)
+  IR_CLASS: Binary
+  IR_TEXT : TMP_0(bool) = gate == 7
+  LVALUE: TMP_0
+  VARIABLE_LEFT: gate
+  VARIABLE_RIGHT: 7
+  TYPE: BinaryType.EQUAL
+  READ: [<slither.core.variables.state_variable.StateVariable object at 0x7be430de3e90>, 7]
+  IR_CLASS: SolidityCall
+  IR_TEXT : TMP_1(None) = SOLIDITY_CALL require(bool,string)(TMP_0,incorrect gate)
+  LVALUE: TMP_1
+  FUNCTION: require(bool,string)
+  ARGUMENTS: [<slither.slithir.variables.temporary.TemporaryVariable object at 0x7be430c1f710>, incorrect gate]
+  READ: [<slither.slithir.variables.temporary.TemporaryVariable object at 0x7be430c1f710>, incorrect gate]
+
+NODE id=2 type=NodeType.EXPRESSION
+EXPRESSION: unlocked = true
+  IR_CLASS: Assignment
+  IR_TEXT : unlocked(bool) := True(bool)
+  LVALUE: unlocked
+  RVALUE: True
+  READ: [True]
+
+--- FUNCTION activate() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: require(bool,string)(unlocked,not unlocked)
+  IR_CLASS: SolidityCall
+  IR_TEXT : TMP_2(None) = SOLIDITY_CALL require(bool,string)(unlocked,not unlocked)
+  LVALUE: TMP_2
+  FUNCTION: require(bool,string)
+  ARGUMENTS: [<slither.core.variables.state_variable.StateVariable object at 0x7be43173b3d0>, not unlocked]
+  READ: [<slither.core.variables.state_variable.StateVariable object at 0x7be43173b3d0>, not unlocked]
+
+NODE id=2 type=NodeType.EXPRESSION
+EXPRESSION: active = true
+  IR_CLASS: Assignment
+  IR_TEXT : active(bool) := True(bool)
+  LVALUE: active
+  RVALUE: True
+  READ: [True]
+
+--- FUNCTION trigger(uint256) ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.EXPRESSION
+EXPRESSION: require(bool,string)(active,not active)
+  IR_CLASS: SolidityCall
+  IR_TEXT : TMP_3(None) = SOLIDITY_CALL require(bool,string)(active,not active)
+  LVALUE: TMP_3
+  FUNCTION: require(bool,string)
+  ARGUMENTS: [<slither.core.variables.state_variable.StateVariable object at 0x7be430de3ed0>, not active]
+  READ: [<slither.core.variables.state_variable.StateVariable object at 0x7be430de3ed0>, not active]
+
+NODE id=2 type=NodeType.EXPRESSION
+EXPRESSION: value = x
+  IR_CLASS: Assignment
+  IR_TEXT : value(uint256) := x(uint256)
+  LVALUE: value
+  RVALUE: x
+  READ: [<slither.core.variables.local_variable.LocalVariable object at 0x7be430df2c10>]
+
+--- FUNCTION echidna_value_safe() ---
+
+NODE id=0 type=NodeType.ENTRYPOINT
+EXPRESSION: None
+
+NODE id=1 type=NodeType.RETURN
+EXPRESSION: value <= 100
+  IR_CLASS: Binary
+  IR_TEXT : TMP_4(bool) = value <= 100
+  LVALUE: TMP_4
+  VARIABLE_LEFT: value
+  VARIABLE_RIGHT: 100
+  TYPE: BinaryType.LESS_EQUAL
+  READ: [<slither.core.variables.state_variable.StateVariable object at 0x7be430de8110>, 100]
+  IR_CLASS: Return
+  IR_TEXT : RETURN TMP_4
+  READ: [<slither.slithir.variables.temporary.TemporaryVariable object at 0x7be430c29c10>]

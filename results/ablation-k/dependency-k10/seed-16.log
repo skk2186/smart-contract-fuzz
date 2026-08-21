@@ -1,0 +1,34 @@
+[2026-07-22 21:29:43.55] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.313839819s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:NoisyFourStepDependencyK10Harness
+[2026-07-22 21:29:43.87] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol`... Done! (0.427444541s)
+[2026-07-22 21:29:44.31] [Worker 0] New coverage: 628 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:29:44.31] [Worker 0] New coverage: 898 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:29:44.31] [Worker 0] New coverage: 1201 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:29:44.31] [Worker 0] New coverage: 1440 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:29:44.32] [Worker 0] New coverage: 1664 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:29:44.32] [Worker 0] New coverage: 1918 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:29:44.32] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyK10Harness.dependency_sequence_6(115792089237316195423570985008687907853269984665640564039457584007913129639933) Time delay: 490446 seconds Block delay: 60267
+
+[2026-07-22 21:29:44.32] [Worker 0] New coverage: 2345 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:29:45.68] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:29:45.68] [status] tests: 1/1, fuzzing: 16/100000, values: [], cov: 2345, corpus: 7, gas/s: 1187629
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyK10Harness.dependency_sequence_6(102)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK10Harness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 2345
+Unique codehashes: 2
+Corpus size: 7
+Seed: 16
+Total calls: 16
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.21
+EXIT_CODE=1

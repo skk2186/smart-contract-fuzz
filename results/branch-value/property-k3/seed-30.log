@@ -1,0 +1,23 @@
+[2026-07-22 23:54:50.18] Compiling `contracts/harnesses/branch-value/BranchValuePropertyK3Harness.sol`... Done! (0.302727304s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/branch-value/BranchValuePropertyK3Harness.sol:BranchValuePropertyK3Harness
+[2026-07-22 23:54:50.49] Running slither on `contracts/harnesses/branch-value/BranchValuePropertyK3Harness.sol`... Done! (0.410545135s)
+[2026-07-22 23:54:50.91] [Worker 0] New coverage: 498 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 23:54:50.91] [Worker 0] New coverage: 650 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 23:54:50.91] [Worker 0] New coverage: 797 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 23:54:51.76] [Worker 0] New coverage: 938 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 23:54:51.92] [Worker 0] New coverage: 941 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 23:54:53.91] [status] tests: 0/1, fuzzing: 24961/100000, values: [], cov: 941, corpus: 5, gas/s: 221772717
+[2026-07-22 23:54:56.91] [status] tests: 0/1, fuzzing: 52139/100000, values: [], cov: 941, corpus: 5, gas/s: 241212675
+[2026-07-22 23:54:59.91] [status] tests: 0/1, fuzzing: 79123/100000, values: [], cov: 941, corpus: 5, gas/s: 239265558
+[2026-07-22 23:55:02.25] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 23:55:02.25] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 941, corpus: 5, gas/s: 277881098
+echidna_value_safe: passing
+
+Unique instructions: 941
+Unique codehashes: 2
+Corpus size: 5
+Seed: 30
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=12.13
+EXIT_CODE=0

@@ -1,0 +1,260 @@
+{
+  "ResetExample": {
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "execute(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "begin()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "poison()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      },
+      {
+        "sequence": [
+          "reset()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)"
+      }
+    ]
+  }
+}

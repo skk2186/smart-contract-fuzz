@@ -1,0 +1,47 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=alternative-path
+METHOD=original
+SEED=6
+CONTRACT_FILE=contracts/benchmarks/AlternativePathExample.sol
+CONTRACT_NAME=AlternativePathExample
+CONFIG_FILE=configs/formal-b2-alternative-original.yaml
+START_TIME=2026-07-27T20:13:51+08:00
+
+[2026-07-27 20:13:51.51] Compiling `contracts/benchmarks/AlternativePathExample.sol`... Done! (0.305007346s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/AlternativePathExample.sol:AlternativePathExample
+[2026-07-27 20:13:51.82] Running slither on `contracts/benchmarks/AlternativePathExample.sol`... Done! (0.404736127s)
+[2026-07-27 20:13:52.23] [Worker 0] New coverage: 237 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 20:13:52.23] [Worker 0] New coverage: 271 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 20:13:52.23] [Worker 0] New coverage: 452 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 20:13:52.23] [Worker 0] New coverage: 477 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 20:13:52.25] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+AlternativePathExample.openRouteB() from: 0x0000000000000000000000000000000000030000 Time delay: 566039 seconds Block delay: 25338
+AlternativePathExample.confirm() from: 0x0000000000000000000000000000000000010000 Time delay: 490448 seconds Block delay: 55538
+AlternativePathExample.execute(157) from: 0x0000000000000000000000000000000000030000 Time delay: 289103 seconds Block delay: 32
+
+[2026-07-27 20:13:52.25] [Worker 0] New coverage: 488 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 20:13:53.08] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:13:53.08] [status] tests: 1/1, fuzzing: 223/100000, values: [], cov: 488, corpus: 5, gas/s: 4899414
+echidna_value_safe: failed!💥  
+  Call sequence:
+    AlternativePathExample.openRouteB()
+    AlternativePathExample.confirm()
+    AlternativePathExample.execute(101)
+
+Traces: 
+
+
+Unique instructions: 488
+Unique codehashes: 1
+Corpus size: 5
+Seed: 6
+Total calls: 223
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.62
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:13:53+08:00
+FORMAL_B2_RUN_COMPLETED=1

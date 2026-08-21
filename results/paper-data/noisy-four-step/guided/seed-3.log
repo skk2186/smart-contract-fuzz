@@ -1,0 +1,28 @@
+[2026-07-21 11:16:11.21] Compiling `contracts/harnesses/guided/NoisyFourStepGuidedHarness.sol`... Done! (0.341782156s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/guided/NoisyFourStepGuidedHarness.sol:NoisyFourStepGuidedHarness
+[2026-07-21 11:16:11.56] Running slither on `contracts/harnesses/guided/NoisyFourStepGuidedHarness.sol`... Done! (0.449082153s)
+[2026-07-21 11:16:12.02] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepGuidedHarness.guided_sequence_1(13449056319266424159207480789498449303408685781988373571500453237603491913144) Time delay: 322273 seconds Block delay: 2511
+
+[2026-07-21 11:16:12.02] [Worker 0] New coverage: 763 instr, 2 contracts, 1 seqs in corpus
+[2026-07-21 11:16:13.38] [Worker 0] Test limit reached. Stopping.
+[2026-07-21 11:16:13.38] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 763, corpus: 1, gas/s: 121571
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepGuidedHarness.guided_sequence_1(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::value()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/guided/NoisyFourStepGuidedHarness.sol:31)[0m
+ └╴← (101)
+
+
+Unique instructions: 763
+Unique codehashes: 2
+Corpus size: 1
+Seed: 3
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.25
+EXIT_CODE=1

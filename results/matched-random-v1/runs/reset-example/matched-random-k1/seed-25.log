@@ -1,0 +1,44 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=reset-example
+METHOD=matched-random-k1
+SEED=25
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o011
+SELECTED_CANDIDATE_INDICES=25
+SELECTION_SHA256=db5dce52887aafd57be9f8f95a90e744cd21626822d53a171c4a4b550c5a311c
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/reset-example/candidate-025.sol
+CONTRACT_NAME=MatchedRandomV1ResetExampleC025Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:28:15+08:00
+[2026-08-06 11:28:15.04] Compiling `contracts/harnesses/matched-random-v1/reset-example/candidate-025.sol`... Done! (0.136815737s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/reset-example/candidate-025.sol:MatchedRandomV1ResetExampleC025Harness
+[2026-08-06 11:28:15.18] Running slither on `contracts/harnesses/matched-random-v1/reset-example/candidate-025.sol`... Done! (0.215935319s)
+[2026-08-06 11:28:15.41] [Worker 0] New coverage: 529 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:28:15.84] [Worker 0] New coverage: 660 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:28:17.25] [Worker 0] New coverage: 663 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:28:18.41] [status] tests: 0/1, fuzzing: 23416/100000, values: [], cov: 663, corpus: 3, gas/s: 254987262
+[2026-08-06 11:28:21.41] [status] tests: 0/1, fuzzing: 48996/100000, values: [], cov: 663, corpus: 3, gas/s: 278408630
+[2026-08-06 11:28:24.41] [status] tests: 0/1, fuzzing: 75511/100000, values: [], cov: 663, corpus: 3, gas/s: 288115925
+[2026-08-06 11:28:27.18] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:28:27.18] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 663, corpus: 3, gas/s: 265400347
+echidna_value_safe: passing
+
+Unique instructions: 663
+Unique codehashes: 2
+Corpus size: 3
+Seed: 25
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:28:27+08:00
+PROCESS_WALL_SECONDS=12.209831
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

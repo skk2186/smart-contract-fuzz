@@ -1,0 +1,6 @@
+source_pool	repository	pinned_revision	local_coverage	candidate_policy	status
+echidna-official	crytic/echidna	4454f3a337ed58e89a3be488b8eac03e83cd40f2	2 files	Upstream multi-step property tests; exclude framework self-tests and single-call properties	partial_local_only
+building-secure-contracts	crytic/building-secure-contracts	2de122e3a6b63bc450a1ec41215f0c44d72fb96b	2 files for one exercise	Upstream Echidna exercises with explicit multi-step properties	partial_local_only
+smartbugs-curated	smartbugs/smartbugs-curated	230e649123477eff332742a59a1c7cc6dc286cab	2 files	Multi-transaction labeled contracts only; property must follow a frozen uniform rule	partial_local_only
+reusable-properties	crytic/properties	UNPINNED	0 files	Projects with an upstream reusable invariant and a known multi-step violating trace	not_local
+open-echidna-projects	multiple	UNPINNED	0 files	Open-source projects with committed Echidna properties and reproducible multi-step counterexamples	not_local

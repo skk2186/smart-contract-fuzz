@@ -1,0 +1,7 @@
+method,runs,falsified_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+dependency-k10,30,30,1.0,27.0,32.8333,0.43,2.06
+original,30,27,0.9,4423.0,18849.1481,0.96,2.47
+property-k1,30,30,1.0,2.0,2.5,0.4,2.02
+property-k10,30,30,1.0,19.5,27.4667,0.44,2.105
+property-k3,30,30,1.0,6.0,6.8,0.41,2.03
+property-k5,30,30,1.0,12.0,14.1667,0.42,2.08

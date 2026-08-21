@@ -1,0 +1,17 @@
+benchmark,method,display_rank,correct_score,higher_score_paths,equal_score_paths,best_tied_rank,worst_tied_rank
+noisy-four-step,dependency,6,6,5,4,6,9
+noisy-four-step,property,1,6,0,1,1,1
+noisy-four-step,repeat,1,6,0,1,1,1
+noisy-four-step,full,1,18,0,1,1,1
+reset-example,dependency,6,8,0,6,1,6
+reset-example,property,1,6,0,6,1,6
+reset-example,repeat,5,8,0,18,1,18
+reset-example,full,1,20,0,1,1,1
+branch-value,dependency,1,6,0,5,1,5
+branch-value,property,5,6,0,5,1,5
+branch-value,repeat,5,6,0,5,1,5
+branch-value,full,1,18,0,1,1,1
+repeated-call,dependency,,,,,,
+repeated-call,property,,,,,,
+repeated-call,repeat,1,7,0,1,1,1
+repeated-call,full,1,11,0,1,1,1

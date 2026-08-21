@@ -1,0 +1,54 @@
+{
+  "date": "2026-08-06",
+  "purpose": "bounded runtime calibration only",
+  "not_a_formal_c2_result": true,
+  "smartian_commit": "eca1ed1d60c88ec5402055a05b59174b7288264c",
+  "dotnet_sdk": "8.0.423",
+  "timelimit_sec": 5,
+  "output_root": "/tmp/smartian-calibration-20260806",
+  "command_template": "dotnet baselines/smartian/src/bin/Release/net8.0/Smartian.dll fuzz -p baselines/smartian/examples/bc/<NAME>.bin -a baselines/smartian/examples/abi/<NAME>.abi -t 5 -o <OUTPUT_DIR> -v 0",
+  "seed_control": "not_exposed_by_smartian_cli; do not claim seeded reproducibility",
+  "runs": [
+    {
+      "benchmark": "IB",
+      "exit_code": 0,
+      "duration_sec": 6,
+      "testcase_files": 13,
+      "bug_files": [],
+      "known_smartian_alarm": "IntegerBug",
+      "interpretation": "startup_and_fuzz_loop_passed; 5-second run did not find the known alarm"
+    },
+    {
+      "benchmark": "BD_false",
+      "exit_code": 0,
+      "duration_sec": 5,
+      "testcase_files": 18,
+      "bug_files": [],
+      "known_smartian_alarm": "none",
+      "interpretation": "startup_and_fuzz_loop_passed; negative-control alarm set remained empty"
+    },
+    {
+      "benchmark": "MS_true",
+      "exit_code": 0,
+      "duration_sec": 5,
+      "testcase_files": 2,
+      "bug_files": ["MultipleSend"],
+      "known_smartian_alarm": "MultipleSend",
+      "interpretation": "startup_and_fuzz_loop_passed; known alarm was emitted"
+    }
+  ],
+  "repeatability": {
+    "manifest": "results/public-benchmarks/c2-screening/smartian-calibration-repeatability.tsv",
+    "planned_runs": 9,
+    "complete_logs": 9,
+    "completion_markers": 9,
+    "exit_codes_revalidated_zero": 9,
+    "alarm_observations": {
+      "IB": "1/3",
+      "BD_false": "0/3",
+      "MS_true": "3/3"
+    },
+    "interpretation": "runtime completion and output parsing were stable; bug discovery remained stochastic, so no detection-rate claim is made"
+  },
+  "next_gate": "freeze formal budget, sender/transaction semantics, and candidate inclusion decision before any C2 comparison"
+}

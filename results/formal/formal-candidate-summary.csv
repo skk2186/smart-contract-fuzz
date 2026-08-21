@@ -1,0 +1,5 @@
+benchmark,dependency_retained_paths,dependency_correct_rank,property_retained_paths,property_correct_rank,repeat_generated_paths,repeat_retained_paths,repeat_correct_rank_before_value,full_retained_paths,full_correct_rank,dfs_expansions,full_top1_sequence
+noisy-four-step,30,6,3,1,3,3,1,3,1,3,register() -> deposit() -> approve() -> withdraw(uint256)
+reset-example,37,6,19,1,33,33,5,33,1,33,begin() -> authorize() -> commit() -> execute(uint256)
+branch-value,18,1,7,5,7,7,5,7,1,7,prepareGood() -> unlock() -> activate() -> trigger(uint256)
+repeated-call,7,,2,,3,3,1,3,1,3,deposit() -> deposit() -> unlock() -> withdraw(uint256)

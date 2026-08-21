@@ -1,0 +1,27 @@
+[2026-07-22 21:13:29.20] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.303667432s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol:NoisyFourStepDependencyK3Harness
+[2026-07-22 21:13:29.51] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.40000569s)
+[2026-07-22 21:13:29.92] [Worker 0] New coverage: 696 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:13:29.92] [Worker 0] New coverage: 978 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:13:29.92] [Worker 0] New coverage: 1217 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:13:30.18] [Worker 0] New coverage: 1237 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:13:30.26] [Worker 0] New coverage: 1244 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:13:30.35] [Worker 0] New coverage: 1375 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:13:30.92] [Worker 0] New coverage: 1378 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:13:32.92] [status] tests: 0/1, fuzzing: 15618/100000, values: [], cov: 1378, corpus: 7, gas/s: 345577308
+[2026-07-22 21:13:35.92] [status] tests: 0/1, fuzzing: 32787/100000, values: [], cov: 1378, corpus: 7, gas/s: 381343539
+[2026-07-22 21:13:38.92] [status] tests: 0/1, fuzzing: 49684/100000, values: [], cov: 1378, corpus: 7, gas/s: 375348813
+[2026-07-22 21:13:41.93] [status] tests: 0/1, fuzzing: 66579/100000, values: [], cov: 1378, corpus: 7, gas/s: 374764720
+[2026-07-22 21:13:44.93] [status] tests: 0/1, fuzzing: 83382/100000, values: [], cov: 1378, corpus: 7, gas/s: 370704571
+[2026-07-22 21:13:47.90] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:13:47.90] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 1378, corpus: 7, gas/s: 367179682
+echidna_value_safe: passing
+
+Unique instructions: 1378
+Unique codehashes: 2
+Corpus size: 7
+Seed: 12
+Total calls: 100000
+
+PROCESS_WALL_SECONDS=18.77
+EXIT_CODE=0

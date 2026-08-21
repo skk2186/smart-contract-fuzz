@@ -1,0 +1,19 @@
+{
+  "all_passed": true,
+  "expected_properties": [
+    "echidna_public_multi_trace_agrees",
+    "echidna_public_flags_trace_agrees",
+    "echidna_exercise2_same_caller_trace_agrees"
+  ],
+  "interpretation": {
+    "trace_replay": "the fixed known successful trace produced the expected property-relevant final state on direct and generated-Harness paths"
+  },
+  "passed_properties": [
+    "echidna_public_multi_trace_agrees",
+    "echidna_public_flags_trace_agrees",
+    "echidna_exercise2_same_caller_trace_agrees"
+  ],
+  "profile": "public-v8-replay",
+  "schema_version": 1,
+  "scope": "local semantic regression; not a vulnerability benchmark or full equivalence proof"
+}

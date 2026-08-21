@@ -1,0 +1,52 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=branch-value
+METHOD=original
+SEED=28
+CONTRACT_FILE=contracts/benchmarks/BranchValueExample.sol
+CONTRACT_NAME=BranchValueExample
+CONFIG_FILE=configs/formal-original-seq4.yaml
+START_TIME=2026-07-27T15:07:19+08:00
+
+[2026-07-27 15:07:19.23] Compiling `contracts/benchmarks/BranchValueExample.sol`... Done! (0.304189152s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/BranchValueExample.sol:BranchValueExample
+[2026-07-27 15:07:19.54] Running slither on `contracts/benchmarks/BranchValueExample.sol`... Done! (0.407273894s)
+[2026-07-27 15:07:19.96] [Worker 0] New coverage: 474 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 15:07:19.96] [Worker 0] New coverage: 488 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 15:07:19.96] [Worker 0] New coverage: 516 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 15:07:19.96] [Worker 0] New coverage: 535 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 15:07:19.97] [Worker 0] New coverage: 560 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 15:07:19.98] [Worker 0] New coverage: 635 instr, 1 contracts, 6 seqs in corpus
+[2026-07-27 15:07:20.02] [Worker 0] New coverage: 660 instr, 1 contracts, 7 seqs in corpus
+[2026-07-27 15:07:20.02] [Worker 0] New coverage: 663 instr, 1 contracts, 8 seqs in corpus
+[2026-07-27 15:07:20.02] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueExample.prepareGood() from: 0x0000000000000000000000000000000000030000 Time delay: 463588 seconds Block delay: 53166
+BranchValueExample.unlock() from: 0x0000000000000000000000000000000000020000 Time delay: 444463 seconds Block delay: 59552
+BranchValueExample.activate() from: 0x0000000000000000000000000000000000020000 Time delay: 322272 seconds Block delay: 33357
+BranchValueExample.trigger(3198802330844365651909216981647151375536164818741047) from: 0x0000000000000000000000000000000000010000 Time delay: 322272 seconds Block delay: 34272
+
+[2026-07-27 15:07:20.02] [Worker 0] New coverage: 674 instr, 1 contracts, 9 seqs in corpus
+[2026-07-27 15:07:21.05] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:07:21.05] [status] tests: 1/1, fuzzing: 651/100000, values: [], cov: 674, corpus: 9, gas/s: 15544088
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueExample.prepareGood()
+    BranchValueExample.unlock()
+    BranchValueExample.activate()
+    BranchValueExample.trigger(101)
+
+Traces: 
+
+
+Unique instructions: 674
+Unique codehashes: 1
+Corpus size: 9
+Seed: 28
+Total calls: 651
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.87
+
+EXIT_CODE=1
+END_TIME=2026-07-27T15:07:21+08:00
+FORMAL_RUN_COMPLETED=1

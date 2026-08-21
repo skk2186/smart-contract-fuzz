@@ -1,0 +1,38 @@
+[2026-07-22 22:50:27.94] Compiling `contracts/benchmarks/ResetExample.sol`... Done! (0.287413929s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/ResetExample.sol:ResetExample
+[2026-07-22 22:50:28.23] Running slither on `contracts/benchmarks/ResetExample.sol`... Done! (0.376503369s)
+[2026-07-22 22:50:28.62] [Worker 0] New coverage: 411 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 22:50:28.62] [Worker 0] New coverage: 622 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 22:50:28.62] [Worker 0] New coverage: 672 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 22:50:28.62] [Worker 0] New coverage: 726 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 22:50:28.65] [Worker 0] New coverage: 729 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 22:50:28.74] [Worker 0] New coverage: 754 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 22:50:28.82] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetExample.begin() from: 0x0000000000000000000000000000000000020000 Time delay: 3 seconds Block delay: 25637
+ResetExample.authorize() from: 0x0000000000000000000000000000000000010000 Time delay: 436727 seconds Block delay: 58783
+ResetExample.commit() from: 0x0000000000000000000000000000000000010000 Time delay: 65535 seconds Block delay: 23722
+ResetExample.execute(8702410730668719797183343200163316310842346026199404208246417106707124397007) from: 0x0000000000000000000000000000000000010000 Time delay: 344203 seconds Block delay: 16089
+
+[2026-07-22 22:50:28.82] [Worker 0] New coverage: 765 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 22:50:29.80] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:50:29.80] [status] tests: 1/1, fuzzing: 2047/100000, values: [], cov: 765, corpus: 7, gas/s: 52852246
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetExample.begin()
+    ResetExample.authorize()
+    ResetExample.commit()
+    ResetExample.execute(101)
+
+Traces: 
+
+
+Unique instructions: 765
+Unique codehashes: 1
+Corpus size: 7
+Seed: 16
+Total calls: 2047
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.91
+EXIT_CODE=1

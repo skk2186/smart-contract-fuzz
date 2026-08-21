@@ -1,0 +1,37 @@
+[2026-07-22 22:51:58.57] Compiling `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.300134739s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:ResetDependencyK10Harness
+[2026-07-22 22:51:58.87] Running slither on `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.405049837s)
+[2026-07-22 22:51:59.29] [Worker 0] New coverage: 455 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:51:59.29] [Worker 0] New coverage: 822 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:51:59.29] [Worker 0] New coverage: 960 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1075 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1203 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1357 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1485 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1605 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 1733 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 22:51:59.30] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetDependencyK10Harness.dependency_sequence_6(101) Time delay: 3 seconds Block delay: 24881
+
+[2026-07-22 22:51:59.30] [Worker 0] New coverage: 2180 instr, 2 contracts, 10 seqs in corpus
+[2026-07-22 22:52:00.56] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:52:00.56] [status] tests: 1/1, fuzzing: 51/100000, values: [], cov: 2180, corpus: 10, gas/s: 1409089
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetDependencyK10Harness.dependency_sequence_6(101)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:125)[0m
+ └╴← (false)
+
+
+Unique instructions: 2180
+Unique codehashes: 2
+Corpus size: 10
+Seed: 20
+Total calls: 51
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.05
+EXIT_CODE=1

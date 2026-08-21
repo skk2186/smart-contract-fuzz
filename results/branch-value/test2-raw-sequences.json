@@ -1,0 +1,643 @@
+{
+  "BranchValueExample": {
+    "edges": [
+      {
+        "from": "prepareGood()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "gate"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "prepareBadA()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "gate"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "prepareBadB()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "gate"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "prepareBadC()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "gate"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "prepareBadD()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "gate"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "unlock()",
+        "to": "activate()",
+        "score": 2,
+        "write_read_variables": [
+          "unlocked"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "activate()",
+        "to": "trigger(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "active"
+        ],
+        "write_write_variables": []
+      }
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "prepareGood()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareGood()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadD()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadD()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadC()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadC()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadB()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadB()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadA()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadA()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "active",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareGood()",
+          "unlock()",
+          "activate()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareGood()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadD()",
+          "unlock()",
+          "activate()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadD()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadC()",
+          "unlock()",
+          "activate()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadC()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadB()",
+          "unlock()",
+          "activate()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadB()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadA()",
+          "unlock()",
+          "activate()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "gate",
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadA()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "activate()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "unlock()",
+            "to": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareGood()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "gate"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareGood()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadD()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "gate"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadD()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadC()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "gate"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadC()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadB()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "gate"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadB()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "prepareBadA()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "gate"
+        ],
+        "dependencies": [
+          {
+            "from": "prepareBadA()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "active"
+        ],
+        "dependencies": [
+          {
+            "from": "activate()",
+            "to": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      }
+    ]
+  }
+}

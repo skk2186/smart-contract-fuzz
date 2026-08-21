@@ -1,0 +1,31 @@
+{
+  "purpose": "SMARTIAN external baseline for existing C1 legacy targets",
+  "formal_c2_batch": false,
+  "rows": 60,
+  "targets": {
+    "multi": {
+      "runs": 30,
+      "falsified": 30,
+      "budget_exhausted": 0,
+      "startup_or_incomplete": 0,
+      "success_rate_over_valid_runs": 1.0,
+      "duration_sec_min": 30,
+      "duration_sec_max": 31,
+      "testcase_files_total": 103,
+      "bug_files_total": 30
+    },
+    "one": {
+      "runs": 30,
+      "falsified": 30,
+      "budget_exhausted": 0,
+      "startup_or_incomplete": 0,
+      "success_rate_over_valid_runs": 1.0,
+      "duration_sec_min": 30,
+      "duration_sec_max": 31,
+      "testcase_files_total": 82,
+      "bug_files_total": 30
+    }
+  },
+  "success_definition": "IntegerBug artifact in a completed run",
+  "seed_control": "SMARTIAN CLI exposes no seed option; run_id is used"
+}

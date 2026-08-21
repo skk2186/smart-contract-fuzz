@@ -1,0 +1,1333 @@
+{
+  "ResetExample": {
+    "edges": [
+      {
+        "from": "begin()",
+        "to": "authorize()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "begin()",
+        "to": "commit()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "begin()",
+        "to": "execute(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "authorize()",
+        "to": "commit()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "authorize()",
+        "to": "execute(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "commit()",
+        "to": "authorize()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "commit()",
+        "to": "execute(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "reset()",
+        "to": "authorize()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "reset()",
+        "to": "commit()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "reset()",
+        "to": "execute(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "poison()",
+        "to": "authorize()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "poison()",
+        "to": "commit()",
+        "score": 3,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": [
+          "ResetExample.stage"
+        ]
+      },
+      {
+        "from": "poison()",
+        "to": "execute(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.stage"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise1(uint256)",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.noiseA"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise2()",
+        "to": "noise3()",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.noiseB"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise3()",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "ResetExample.noiseA"
+        ],
+        "write_write_variables": []
+      }
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 8,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "authorize()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "commit()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "authorize()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "commit()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "authorize()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "commit()"
+        ],
+        "length": 3,
+        "score": 6,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 5,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "ResetExample.noiseA",
+          "ResetExample.noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "commit()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()"
+        ],
+        "length": 2,
+        "score": 3,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "authorize()",
+            "to": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "reset()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "reset()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "poison()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "poison()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "commit()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "begin()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "begin()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "ResetExample.stage"
+        ],
+        "dependencies": [
+          {
+            "from": "authorize()",
+            "to": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      }
+    ]
+  }
+}

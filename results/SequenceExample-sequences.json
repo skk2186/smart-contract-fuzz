@@ -1,0 +1,17 @@
+{
+  "SequenceExample": {
+    "sequences": [
+      {
+        "sequence": [
+          "initialize()",
+          "update(uint256)"
+        ],
+        "score": 2,
+        "write_read_variables": [
+          "initialized"
+        ],
+        "write_write_variables": []
+      }
+    ]
+  }
+}

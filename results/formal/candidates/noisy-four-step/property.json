@@ -1,0 +1,54 @@
+{
+  "NoisyFourStepExample": {
+    "property_variables": [
+      "NoisyFourStepExample.value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "register()",
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "NoisyFourStepExample.approved",
+          "NoisyFourStepExample.funded",
+          "NoisyFourStepExample.registered"
+        ],
+        "target_function": "withdraw(uint256)"
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "NoisyFourStepExample.approved",
+          "NoisyFourStepExample.funded"
+        ],
+        "target_function": "withdraw(uint256)"
+      },
+      {
+        "sequence": [
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "NoisyFourStepExample.approved"
+        ],
+        "target_function": "withdraw(uint256)"
+      }
+    ]
+  }
+}

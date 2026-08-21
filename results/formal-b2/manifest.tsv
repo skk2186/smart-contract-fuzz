@@ -1,0 +1,6 @@
+benchmark	method	contract_file	contract_name	config_file
+alternative-path	original	contracts/benchmarks/AlternativePathExample.sol	AlternativePathExample	configs/formal-b2-alternative-original.yaml
+alternative-path	full-k1	contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol	AlternativePathFullK1Harness	configs/formal-b2-alternative-harness.yaml
+alternative-path	full-k2	contracts/harnesses/formal-b2/AlternativePathFullK2Harness.sol	AlternativePathFullK2Harness	configs/formal-b2-alternative-harness.yaml
+multi-property	original	contracts/benchmarks/MultiPropertyExample.sol	MultiPropertyExample	configs/formal-b2-multi-original.yaml
+multi-property	full-k1	contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol	MultiPropertyFullK1Harness	configs/formal-b2-multi-harness.yaml

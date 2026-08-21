@@ -1,0 +1,118 @@
+{
+  "BranchValueExampleRenamed": {
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "trigger(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "aBadPrepare()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "bBadPrepare()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "cBadPrepare()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "dBadPrepare()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "zCorrectPrepare()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "active",
+          "gate",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "active",
+          "unlocked"
+        ],
+        "target_function": "trigger(uint256)"
+      },
+      {
+        "sequence": [
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "active"
+        ],
+        "target_function": "trigger(uint256)"
+      }
+    ]
+  }
+}

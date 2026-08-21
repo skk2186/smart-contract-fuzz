@@ -1,0 +1,28 @@
+[2026-07-23 17:54:48.36] Compiling `contracts/harnesses/value-generated/BranchValueValueGuidedK1Harness.sol`... Done! (0.296622649s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/value-generated/BranchValueValueGuidedK1Harness.sol:BranchValueValueGuidedK1Harness
+[2026-07-23 17:54:48.66] Running slither on `contracts/harnesses/value-generated/BranchValueValueGuidedK1Harness.sol`... Done! (0.40102201s)
+[2026-07-23 17:54:49.07] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueValueGuidedK1Harness.value_sequence_1(114515750552178452564342117230826869082917143748028223830859413845470796798531) Time delay: 16802 seconds Block delay: 59983
+
+[2026-07-23 17:54:49.07] [Worker 0] New coverage: 725 instr, 2 contracts, 1 seqs in corpus
+[2026-07-23 17:54:50.32] [Worker 0] Test limit reached. Stopping.
+[2026-07-23 17:54:50.32] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 725, corpus: 1, gas/s: 164981
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueValueGuidedK1Harness.value_sequence_1(101)
+
+Traces: 
+call [1mBranchValueExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/value-generated/BranchValueValueGuidedK1Harness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 725
+Unique codehashes: 2
+Corpus size: 1
+Seed: 11
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.02
+EXIT_CODE=1

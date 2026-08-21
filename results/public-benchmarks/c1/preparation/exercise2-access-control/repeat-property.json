@@ -1,0 +1,67 @@
+{
+  "TestToken": {
+    "property_functions": [
+      "echidna_no_transfer()"
+    ],
+    "property_variables": [
+      "Pausable._paused"
+    ],
+    "target_functions": [
+      "pause()",
+      "resume()"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 2,
+    "retained_path_count": 2,
+    "dfs_expansions": 2,
+    "paths": [
+      {
+        "sequence": [
+          "Owner()",
+          "pause()"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "pause()",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "Owner()",
+            "target": "pause()",
+            "score": 2,
+            "write_read_variables": [
+              "Ownable.owner"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "Owner()",
+          "resume()"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "resume()",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "Owner()",
+            "target": "resume()",
+            "score": 2,
+            "write_read_variables": [
+              "Ownable.owner"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      }
+    ]
+  }
+}

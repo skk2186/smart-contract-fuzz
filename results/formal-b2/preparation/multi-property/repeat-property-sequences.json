@@ -1,0 +1,189 @@
+{
+  "MultiPropertyExample": {
+    "property_functions": [
+      "echidna_value_a_safe()",
+      "echidna_value_b_safe()"
+    ],
+    "property_variables": [
+      "MultiPropertyExample.valueA",
+      "MultiPropertyExample.valueB"
+    ],
+    "target_functions": [
+      "execute(uint256,uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 5,
+    "retained_path_count": 5,
+    "dfs_expansions": 5,
+    "paths": [
+      {
+        "sequence": [
+          "prepare()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "prepare()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 4
+      },
+      {
+        "sequence": [
+          "prepare()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 5
+      }
+    ]
+  }
+}

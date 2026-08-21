@@ -1,0 +1,43 @@
+
+============================================================
+Screening: echidna-multi
+Compiler : 0.8.20
+Contract : C
+============================================================
+Result: PASS
+Full Visits=2 expected rank: 1
+
+============================================================
+Screening: echidna-flags
+Compiler : 0.8.20
+Contract : Test
+============================================================
+Result: PASS
+Full Visits=2 expected rank: 1
+
+============================================================
+Screening: exercise2-access-control
+Compiler : 0.8.20
+Contract : TestToken
+============================================================
+Result: PASS
+Full Visits=2 expected rank: 2
+
+============================================================
+Screening: smartbugs-multifunc
+Compiler : 0.4.23
+Contract : SmartBugsMultiFuncEchidna
+============================================================
+Result: PASS
+Full Visits=2 expected rank: 3
+
+============================================================
+Screening: smartbugs-onefunc
+Compiler : 0.4.23
+Contract : SmartBugsOneFuncEchidna
+============================================================
+Result: PASS
+Full Visits=2 expected rank: 1
+
+Saved summary: results/public-benchmarks/c0/c0-summary.csv
+Saved paths: results/public-benchmarks/c0/c0-top-paths.csv

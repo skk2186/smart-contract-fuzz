@@ -1,0 +1,38 @@
+{
+  "RepeatedCallExample": {
+    "property_variables": [
+      "RepeatedCallExample.value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "deposit()",
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "RepeatedCallExample.depositCount",
+          "RepeatedCallExample.unlocked"
+        ],
+        "target_function": "withdraw(uint256)"
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.unlocked"
+        ],
+        "target_function": "withdraw(uint256)"
+      }
+    ]
+  }
+}

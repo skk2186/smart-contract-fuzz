@@ -1,0 +1,17 @@
+benchmark,rank,sequence,property_score,value_score,matches,conflicts
+alternative-path,1,openRouteA() -> confirm() -> execute(uint256),5,13,2,0
+alternative-path,2,openRouteB() -> confirm() -> execute(uint256),5,13,2,0
+alternative-path,3,openRouteA() -> confirm() -> confirm() -> execute(uint256),8,12,2,1
+alternative-path,4,openRouteB() -> confirm() -> confirm() -> execute(uint256),8,12,2,1
+alternative-path,5,confirm() -> execute(uint256),2,6,1,0
+alternative-path,6,confirm() -> confirm() -> execute(uint256),5,5,1,1
+alternative-path,7,openWrongRoute() -> confirm() -> execute(uint256),5,5,1,1
+alternative-path,8,openWrongRoute() -> confirm() -> confirm() -> execute(uint256),8,4,1,2
+alternative-path,9,openRouteA() -> execute(uint256),2,-2,0,1
+alternative-path,10,openRouteB() -> execute(uint256),2,-2,0,1
+alternative-path,11,openWrongRoute() -> execute(uint256),2,-2,0,1
+multi-property,1,"prepare() -> authorize() -> execute(uint256,uint256)",5,13,2,0
+multi-property,2,"prepare() -> authorize() -> authorize() -> execute(uint256,uint256)",8,12,2,1
+multi-property,3,"authorize() -> execute(uint256,uint256)",2,6,1,0
+multi-property,4,"authorize() -> authorize() -> execute(uint256,uint256)",5,5,1,1
+multi-property,5,"prepare() -> execute(uint256,uint256)",2,-2,0,1

@@ -1,0 +1,24 @@
+{
+  "purpose": "descriptive comparison of SMARTIAN with existing C1 results",
+  "formal_c2_result": false,
+  "targets": ["smartbugs-multifunc", "smartbugs-onefunc"],
+  "compiler": "0.4.25",
+  "rows": 8,
+  "observations": [
+    "All three existing C1 Echidna methods and SMARTIAN found the property violation in 30/30 runs for both targets.",
+    "SMARTIAN used a 30-second timelimit and has no public seed option; C1 uses Echidna testLimit 100000, timeout 30, and seeds 1-30.",
+    "SMARTIAN process wall time and Echidna fuzz_seconds are not equal-work timing measures and must not be interpreted as speedup."
+  ],
+  "targets_summary": {
+    "smartbugs-multifunc": {
+      "c1_methods": {"original": "30/30", "full-k1": "30/30", "full-k5": "30/30"},
+      "smartian": "30/30"
+    },
+    "smartbugs-onefunc": {
+      "c1_methods": {"original": "30/30", "full-k1": "30/30", "full-k5": "30/30"},
+      "smartian": "30/30"
+    }
+  },
+  "interpretation": "This is a tool-availability and oracle-aligned descriptive baseline, not evidence that SMARTIAN is superior to Echidna or to the proposed method.",
+  "c2_registry_changed": false
+}

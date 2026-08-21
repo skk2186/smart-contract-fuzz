@@ -1,0 +1,49 @@
+{
+  "SmartBugsOneFuncEchidna": {
+    "property_functions": [
+      "echidna_count_does_not_underflow()"
+    ],
+    "property_variables": [
+      "SmartBugsOneFuncEchidna.count"
+    ],
+    "target_functions": [
+      "run(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 1,
+    "retained_path_count": 1,
+    "dfs_expansions": 1,
+    "paths": [
+      {
+        "sequence": [
+          "run(uint256)",
+          "run(uint256)"
+        ],
+        "score": 6,
+        "length": 2,
+        "target_function": "run(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "run(uint256)": 2
+        },
+        "edges": [
+          {
+            "source": "run(uint256)",
+            "target": "run(uint256)",
+            "score": 6,
+            "write_read_variables": [
+              "SmartBugsOneFuncEchidna.count",
+              "SmartBugsOneFuncEchidna.initialized"
+            ],
+            "write_write_variables": [
+              "SmartBugsOneFuncEchidna.count",
+              "SmartBugsOneFuncEchidna.initialized"
+            ]
+          }
+        ],
+        "repeat_rank": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+[2026-08-05 22:48:11.02] Compiling `contracts/semantic-fixtures/FormalTraceReplay.sol`... Done! (0.242977175s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/semantic-fixtures/FormalTraceReplay.sol:FormalTraceReplay
+[2026-08-05 22:48:11.79] [Worker 0] Test limit reached. Stopping.
+[2026-08-05 22:48:11.79] [status] tests: 0/6, fuzzing: 26/25, values: [], cov: 0, corpus: 0, gas/s: 0
+echidna_alternative_path_trace_agrees: passing
+echidna_repeated_call_trace_agrees: passing
+echidna_reset_trace_agrees: passing
+echidna_multi_property_trace_agrees: passing
+echidna_noisy_trace_agrees: passing
+echidna_branch_value_trace_agrees: passing
+
+Unique instructions: 0
+Unique codehashes: 0
+Corpus size: 0
+Seed: 1
+Total calls: 26
+

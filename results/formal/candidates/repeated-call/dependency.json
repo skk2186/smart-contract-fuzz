@@ -1,0 +1,229 @@
+{
+  "RepeatedCallExample": {
+    "edges": [
+      {
+        "from": "deposit()",
+        "to": "unlock()",
+        "score": 2,
+        "write_read_variables": [
+          "RepeatedCallExample.depositCount"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "unlock()",
+        "to": "withdraw(uint256)",
+        "score": 2,
+        "write_read_variables": [
+          "RepeatedCallExample.unlocked"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise1(uint256)",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "RepeatedCallExample.noiseA"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise2()",
+        "to": "noise3()",
+        "score": 2,
+        "write_read_variables": [
+          "RepeatedCallExample.noiseB"
+        ],
+        "write_write_variables": []
+      },
+      {
+        "from": "noise3()",
+        "to": "noise2()",
+        "score": 2,
+        "write_read_variables": [
+          "RepeatedCallExample.noiseA"
+        ],
+        "write_write_variables": []
+      }
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "RepeatedCallExample.noiseA",
+          "RepeatedCallExample.noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.noiseA"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "RepeatedCallExample.depositCount",
+          "RepeatedCallExample.unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "deposit()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.depositCount"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "from": "unlock()",
+            "to": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "withdraw(uint256)"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.unlocked"
+        ],
+        "dependencies": [
+          {
+            "from": "unlock()",
+            "to": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.unlocked"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise3()",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise3()",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise2()",
+          "noise3()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.noiseB"
+        ],
+        "dependencies": [
+          {
+            "from": "noise2()",
+            "to": "noise3()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.noiseB"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "noise1(uint256)",
+          "noise2()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.noiseA"
+        ],
+        "dependencies": [
+          {
+            "from": "noise1(uint256)",
+            "to": "noise2()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.noiseA"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "unlock()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "RepeatedCallExample.depositCount"
+        ],
+        "dependencies": [
+          {
+            "from": "deposit()",
+            "to": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "RepeatedCallExample.depositCount"
+            ],
+            "write_write_variables": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=multi-property
+METHOD=original
+SEED=19
+CONTRACT_FILE=contracts/benchmarks/MultiPropertyExample.sol
+CONTRACT_NAME=MultiPropertyExample
+CONFIG_FILE=configs/formal-b2-multi-original.yaml
+START_TIME=2026-07-27T20:17:22+08:00
+
+[2026-07-27 20:17:22.69] Compiling `contracts/benchmarks/MultiPropertyExample.sol`... Done! (0.306003302s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/MultiPropertyExample.sol:MultiPropertyExample
+[2026-07-27 20:17:23.00] Running slither on `contracts/benchmarks/MultiPropertyExample.sol`... Done! (0.403533907s)
+[2026-07-27 20:17:23.42] [Worker 0] New coverage: 413 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 20:17:23.44] [Worker 0] New coverage: 438 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 20:17:23.44] [Worker 0] Test echidna_value_b_safe falsified!
+  Call sequence:
+MultiPropertyExample.prepare() from: 0x0000000000000000000000000000000000020000 Time delay: 519847 seconds Block delay: 103
+MultiPropertyExample.authorize() from: 0x0000000000000000000000000000000000010000 Time delay: 439556 seconds Block delay: 197
+MultiPropertyExample.execute(29604054621954071017799906488721273785300073960331870089110752162068995714493,4370001) from: 0x0000000000000000000000000000000000010000 Time delay: 82670 seconds Block delay: 2497
+
+[2026-07-27 20:17:23.44] [Worker 0] Test echidna_value_a_safe falsified!
+  Call sequence:
+MultiPropertyExample.prepare() from: 0x0000000000000000000000000000000000020000 Time delay: 519847 seconds Block delay: 103
+MultiPropertyExample.authorize() from: 0x0000000000000000000000000000000000010000 Time delay: 439556 seconds Block delay: 197
+MultiPropertyExample.execute(29604054621954071017799906488721273785300073960331870089110752162068995714493,4370001) from: 0x0000000000000000000000000000000000010000 Time delay: 82670 seconds Block delay: 2497
+
+[2026-07-27 20:17:23.44] [Worker 0] New coverage: 456 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 20:17:25.10] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:17:25.10] [status] tests: 2/2, fuzzing: 191/100000, values: [], cov: 456, corpus: 3, gas/s: 1919992
+echidna_value_b_safe: failed!💥  
+  Call sequence:
+    MultiPropertyExample.prepare()
+    MultiPropertyExample.authorize()
+    MultiPropertyExample.execute(1477076972069565376170676083,201)
+
+Traces: 
+
+echidna_value_a_safe: failed!💥  
+  Call sequence:
+    MultiPropertyExample.prepare()
+    MultiPropertyExample.authorize()
+    MultiPropertyExample.execute(101,0)
+
+Traces: 
+
+
+Unique instructions: 456
+Unique codehashes: 1
+Corpus size: 3
+Seed: 19
+Total calls: 191
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.46
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:17:25+08:00
+FORMAL_B2_RUN_COMPLETED=1

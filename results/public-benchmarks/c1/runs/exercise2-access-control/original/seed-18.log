@@ -1,0 +1,48 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=original
+COMPILER=0.8.20
+SEED=18
+CONTRACT_FILE=contracts/public-benchmarks/raw/exercise2/solution.sol
+CONTRACT_NAME=TestToken
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T16:09:54+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:09:54.83] Compiling `contracts/public-benchmarks/raw/exercise2/solution.sol`... Done! (0.314891762s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/raw/exercise2/solution.sol:TestToken
+[2026-07-28 16:09:55.15] Running slither on `contracts/public-benchmarks/raw/exercise2/solution.sol`... Done! (0.419803633s)
+[2026-07-28 16:09:55.58] [Worker 0] New coverage: 499 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 16:09:55.60] [Worker 0] New coverage: 524 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 16:09:55.60] [Worker 0] Test echidna_no_transfer falsified!
+  Call sequence:
+TestToken.Owner() Time delay: 414736 seconds Block delay: 32
+TestToken.resume() Time delay: 510837 seconds Block delay: 23722
+
+[2026-07-28 16:09:55.60] [Worker 0] New coverage: 549 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 16:09:56.18] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:09:56.18] [status] tests: 1/1, fuzzing: 186/100000, values: [], cov: 549, corpus: 3, gas/s: 3514320
+echidna_no_transfer: failed!💥  
+  Call sequence:
+    TestToken.Owner()
+    TestToken.resume()
+
+Traces: 
+
+
+Unique instructions: 549
+Unique codehashes: 1
+Corpus size: 3
+Seed: 18
+Total calls: 186
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.39
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:09:56+08:00
+PUBLIC_C1_RUN_COMPLETED=1

@@ -1,0 +1,44 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=branch-value
+METHOD=matched-random-k1
+SEED=26
+SCHEDULE_SEED=20260805
+SELECTION_ID=b03-o005
+SELECTED_CANDIDATE_INDICES=6
+SELECTION_SHA256=124423bde0040e4bdb16f28d692f674e4a65b1c28db31cfc380a73088bc2debe
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/branch-value/candidate-006.sol
+CONTRACT_NAME=MatchedRandomV1BranchValueC006Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:14:44+08:00
+[2026-08-06 11:14:44.30] Compiling `contracts/harnesses/matched-random-v1/branch-value/candidate-006.sol`... Done! (0.129984172s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/branch-value/candidate-006.sol:MatchedRandomV1BranchValueC006Harness
+[2026-08-06 11:14:44.44] Running slither on `contracts/harnesses/matched-random-v1/branch-value/candidate-006.sol`... Done! (0.216406113s)
+[2026-08-06 11:14:44.67] [Worker 0] New coverage: 472 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:14:45.31] [Worker 0] New coverage: 475 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:14:45.45] [Worker 0] New coverage: 606 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:14:47.67] [status] tests: 0/1, fuzzing: 23986/100000, values: [], cov: 606, corpus: 3, gas/s: 257840701
+[2026-08-06 11:14:50.67] [status] tests: 0/1, fuzzing: 50978/100000, values: [], cov: 606, corpus: 3, gas/s: 291379836
+[2026-08-06 11:14:53.67] [status] tests: 0/1, fuzzing: 77450/100000, values: [], cov: 606, corpus: 3, gas/s: 285890412
+[2026-08-06 11:14:56.13] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:14:56.14] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 606, corpus: 3, gas/s: 364131459
+echidna_value_safe: passing
+
+Unique instructions: 606
+Unique codehashes: 2
+Corpus size: 3
+Seed: 26
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:14:56+08:00
+PROCESS_WALL_SECONDS=11.892934
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

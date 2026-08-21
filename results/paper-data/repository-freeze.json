@@ -1,0 +1,46 @@
+{
+  "freeze_format": 1,
+  "generated_at": "2026-08-06T23:23:42+08:00",
+  "repository_base_commit": "4fb0f71fda37ac5956be2b060250a09bba8b2e90",
+  "repository_branch": "master",
+  "inventory": "results/paper-data/repository-files.tsv",
+  "inventory_excludes": [
+    ".git/ (primary repository metadata)",
+    "results/paper-data/repository-files.tsv",
+    "results/paper-data/repository-freeze.json"
+  ],
+  "file_count": 24188,
+  "byte_count": 1147014988,
+  "workspace_digest": "3139b408eeaf8e4a159459d94eeda1b198ff9b83f5eba6e488eb66755481bb81",
+  "scope_file_counts": {
+    "excluded_generated_artifact": 1321,
+    "external_dependency": 3428,
+    "external_vcs_metadata": 166,
+    "historical_checkpoint": 8,
+    "local_toolchain": 4704,
+    "project_managed": 14485,
+    "runtime_cache": 76
+  },
+  "scope_byte_counts": {
+    "excluded_generated_artifact": 6799168,
+    "external_dependency": 263069993,
+    "external_vcs_metadata": 215918055,
+    "historical_checkpoint": 732240,
+    "local_toolchain": 591485778,
+    "project_managed": 68100072,
+    "runtime_cache": 909682
+  },
+  "environment": {
+    "dotnet_version": "8.0.423",
+    "smartian_commit": "eca1ed1d60c88ec5402055a05b59174b7288264c",
+    "smartian_submodules": [
+      "409a9c1e0886810b6a7b4d7fba4e8dd0f647722b EVMAnalysis/B2R2 (409a9c1e)",
+      " 7d661364f0f7097f17a8e6206a9a797acf94c649 nethermind (heads/master)"
+    ]
+  },
+  "notes": [
+    "All regular files under the workspace were inventoried except the primary .git metadata and the two self-referential freeze outputs.",
+    "Local toolchains, nested repositories, caches, checkpoints, and excluded generated artifacts are recorded but are not part of the paper evidence whitelist.",
+    "The Git commit created after this inventory is the authoritative managed-project snapshot."
+  ]
+}

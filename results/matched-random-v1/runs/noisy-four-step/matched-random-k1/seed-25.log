@@ -1,0 +1,50 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=noisy-four-step
+METHOD=matched-random-k1
+SEED=25
+SCHEDULE_SEED=20260805
+SELECTION_ID=b08-o002
+SELECTED_CANDIDATE_INDICES=1
+SELECTION_SHA256=e577291f2c36110ec956c308b37a5e47bc2f631bd849d1cde547b0e52007679b
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/noisy-four-step/candidate-001.sol
+CONTRACT_NAME=MatchedRandomV1NoisyFourStepC001Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:18:37+08:00
+[2026-08-06 11:18:38.02] Compiling `contracts/harnesses/matched-random-v1/noisy-four-step/candidate-001.sol`... Done! (0.137116371s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/noisy-four-step/candidate-001.sol:MatchedRandomV1NoisyFourStepC001Harness
+[2026-08-06 11:18:38.16] Running slither on `contracts/harnesses/matched-random-v1/noisy-four-step/candidate-001.sol`... Done! (0.2174866s)
+[2026-08-06 11:18:38.39] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+MatchedRandomV1NoisyFourStepC001Harness.matched_random_sequence_1(59576726489646263020578252898212513257258584485310017834613929373736132327796) Time delay: 414579 seconds Block delay: 23275
+
+[2026-08-06 11:18:38.39] [Worker 0] New coverage: 768 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:18:39.76] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:18:39.76] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 768, corpus: 1, gas/s: 121593
+echidna_value_safe: failed!💥  
+  Call sequence:
+    MatchedRandomV1NoisyFourStepC001Harness.matched_random_sequence_1(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/noisy-four-step/candidate-001.sol:24)[0m
+ └╴← (false)
+
+
+Unique instructions: 768
+Unique codehashes: 2
+Corpus size: 1
+Seed: 25
+Total calls: 2
+
+
+EXIT_CODE=1
+END_TIME=2026-08-06T11:18:39+08:00
+PROCESS_WALL_SECONDS=1.808688
+MATCHED_RANDOM_RUN_STATUS=falsified
+MATCHED_RANDOM_RUN_COMPLETED=1

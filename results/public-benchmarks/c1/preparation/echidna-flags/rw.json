@@ -1,0 +1,28 @@
+{
+  "PublicEchidnaFlagsTarget": {
+    "set0(int256)": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "PublicEchidnaFlagsTarget.flag0"
+      ]
+    },
+    "set1(int256)": {
+      "visibility": "public",
+      "read": [
+        "PublicEchidnaFlagsTarget.flag0"
+      ],
+      "write": [
+        "PublicEchidnaFlagsTarget.flag1"
+      ]
+    },
+    "echidna_sometimesfalse()": {
+      "visibility": "public",
+      "read": [
+        "PublicEchidnaFlagsTarget.flag0",
+        "PublicEchidnaFlagsTarget.flag1"
+      ],
+      "write": []
+    }
+  }
+}

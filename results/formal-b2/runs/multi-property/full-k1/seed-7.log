@@ -1,0 +1,53 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=multi-property
+METHOD=full-k1
+SEED=7
+CONTRACT_FILE=contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol
+CONTRACT_NAME=MultiPropertyFullK1Harness
+CONFIG_FILE=configs/formal-b2-multi-harness.yaml
+START_TIME=2026-07-27T20:18:11+08:00
+
+[2026-07-27 20:18:11.77] Compiling `contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol`... Done! (0.309118098s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:MultiPropertyFullK1Harness
+[2026-07-27 20:18:12.08] Running slither on `contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol`... Done! (0.412500871s)
+[2026-07-27 20:18:12.51] [Worker 0] Test echidna_value_b_safe falsified!
+  Call sequence:
+MultiPropertyFullK1Harness.full_sequence_1(202,764) Time delay: 526194 seconds Block delay: 8447
+
+[2026-07-27 20:18:12.51] [Worker 0] Test echidna_value_a_safe falsified!
+  Call sequence:
+MultiPropertyFullK1Harness.full_sequence_1(202,764) Time delay: 526194 seconds Block delay: 8447
+
+[2026-07-27 20:18:12.51] [Worker 0] New coverage: 699 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 20:18:14.80] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:18:14.80] [status] tests: 2/2, fuzzing: 2/100000, values: [], cov: 699, corpus: 1, gas/s: 82023
+echidna_value_b_safe: failed!💥  
+  Call sequence:
+    MultiPropertyFullK1Harness.full_sequence_1(0,201)
+
+Traces: 
+call [1mMultiPropertyExample[0m::echidna_value_b_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:37)[0m
+ └╴← (false)
+
+echidna_value_a_safe: failed!💥  
+  Call sequence:
+    MultiPropertyFullK1Harness.full_sequence_1(101,0)
+
+Traces: 
+call [1mMultiPropertyExample[0m::echidna_value_a_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/MultiPropertyFullK1Harness.sol:29)[0m
+ └╴← (false)
+
+
+Unique instructions: 699
+Unique codehashes: 2
+Corpus size: 1
+Seed: 7
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=3.12
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:18:14+08:00
+FORMAL_B2_RUN_COMPLETED=1

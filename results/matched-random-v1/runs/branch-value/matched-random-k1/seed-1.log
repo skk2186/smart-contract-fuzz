@@ -1,0 +1,45 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=branch-value
+METHOD=matched-random-k1
+SEED=1
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o002
+SELECTED_CANDIDATE_INDICES=4
+SELECTION_SHA256=b92e86e13de9e3881661135cc2d6daded78c2d97e89110f19eb1a0c87c852c88
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/branch-value/candidate-004.sol
+CONTRACT_NAME=MatchedRandomV1BranchValueC004Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:10:13+08:00
+[2026-08-06 11:10:14.02] Compiling `contracts/harnesses/matched-random-v1/branch-value/candidate-004.sol`... Done! (0.324937161s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/branch-value/candidate-004.sol:MatchedRandomV1BranchValueC004Harness
+[2026-08-06 11:10:14.36] Running slither on `contracts/harnesses/matched-random-v1/branch-value/candidate-004.sol`... Done! (0.266411638s)
+[2026-08-06 11:10:14.65] [Worker 0] New coverage: 503 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:10:15.26] [Worker 0] New coverage: 634 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:10:16.42] [Worker 0] New coverage: 637 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:10:17.64] [status] tests: 0/1, fuzzing: 16493/100000, values: [], cov: 637, corpus: 3, gas/s: 178213574
+[2026-08-06 11:10:20.64] [status] tests: 0/1, fuzzing: 40579/100000, values: [], cov: 637, corpus: 3, gas/s: 260176789
+[2026-08-06 11:10:23.65] [status] tests: 0/1, fuzzing: 64499/100000, values: [], cov: 637, corpus: 3, gas/s: 259182132
+[2026-08-06 11:10:26.66] [status] tests: 0/1, fuzzing: 88464/100000, values: [], cov: 637, corpus: 3, gas/s: 259710392
+[2026-08-06 11:10:28.13] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:10:28.13] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 637, corpus: 3, gas/s: 375695315
+echidna_value_safe: passing
+
+Unique instructions: 637
+Unique codehashes: 2
+Corpus size: 3
+Seed: 1
+Total calls: 100001
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:10:28+08:00
+PROCESS_WALL_SECONDS=14.237419
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

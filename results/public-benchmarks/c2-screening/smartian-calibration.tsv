@@ -1,0 +1,4 @@
+run_id	benchmark	bytecode	abi	timelimit_sec	command_mode	known_smartian_alarm	observed_exit_code	observed_testcase_files	observed_bug_files	formal_comparable
+cal-20260806-ib	IB	baselines/smartian/examples/bc/IB.bin	baselines/smartian/examples/abi/IB.abi	5	default	IntegerBug	0	13	0	no
+cal-20260806-bd-false	BD_false	baselines/smartian/examples/bc/BD_false.bin	baselines/smartian/examples/abi/BD_false.abi	5	default	none	0	18	0	no
+cal-20260806-ms-true	MS_true	baselines/smartian/examples/bc/MS_true.bin	baselines/smartian/examples/abi/MS_true.abi	5	default	MultipleSend	0	2	1	no

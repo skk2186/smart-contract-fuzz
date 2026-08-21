@@ -1,0 +1,45 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=dependency-k10
+SEED=5
+CONTRACT_FILE=contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol
+CONTRACT_NAME=NoisyFourStepDependencyHarness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T14:57:45+08:00
+
+[2026-07-27 14:57:45.58] Compiling `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.317421135s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:NoisyFourStepDependencyHarness
+[2026-07-27 14:57:45.90] Running slither on `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.445932569s)
+[2026-07-27 14:57:46.36] [Worker 0] New coverage: 628 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 14:57:46.36] [Worker 0] New coverage: 940 instr, 2 contracts, 2 seqs in corpus
+[2026-07-27 14:57:46.36] [Worker 0] New coverage: 1233 instr, 2 contracts, 3 seqs in corpus
+[2026-07-27 14:57:46.37] [Worker 0] New coverage: 1483 instr, 2 contracts, 4 seqs in corpus
+[2026-07-27 14:57:46.37] [Worker 0] New coverage: 1728 instr, 2 contracts, 5 seqs in corpus
+[2026-07-27 14:57:46.37] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyHarness.dependency_sequence_6(64313439880868508366848636218780551298664325886541163131486514130606467994472) Time delay: 376096 seconds Block delay: 59983
+
+[2026-07-27 14:57:46.37] [Worker 0] New coverage: 2160 instr, 2 contracts, 6 seqs in corpus
+[2026-07-27 14:57:47.69] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:57:47.69] [status] tests: 1/1, fuzzing: 16/100000, values: [], cov: 2160, corpus: 6, gas/s: 1064969
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyHarness.dependency_sequence_6(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 2160
+Unique codehashes: 2
+Corpus size: 6
+Seed: 5
+Total calls: 16
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.17
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:57:47+08:00
+FORMAL_RUN_COMPLETED=1

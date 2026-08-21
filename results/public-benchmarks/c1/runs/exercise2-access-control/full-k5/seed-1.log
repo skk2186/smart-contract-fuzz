@@ -1,0 +1,46 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=full-k5
+COMPILER=0.8.20
+SEED=1
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol
+CONTRACT_NAME=PublicExercise2FullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:17:27+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:17:27.74] Compiling `contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol`... Done! (0.32255985s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol:PublicExercise2FullK5Harness
+[2026-07-28 16:17:28.07] Running slither on `contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol`... Done! (0.423524344s)
+[2026-07-28 16:17:28.50] [Worker 0] Test echidna_no_transfer falsified!
+  Call sequence:
+PublicExercise2FullK5Harness.full_sequence_2() Time delay: 117472 seconds Block delay: 12858
+
+[2026-07-28 16:17:28.50] [Worker 0] New coverage: 456 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:17:28.50] [Worker 0] A test was falsified. Stopping.
+[2026-07-28 16:17:28.50] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 456, corpus: 1, gas/s: 0
+echidna_no_transfer: failed!💥  
+  Call sequence:
+    PublicExercise2FullK5Harness.full_sequence_2()
+
+Traces: 
+call [1mTestToken[0m::echidna_no_transfer()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicExercise2FullK5Harness.sol:36)[0m
+ └╴← (false)
+
+
+Unique instructions: 456
+Unique codehashes: 2
+Corpus size: 1
+Seed: 1
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=0.79
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:17:28+08:00
+PUBLIC_C1_RUN_COMPLETED=1

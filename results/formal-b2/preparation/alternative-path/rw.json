@@ -1,0 +1,50 @@
+{
+  "AlternativePathExample": {
+    "openRouteA()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "AlternativePathExample.stage"
+      ]
+    },
+    "openRouteB()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "AlternativePathExample.stage"
+      ]
+    },
+    "openWrongRoute()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "AlternativePathExample.stage"
+      ]
+    },
+    "confirm()": {
+      "visibility": "public",
+      "read": [
+        "AlternativePathExample.stage"
+      ],
+      "write": [
+        "AlternativePathExample.stage"
+      ]
+    },
+    "execute(uint256)": {
+      "visibility": "public",
+      "read": [
+        "AlternativePathExample.stage"
+      ],
+      "write": [
+        "AlternativePathExample.value"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "AlternativePathExample.value"
+      ],
+      "write": []
+    }
+  }
+}

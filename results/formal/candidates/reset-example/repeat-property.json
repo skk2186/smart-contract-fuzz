@@ -1,0 +1,1359 @@
+{
+  "ResetExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "ResetExample.value"
+    ],
+    "target_functions": [
+      "execute(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 33,
+    "retained_path_count": 33,
+    "dfs_expansions": 33,
+    "paths": [
+      {
+        "sequence": [
+          "authorize()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 4
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 5
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 6
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 7
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 8
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 9
+      },
+      {
+        "sequence": [
+          "commit()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 10
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 11
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 12
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 13
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 14
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 15
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 16
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 17
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 8,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 18
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 19
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 20
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 21
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 22
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 23
+      },
+      {
+        "sequence": [
+          "commit()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "commit()": 2
+        },
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 24
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 25
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 26
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 27
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "commit()",
+            "score": 3,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": [
+              "ResetExample.stage"
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 28
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 29
+      },
+      {
+        "sequence": [
+          "begin()",
+          "execute(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "begin()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 30
+      },
+      {
+        "sequence": [
+          "commit()",
+          "execute(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 31
+      },
+      {
+        "sequence": [
+          "poison()",
+          "execute(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "poison()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 32
+      },
+      {
+        "sequence": [
+          "reset()",
+          "execute(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "reset()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "ResetExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 33
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+[2026-07-22 22:50:04.46] Compiling `contracts/benchmarks/ResetExample.sol`... Done! (0.296653973s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/ResetExample.sol:ResetExample
+[2026-07-22 22:50:04.75] Running slither on `contracts/benchmarks/ResetExample.sol`... Done! (0.434777898s)
+[2026-07-22 22:50:05.20] [Worker 0] New coverage: 406 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 22:50:05.20] [Worker 0] New coverage: 428 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 22:50:05.20] [Worker 0] New coverage: 528 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 22:50:05.20] [Worker 0] New coverage: 586 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 22:50:05.21] [Worker 0] New coverage: 701 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 22:50:05.21] [Worker 0] New coverage: 726 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 22:50:05.24] [Worker 0] New coverage: 729 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 22:50:05.27] [Worker 0] New coverage: 754 instr, 1 contracts, 8 seqs in corpus
+[2026-07-22 22:50:05.46] [Worker 0] New coverage: 810 instr, 1 contracts, 9 seqs in corpus
+[2026-07-22 22:50:05.52] [Worker 0] New coverage: 810 instr, 1 contracts, 10 seqs in corpus
+[2026-07-22 22:50:05.59] [Worker 0] New coverage: 885 instr, 1 contracts, 11 seqs in corpus
+[2026-07-22 22:50:05.64] [Worker 0] New coverage: 910 instr, 1 contracts, 12 seqs in corpus
+[2026-07-22 22:50:05.65] [Worker 0] New coverage: 923 instr, 1 contracts, 13 seqs in corpus
+[2026-07-22 22:50:05.86] [Worker 0] New coverage: 948 instr, 1 contracts, 14 seqs in corpus
+[2026-07-22 22:50:06.00] [Worker 0] New coverage: 948 instr, 1 contracts, 15 seqs in corpus
+[2026-07-22 22:50:08.20] [status] tests: 0/1, fuzzing: 48817/100000, values: [], cov: 948, corpus: 15, gas/s: 407217945
+[2026-07-22 22:50:11.09] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:50:11.09] [status] tests: 0/1, fuzzing: 100004/100000, values: [], cov: 948, corpus: 15, gas/s: 429306997
+echidna_value_safe: passing
+
+Unique instructions: 948
+Unique codehashes: 1
+Corpus size: 15
+Seed: 10
+Total calls: 100004
+
+PROCESS_WALL_SECONDS=6.70
+EXIT_CODE=0

@@ -1,0 +1,48 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-onefunc
+METHOD=original
+COMPILER=0.4.25
+SEED=20
+CONTRACT_FILE=contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol
+CONTRACT_NAME=SmartBugsOneFuncEchidna
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T19:54:22+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.25+commit.59dbf8f1.Linux.g++
+
+[2026-07-28 19:54:22.71] Compiling `contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol`... Done! (0.324928767s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol:SmartBugsOneFuncEchidna
+[2026-07-28 19:54:23.04] Running slither on `contracts/public-benchmarks/adapted/SmartBugsOneFuncEchidna.sol`... Done! (0.437867658s)
+[2026-07-28 19:54:23.49] [Worker 0] Test echidna_count_does_not_underflow falsified!
+  Call sequence:
+SmartBugsOneFuncEchidna.run(8218930181704987205908330337278326372841270234437435816597797381357213783306) from: 0x0000000000000000000000000000000000020000 Time delay: 344203 seconds Block delay: 53166
+SmartBugsOneFuncEchidna.run(52285233491901655739483903249183963238910049567803436063413646112267953526466) from: 0x0000000000000000000000000000000000010000 Time delay: 404997 seconds Block delay: 60054
+
+[2026-07-28 19:54:23.49] [Worker 0] New coverage: 120 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 19:54:24.11] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 19:54:24.11] [status] tests: 1/1, fuzzing: 5/100000, values: [], cov: 120, corpus: 1, gas/s: 122127
+echidna_count_does_not_underflow: failed!💥  
+  Call sequence:
+    SmartBugsOneFuncEchidna.run(0)
+    SmartBugsOneFuncEchidna.run(2)
+
+Traces: 
+
+
+Unique instructions: 120
+Unique codehashes: 1
+Corpus size: 1
+Seed: 20
+Total calls: 5
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.46
+
+EXIT_CODE=1
+END_TIME=2026-07-28T19:54:24+08:00
+
+PUBLIC_C1_RUN_STATUS=valid
+PUBLIC_C1_RUN_COMPLETED=1

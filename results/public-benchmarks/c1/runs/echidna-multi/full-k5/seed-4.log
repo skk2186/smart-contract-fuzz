@@ -1,0 +1,54 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=full-k5
+COMPILER=0.8.20
+SEED=4
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol
+CONTRACT_NAME=PublicEchidnaMultiFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:02:29+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:02:29.51] Compiling `contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol`... Done! (0.313105508s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol:PublicEchidnaMultiFullK5Harness
+[2026-07-28 16:02:29.83] Running slither on `contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol`... Done! (0.414900024s)
+[2026-07-28 16:02:30.26] [Worker 0] New coverage: 517 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:02:30.26] [Worker 0] New coverage: 683 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:02:30.27] [Worker 0] New coverage: 786 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:02:30.37] [Worker 0] New coverage: 917 instr, 2 contracts, 4 seqs in corpus
+[2026-07-28 16:02:30.79] [Worker 0] New coverage: 920 instr, 2 contracts, 5 seqs in corpus
+[2026-07-28 16:02:33.25] [status] tests: 0/1, fuzzing: 24903/100000, values: [], cov: 920, corpus: 5, gas/s: 114598205
+[2026-07-28 16:02:36.26] [status] tests: 0/1, fuzzing: 52505/100000, values: [], cov: 920, corpus: 5, gas/s: 126564042
+[2026-07-28 16:02:39.26] [status] tests: 0/1, fuzzing: 79407/100000, values: [], cov: 920, corpus: 5, gas/s: 124573203
+[2026-07-28 16:02:40.33] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+PublicEchidnaMultiFullK5Harness.full_sequence_1(12,8,115348496088697155975364235204792822632386352499180196646534398850834999509363) Time delay: 569114 seconds Block delay: 30784
+
+[2026-07-28 16:02:40.33] [Worker 0] New coverage: 1075 instr, 2 contracts, 6 seqs in corpus
+[2026-07-28 16:02:41.41] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:02:41.41] [status] tests: 1/1, fuzzing: 89085/100000, values: [], cov: 1075, corpus: 6, gas/s: 66554919
+echidna_state3: failed!💥  
+  Call sequence:
+    PublicEchidnaMultiFullK5Harness.full_sequence_1(12,8,16926425035759895103247470763130933714453669351000580)
+
+Traces: 
+call [1mC[0m::echidna_state3()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol:37)[0m
+ └╴← (false)
+
+
+Unique instructions: 1075
+Unique codehashes: 2
+Corpus size: 6
+Seed: 4
+Total calls: 89085
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=11.97
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:02:41+08:00
+PUBLIC_C1_RUN_COMPLETED=1

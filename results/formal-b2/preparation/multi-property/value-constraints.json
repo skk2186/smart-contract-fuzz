@@ -1,0 +1,90 @@
+{
+  "MultiPropertyExample": {
+    "state_variables": [
+      "stage",
+      "valueA",
+      "valueB"
+    ],
+    "functions": {
+      "prepare()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "authorize()": {
+        "constant_writes": {
+          "stage": [
+            {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            },
+            "condition": "stage == 1"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "execute(uint256,uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "stage",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 2,
+              "raw": "2"
+            },
+            "condition": "stage == 2"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "valueA",
+            "expression": "x",
+            "node_expression": "valueA = x"
+          },
+          {
+            "variable": "valueB",
+            "expression": "y",
+            "node_expression": "valueB = y"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_a_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "echidna_value_b_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

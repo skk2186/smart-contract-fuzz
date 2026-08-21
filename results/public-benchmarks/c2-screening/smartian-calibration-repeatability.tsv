@@ -1,0 +1,10 @@
+repeat_id	benchmark	timelimit_sec	completion_marker	exit_code_evidence	testcase_files	bug_files	bug_types
+rep-1-IB	IB	5	1	captured_zero	14	1	IntegerBug
+rep-1-BD_false	BD_false	5	1	captured_zero	14	0	none
+rep-1-MS_true	MS_true	5	1	captured_zero	2	1	MultipleSend
+rep-2-IB	IB	5	1	captured_zero	14	0	none
+rep-2-BD_false	BD_false	5	1	captured_zero	14	0	none
+rep-2-MS_true	MS_true	5	1	same_command_recapture_zero	2	1	MultipleSend
+rep-3-IB	IB	5	1	same_command_recapture_zero	14	0	none
+rep-3-BD_false	BD_false	5	1	captured_zero	16	0	none
+rep-3-MS_true	MS_true	5	1	captured_zero	2	1	MultipleSend

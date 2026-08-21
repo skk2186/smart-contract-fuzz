@@ -1,0 +1,4 @@
+method,total_logs,valid_runs,falsified_runs,budget_exhausted_runs,passed_runs,startup_error_runs,incomplete_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+full-k1,30,30,30,0,0,0,0,1.0,2.0,2.0,0.46,1.9
+full-k5,30,30,30,0,0,0,0,1.0,2.0,2.6333,0.46,1.89
+original,30,30,30,0,0,0,0,1.0,5.0,10.0667,0.45,1.4

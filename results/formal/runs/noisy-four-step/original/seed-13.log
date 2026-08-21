@@ -1,0 +1,64 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=original
+SEED=13
+CONTRACT_FILE=contracts/benchmarks/NoisyFourStepExample.sol
+CONTRACT_NAME=NoisyFourStepExample
+CONFIG_FILE=configs/formal-original-seq4.yaml
+START_TIME=2026-07-27T14:56:27+08:00
+
+[2026-07-27 14:56:27.09] Compiling `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.310771033s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/NoisyFourStepExample.sol:NoisyFourStepExample
+[2026-07-27 14:56:27.40] Running slither on `contracts/benchmarks/NoisyFourStepExample.sol`... Done! (0.411028229s)
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 287 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 396 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 443 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 481 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 508 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 14:56:27.83] [Worker 0] New coverage: 708 instr, 1 contracts, 6 seqs in corpus
+[2026-07-27 14:56:27.87] [Worker 0] New coverage: 733 instr, 1 contracts, 7 seqs in corpus
+[2026-07-27 14:56:27.89] [Worker 0] New coverage: 736 instr, 1 contracts, 8 seqs in corpus
+[2026-07-27 14:56:27.92] [Worker 0] New coverage: 761 instr, 1 contracts, 9 seqs in corpus
+[2026-07-27 14:56:27.99] [Worker 0] New coverage: 817 instr, 1 contracts, 10 seqs in corpus
+[2026-07-27 14:56:28.51] [Worker 0] New coverage: 892 instr, 1 contracts, 11 seqs in corpus
+[2026-07-27 14:56:28.53] [Worker 0] New coverage: 892 instr, 1 contracts, 12 seqs in corpus
+[2026-07-27 14:56:28.59] [Worker 0] New coverage: 917 instr, 1 contracts, 13 seqs in corpus
+[2026-07-27 14:56:28.88] [Worker 0] New coverage: 942 instr, 1 contracts, 14 seqs in corpus
+[2026-07-27 14:56:29.27] [Worker 0] New coverage: 942 instr, 1 contracts, 15 seqs in corpus
+[2026-07-27 14:56:29.36] [Worker 0] New coverage: 981 instr, 1 contracts, 16 seqs in corpus
+[2026-07-27 14:56:29.66] [Worker 0] New coverage: 981 instr, 1 contracts, 17 seqs in corpus
+[2026-07-27 14:56:29.72] [Worker 0] New coverage: 1006 instr, 1 contracts, 18 seqs in corpus
+[2026-07-27 14:56:30.73] [Worker 0] New coverage: 1019 instr, 1 contracts, 19 seqs in corpus
+[2026-07-27 14:56:30.82] [status] tests: 0/1, fuzzing: 40247/100000, values: [], cov: 1019, corpus: 19, gas/s: 347999752
+[2026-07-27 14:56:31.83] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepExample.register() from: 0x0000000000000000000000000000000000020000 Time delay: 384546 seconds Block delay: 255
+NoisyFourStepExample.deposit() from: 0x0000000000000000000000000000000000020000 Time delay: 19029 seconds Block delay: 24311
+NoisyFourStepExample.approve() from: 0x0000000000000000000000000000000000020000 Time delay: 322273 seconds Block delay: 37559
+NoisyFourStepExample.withdraw(85071257677943375445281169376588915364517913863725385032374186501994635187685) from: 0x0000000000000000000000000000000000010000 Time delay: 322274 seconds Block delay: 50643
+
+[2026-07-27 14:56:31.83] [Worker 0] New coverage: 1030 instr, 1 contracts, 20 seqs in corpus
+[2026-07-27 14:56:32.76] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:56:32.76] [status] tests: 1/1, fuzzing: 56941/100000, values: [], cov: 1030, corpus: 20, gas/s: 212521528
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepExample.register()
+    NoisyFourStepExample.deposit()
+    NoisyFourStepExample.approve()
+    NoisyFourStepExample.withdraw(101)
+
+Traces: 
+
+
+Unique instructions: 1030
+Unique codehashes: 1
+Corpus size: 20
+Seed: 13
+Total calls: 56941
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=5.72
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:56:32+08:00
+FORMAL_RUN_COMPLETED=1

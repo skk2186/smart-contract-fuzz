@@ -1,0 +1,19 @@
+{
+  "status": "frozen_external_baseline_batch_completed",
+  "scope": "external_baseline_for_existing_c1_legacy_targets",
+  "c2_candidate_registry_changed": false,
+  "targets": ["smartbugs-multifunc", "smartbugs-onefunc"],
+  "compiler": "0.4.25",
+  "smartian_timelimit_sec": 30,
+  "repeats_per_target": 30,
+  "smartian_seed_parameter": "not_exposed",
+  "success_definition": "IntegerBug trace satisfies verified count-underflow property semantics",
+  "formal_batch_started": true,
+  "formal_batch_completed": true,
+  "run_root": "results/public-benchmarks/c2-screening/smartian-formal-20260806",
+  "total_runs": 60,
+  "completed_runs": 60,
+  "integer_bug_runs": 60,
+  "c2_registry_changed": false,
+  "scope_used": "C1 external baseline; targets were not promoted into C2"
+}

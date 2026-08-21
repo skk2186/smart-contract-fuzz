@@ -1,0 +1,8 @@
+testMode: property
+testLimit: 100000
+seqLen: 1
+timeout: 30
+workers: 1
+stopOnFail: false
+coverage: true
+format: text

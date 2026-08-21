@@ -1,0 +1,48 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=alternative-path
+METHOD=original
+SEED=13
+CONTRACT_FILE=contracts/benchmarks/AlternativePathExample.sol
+CONTRACT_NAME=AlternativePathExample
+CONFIG_FILE=configs/formal-b2-alternative-original.yaml
+START_TIME=2026-07-27T20:14:04+08:00
+
+[2026-07-27 20:14:04.21] Compiling `contracts/benchmarks/AlternativePathExample.sol`... Done! (0.299970731s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/AlternativePathExample.sol:AlternativePathExample
+[2026-07-27 20:14:04.51] Running slither on `contracts/benchmarks/AlternativePathExample.sol`... Done! (0.410431134s)
+[2026-07-27 20:14:04.94] [Worker 0] New coverage: 394 instr, 1 contracts, 1 seqs in corpus
+[2026-07-27 20:14:04.94] [Worker 0] New coverage: 423 instr, 1 contracts, 2 seqs in corpus
+[2026-07-27 20:14:04.94] [Worker 0] New coverage: 452 instr, 1 contracts, 3 seqs in corpus
+[2026-07-27 20:14:04.94] [Worker 0] New coverage: 455 instr, 1 contracts, 4 seqs in corpus
+[2026-07-27 20:14:04.94] [Worker 0] New coverage: 480 instr, 1 contracts, 5 seqs in corpus
+[2026-07-27 20:14:04.96] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+AlternativePathExample.openRouteA() from: 0x0000000000000000000000000000000000020000 Time delay: 269307 seconds Block delay: 4927
+AlternativePathExample.confirm() from: 0x0000000000000000000000000000000000010000 Time delay: 512439 seconds Block delay: 34720
+AlternativePathExample.execute(56685686257747807173481276093478354288924047620937631282807196785936940104220) from: 0x0000000000000000000000000000000000020000 Time delay: 65535 seconds Block delay: 27404
+
+[2026-07-27 20:14:04.96] [Worker 0] New coverage: 491 instr, 1 contracts, 6 seqs in corpus
+[2026-07-27 20:14:05.82] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:14:05.82] [status] tests: 1/1, fuzzing: 200/100000, values: [], cov: 491, corpus: 6, gas/s: 4454877
+echidna_value_safe: failed!💥  
+  Call sequence:
+    AlternativePathExample.openRouteA()
+    AlternativePathExample.confirm()
+    AlternativePathExample.execute(101)
+
+Traces: 
+
+
+Unique instructions: 491
+Unique codehashes: 1
+Corpus size: 6
+Seed: 13
+Total calls: 200
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.66
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:14:05+08:00
+FORMAL_B2_RUN_COMPLETED=1

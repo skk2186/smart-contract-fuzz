@@ -1,0 +1,44 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal-b2
+BENCHMARK=alternative-path
+METHOD=matched-random-k1
+SEED=7
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o004
+SELECTED_CANDIDATE_INDICES=5
+SELECTION_SHA256=b07420a99a983aedebf87ec33959ca986c0b8bd36a0169a250b30c9345d1c13d
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/alternative-path/candidate-005.sol
+CONTRACT_NAME=MatchedRandomV1AlternativePathC005Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-b2-alternative-harness.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:30:22+08:00
+[2026-08-06 11:30:22.36] Compiling `contracts/harnesses/matched-random-v1/alternative-path/candidate-005.sol`... Done! (0.138724601s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/alternative-path/candidate-005.sol:MatchedRandomV1AlternativePathC005Harness
+[2026-08-06 11:30:22.50] Running slither on `contracts/harnesses/matched-random-v1/alternative-path/candidate-005.sol`... Done! (0.214779991s)
+[2026-08-06 11:30:22.73] [Worker 0] New coverage: 415 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:30:22.82] [Worker 0] New coverage: 546 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:30:23.25] [Worker 0] New coverage: 549 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:30:25.72] [status] tests: 0/1, fuzzing: 28147/100000, values: [], cov: 549, corpus: 3, gas/s: 133117344
+[2026-08-06 11:30:28.73] [status] tests: 0/1, fuzzing: 60376/100000, values: [], cov: 549, corpus: 3, gas/s: 152636986
+[2026-08-06 11:30:31.73] [status] tests: 0/1, fuzzing: 92436/100000, values: [], cov: 549, corpus: 3, gas/s: 152297483
+[2026-08-06 11:30:32.44] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:30:32.44] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 549, corpus: 3, gas/s: 107915433
+echidna_value_safe: passing
+
+Unique instructions: 549
+Unique codehashes: 2
+Corpus size: 3
+Seed: 7
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:30:32+08:00
+PROCESS_WALL_SECONDS=10.162604
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

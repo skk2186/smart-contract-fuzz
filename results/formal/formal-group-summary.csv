@@ -1,0 +1,16 @@
+benchmark,method,total_logs,valid_runs,falsified_runs,budget_exhausted_runs,passed_runs,startup_error_runs,incomplete_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+branch-value,full-k1,30,30,30,0,0,0,0,1.0,2.0,3.0,0.43,2.11
+branch-value,original,30,30,28,2,0,0,0,0.9333,2583.5,18998.7857,0.675,2.015
+branch-value,property-k1,30,30,0,30,0,0,0,0.0,,,,12.29
+branch-value,value-k1,30,30,30,0,0,0,0,1.0,2.0,3.0,0.43,2.11
+noisy-four-step,dependency-k10,30,30,30,0,0,0,0,1.0,16.0,27.5333,0.465,2.19
+noisy-four-step,full-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.43,2.13
+noisy-four-step,original,30,30,26,4,0,0,0,0.8667,8746.0,18782.3462,1.2,3.38
+noisy-four-step,property-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.43,2.14
+repeated-call,full-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.44,2.235
+repeated-call,original,30,30,30,0,0,0,0,1.0,2663.5,9075.8,0.755,2.325
+repeated-call,value-no-repeat-k1,30,30,0,30,0,0,0,0.0,,,,13.545
+reset-example,dependency-k10,30,30,30,0,0,0,0,1.0,27.0,32.8333,0.47,2.18
+reset-example,full-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.44,2.135
+reset-example,original,30,30,27,3,0,0,0,0.9,4423.0,18849.1481,0.84,2.345
+reset-example,property-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.44,2.125

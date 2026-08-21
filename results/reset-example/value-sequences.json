@@ -1,0 +1,1645 @@
+{
+  "ResetExample": {
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "execute(uint256)"
+    ],
+    "paths": [
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 18,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": 12,
+        "value_score": 18,
+        "value_matches": 3,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "begin()",
+            "target": "authorize()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 12,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": 8,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "poison()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 255,
+                    "raw": "255"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 3
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": 10,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": 4,
+        "value_score": 10,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "reset()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "commit()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 4
+      },
+      {
+        "sequence": [
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": 6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 5
+      },
+      {
+        "sequence": [
+          "begin()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": 0,
+        "value_score": 4,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "begin()",
+            "target": "authorize()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 6
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": 0,
+        "value_score": 4,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "begin()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 7
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": 0,
+        "value_score": 4,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "poison()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 255,
+                    "raw": "255"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 8
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": 0,
+        "value_score": 4,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "reset()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 9
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": -2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 10
+      },
+      {
+        "sequence": [
+          "begin()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": -2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "begin()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 11
+      },
+      {
+        "sequence": [
+          "poison()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": -2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "poison()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 255,
+                    "raw": "255"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 12
+      },
+      {
+        "sequence": [
+          "reset()",
+          "execute(uint256)"
+        ],
+        "length": 2,
+        "score": -2,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "reset()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 13
+      },
+      {
+        "sequence": [
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": -4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": -8,
+        "value_score": -4,
+        "value_matches": 0,
+        "value_conflicts": 2,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 14
+      },
+      {
+        "sequence": [
+          "poison()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": -4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": -8,
+        "value_score": -4,
+        "value_matches": 0,
+        "value_conflicts": 2,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "poison()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 255,
+                    "raw": "255"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 15
+      },
+      {
+        "sequence": [
+          "reset()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 3,
+        "score": -4,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 4,
+        "value_adjustment": -8,
+        "value_score": -4,
+        "value_matches": 0,
+        "value_conflicts": 2,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "reset()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 16
+      },
+      {
+        "sequence": [
+          "begin()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": -6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": -12,
+        "value_score": -6,
+        "value_matches": 0,
+        "value_conflicts": 3,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "begin()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 17
+      },
+      {
+        "sequence": [
+          "poison()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": -6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": -12,
+        "value_score": -6,
+        "value_matches": 0,
+        "value_conflicts": 3,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "poison()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 255,
+                    "raw": "255"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 18
+      },
+      {
+        "sequence": [
+          "reset()",
+          "commit()",
+          "authorize()",
+          "execute(uint256)"
+        ],
+        "length": 4,
+        "score": -6,
+        "dependency_variables": [
+          "stage"
+        ],
+        "target_function": "execute(uint256)",
+        "property_score": 6,
+        "value_adjustment": -12,
+        "value_score": -6,
+        "value_matches": 0,
+        "value_conflicts": 3,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "reset()",
+            "target": "commit()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "commit()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 3,
+                    "raw": "3"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 3,
+                  "raw": "3"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 19
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

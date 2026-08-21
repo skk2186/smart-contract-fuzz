@@ -1,0 +1,5 @@
+method,total_logs,valid_runs,falsified_runs,budget_exhausted_runs,passed_runs,startup_error_runs,incomplete_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+dependency-k10,30,30,30,0,0,0,0,1.0,27.0,32.8333,0.47,2.18
+full-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.44,2.135
+original,30,30,27,3,0,0,0,0.9,4423.0,18849.1481,0.84,2.345
+property-k1,30,30,30,0,0,0,0,1.0,2.0,2.5,0.44,2.125

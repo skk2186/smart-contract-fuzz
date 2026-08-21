@@ -1,0 +1,68 @@
+{
+  "PublicEchidnaFlagsTarget": {
+    "property_functions": [
+      "echidna_sometimesfalse()"
+    ],
+    "property_variables": [
+      "PublicEchidnaFlagsTarget.flag0",
+      "PublicEchidnaFlagsTarget.flag1"
+    ],
+    "target_functions": [
+      "set0(int256)",
+      "set1(int256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 1,
+    "retained_path_count": 1,
+    "dfs_expansions": 1,
+    "paths": [
+      {
+        "sequence": [
+          "set0(int256)",
+          "set1(int256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "set1(int256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "set0(int256)",
+            "target": "set1(int256)",
+            "score": 2,
+            "write_read_variables": [
+              "PublicEchidnaFlagsTarget.flag0"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1,
+        "property_score": 2,
+        "value_adjustment": 0,
+        "value_score": 2,
+        "value_matches": 0,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "set0(int256)",
+            "target": "set1(int256)",
+            "status": "not_applicable",
+            "match_count": 0,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": []
+          }
+        ],
+        "value_rank": 1
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

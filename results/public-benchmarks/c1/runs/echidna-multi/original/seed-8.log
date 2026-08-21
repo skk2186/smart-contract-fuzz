@@ -1,0 +1,56 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=original
+COMPILER=0.8.20
+SEED=8
+CONTRACT_FILE=contracts/public-benchmarks/raw/echidna/multi.sol
+CONTRACT_NAME=C
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T15:58:05+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 15:58:05.25] Compiling `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.297586054s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/raw/echidna/multi.sol:C
+[2026-07-28 15:58:05.55] Running slither on `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.395632733s)
+[2026-07-28 15:58:05.95] [Worker 0] New coverage: 252 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 15:58:05.95] [Worker 0] New coverage: 278 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 15:58:06.09] [Worker 0] New coverage: 304 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 15:58:06.09] [Worker 0] New coverage: 313 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 15:58:06.13] [Worker 0] New coverage: 316 instr, 1 contracts, 5 seqs in corpus
+[2026-07-28 15:58:06.41] [Worker 0] New coverage: 343 instr, 1 contracts, 6 seqs in corpus
+[2026-07-28 15:58:07.51] [Worker 0] New coverage: 369 instr, 1 contracts, 7 seqs in corpus
+[2026-07-28 15:58:08.64] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+C.f(12) from: 0x0000000000000000000000000000000000010000 Time delay: 115085 seconds Block delay: 561
+C.g(8) from: 0x0000000000000000000000000000000000020000 Time delay: 318197 seconds Block delay: 13
+C.h(115792089237316195423570985008687907853269984665640564039457584007913129639930) from: 0x0000000000000000000000000000000000030000 Time delay: 322372 seconds Block delay: 42229
+
+[2026-07-28 15:58:08.64] [Worker 0] New coverage: 395 instr, 1 contracts, 8 seqs in corpus
+[2026-07-28 15:58:08.95] [status] tests: 1/1, fuzzing: 52973/100000, values: [], cov: 395, corpus: 8, shrinking: W0:1782/5000(3), gas/s: 334800701
+[2026-07-28 15:58:09.51] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 15:58:09.51] [status] tests: 1/1, fuzzing: 52973/100000, values: [], cov: 395, corpus: 8, gas/s: 0
+echidna_state3: failed!💥  
+  Call sequence:
+    C.f(12)
+    C.g(8)
+    C.h(0)
+
+Traces: 
+
+
+Unique instructions: 395
+Unique codehashes: 1
+Corpus size: 8
+Seed: 8
+Total calls: 52973
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=4.34
+
+EXIT_CODE=1
+END_TIME=2026-07-28T15:58:09+08:00
+PUBLIC_C1_RUN_COMPLETED=1

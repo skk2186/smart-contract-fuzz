@@ -1,0 +1,518 @@
+{
+  "MultiPropertyExample": {
+    "property_functions": [
+      "echidna_value_a_safe()",
+      "echidna_value_b_safe()"
+    ],
+    "property_variables": [
+      "MultiPropertyExample.valueA",
+      "MultiPropertyExample.valueB"
+    ],
+    "target_functions": [
+      "execute(uint256,uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 5,
+    "retained_path_count": 5,
+    "dfs_expansions": 5,
+    "paths": [
+      {
+        "sequence": [
+          "prepare()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 13,
+        "length": 3,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3,
+        "property_score": 5,
+        "value_adjustment": 8,
+        "value_score": 13,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "prepare()",
+          "authorize()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 12,
+        "length": 4,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1,
+        "property_score": 8,
+        "value_adjustment": 4,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepare()",
+            "target": "authorize()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 6,
+        "length": 2,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 4,
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 3
+      },
+      {
+        "sequence": [
+          "authorize()",
+          "authorize()",
+          "execute(uint256,uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "authorize()": 2
+        },
+        "edges": [
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "score": 3,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": [
+              "MultiPropertyExample.stage"
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2,
+        "property_score": 5,
+        "value_adjustment": 0,
+        "value_score": 5,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "authorize()",
+            "target": "authorize()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "authorize()",
+            "target": "execute(uint256,uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 4
+      },
+      {
+        "sequence": [
+          "prepare()",
+          "execute(uint256,uint256)"
+        ],
+        "score": -2,
+        "length": 2,
+        "target_function": "execute(uint256,uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepare()",
+            "target": "execute(uint256,uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "MultiPropertyExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 5,
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "prepare()",
+            "target": "execute(uint256,uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 5
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

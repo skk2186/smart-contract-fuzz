@@ -1,0 +1,40 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=original
+COMPILER=0.8.20
+SEED=27
+CONTRACT_FILE=contracts/public-benchmarks/raw/echidna/multi.sol
+CONTRACT_NAME=C
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T15:59:15+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 15:59:15.96] Compiling `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.299854378s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/raw/echidna/multi.sol:C
+[2026-07-28 15:59:16.26] Running slither on `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.394209656s)
+[2026-07-28 15:59:16.67] [Worker 0] New coverage: 278 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 15:59:16.69] [Worker 0] New coverage: 305 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 15:59:16.73] [Worker 0] New coverage: 308 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 15:59:16.87] [Worker 0] New coverage: 334 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 15:59:16.88] [Worker 0] New coverage: 343 instr, 1 contracts, 5 seqs in corpus
+[2026-07-28 15:59:16.91] [Worker 0] New coverage: 369 instr, 1 contracts, 6 seqs in corpus
+[2026-07-28 15:59:19.67] [status] tests: 0/1, fuzzing: 57527/100000, values: [], cov: 369, corpus: 6, gas/s: 371512191
+[2026-07-28 15:59:21.71] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 15:59:21.71] [status] tests: 0/1, fuzzing: 100002/100000, values: [], cov: 369, corpus: 6, gas/s: 413111500
+echidna_state3: passing
+
+Unique instructions: 369
+Unique codehashes: 1
+Corpus size: 6
+Seed: 27
+Total calls: 100002
+
+PROCESS_WALL_SECONDS=5.80
+
+EXIT_CODE=0
+END_TIME=2026-07-28T15:59:21+08:00
+PUBLIC_C1_RUN_COMPLETED=1

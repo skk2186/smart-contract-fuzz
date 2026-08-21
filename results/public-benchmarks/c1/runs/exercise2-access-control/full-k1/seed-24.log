@@ -1,0 +1,40 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=full-k1
+COMPILER=0.8.20
+SEED=24
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol
+CONTRACT_NAME=PublicExercise2FullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:15:46+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:15:46.45] Compiling `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.317439638s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol:PublicExercise2FullK1Harness
+[2026-07-28 16:15:46.78] Running slither on `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.429696856s)
+[2026-07-28 16:15:47.22] [Worker 0] New coverage: 450 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:15:47.31] [Worker 0] New coverage: 586 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:15:47.40] [Worker 0] New coverage: 589 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:15:50.22] [status] tests: 0/1, fuzzing: 21225/100000, values: [], cov: 589, corpus: 3, gas/s: 103000946
+[2026-07-28 16:15:53.22] [status] tests: 0/1, fuzzing: 42276/100000, values: [], cov: 589, corpus: 3, gas/s: 101964710
+[2026-07-28 16:15:56.22] [status] tests: 0/1, fuzzing: 64971/100000, values: [], cov: 589, corpus: 3, gas/s: 110341374
+[2026-07-28 16:15:59.22] [status] tests: 0/1, fuzzing: 87022/100000, values: [], cov: 589, corpus: 3, gas/s: 107146287
+[2026-07-28 16:16:00.96] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:16:00.96] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 589, corpus: 3, gas/s: 94257497
+echidna_no_transfer: passing
+
+Unique instructions: 589
+Unique codehashes: 2
+Corpus size: 3
+Seed: 24
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=14.58
+
+EXIT_CODE=0
+END_TIME=2026-07-28T16:16:01+08:00
+PUBLIC_C1_RUN_COMPLETED=1

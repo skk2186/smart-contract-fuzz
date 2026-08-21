@@ -1,0 +1,35 @@
+[2026-07-20 15:46:14.90] Compiling `contracts/SequenceExample.sol`... Done! (0.305424797s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/SequenceExample.sol:SequenceExample
+[2026-07-20 15:46:15.21] Running slither on `contracts/SequenceExample.sol`... Done! (0.370951261s)
+Loaded 1 transaction sequences from results/corpus-smoke/reproducers
+Loaded 1 transaction sequences from results/corpus-smoke/coverage
+[2026-07-20 15:46:15.59] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+SequenceExample.initialize()
+SequenceExample.update(101)
+
+[2026-07-20 15:46:15.59] [Worker 0] New coverage: 192 instr, 1 contracts, 1 seqs in corpus
+[2026-07-20 15:46:15.59] [Worker 0] Sequence replayed from corpus file 7435791407297039697.txt (1/2)
+[2026-07-20 15:46:15.59] [Worker 0] Sequence replayed from corpus file 2156604968724976889.txt (2/2)
+[2026-07-20 15:46:15.60]  Saved reproducer to results/corpus-smoke/reproducers-unshrunk/7435791407297039697.txt
+[2026-07-20 15:46:15.60]  Saved reproducer to results/corpus-smoke/coverage/7435791407297039697.txt
+[2026-07-20 15:46:16.43] [Worker 0] Test limit reached. Stopping.
+[2026-07-20 15:46:16.43] [status] tests: 1/1, fuzzing: 9/20000, values: [], cov: 192, corpus: 1, gas/s: 255249
+echidna_value_safe: failed!💥  
+  Call sequence:
+    SequenceExample.initialize()
+    SequenceExample.update(101)
+
+Traces: 
+
+
+Unique instructions: 192
+Unique codehashes: 1
+Corpus size: 1
+Seed: 2006240679595051619
+Total calls: 9
+
+[2026-07-20 15:46:16.43] Saving test reproducers... Done! (0.000037856s)
+[2026-07-20 15:46:16.43] Saving corpus... Done! (0.000023964s)
+[2026-07-20 15:46:16.43] Saving foundry reproducers... Done! (0.000684597s)
+[2026-07-20 15:46:16.43] Saving coverage... Done! (0.002317635s)

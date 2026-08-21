@@ -1,0 +1,4 @@
+method,runs,falsified_runs,success_rate,median_calls_successful,mean_calls_successful,median_fuzz_seconds_successful,median_process_wall_seconds
+guided,10,10,1.0,2.0,2.4,0.46,2.36
+original,10,9,0.9,13286.0,20212.8889,1.38,3.065
+random,10,0,0.0,,,,13.65

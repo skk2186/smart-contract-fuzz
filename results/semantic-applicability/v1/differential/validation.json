@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "expected_properties": [
+    "echidna_same_caller_trace_is_equivalent",
+    "echidna_caller_alternation_changes_behavior",
+    "echidna_rollback_boundary_changes_behavior"
+  ],
+  "interpretation": {
+    "caller_alternation": "alternating callers can diverge from a fixed-caller wrapper",
+    "rollback_boundary": "a caught later failure preserves an earlier independent call but rolls back an atomic wrapper",
+    "same_caller": "same-caller independent calls and wrapper calls agree"
+  },
+  "passed_properties": [
+    "echidna_same_caller_trace_is_equivalent",
+    "echidna_caller_alternation_changes_behavior",
+    "echidna_rollback_boundary_changes_behavior"
+  ],
+  "profile": "semantic-model",
+  "schema_version": 1,
+  "scope": "local semantic regression; not a vulnerability benchmark or full equivalence proof"
+}

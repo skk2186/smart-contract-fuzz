@@ -1,0 +1,73 @@
+{
+  "BranchValueExample": {
+    "prepareBadA()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "BranchValueExample.gate"
+      ]
+    },
+    "prepareBadB()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "BranchValueExample.gate"
+      ]
+    },
+    "prepareBadC()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "BranchValueExample.gate"
+      ]
+    },
+    "prepareBadD()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "BranchValueExample.gate"
+      ]
+    },
+    "prepareGood()": {
+      "visibility": "public",
+      "read": [],
+      "write": [
+        "BranchValueExample.gate"
+      ]
+    },
+    "unlock()": {
+      "visibility": "public",
+      "read": [
+        "BranchValueExample.gate"
+      ],
+      "write": [
+        "BranchValueExample.unlocked"
+      ]
+    },
+    "activate()": {
+      "visibility": "public",
+      "read": [
+        "BranchValueExample.unlocked"
+      ],
+      "write": [
+        "BranchValueExample.active"
+      ]
+    },
+    "trigger(uint256)": {
+      "visibility": "public",
+      "read": [
+        "BranchValueExample.active"
+      ],
+      "write": [
+        "BranchValueExample.value"
+      ]
+    },
+    "echidna_value_safe()": {
+      "visibility": "public",
+      "read": [
+        "BranchValueExample.value"
+      ],
+      "write": []
+    }
+  }
+}

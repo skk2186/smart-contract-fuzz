@@ -1,0 +1,34 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=repeated-call
+METHOD=value-no-repeat-k1
+SEED=23
+CONTRACT_FILE=contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol
+CONTRACT_NAME=RepeatedCallVisits1K1Harness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T15:22:10+08:00
+
+[2026-07-27 15:22:10.51] Compiling `contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol`... Done! (0.319296706s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol:RepeatedCallVisits1K1Harness
+[2026-07-27 15:22:10.83] Running slither on `contracts/harnesses/repeated-call/generated/RepeatedCallVisits1K1Harness.sol`... Done! (0.425270337s)
+[2026-07-27 15:22:11.27] [Worker 0] New coverage: 578 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 15:22:11.78] [Worker 0] New coverage: 581 instr, 2 contracts, 2 seqs in corpus
+[2026-07-27 15:22:12.34] [Worker 0] New coverage: 722 instr, 2 contracts, 3 seqs in corpus
+[2026-07-27 15:22:14.26] [status] tests: 0/1, fuzzing: 22069/100000, values: [], cov: 722, corpus: 3, gas/s: 242625437
+[2026-07-27 15:22:17.27] [status] tests: 0/1, fuzzing: 46353/100000, values: [], cov: 722, corpus: 3, gas/s: 268565952
+[2026-07-27 15:22:20.27] [status] tests: 0/1, fuzzing: 70524/100000, values: [], cov: 722, corpus: 3, gas/s: 267204199
+[2026-07-27 15:22:23.27] [status] tests: 0/1, fuzzing: 94426/100000, values: [], cov: 722, corpus: 3, gas/s: 263354934
+[2026-07-27 15:22:23.98] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:22:23.98] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 722, corpus: 3, gas/s: 183217759
+echidna_value_safe: passing
+
+Unique instructions: 722
+Unique codehashes: 2
+Corpus size: 3
+Seed: 23
+Total calls: 100000
+
+PROCESS_WALL_SECONDS=13.54
+
+EXIT_CODE=0
+END_TIME=2026-07-27T15:22:24+08:00
+FORMAL_RUN_COMPLETED=1

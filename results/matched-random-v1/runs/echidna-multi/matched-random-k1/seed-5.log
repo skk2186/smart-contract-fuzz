@@ -1,0 +1,55 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=public-c1
+BENCHMARK=echidna-multi
+METHOD=matched-random-k1
+SEED=5
+SCHEDULE_SEED=20260805
+SELECTION_ID=b02-o001
+SELECTED_CANDIDATE_INDICES=1
+SELECTION_SHA256=d92bb255b955d201970fbe349ee56b614e1bf9006c9e643aef213ac0128a871a
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/echidna-multi/candidate-001.sol
+CONTRACT_NAME=MatchedRandomV1EchidnaMultiC001Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/public-c1-harness.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_state3
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:41:55+08:00
+[2026-08-06 11:41:55.64] Compiling `contracts/harnesses/matched-random-v1/echidna-multi/candidate-001.sol`... Done! (0.132044524s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/echidna-multi/candidate-001.sol:MatchedRandomV1EchidnaMultiC001Harness
+[2026-08-06 11:41:55.78] Running slither on `contracts/harnesses/matched-random-v1/echidna-multi/candidate-001.sol`... Done! (0.219735783s)
+[2026-08-06 11:41:56.01] [Worker 0] New coverage: 512 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:41:56.02] [Worker 0] New coverage: 643 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:41:56.06] [Worker 0] New coverage: 786 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:41:57.21] [Worker 0] New coverage: 789 instr, 2 contracts, 4 seqs in corpus
+[2026-08-06 11:41:59.01] [status] tests: 0/1, fuzzing: 24018/100000, values: [], cov: 789, corpus: 4, gas/s: 103104010
+[2026-08-06 11:41:59.41] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+MatchedRandomV1EchidnaMultiC001Harness.matched_random_sequence_1(12,8,107759407625946663678877453635609563120938301260576732161261040830947067778996)
+
+[2026-08-06 11:41:59.41] [Worker 0] New coverage: 944 instr, 2 contracts, 5 seqs in corpus
+[2026-08-06 11:42:00.44] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:42:00.45] [status] tests: 1/1, fuzzing: 27753/100000, values: [], cov: 944, corpus: 5, gas/s: 48294383
+echidna_state3: failed!💥  
+  Call sequence:
+    MatchedRandomV1EchidnaMultiC001Harness.matched_random_sequence_1(12,8,249718773034147136502898771084916872788195)
+
+Traces: 
+call [1mC[0m::echidna_state3()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/echidna-multi/candidate-001.sol:23)[0m
+ └╴← (false)
+
+
+Unique instructions: 944
+Unique codehashes: 2
+Corpus size: 5
+Seed: 5
+Total calls: 27753
+
+
+EXIT_CODE=1
+END_TIME=2026-08-06T11:42:00+08:00
+PROCESS_WALL_SECONDS=4.885663
+MATCHED_RANDOM_RUN_STATUS=falsified
+MATCHED_RANDOM_RUN_COMPLETED=1

@@ -1,0 +1,40 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=branch-value
+METHOD=full-k1
+SEED=1
+CONTRACT_FILE=contracts/harnesses/formal/BranchValueFullK1Harness.sol
+CONTRACT_NAME=BranchValueFullK1Harness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T15:14:42+08:00
+
+[2026-07-27 15:14:42.34] Compiling `contracts/harnesses/formal/BranchValueFullK1Harness.sol`... Done! (0.306581799s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal/BranchValueFullK1Harness.sol:BranchValueFullK1Harness
+[2026-07-27 15:14:42.65] Running slither on `contracts/harnesses/formal/BranchValueFullK1Harness.sol`... Done! (0.416869083s)
+[2026-07-27 15:14:43.08] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueFullK1Harness.full_sequence_1(115792089237316195423570985008687907853269984665640564039457584007913129639834) Time delay: 360624 seconds Block delay: 41436
+
+[2026-07-27 15:14:43.08] [Worker 0] New coverage: 725 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 15:14:44.38] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:14:44.38] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 725, corpus: 1, gas/s: 164981
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueFullK1Harness.full_sequence_1(101)
+
+Traces: 
+call [1mBranchValueExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal/BranchValueFullK1Harness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 725
+Unique codehashes: 2
+Corpus size: 1
+Seed: 1
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.10
+
+EXIT_CODE=1
+END_TIME=2026-07-27T15:14:44+08:00
+FORMAL_RUN_COMPLETED=1

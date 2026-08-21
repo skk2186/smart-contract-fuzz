@@ -1,0 +1,49 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=full-k1
+COMPILER=0.8.20
+SEED=1
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol
+CONTRACT_NAME=PublicEchidnaMultiFullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T15:59:33+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 15:59:33.83] Compiling `contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol`... Done! (0.307943662s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol:PublicEchidnaMultiFullK1Harness
+[2026-07-28 15:59:34.14] Running slither on `contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol`... Done! (0.408717174s)
+[2026-07-28 15:59:34.56] [Worker 0] New coverage: 512 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 15:59:34.56] [Worker 0] New coverage: 655 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 15:59:34.86] [Worker 0] New coverage: 786 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 15:59:35.32] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+PublicEchidnaMultiFullK1Harness.full_sequence_1(12,8,0) Time delay: 344203 seconds Block delay: 7
+
+[2026-07-28 15:59:35.32] [Worker 0] New coverage: 941 instr, 2 contracts, 4 seqs in corpus
+[2026-07-28 15:59:36.36] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 15:59:36.36] [status] tests: 1/1, fuzzing: 3345/100000, values: [], cov: 941, corpus: 4, gas/s: 21422108
+echidna_state3: failed!💥  
+  Call sequence:
+    PublicEchidnaMultiFullK1Harness.full_sequence_1(12,8,0)
+
+Traces: 
+call [1mC[0m::echidna_state3()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol:28)[0m
+ └╴← (false)
+
+
+Unique instructions: 941
+Unique codehashes: 2
+Corpus size: 4
+Seed: 1
+Total calls: 3345
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.59
+
+EXIT_CODE=1
+END_TIME=2026-07-28T15:59:36+08:00
+PUBLIC_C1_RUN_COMPLETED=1

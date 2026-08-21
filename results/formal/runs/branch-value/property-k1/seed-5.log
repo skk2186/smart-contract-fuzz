@@ -1,0 +1,33 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=branch-value
+METHOD=property-k1
+SEED=5
+CONTRACT_FILE=contracts/harnesses/branch-value/BranchValuePropertyK1Harness.sol
+CONTRACT_NAME=BranchValuePropertyK1Harness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T15:08:14+08:00
+
+[2026-07-27 15:08:14.94] Compiling `contracts/harnesses/branch-value/BranchValuePropertyK1Harness.sol`... Done! (0.31119137s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/branch-value/BranchValuePropertyK1Harness.sol:BranchValuePropertyK1Harness
+[2026-07-27 15:08:15.25] Running slither on `contracts/harnesses/branch-value/BranchValuePropertyK1Harness.sol`... Done! (0.41582152s)
+[2026-07-27 15:08:15.68] [Worker 0] New coverage: 472 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 15:08:15.70] [Worker 0] New coverage: 613 instr, 2 contracts, 2 seqs in corpus
+[2026-07-27 15:08:16.36] [Worker 0] New coverage: 616 instr, 2 contracts, 3 seqs in corpus
+[2026-07-27 15:08:18.68] [status] tests: 0/1, fuzzing: 24689/100000, values: [], cov: 616, corpus: 3, gas/s: 121258108
+[2026-07-27 15:08:21.68] [status] tests: 0/1, fuzzing: 51903/100000, values: [], cov: 616, corpus: 3, gas/s: 133924400
+[2026-07-27 15:08:24.68] [status] tests: 0/1, fuzzing: 75511/100000, values: [], cov: 616, corpus: 3, gas/s: 115924118
+[2026-07-27 15:08:27.44] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:08:27.44] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 616, corpus: 3, gas/s: 120362024
+echidna_value_safe: passing
+
+Unique instructions: 616
+Unique codehashes: 2
+Corpus size: 3
+Seed: 5
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=12.58
+
+EXIT_CODE=0
+END_TIME=2026-07-27T15:08:27+08:00
+FORMAL_RUN_COMPLETED=1

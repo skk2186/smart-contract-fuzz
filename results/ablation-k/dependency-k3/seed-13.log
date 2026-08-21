@@ -1,0 +1,27 @@
+[2026-07-22 21:13:47.97] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.302745396s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol:NoisyFourStepDependencyK3Harness
+[2026-07-22 21:13:48.28] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK3Harness.sol`... Done! (0.393476829s)
+[2026-07-22 21:13:48.68] [Worker 0] New coverage: 551 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:13:48.69] [Worker 0] New coverage: 978 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:13:48.69] [Worker 0] New coverage: 1217 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:13:48.70] [Worker 0] New coverage: 1237 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:13:48.95] [Worker 0] New coverage: 1244 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:13:49.02] [Worker 0] New coverage: 1375 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:13:49.21] [Worker 0] New coverage: 1378 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:13:51.68] [status] tests: 0/1, fuzzing: 15846/100000, values: [], cov: 1378, corpus: 7, gas/s: 351588799
+[2026-07-22 21:13:54.68] [status] tests: 0/1, fuzzing: 33037/100000, values: [], cov: 1378, corpus: 7, gas/s: 383727128
+[2026-07-22 21:13:57.69] [status] tests: 0/1, fuzzing: 50144/100000, values: [], cov: 1378, corpus: 7, gas/s: 378974968
+[2026-07-22 21:14:00.69] [status] tests: 0/1, fuzzing: 66907/100000, values: [], cov: 1378, corpus: 7, gas/s: 372499903
+[2026-07-22 21:14:03.69] [status] tests: 0/1, fuzzing: 83841/100000, values: [], cov: 1378, corpus: 7, gas/s: 375684876
+[2026-07-22 21:14:06.57] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:14:06.57] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 1378, corpus: 7, gas/s: 358663166
+echidna_value_safe: passing
+
+Unique instructions: 1378
+Unique codehashes: 2
+Corpus size: 7
+Seed: 13
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=18.66
+EXIT_CODE=0

@@ -1,0 +1,25 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-multifunc
+METHOD=full-k5
+COMPILER=0.4.23
+SEED=28
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol
+CONTRACT_NAME=PublicSmartBugsMultiFuncFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:19:09+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.23+commit.124ca40d.Linux.g++
+
+[2026-07-28 16:19:09.55] Compiling `contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol`... Done! (0.304179059s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol:PublicSmartBugsMultiFuncFullK5Harness
+[2026-07-28 16:19:09.86] Running slither on `contracts/harnesses/public-c1/PublicSmartBugsMultiFuncFullK5Harness.sol`... Done! (0.416640614s)
+echidna: Solc version 0.4.23 detected. Echidna doesn't support versions of solc before 0.4.25. Please use a newer version.
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=0.75
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:19:10+08:00
+PUBLIC_C1_RUN_COMPLETED=1

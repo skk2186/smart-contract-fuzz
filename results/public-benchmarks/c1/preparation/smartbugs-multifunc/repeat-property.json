@@ -1,0 +1,107 @@
+{
+  "SmartBugsMultiFuncEchidna": {
+    "property_functions": [
+      "echidna_count_does_not_underflow()"
+    ],
+    "property_variables": [
+      "SmartBugsMultiFuncEchidna.count"
+    ],
+    "target_functions": [
+      "run(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 3,
+    "retained_path_count": 3,
+    "dfs_expansions": 3,
+    "paths": [
+      {
+        "sequence": [
+          "init()",
+          "run(uint256)",
+          "run(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "run(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "run(uint256)": 2
+        },
+        "edges": [
+          {
+            "source": "init()",
+            "target": "run(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "SmartBugsMultiFuncEchidna.initialized"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "run(uint256)",
+            "target": "run(uint256)",
+            "score": 3,
+            "write_read_variables": [
+              "SmartBugsMultiFuncEchidna.count"
+            ],
+            "write_write_variables": [
+              "SmartBugsMultiFuncEchidna.count"
+            ]
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "run(uint256)",
+          "run(uint256)"
+        ],
+        "score": 3,
+        "length": 2,
+        "target_function": "run(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "run(uint256)": 2
+        },
+        "edges": [
+          {
+            "source": "run(uint256)",
+            "target": "run(uint256)",
+            "score": 3,
+            "write_read_variables": [
+              "SmartBugsMultiFuncEchidna.count"
+            ],
+            "write_write_variables": [
+              "SmartBugsMultiFuncEchidna.count"
+            ]
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "init()",
+          "run(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "run(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "init()",
+            "target": "run(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "SmartBugsMultiFuncEchidna.initialized"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      }
+    ]
+  }
+}

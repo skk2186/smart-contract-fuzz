@@ -1,0 +1,40 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=exercise2-access-control
+METHOD=full-k1
+COMPILER=0.8.20
+SEED=7
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol
+CONTRACT_NAME=PublicExercise2FullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:11:41+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:11:41.59] Compiling `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.316758962s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol:PublicExercise2FullK1Harness
+[2026-07-28 16:11:41.92] Running slither on `contracts/harnesses/public-c1/PublicExercise2FullK1Harness.sol`... Done! (0.428096668s)
+[2026-07-28 16:11:42.35] [Worker 0] New coverage: 450 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:11:42.82] [Worker 0] New coverage: 453 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:11:43.34] [Worker 0] New coverage: 589 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:11:45.35] [status] tests: 0/1, fuzzing: 20917/100000, values: [], cov: 589, corpus: 3, gas/s: 101824820
+[2026-07-28 16:11:48.36] [status] tests: 0/1, fuzzing: 44000/100000, values: [], cov: 589, corpus: 3, gas/s: 111752275
+[2026-07-28 16:11:51.36] [status] tests: 0/1, fuzzing: 66511/100000, values: [], cov: 589, corpus: 3, gas/s: 109699856
+[2026-07-28 16:11:54.36] [status] tests: 0/1, fuzzing: 89041/100000, values: [], cov: 589, corpus: 3, gas/s: 109411257
+[2026-07-28 16:11:55.83] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:11:55.83] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 589, corpus: 3, gas/s: 160427016
+echidna_no_transfer: passing
+
+Unique instructions: 589
+Unique codehashes: 2
+Corpus size: 3
+Seed: 7
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=14.30
+
+EXIT_CODE=0
+END_TIME=2026-07-28T16:11:55+08:00
+PUBLIC_C1_RUN_COMPLETED=1

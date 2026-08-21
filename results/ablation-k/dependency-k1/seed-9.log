@@ -1,0 +1,26 @@
+[2026-07-22 21:02:28.15] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK1Harness.sol`... Done! (0.309206338s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK1Harness.sol:NoisyFourStepDependencyK1Harness
+[2026-07-22 21:02:28.47] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK1Harness.sol`... Done! (0.388747194s)
+[2026-07-22 21:02:28.87] [Worker 0] New coverage: 696 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:02:28.89] [Worker 0] New coverage: 716 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:02:28.98] [Worker 0] New coverage: 723 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:02:29.00] [Worker 0] New coverage: 864 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:02:29.71] [Worker 0] New coverage: 867 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:02:31.87] [status] tests: 0/1, fuzzing: 14622/100000, values: [], cov: 867, corpus: 5, gas/s: 350819974
+[2026-07-22 21:02:34.87] [status] tests: 0/1, fuzzing: 28933/100000, values: [], cov: 867, corpus: 5, gas/s: 343603483
+[2026-07-22 21:02:37.87] [status] tests: 0/1, fuzzing: 43532/100000, values: [], cov: 867, corpus: 5, gas/s: 351549818
+[2026-07-22 21:02:40.88] [status] tests: 0/1, fuzzing: 59357/100000, values: [], cov: 867, corpus: 5, gas/s: 380787143
+[2026-07-22 21:02:43.88] [status] tests: 0/1, fuzzing: 74944/100000, values: [], cov: 867, corpus: 5, gas/s: 375104303
+[2026-07-22 21:02:46.88] [status] tests: 0/1, fuzzing: 90392/100000, values: [], cov: 867, corpus: 5, gas/s: 373102809
+[2026-07-22 21:02:48.76] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:02:48.76] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 867, corpus: 5, gas/s: 348536871
+echidna_value_safe: passing
+
+Unique instructions: 867
+Unique codehashes: 2
+Corpus size: 5
+Seed: 9
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=20.67
+EXIT_CODE=0

@@ -1,0 +1,36 @@
+[2026-07-22 22:52:04.77] Compiling `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.301049145s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:ResetDependencyK10Harness
+[2026-07-22 22:52:05.08] Running slither on `contracts/harnesses/reset-example/ResetDependencyK10Harness.sol`... Done! (0.407518911s)
+[2026-07-22 22:52:05.50] [Worker 0] New coverage: 446 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 620 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 878 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 1072 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 1187 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 1663 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 1796 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 1924 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] New coverage: 2052 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 22:52:05.51] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+ResetDependencyK10Harness.dependency_sequence_6(27417062822100743631203880836662542427501314555814275655358917767051097854807) Time delay: 98 seconds Block delay: 27404
+
+[2026-07-22 22:52:06.76] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 22:52:06.76] [status] tests: 1/1, fuzzing: 37/100000, values: [], cov: 2052, corpus: 9, gas/s: 978648
+echidna_value_safe: failed!💥  
+  Call sequence:
+    ResetDependencyK10Harness.dependency_sequence_6(101)
+
+Traces: 
+call [1mResetExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/reset-example/ResetDependencyK10Harness.sol:125)[0m
+ └╴← (false)
+
+
+Unique instructions: 2052
+Unique codehashes: 2
+Corpus size: 9
+Seed: 23
+Total calls: 37
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.05
+EXIT_CODE=1

@@ -1,0 +1,48 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=smartbugs-onefunc
+METHOD=full-k5
+COMPILER=0.4.25
+SEED=8
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol
+CONTRACT_NAME=PublicSmartBugsOneFuncFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T19:55:50+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.4.25+commit.59dbf8f1.Linux.g++
+
+[2026-07-28 19:55:50.38] Compiling `contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol`... Done! (0.34413418s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol:PublicSmartBugsOneFuncFullK5Harness
+[2026-07-28 19:55:50.73] Running slither on `contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol`... Done! (0.463332573s)
+[2026-07-28 19:55:51.20] [Worker 0] New coverage: 392 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 19:55:51.20] [Worker 0] Test echidna_count_does_not_underflow falsified!
+  Call sequence:
+PublicSmartBugsOneFuncFullK5Harness.full_sequence_1(115792089237316195423570985008687907853269984665640564039457584007913129639935,2) Time delay: 82671 seconds Block delay: 22699
+
+[2026-07-28 19:55:52.13] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 19:55:52.13] [status] tests: 1/1, fuzzing: 4/100000, values: [], cov: 392, corpus: 1, gas/s: 154854
+echidna_count_does_not_underflow: failed!💥  
+  Call sequence:
+    PublicSmartBugsOneFuncFullK5Harness.full_sequence_1(0,2)
+
+Traces: 
+call [1mSmartBugsOneFuncEchidna[0m::echidna_count_does_not_underflow()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicSmartBugsOneFuncFullK5Harness.sol:27)[0m
+ └╴← (false)
+
+
+Unique instructions: 392
+Unique codehashes: 2
+Corpus size: 1
+Seed: 8
+Total calls: 4
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.83
+
+EXIT_CODE=1
+END_TIME=2026-07-28T19:55:52+08:00
+
+PUBLIC_C1_RUN_STATUS=valid
+PUBLIC_C1_RUN_COMPLETED=1

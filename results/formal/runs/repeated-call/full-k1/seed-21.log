@@ -1,0 +1,40 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=repeated-call
+METHOD=full-k1
+SEED=21
+CONTRACT_FILE=contracts/harnesses/formal/RepeatedCallFullK1Harness.sol
+CONTRACT_NAME=RepeatedCallFullK1Harness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T15:24:44+08:00
+
+[2026-07-27 15:24:44.38] Compiling `contracts/harnesses/formal/RepeatedCallFullK1Harness.sol`... Done! (0.308953455s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal/RepeatedCallFullK1Harness.sol:RepeatedCallFullK1Harness
+[2026-07-27 15:24:44.69] Running slither on `contracts/harnesses/formal/RepeatedCallFullK1Harness.sol`... Done! (0.428214425s)
+[2026-07-27 15:24:45.14] [Worker 0] New coverage: 784 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 15:24:45.14] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+RepeatedCallFullK1Harness.full_sequence_1(51423547384918002406320595374503327929924332875041074898615062772025955455796) Time delay: 521319 seconds Block delay: 5952
+
+[2026-07-27 15:24:46.54] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 15:24:46.54] [status] tests: 1/1, fuzzing: 8/100000, values: [], cov: 784, corpus: 1, gas/s: 491512
+echidna_value_safe: failed!💥  
+  Call sequence:
+    RepeatedCallFullK1Harness.full_sequence_1(101)
+
+Traces: 
+call [1mRepeatedCallExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal/RepeatedCallFullK1Harness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 784
+Unique codehashes: 2
+Corpus size: 1
+Seed: 21
+Total calls: 8
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.25
+
+EXIT_CODE=1
+END_TIME=2026-07-27T15:24:46+08:00
+FORMAL_RUN_COMPLETED=1

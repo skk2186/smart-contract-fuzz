@@ -1,0 +1,161 @@
+{
+  "BranchValueExampleRenamed": {
+    "state_variables": [
+      "active",
+      "gate",
+      "unlocked",
+      "value"
+    ],
+    "functions": {
+      "aBadPrepare()": {
+        "constant_writes": {
+          "gate": [
+            {
+              "kind": "int",
+              "value": 0,
+              "raw": "0"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "bBadPrepare()": {
+        "constant_writes": {
+          "gate": [
+            {
+              "kind": "int",
+              "value": 1,
+              "raw": "1"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "cBadPrepare()": {
+        "constant_writes": {
+          "gate": [
+            {
+              "kind": "int",
+              "value": 6,
+              "raw": "6"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "dBadPrepare()": {
+        "constant_writes": {
+          "gate": [
+            {
+              "kind": "int",
+              "value": 8,
+              "raw": "8"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "zCorrectPrepare()": {
+        "constant_writes": {
+          "gate": [
+            {
+              "kind": "int",
+              "value": 7,
+              "raw": "7"
+            }
+          ]
+        },
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "unlock()": {
+        "constant_writes": {
+          "unlocked": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "gate",
+            "operator": "==",
+            "value": {
+              "kind": "int",
+              "value": 7,
+              "raw": "7"
+            },
+            "condition": "gate == 7"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "activate()": {
+        "constant_writes": {
+          "active": [
+            {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "variable": "unlocked",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "unlocked"
+          }
+        ],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      },
+      "trigger(uint256)": {
+        "constant_writes": {},
+        "requirements": [
+          {
+            "variable": "active",
+            "operator": "==",
+            "value": {
+              "kind": "bool",
+              "value": true,
+              "raw": "true"
+            },
+            "condition": "active"
+          }
+        ],
+        "unsupported_writes": [
+          {
+            "variable": "value",
+            "expression": "x",
+            "node_expression": "value = x"
+          }
+        ],
+        "unsupported_requirements": []
+      },
+      "echidna_value_safe()": {
+        "constant_writes": {},
+        "requirements": [],
+        "unsupported_writes": [],
+        "unsupported_requirements": []
+      }
+    }
+  }
+}

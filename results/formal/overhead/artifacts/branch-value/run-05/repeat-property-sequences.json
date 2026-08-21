@@ -1,0 +1,291 @@
+{
+  "BranchValueExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "trigger(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 7,
+    "retained_path_count": 7,
+    "dfs_expansions": 7,
+    "paths": [
+      {
+        "sequence": [
+          "prepareBadA()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepareBadA()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "prepareBadB()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepareBadB()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "prepareBadC()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepareBadC()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      },
+      {
+        "sequence": [
+          "prepareBadD()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepareBadD()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 4
+      },
+      {
+        "sequence": [
+          "prepareGood()",
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "prepareGood()",
+            "target": "unlock()",
+            "score": 2,
+            "write_read_variables": [
+              "gate"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 5
+      },
+      {
+        "sequence": [
+          "unlock()",
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 4,
+        "length": 3,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "unlock()",
+            "target": "activate()",
+            "score": 2,
+            "write_read_variables": [
+              "unlocked"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 6
+      },
+      {
+        "sequence": [
+          "activate()",
+          "trigger(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "trigger(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "activate()",
+            "target": "trigger(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "active"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 7
+      }
+    ]
+  }
+}

@@ -1,0 +1,1156 @@
+{
+  "AlternativePathExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "AlternativePathExample.value"
+    ],
+    "target_functions": [
+      "execute(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 11,
+    "retained_path_count": 11,
+    "dfs_expansions": 11,
+    "paths": [
+      {
+        "sequence": [
+          "openRouteA()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 13,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openRouteA()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 5,
+        "property_score": 5,
+        "value_adjustment": 8,
+        "value_score": 13,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteA()",
+            "target": "confirm()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 1
+      },
+      {
+        "sequence": [
+          "openRouteB()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 13,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openRouteB()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 6,
+        "property_score": 5,
+        "value_adjustment": 8,
+        "value_score": 13,
+        "value_matches": 2,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteB()",
+            "target": "confirm()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 2
+      },
+      {
+        "sequence": [
+          "openRouteA()",
+          "confirm()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 12,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "confirm()": 2
+        },
+        "edges": [
+          {
+            "source": "openRouteA()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1,
+        "property_score": 8,
+        "value_adjustment": 4,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteA()",
+            "target": "confirm()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 3
+      },
+      {
+        "sequence": [
+          "openRouteB()",
+          "confirm()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 12,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "confirm()": 2
+        },
+        "edges": [
+          {
+            "source": "openRouteB()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2,
+        "property_score": 8,
+        "value_adjustment": 4,
+        "value_score": 12,
+        "value_matches": 2,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteB()",
+            "target": "confirm()",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 4
+      },
+      {
+        "sequence": [
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 6,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 8,
+        "property_score": 2,
+        "value_adjustment": 4,
+        "value_score": 6,
+        "value_matches": 1,
+        "value_conflicts": 0,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 5
+      },
+      {
+        "sequence": [
+          "confirm()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "confirm()": 2
+        },
+        "edges": [
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 4,
+        "property_score": 5,
+        "value_adjustment": 0,
+        "value_score": 5,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 6
+      },
+      {
+        "sequence": [
+          "openWrongRoute()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 5,
+        "length": 3,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 7,
+        "property_score": 5,
+        "value_adjustment": 0,
+        "value_score": 5,
+        "value_matches": 1,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 9,
+                    "raw": "9"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 7
+      },
+      {
+        "sequence": [
+          "openWrongRoute()",
+          "confirm()",
+          "confirm()",
+          "execute(uint256)"
+        ],
+        "score": 4,
+        "length": 4,
+        "target_function": "execute(uint256)",
+        "has_repetition": true,
+        "repeated_functions": {
+          "confirm()": 2
+        },
+        "edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "score": 3,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": [
+              "AlternativePathExample.stage"
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3,
+        "property_score": 8,
+        "value_adjustment": -4,
+        "value_score": 4,
+        "value_matches": 1,
+        "value_conflicts": 2,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 9,
+                    "raw": "9"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "confirm()",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 1,
+                  "raw": "1"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          },
+          {
+            "source": "confirm()",
+            "target": "execute(uint256)",
+            "status": "match",
+            "match_count": 1,
+            "conflict_count": 0,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 2,
+                    "raw": "2"
+                  }
+                ],
+                "outcomes": [
+                  true
+                ],
+                "reason": "all constant writes satisfy requirement",
+                "status": "match"
+              }
+            ]
+          }
+        ],
+        "value_rank": 8
+      },
+      {
+        "sequence": [
+          "openRouteA()",
+          "execute(uint256)"
+        ],
+        "score": -2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openRouteA()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 9,
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteA()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 9
+      },
+      {
+        "sequence": [
+          "openRouteB()",
+          "execute(uint256)"
+        ],
+        "score": -2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openRouteB()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 10,
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openRouteB()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 1,
+                    "raw": "1"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 10
+      },
+      {
+        "sequence": [
+          "openWrongRoute()",
+          "execute(uint256)"
+        ],
+        "score": -2,
+        "length": 2,
+        "target_function": "execute(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "execute(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "AlternativePathExample.stage"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 11,
+        "property_score": 2,
+        "value_adjustment": -4,
+        "value_score": -2,
+        "value_matches": 0,
+        "value_conflicts": 1,
+        "value_unknowns": 0,
+        "value_edges": [
+          {
+            "source": "openWrongRoute()",
+            "target": "execute(uint256)",
+            "status": "conflict",
+            "match_count": 0,
+            "conflict_count": 1,
+            "unknown_count": 0,
+            "details": [
+              {
+                "variable": "stage",
+                "operator": "==",
+                "required_value": {
+                  "kind": "int",
+                  "value": 2,
+                  "raw": "2"
+                },
+                "written_values": [
+                  {
+                    "kind": "int",
+                    "value": 9,
+                    "raw": "9"
+                  }
+                ],
+                "outcomes": [
+                  false
+                ],
+                "reason": "all constant writes violate requirement",
+                "status": "conflict"
+              }
+            ]
+          }
+        ],
+        "value_rank": 11
+      }
+    ],
+    "value_scoring": {
+      "match_reward": 4.0,
+      "conflict_penalty": 4.0,
+      "unknown_adjustment": 0
+    }
+  }
+}

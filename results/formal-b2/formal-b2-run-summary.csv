@@ -1,0 +1,6 @@
+experiment_version,batch,benchmark,method,runs,successful_runs,budget_exhausted_runs,startup_error_runs,incomplete_runs,success_rate,success_definition,denominator_unit,environment_snapshot_status
+Full-v1.0,B-2,alternative-path,full-k1,30,30,0,0,0,1.0,target_property_falsified_in_run,runs,missing_independent_snapshot
+Full-v1.0,B-2,alternative-path,full-k2,30,30,0,0,0,1.0,target_property_falsified_in_run,runs,missing_independent_snapshot
+Full-v1.0,B-2,alternative-path,original,30,30,0,0,0,1.0,target_property_falsified_in_run,runs,missing_independent_snapshot
+Full-v1.0,B-2,multi-property,full-k1,30,30,0,0,0,1.0,both_specified_properties_falsified_in_same_run,runs,missing_independent_snapshot
+Full-v1.0,B-2,multi-property,original,30,30,0,0,0,1.0,both_specified_properties_falsified_in_same_run,runs,missing_independent_snapshot

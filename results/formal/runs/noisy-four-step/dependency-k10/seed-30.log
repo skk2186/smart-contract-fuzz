@@ -1,0 +1,50 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+BENCHMARK=noisy-four-step
+METHOD=dependency-k10
+SEED=30
+CONTRACT_FILE=contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol
+CONTRACT_NAME=NoisyFourStepDependencyHarness
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+START_TIME=2026-07-27T14:58:40+08:00
+
+[2026-07-27 14:58:40.62] Compiling `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.316949353s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:NoisyFourStepDependencyHarness
+[2026-07-27 14:58:40.94] Running slither on `contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol`... Done! (0.43945286s)
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 702 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 1058 instr, 2 contracts, 2 seqs in corpus
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 1303 instr, 2 contracts, 3 seqs in corpus
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 1557 instr, 2 contracts, 4 seqs in corpus
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 1802 instr, 2 contracts, 5 seqs in corpus
+[2026-07-27 14:58:41.40] [Worker 0] New coverage: 2026 instr, 2 contracts, 6 seqs in corpus
+[2026-07-27 14:58:41.41] [Worker 0] New coverage: 2255 instr, 2 contracts, 7 seqs in corpus
+[2026-07-27 14:58:41.41] [Worker 0] New coverage: 2446 instr, 2 contracts, 8 seqs in corpus
+[2026-07-27 14:58:41.41] [Worker 0] New coverage: 2670 instr, 2 contracts, 9 seqs in corpus
+[2026-07-27 14:58:41.41] [Worker 0] New coverage: 2690 instr, 2 contracts, 10 seqs in corpus
+[2026-07-27 14:58:41.42] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+NoisyFourStepDependencyHarness.dependency_sequence_6(115792089237316195423570985008687907853269984665640564039457584007913129639835) Time delay: 271957 seconds Block delay: 4926
+
+[2026-07-27 14:58:41.42] [Worker 0] New coverage: 3112 instr, 2 contracts, 11 seqs in corpus
+[2026-07-27 14:58:42.74] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 14:58:42.74] [status] tests: 1/1, fuzzing: 54/100000, values: [], cov: 3112, corpus: 11, gas/s: 3721542
+echidna_value_safe: failed!💥  
+  Call sequence:
+    NoisyFourStepDependencyHarness.dependency_sequence_6(101)
+
+Traces: 
+call [1mNoisyFourStepExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-generated/NoisyFourStepDependencyHarness.sol:128)[0m
+ └╴← (false)
+
+
+Unique instructions: 3112
+Unique codehashes: 2
+Corpus size: 11
+Seed: 30
+Total calls: 54
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.20
+
+EXIT_CODE=1
+END_TIME=2026-07-27T14:58:42+08:00
+FORMAL_RUN_COMPLETED=1

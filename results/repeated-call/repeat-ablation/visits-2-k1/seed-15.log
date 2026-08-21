@@ -1,0 +1,28 @@
+[2026-07-25 21:47:16.87] Compiling `contracts/harnesses/repeated-call/generated/RepeatedCallVisits2K1Harness.sol`... Done! (0.290066651s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/repeated-call/generated/RepeatedCallVisits2K1Harness.sol:RepeatedCallVisits2K1Harness
+[2026-07-25 21:47:17.16] Running slither on `contracts/harnesses/repeated-call/generated/RepeatedCallVisits2K1Harness.sol`... Done! (0.387484479s)
+[2026-07-25 21:47:17.56] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+RepeatedCallVisits2K1Harness.repeat_v2_sequence_1(24025528399378370020662707237518973255037162804519671158322118306537053821634) Time delay: 254414 seconds Block delay: 5020
+
+[2026-07-25 21:47:17.56] [Worker 0] New coverage: 784 instr, 2 contracts, 1 seqs in corpus
+[2026-07-25 21:47:18.91] [Worker 0] Test limit reached. Stopping.
+[2026-07-25 21:47:18.91] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 784, corpus: 1, gas/s: 123157
+echidna_value_safe: failed!💥  
+  Call sequence:
+    RepeatedCallVisits2K1Harness.repeat_v2_sequence_1(101)
+
+Traces: 
+call [1mRepeatedCallExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/repeated-call/generated/RepeatedCallVisits2K1Harness.sol:30)[0m
+ └╴← (false)
+
+
+Unique instructions: 784
+Unique codehashes: 2
+Corpus size: 1
+Seed: 15
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.12
+EXIT_CODE=1

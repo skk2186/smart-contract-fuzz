@@ -1,0 +1,41 @@
+FORMAL_EXPERIMENT_VERSION=Full-v1.0
+FORMAL_BATCH=B-2
+BENCHMARK=alternative-path
+METHOD=full-k1
+SEED=4
+CONTRACT_FILE=contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol
+CONTRACT_NAME=AlternativePathFullK1Harness
+CONFIG_FILE=configs/formal-b2-alternative-harness.yaml
+START_TIME=2026-07-27T20:14:42+08:00
+
+[2026-07-27 20:14:42.10] Compiling `contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol`... Done! (0.306761365s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol:AlternativePathFullK1Harness
+[2026-07-27 20:14:42.41] Running slither on `contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol`... Done! (0.429011307s)
+[2026-07-27 20:14:42.85] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+AlternativePathFullK1Harness.full_sequence_1(272504363338328174572623641334121758069769320395) Time delay: 554465 seconds Block delay: 4923
+
+[2026-07-27 20:14:42.85] [Worker 0] New coverage: 647 instr, 2 contracts, 1 seqs in corpus
+[2026-07-27 20:14:44.07] [Worker 0] Test limit reached. Stopping.
+[2026-07-27 20:14:44.07] [status] tests: 1/1, fuzzing: 2/100000, values: [], cov: 647, corpus: 1, gas/s: 119278
+echidna_value_safe: failed!💥  
+  Call sequence:
+    AlternativePathFullK1Harness.full_sequence_1(101)
+
+Traces: 
+call [1mAlternativePathExample[0m::echidna_value_safe()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/formal-b2/AlternativePathFullK1Harness.sol:29)[0m
+ └╴← (false)
+
+
+Unique instructions: 647
+Unique codehashes: 2
+Corpus size: 1
+Seed: 4
+Total calls: 2
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.05
+
+EXIT_CODE=1
+END_TIME=2026-07-27T20:14:44+08:00
+FORMAL_B2_RUN_COMPLETED=1

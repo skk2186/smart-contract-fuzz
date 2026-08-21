@@ -1,0 +1,7 @@
+method,metric,metric_type,denominator_unit,runs,successful_outcomes,success_rate
+full-k1,echidna_value_a_safe,property_outcome,runs_with_one_outcome_for_this_property,30,30,1.0
+full-k1,echidna_value_b_safe,property_outcome,runs_with_one_outcome_for_this_property,30,30,1.0
+full-k1,both_properties_failed,run_level_composite,runs,30,30,1.0
+original,echidna_value_a_safe,property_outcome,runs_with_one_outcome_for_this_property,30,30,1.0
+original,echidna_value_b_safe,property_outcome,runs_with_one_outcome_for_this_property,30,30,1.0
+original,both_properties_failed,run_level_composite,runs,30,30,1.0

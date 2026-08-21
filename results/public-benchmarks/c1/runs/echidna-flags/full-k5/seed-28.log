@@ -1,0 +1,50 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-flags
+METHOD=full-k5
+COMPILER=0.8.20
+SEED=28
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol
+CONTRACT_NAME=PublicEchidnaFlagsFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:09:22+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:09:23.10] Compiling `contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol`... Done! (0.309896828s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol:PublicEchidnaFlagsFullK5Harness
+[2026-07-28 16:09:23.41] Running slither on `contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol`... Done! (0.406285973s)
+[2026-07-28 16:09:23.83] [Worker 0] New coverage: 810 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:09:23.84] [Worker 0] New coverage: 831 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:09:23.92] [Worker 0] Test echidna_sometimesfalse falsified!
+  Call sequence:
+PublicEchidnaFlagsFullK5Harness.full_sequence_1(34772290263056925038160754389530791402788420982842671247989293607528991988200,57896044618658097711785492504343953926634992332820282019728792003956564819390) Time delay: 82671 seconds Block delay: 9966
+
+[2026-07-28 16:09:23.92] [Worker 0] New coverage: 852 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:09:25.43] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:09:25.43] [status] tests: 1/1, fuzzing: 201/100000, values: [], cov: 852, corpus: 3, gas/s: 1560142
+echidna_sometimesfalse: failed!💥  
+  Call sequence:
+    PublicEchidnaFlagsFullK5Harness.full_sequence_1(5109958229946876881647123505976782906990175174427944102087517786223705232300,337923692710897802402450408383923764699947574782464316862037559095874970110)
+
+Traces: 
+call [1mPublicEchidnaFlagsTarget[0m::echidna_sometimesfalse()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaFlagsFullK5Harness.sol:27)[0m
+ ├╴emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:38)[0m
+ ├╴emit [36mFlag[0m(false) [1m(/home/skk/smart-contract-fuzzing/contracts/public-benchmarks/adapted/EchidnaFlagsTarget.sol:39)[0m
+ └╴← (false)
+
+
+Unique instructions: 852
+Unique codehashes: 2
+Corpus size: 3
+Seed: 28
+Total calls: 201
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=2.40
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:09:25+08:00
+PUBLIC_C1_RUN_COMPLETED=1

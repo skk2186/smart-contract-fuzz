@@ -1,0 +1,33 @@
+[2026-07-22 21:27:31.88] Compiling `contracts/harnesses/dependency-k/NoisyFourStepDependencyK5Harness.sol`... Done! (0.306078563s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/dependency-k/NoisyFourStepDependencyK5Harness.sol:NoisyFourStepDependencyK5Harness
+[2026-07-22 21:27:32.19] Running slither on `contracts/harnesses/dependency-k/NoisyFourStepDependencyK5Harness.sol`... Done! (0.4355723s)
+[2026-07-22 21:27:32.64] [Worker 0] New coverage: 557 instr, 2 contracts, 1 seqs in corpus
+[2026-07-22 21:27:32.64] [Worker 0] New coverage: 999 instr, 2 contracts, 2 seqs in corpus
+[2026-07-22 21:27:32.64] [Worker 0] New coverage: 1238 instr, 2 contracts, 3 seqs in corpus
+[2026-07-22 21:27:32.64] [Worker 0] New coverage: 1467 instr, 2 contracts, 4 seqs in corpus
+[2026-07-22 21:27:32.65] [Worker 0] New coverage: 1740 instr, 2 contracts, 5 seqs in corpus
+[2026-07-22 21:27:32.66] [Worker 0] New coverage: 1760 instr, 2 contracts, 6 seqs in corpus
+[2026-07-22 21:27:32.70] [Worker 0] New coverage: 1767 instr, 2 contracts, 7 seqs in corpus
+[2026-07-22 21:27:32.77] [Worker 0] New coverage: 1774 instr, 2 contracts, 8 seqs in corpus
+[2026-07-22 21:27:32.91] [Worker 0] New coverage: 1781 instr, 2 contracts, 9 seqs in corpus
+[2026-07-22 21:27:33.55] [Worker 0] New coverage: 1788 instr, 2 contracts, 10 seqs in corpus
+[2026-07-22 21:27:33.61] [Worker 0] New coverage: 1791 instr, 2 contracts, 11 seqs in corpus
+[2026-07-22 21:27:33.81] [Worker 0] New coverage: 1922 instr, 2 contracts, 12 seqs in corpus
+[2026-07-22 21:27:35.64] [status] tests: 0/1, fuzzing: 14364/100000, values: [], cov: 1922, corpus: 12, gas/s: 328625609
+[2026-07-22 21:27:38.64] [status] tests: 0/1, fuzzing: 30847/100000, values: [], cov: 1922, corpus: 12, gas/s: 377220025
+[2026-07-22 21:27:41.65] [status] tests: 0/1, fuzzing: 46985/100000, values: [], cov: 1922, corpus: 12, gas/s: 373693168
+[2026-07-22 21:27:44.65] [status] tests: 0/1, fuzzing: 62887/100000, values: [], cov: 1922, corpus: 12, gas/s: 366074486
+[2026-07-22 21:27:47.65] [status] tests: 0/1, fuzzing: 78655/100000, values: [], cov: 1922, corpus: 12, gas/s: 362629099
+[2026-07-22 21:27:50.66] [status] tests: 0/1, fuzzing: 94095/100000, values: [], cov: 1922, corpus: 12, gas/s: 356326808
+[2026-07-22 21:27:51.76] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 21:27:51.76] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 1922, corpus: 12, gas/s: 410414919
+echidna_value_safe: passing
+
+Unique instructions: 1922
+Unique codehashes: 2
+Corpus size: 12
+Seed: 26
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=19.95
+EXIT_CODE=0

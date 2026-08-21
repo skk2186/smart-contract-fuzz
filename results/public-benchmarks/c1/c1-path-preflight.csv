@@ -1,0 +1,6 @@
+benchmark,expected_minimal_path,expected_minimal_path_rank,exact_minimal_path_in_k1,exact_minimal_path_in_k5,any_known_triggering_path_in_k1,any_known_triggering_path_in_k5,top1_sequence,path_count
+echidna-multi,f(uint256) -> g(uint256) -> h(uint256),1,1,1,1,1,f(uint256) -> g(uint256) -> h(uint256),2
+echidna-flags,set0(int256) -> set1(int256),1,1,1,1,1,set0(int256) -> set1(int256),1
+exercise2-access-control,Owner() -> resume(),2,0,1,0,1,Owner() -> pause(),2
+smartbugs-multifunc,init() -> run(uint256),3,0,1,1,1,init() -> run(uint256) -> run(uint256),3
+smartbugs-onefunc,run(uint256) -> run(uint256),1,1,1,1,1,run(uint256) -> run(uint256),1

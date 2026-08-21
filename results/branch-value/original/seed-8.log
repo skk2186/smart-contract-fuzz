@@ -1,0 +1,39 @@
+[2026-07-22 23:41:47.41] Compiling `contracts/benchmarks/BranchValueExample.sol`... Done! (0.327153312s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/benchmarks/BranchValueExample.sol:BranchValueExample
+[2026-07-22 23:41:47.74] Running slither on `contracts/benchmarks/BranchValueExample.sol`... Done! (0.431334608s)
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 217 instr, 1 contracts, 1 seqs in corpus
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 488 instr, 1 contracts, 2 seqs in corpus
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 502 instr, 1 contracts, 3 seqs in corpus
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 516 instr, 1 contracts, 4 seqs in corpus
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 541 instr, 1 contracts, 5 seqs in corpus
+[2026-07-22 23:41:48.19] [Worker 0] New coverage: 560 instr, 1 contracts, 6 seqs in corpus
+[2026-07-22 23:41:48.25] [Worker 0] New coverage: 585 instr, 1 contracts, 7 seqs in corpus
+[2026-07-22 23:41:48.27] [Worker 0] New coverage: 596 instr, 1 contracts, 8 seqs in corpus
+[2026-07-22 23:41:48.29] [Worker 0] Test echidna_value_safe falsified!
+  Call sequence:
+BranchValueExample.prepareGood() from: 0x0000000000000000000000000000000000010000 Time delay: 289103 seconds Block delay: 3571
+BranchValueExample.unlock() from: 0x0000000000000000000000000000000000020000 Time delay: 522178 seconds Block delay: 11905
+BranchValueExample.activate() from: 0x0000000000000000000000000000000000010000
+BranchValueExample.trigger(9627126123674692953182038678605182206264449620051274599516077787681226067416) from: 0x0000000000000000000000000000000000010000 Time delay: 434894 seconds Block delay: 46422
+
+[2026-07-22 23:41:49.34] [Worker 0] Test limit reached. Stopping.
+[2026-07-22 23:41:49.34] [status] tests: 1/1, fuzzing: 1032/100000, values: [], cov: 596, corpus: 8, gas/s: 24806498
+echidna_value_safe: failed!💥  
+  Call sequence:
+    BranchValueExample.prepareGood()
+    BranchValueExample.unlock()
+    BranchValueExample.activate()
+    BranchValueExample.trigger(101)
+
+Traces: 
+
+
+Unique instructions: 596
+Unique codehashes: 1
+Corpus size: 8
+Seed: 8
+Total calls: 1032
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=1.99
+EXIT_CODE=1

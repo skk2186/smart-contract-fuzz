@@ -1,0 +1,12 @@
+Warning: Function state mutability can be restricted to view
+  --> contracts/harnesses/matched-random-v1/multi-property/candidate-002.sol:23:5:
+   |
+23 |     function echidna_value_a_safe() public returns (bool) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: Function state mutability can be restricted to view
+  --> contracts/harnesses/matched-random-v1/multi-property/candidate-002.sol:27:5:
+   |
+27 |     function echidna_value_b_safe() public returns (bool) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+

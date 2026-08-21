@@ -1,0 +1,44 @@
+MATCHED_RANDOM_EXPERIMENT_VERSION=Full-v1.0-matched-random-control
+RUN_MODE=formal
+COHORT=formal
+BENCHMARK=noisy-four-step
+METHOD=matched-random-k1
+SEED=3
+SCHEDULE_SEED=20260805
+SELECTION_ID=b00-o001
+SELECTED_CANDIDATE_INDICES=3
+SELECTION_SHA256=bfc6ecd48d8998096b6f8dabcb533360bcf5f6f196913405324d16f269639d10
+CONTRACT_FILE=contracts/harnesses/matched-random-v1/noisy-four-step/candidate-003.sol
+CONTRACT_NAME=MatchedRandomV1NoisyFourStepC003Harness
+COMPILER_VERSION=0.8.20
+COMPILER_PATH=/home/skk/.solc-select/artifacts/solc-0.8.20/solc-0.8.20
+CONFIG_FILE=configs/formal-harness-seq1.yaml
+SEMANTIC_CLASSIFICATION=supported
+EXPECTED_PROPERTIES=echidna_value_safe
+TEST_LIMIT_OVERRIDE=
+START_TIME=2026-08-06T11:15:47+08:00
+[2026-08-06 11:15:47.09] Compiling `contracts/harnesses/matched-random-v1/noisy-four-step/candidate-003.sol`... Done! (0.13106242s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/matched-random-v1/noisy-four-step/candidate-003.sol:MatchedRandomV1NoisyFourStepC003Harness
+[2026-08-06 11:15:47.23] Running slither on `contracts/harnesses/matched-random-v1/noisy-four-step/candidate-003.sol`... Done! (0.223449806s)
+[2026-08-06 11:15:47.47] [Worker 0] New coverage: 413 instr, 2 contracts, 1 seqs in corpus
+[2026-08-06 11:15:47.99] [Worker 0] New coverage: 544 instr, 2 contracts, 2 seqs in corpus
+[2026-08-06 11:15:48.11] [Worker 0] New coverage: 547 instr, 2 contracts, 3 seqs in corpus
+[2026-08-06 11:15:50.47] [status] tests: 0/1, fuzzing: 27428/100000, values: [], cov: 547, corpus: 3, gas/s: 131090692
+[2026-08-06 11:15:53.47] [status] tests: 0/1, fuzzing: 57207/100000, values: [], cov: 547, corpus: 3, gas/s: 142250114
+[2026-08-06 11:15:56.47] [status] tests: 0/1, fuzzing: 89841/100000, values: [], cov: 547, corpus: 3, gas/s: 156005609
+[2026-08-06 11:15:57.43] [Worker 0] Test limit reached. Stopping.
+[2026-08-06 11:15:57.43] [status] tests: 0/1, fuzzing: 100000/100000, values: [], cov: 547, corpus: 3, gas/s: 145323953
+echidna_value_safe: passing
+
+Unique instructions: 547
+Unique codehashes: 2
+Corpus size: 3
+Seed: 3
+Total calls: 100000
+
+
+EXIT_CODE=0
+END_TIME=2026-08-06T11:15:57+08:00
+PROCESS_WALL_SECONDS=10.398284
+MATCHED_RANDOM_RUN_STATUS=budget_exhausted
+MATCHED_RANDOM_RUN_COMPLETED=1

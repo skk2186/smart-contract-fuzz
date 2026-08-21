@@ -1,0 +1,51 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=full-k1
+COMPILER=0.8.20
+SEED=10
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol
+CONTRACT_NAME=PublicEchidnaMultiFullK1Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:00:25+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:00:25.81] Compiling `contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol`... Done! (0.30880132s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol:PublicEchidnaMultiFullK1Harness
+[2026-07-28 16:00:26.13] Running slither on `contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol`... Done! (0.410360553s)
+[2026-07-28 16:00:26.55] [Worker 0] New coverage: 512 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:00:26.69] [Worker 0] New coverage: 655 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:00:26.80] [Worker 0] New coverage: 658 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:00:26.83] [Worker 0] New coverage: 789 instr, 2 contracts, 4 seqs in corpus
+[2026-07-28 16:00:29.55] [status] tests: 0/1, fuzzing: 24268/100000, values: [], cov: 789, corpus: 4, gas/s: 104811408
+[2026-07-28 16:00:30.32] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+PublicEchidnaMultiFullK1Harness.full_sequence_1(12,8,40139683410176146552504449904583791524907144734473045993786535188384317166645) Time delay: 405856 seconds Block delay: 47075
+
+[2026-07-28 16:00:30.33] [Worker 0] New coverage: 944 instr, 2 contracts, 5 seqs in corpus
+[2026-07-28 16:00:31.38] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:00:31.38] [status] tests: 1/1, fuzzing: 31374/100000, values: [], cov: 944, corpus: 5, gas/s: 45987445
+echidna_state3: failed!💥  
+  Call sequence:
+    PublicEchidnaMultiFullK1Harness.full_sequence_1(12,8,1877883418773286270424661830)
+
+Traces: 
+call [1mC[0m::echidna_state3()() [1m(/home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK1Harness.sol:28)[0m
+ └╴← (false)
+
+
+Unique instructions: 944
+Unique codehashes: 2
+Corpus size: 5
+Seed: 10
+Total calls: 31374
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=5.64
+
+EXIT_CODE=1
+END_TIME=2026-07-28T16:00:31+08:00
+PUBLIC_C1_RUN_COMPLETED=1

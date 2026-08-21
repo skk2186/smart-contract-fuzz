@@ -1,0 +1,76 @@
+{
+  "C": {
+    "property_functions": [
+      "echidna_state3()"
+    ],
+    "property_variables": [
+      "C.state3"
+    ],
+    "target_functions": [
+      "h(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 2,
+    "retained_path_count": 2,
+    "dfs_expansions": 2,
+    "paths": [
+      {
+        "sequence": [
+          "f(uint256)",
+          "g(uint256)",
+          "h(uint256)"
+        ],
+        "score": 4,
+        "length": 3,
+        "target_function": "h(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "f(uint256)",
+            "target": "g(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state1"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state2"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "g(uint256)",
+          "h(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "h(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "g(uint256)",
+            "target": "h(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "C.state2"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      }
+    ]
+  }
+}

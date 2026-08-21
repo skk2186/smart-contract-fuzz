@@ -1,0 +1,41 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=full-k5
+COMPILER=0.8.20
+SEED=7
+CONTRACT_FILE=contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol
+CONTRACT_NAME=PublicEchidnaMultiFullK5Harness
+CONFIG_FILE=configs/public-c1-harness.yaml
+START_TIME=2026-07-28T16:02:47+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 16:02:47.45] Compiling `contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol`... Done! (0.318213559s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol:PublicEchidnaMultiFullK5Harness
+[2026-07-28 16:02:47.77] Running slither on `contracts/harnesses/public-c1/PublicEchidnaMultiFullK5Harness.sol`... Done! (0.410534549s)
+[2026-07-28 16:02:48.19] [Worker 0] New coverage: 516 instr, 2 contracts, 1 seqs in corpus
+[2026-07-28 16:02:48.19] [Worker 0] New coverage: 683 instr, 2 contracts, 2 seqs in corpus
+[2026-07-28 16:02:48.26] [Worker 0] New coverage: 814 instr, 2 contracts, 3 seqs in corpus
+[2026-07-28 16:02:48.26] [Worker 0] New coverage: 817 instr, 2 contracts, 4 seqs in corpus
+[2026-07-28 16:02:48.39] [Worker 0] New coverage: 920 instr, 2 contracts, 5 seqs in corpus
+[2026-07-28 16:02:51.19] [status] tests: 0/1, fuzzing: 25079/100000, values: [], cov: 920, corpus: 5, gas/s: 115256033
+[2026-07-28 16:02:54.19] [status] tests: 0/1, fuzzing: 52677/100000, values: [], cov: 920, corpus: 5, gas/s: 126704629
+[2026-07-28 16:02:57.20] [status] tests: 0/1, fuzzing: 80029/100000, values: [], cov: 920, corpus: 5, gas/s: 125430729
+[2026-07-28 16:02:59.41] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 16:02:59.41] [status] tests: 0/1, fuzzing: 100001/100000, values: [], cov: 920, corpus: 5, gas/s: 137587375
+echidna_state3: passing
+
+Unique instructions: 920
+Unique codehashes: 2
+Corpus size: 5
+Seed: 7
+Total calls: 100001
+
+PROCESS_WALL_SECONDS=12.03
+
+EXIT_CODE=0
+END_TIME=2026-07-28T16:02:59+08:00
+PUBLIC_C1_RUN_COMPLETED=1

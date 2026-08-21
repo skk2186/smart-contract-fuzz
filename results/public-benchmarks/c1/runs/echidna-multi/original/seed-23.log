@@ -1,0 +1,57 @@
+METHOD_VERSION=Full-v1.0.1-compat
+FORMAL_BATCH=C-1
+BENCHMARK=echidna-multi
+METHOD=original
+COMPILER=0.8.20
+SEED=23
+CONTRACT_FILE=contracts/public-benchmarks/raw/echidna/multi.sol
+CONTRACT_NAME=C
+CONFIG_FILE=configs/public-c1-original.yaml
+START_TIME=2026-07-28T15:59:01+08:00
+
+===== SOLC VERSION =====
+solc, the solidity compiler commandline interface
+Version: 0.8.20+commit.a1b79de6.Linux.g++
+
+[2026-07-28 15:59:01.14] Compiling `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.296804161s)
+Analyzing contract: /home/skk/smart-contract-fuzzing/contracts/public-benchmarks/raw/echidna/multi.sol:C
+[2026-07-28 15:59:01.44] Running slither on `contracts/public-benchmarks/raw/echidna/multi.sol`... Done! (0.390815176s)
+[2026-07-28 15:59:01.84] [Worker 0] New coverage: 218 instr, 1 contracts, 1 seqs in corpus
+[2026-07-28 15:59:01.84] [Worker 0] New coverage: 252 instr, 1 contracts, 2 seqs in corpus
+[2026-07-28 15:59:01.84] [Worker 0] New coverage: 278 instr, 1 contracts, 3 seqs in corpus
+[2026-07-28 15:59:01.86] [Worker 0] New coverage: 313 instr, 1 contracts, 4 seqs in corpus
+[2026-07-28 15:59:02.04] [Worker 0] New coverage: 340 instr, 1 contracts, 5 seqs in corpus
+[2026-07-28 15:59:02.37] [Worker 0] New coverage: 366 instr, 1 contracts, 6 seqs in corpus
+[2026-07-28 15:59:02.38] [Worker 0] New coverage: 369 instr, 1 contracts, 7 seqs in corpus
+[2026-07-28 15:59:04.84] [status] tests: 0/1, fuzzing: 59223/100000, values: [], cov: 369, corpus: 7, gas/s: 377873242
+[2026-07-28 15:59:04.94] [Worker 0] Test echidna_state3 falsified!
+  Call sequence:
+C.g(15629451150248194045368695425594095540550475404394891576239958702694596401455) from: 0x0000000000000000000000000000000000010000 Time delay: 38059 seconds Block delay: 5014
+C.f(12) from: 0x0000000000000000000000000000000000010000 Time delay: 322365 seconds Block delay: 12053
+C.g(8) from: 0x0000000000000000000000000000000000020000 Time delay: 82670 seconds Block delay: 22909
+C.h(90518084688128544136913620526952029924582337026689398487906712547335432429487) from: 0x0000000000000000000000000000000000020000 Time delay: 254414 seconds Block delay: 46422
+
+[2026-07-28 15:59:04.94] [Worker 0] New coverage: 395 instr, 1 contracts, 8 seqs in corpus
+[2026-07-28 15:59:05.81] [Worker 0] Test limit reached. Stopping.
+[2026-07-28 15:59:05.81] [status] tests: 1/1, fuzzing: 61378/100000, values: [], cov: 395, corpus: 8, gas/s: 41086798
+echidna_state3: failed!💥  
+  Call sequence:
+    C.f(12)
+    C.g(8)
+    C.h(0)
+
+Traces: 
+
+
+Unique instructions: 395
+Unique codehashes: 1
+Corpus size: 8
+Seed: 23
+Total calls: 61378
+
+Command exited with non-zero status 1
+PROCESS_WALL_SECONDS=4.73
+
+EXIT_CODE=1
+END_TIME=2026-07-28T15:59:05+08:00
+PUBLIC_C1_RUN_COMPLETED=1

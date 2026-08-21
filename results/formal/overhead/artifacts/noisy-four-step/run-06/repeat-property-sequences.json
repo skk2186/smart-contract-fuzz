@@ -1,0 +1,119 @@
+{
+  "NoisyFourStepExample": {
+    "property_functions": [
+      "echidna_value_safe()"
+    ],
+    "property_variables": [
+      "value"
+    ],
+    "target_functions": [
+      "withdraw(uint256)"
+    ],
+    "max_path_length": 4,
+    "max_function_visits": 2,
+    "generated_path_count": 3,
+    "retained_path_count": 3,
+    "dfs_expansions": 3,
+    "paths": [
+      {
+        "sequence": [
+          "register()",
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 6,
+        "length": 4,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "register()",
+            "target": "deposit()",
+            "score": 2,
+            "write_read_variables": [
+              "registered"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 1
+      },
+      {
+        "sequence": [
+          "deposit()",
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 4,
+        "length": 3,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "deposit()",
+            "target": "approve()",
+            "score": 2,
+            "write_read_variables": [
+              "funded"
+            ],
+            "write_write_variables": []
+          },
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 2
+      },
+      {
+        "sequence": [
+          "approve()",
+          "withdraw(uint256)"
+        ],
+        "score": 2,
+        "length": 2,
+        "target_function": "withdraw(uint256)",
+        "has_repetition": false,
+        "repeated_functions": {},
+        "edges": [
+          {
+            "source": "approve()",
+            "target": "withdraw(uint256)",
+            "score": 2,
+            "write_read_variables": [
+              "approved"
+            ],
+            "write_write_variables": []
+          }
+        ],
+        "repeat_rank": 3
+      }
+    ]
+  }
+}

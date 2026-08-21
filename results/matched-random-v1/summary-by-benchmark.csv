@@ -1,0 +1,10 @@
+cohort,benchmark,runs,random_falsified,random_rate,random_wilson95_low,random_wilson95_high,full_k1_falsified,full_k1_rate,random_only,full_k1_only,mcnemar_exact_p
+formal,branch-value,30,4,0.133333,0.053097,0.296813,30,1.0,0,26,2.9802e-08
+formal,noisy-four-step,30,10,0.333333,0.192305,0.512199,30,1.0,0,20,1.907349e-06
+formal,repeated-call,30,10,0.333333,0.192305,0.512199,30,1.0,0,20,1.907349e-06
+formal,reset-example,30,1,0.033333,0.005909,0.166704,30,1.0,0,29,3.725e-09
+formal-b2,alternative-path,30,6,0.2,0.095051,0.373057,30,1.0,0,24,1.19209e-07
+formal-b2,multi-property,30,6,0.2,0.095051,0.373057,30,1.0,0,24,1.19209e-07
+public-c1,echidna-multi,30,15,0.5,0.331541,0.668459,30,1.0,0,15,6.1035156e-05
+public-c1,exercise2-access-control,30,15,0.5,0.331541,0.668459,0,0.0,15,0,6.1035156e-05
+public-c1,smartbugs-multifunc,30,20,0.666667,0.487801,0.807695,30,1.0,0,10,0.001953125
