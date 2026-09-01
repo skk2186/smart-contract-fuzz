@@ -357,12 +357,12 @@ END_TIME="$(date --iso-8601=seconds)"
 
 STATUS_VALUE="unknown_error"
 if [[ "$FAILED_STAGE" == "echidna" ]]; then
-    if grep -Eiq 'test limit|testLimit|budget.exhaust|time limit|timed out' "$RAW_LOG"; then
-        STATUS_VALUE="budget_exhausted"
+    if grep -Eiq 'falsified|property[[:space:][:punct:]]*failed|assertion[[:space:][:punct:]]*failed|failed!' "$RAW_LOG"; then
+        STATUS_VALUE="completed"
     elif [[ "$EXIT_CODE" -eq 0 ]]; then
         STATUS_VALUE="completed"
-    elif grep -Eiq 'falsified|property.*failed|assertion.*failed|failed!' "$RAW_LOG"; then
-        STATUS_VALUE="completed"
+    elif grep -Eiq 'test limit|testLimit|budget.exhaust|time limit|timed out' "$RAW_LOG"; then
+        STATUS_VALUE="budget_exhausted"
     fi
 fi
 
