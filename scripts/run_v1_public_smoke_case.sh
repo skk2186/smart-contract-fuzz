@@ -7,6 +7,8 @@ usage() {
 Usage:
   bash scripts/run_v1_public_smoke_case.sh --mode preflight --benchmark <benchmark_id> [--run-id <run_id>]
   bash scripts/run_v1_public_smoke_case.sh --mode smoke --run-id <run_id> --benchmark <benchmark_id> --method <original|full-k1|full-k5> --seed 1
+  bash scripts/run_v1_public_smoke_case.sh --mode pilot-preflight --benchmark <benchmark_id> [--run-id <run_id>]
+  bash scripts/run_v1_public_smoke_case.sh --mode pilot --run-id <run_id> --benchmark <benchmark_id> --method <original|full-k1|full-k5> --seed <1|2|3>
 USAGE
 }
 
@@ -58,16 +60,20 @@ while [[ "$#" -gt 0 ]]; do
     esac
 done
 
-[[ "$MODE" == "preflight" || "$MODE" == "smoke" ]] || fail "--mode must be preflight or smoke"
+[[ "$MODE" == "preflight" || "$MODE" == "smoke" || "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]] || fail "--mode must be preflight, smoke, pilot-preflight, or pilot"
 [[ -n "$BENCHMARK" ]] || fail "--benchmark is required"
-if [[ "$MODE" == "preflight" ]]; then
+if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
     [[ -z "$METHOD" && -z "$SEED" ]] || fail "preflight does not accept method or seed"
     [[ -z "$RUN_ID" || "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
 else
-    [[ -n "$RUN_ID" ]] || fail "--run-id is required for smoke"
+    [[ -n "$RUN_ID" ]] || fail "--run-id is required for smoke/pilot"
     [[ "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
     [[ "$METHOD" == "original" || "$METHOD" == "full-k1" || "$METHOD" == "full-k5" ]] || fail "smoke method must be original, full-k1, or full-k5"
-    [[ "$SEED" =~ ^1$ ]] || fail "Phase 05 smoke only permits seed 1"
+    if [[ "$MODE" == "smoke" ]]; then
+        [[ "$SEED" =~ ^1$ ]] || fail "Phase 05 smoke only permits seed 1"
+    else
+        [[ "$SEED" =~ ^[123]$ ]] || fail "Phase 06A pilot only permits seeds 1, 2, or 3"
+    fi
 fi
 
 case "$BENCHMARK" in
@@ -110,7 +116,18 @@ case "$BENCHMARK" in
         fail "unknown public C-1 benchmark: $BENCHMARK"
         ;;
 esac
-
+if [[ "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]]; then
+    case "$BENCHMARK" in
+        echidna-flags|echidna-multi|smartbugs-multifunc|smartbugs-onefunc)
+            ;;
+        exercise2-access-control)
+            fail "Phase 06A pilot does not permit conditional benchmark: $BENCHMARK"
+            ;;
+        *)
+            fail "Phase 06A pilot benchmark is not supported: $BENCHMARK"
+            ;;
+    esac
+fi
 HARNESS_K1="$HARNESS_PREFIX""K1Harness"
 HARNESS_K5="$HARNESS_PREFIX""K5Harness"
 SCRIPT_DIR="$(cd -- "$(dirname -- "$BASH_SOURCE")" && pwd)"
@@ -125,18 +142,31 @@ EXPECTED_REPO_ROOT="$(readlink -f -- "$EXPECTED_REPO_ROOT")"
 WORK_ROOT="$REPO_ROOT/work"
 RESTART_ROOT="$WORK_ROOT/v1-restart"
 PUBLIC_SMOKE_ROOT="$RESTART_ROOT/phase05-public-smoke"
+PHASE06A_ROOT="$RESTART_ROOT/phase06a-public-supported-3seed"
 for path in "$WORK_ROOT" "$RESTART_ROOT" "$PUBLIC_SMOKE_ROOT"; do
     [[ ! -L "$path" ]] || fail "temporary output path must not be a symlink: $path"
     [[ ! -e "$path" || -d "$path" ]] || fail "temporary output path is not a directory: $path"
 done
 mkdir -p "$PUBLIC_SMOKE_ROOT"
-
+if [[ "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]]; then
+    [[ ! -L "$PHASE06A_ROOT" ]] || fail "temporary output path must not be a symlink: $PHASE06A_ROOT"
+    [[ ! -e "$PHASE06A_ROOT" || -d "$PHASE06A_ROOT" ]] || fail "temporary output path is not a directory: $PHASE06A_ROOT"
+    mkdir -p "$PHASE06A_ROOT"
+fi
 if [[ "$MODE" == "preflight" ]]; then
     if [[ -n "$RUN_ID" ]]; then
         OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight-$RUN_ID"
     else
         OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight"
     fi
+elif [[ "$MODE" == "pilot-preflight" ]]; then
+    if [[ -n "$RUN_ID" ]]; then
+        OUTPUT_ROOT="$PHASE06A_ROOT/$BENCHMARK-preflight-$RUN_ID"
+    else
+        OUTPUT_ROOT="$PHASE06A_ROOT/$BENCHMARK-preflight"
+    fi
+elif [[ "$MODE" == "pilot" ]]; then
+    OUTPUT_ROOT="$PHASE06A_ROOT/$RUN_ID"
 else
     OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$RUN_ID"
 fi
@@ -207,7 +237,7 @@ write_command_record() {
     {
         printf 'cd -- %q\n' "$REPO_ROOT"
         printf 'solc-select use %q\n' "$COMPILER"
-        if [[ "$MODE" == "preflight" ]]; then
+        if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
             printf 'solc --allow-paths %q --bin %q\n' "$REPO_ROOT/contracts" "$SOURCE_ABS"
             printf 'python analyzer/extract_rw.py %q > %q\n' "$SOURCE_ABS" "$OUTPUT_ROOT/generated/rw.json"
             printf 'python analyzer/generate_repetition_aware_sequences.py %q 4 500 --contract %q --max-function-visits 2 > %q\n' "$OUTPUT_ROOT/generated/rw.json" "$CONTRACT_NAME" "$OUTPUT_ROOT/generated/repeat-property-sequences.json"
@@ -277,7 +307,7 @@ if grep -Eq 'results/formal|results/formal-b2|results/public-benchmarks/c1/|resu
     fail "planned command leaks into a frozen output path"
 fi
 
-if [[ "$MODE" == "preflight" ]]; then
+if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
     SOLC_ORIGINAL_DIR="$OUTPUT_ROOT/generated/solc-original"
     SOLC_K1_DIR="$OUTPUT_ROOT/generated/solc-k1"
     SOLC_K5_DIR="$OUTPUT_ROOT/generated/solc-k5"
@@ -377,7 +407,18 @@ if [[ "$MODE" == "preflight" ]]; then
     exit 0
 fi
 
-PREFLIGHT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight"
+if [[ "$MODE" == "pilot" ]]; then
+    PREFLIGHT_ROOT="$PHASE06A_ROOT/$BENCHMARK-preflight"
+    if [[ ! -f "$PREFLIGHT_ROOT/generated/harness-k1.sol" || ! -f "$PREFLIGHT_ROOT/generated/harness-k5.sol" ]]; then
+        for candidate in "$PHASE06A_ROOT"/"$BENCHMARK-preflight-"*; do
+            if [[ -f "$candidate/generated/harness-k1.sol" && -f "$candidate/generated/harness-k5.sol" && -f "$candidate/status/status.env" ]] && grep -q '^STATUS=preflight_pass$' "$candidate/status/status.env"; then
+                PREFLIGHT_ROOT="$candidate"
+            fi
+        done
+    fi
+else
+    PREFLIGHT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight"
+fi
 [[ -f "$PREFLIGHT_ROOT/generated/harness-k1.sol" && -f "$PREFLIGHT_ROOT/generated/harness-k5.sol" ]] || {
     FAILED_STAGE="missing_preflight"
     EXIT_CODE=1
