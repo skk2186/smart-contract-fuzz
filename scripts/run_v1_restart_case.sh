@@ -5,8 +5,8 @@ set -euo pipefail
 usage() {
     cat >&2 <<'USAGE'
 Usage:
-  bash scripts/run_v1_restart_case.sh --run-id <run_id> --method original --seed <seed> [--dry-run]
-  bash scripts/run_v1_restart_case.sh --run-id <run_id> --method full-k1 --seed <seed> [--dry-run]
+  bash scripts/run_v1_restart_case.sh --run-id <run_id> [--benchmark <benchmark>] --method original --seed <seed> [--dry-run]
+  bash scripts/run_v1_restart_case.sh --run-id <run_id> [--benchmark <benchmark>] --method full-k1 --seed <seed> [--dry-run]
 USAGE
 }
 
@@ -16,6 +16,7 @@ fail() {
 }
 
 RUN_ID=""
+BENCHMARK="noisy-four-step"
 METHOD=""
 SEED=""
 DRY_RUN=0
@@ -25,6 +26,11 @@ while [[ "$#" -gt 0 ]]; do
         --run-id)
             [[ "$#" -ge 2 ]] || fail "--run-id requires a value"
             RUN_ID="$2"
+            shift 2
+            ;;
+        --benchmark)
+            [[ "$#" -ge 2 ]] || fail "--benchmark requires a value"
+            BENCHMARK="$2"
             shift 2
             ;;
         --method)
@@ -63,6 +69,47 @@ case "$METHOD" in
         fail "method must be original or full-k1"
         ;;
 esac
+
+
+case "$BENCHMARK" in
+    noisy-four-step)
+        CONTRACT_FILE="contracts/benchmarks/NoisyFourStepExample.sol"
+        CONTRACT_NAME="NoisyFourStepExample"
+        ;;
+    reset-example)
+        CONTRACT_FILE="contracts/benchmarks/ResetExample.sol"
+        CONTRACT_NAME="ResetExample"
+        ;;
+    branch-value)
+        CONTRACT_FILE="contracts/benchmarks/BranchValueExample.sol"
+        CONTRACT_NAME="BranchValueExample"
+        ;;
+    repeated-call)
+        CONTRACT_FILE="contracts/benchmarks/RepeatedCallExample.sol"
+        CONTRACT_NAME="RepeatedCallExample"
+        ;;
+    *)
+        fail "benchmark must be noisy-four-step, reset-example, branch-value, or repeated-call"
+        ;;
+esac
+
+PROPERTY="echidna_value_safe"
+ORIGINAL_CONFIG_FILE="configs/formal-original-seq4.yaml"
+HARNESS_CONFIG_FILE="configs/formal-harness-seq1.yaml"
+TEST_LIMIT=100000
+TIMEOUT=30
+WORKERS=1
+STOP_ON_FAIL=true
+METHOD_VERSION="Full-v1.0-restart-benchmark-v1"
+if [[ "$METHOD" == "original" ]]; then
+    CONFIG_FILE="$ORIGINAL_CONFIG_FILE"
+else
+    CONFIG_FILE="$HARNESS_CONFIG_FILE"
+fi
+HARNESS_NAME="${CONTRACT_NAME}FullK1RestartHarness"
+if [[ "$BENCHMARK" == "noisy-four-step" ]]; then
+    HARNESS_NAME="NoisyFourStepFullK1RestartHarness"
+fi
 
 [[ "$SEED" =~ ^[1-9][0-9]*$ ]] || fail "seed must be a positive integer"
 
@@ -154,18 +201,9 @@ do
     }
 done
 
-CONTRACT_FILE="contracts/benchmarks/NoisyFourStepExample.sol"
-CONTRACT_NAME="NoisyFourStepExample"
-PROPERTY="echidna_value_safe"
-if [[ "$METHOD" == "original" ]]; then
-    CONFIG_FILE="configs/formal-original-seq4.yaml"
-else
-    CONFIG_FILE="configs/formal-harness-seq1.yaml"
-fi
 [[ -f "$CONTRACT_FILE" ]] || startup_fail "contract not found: $CONTRACT_FILE"
 [[ -f "$CONFIG_FILE" ]] || startup_fail "config not found: $CONFIG_FILE"
 
-HARNESS_NAME="NoisyFourStepFullK1RestartHarness"
 HARNESS_FILE="$OUTPUT_ROOT/generated/$HARNESS_NAME.sol"
 RW_JSON="$OUTPUT_ROOT/generated/rw.json"
 REPEAT_JSON="$OUTPUT_ROOT/generated/repeat-property-sequences.json"
@@ -197,6 +235,8 @@ fi
 {
     printf 'REPO_ROOT=%s\n' "$REPO_ROOT"
     printf 'RUN_ID=%s\n' "$RUN_ID"
+    printf 'BENCHMARK=%s\n' "$BENCHMARK"
+    printf 'METHOD_VERSION=%s\n' "$METHOD_VERSION"
     printf 'METHOD=%s\n' "$METHOD"
     printf 'SEED=%s\n' "$SEED"
     printf 'DRY_RUN=%s\n' "$DRY_RUN"
@@ -204,6 +244,14 @@ fi
     printf 'COMMIT_SHA=%s\n' "$COMMIT_SHA"
     printf 'CONDA_DEFAULT_ENV=%s\n' "$CONDA_DEFAULT_ENV_VALUE"
     printf 'CONDA_PREFIX=%s\n' "$CONDA_PREFIX_VALUE"
+    printf 'CONTRACT_FILE=%s\n' "$CONTRACT_FILE"
+    printf 'CONTRACT_NAME=%s\n' "$CONTRACT_NAME"
+    printf 'PROPERTY=%s\n' "$PROPERTY"
+    printf 'CONFIG_FILE=%s\n' "$CONFIG_FILE"
+    printf 'TEST_LIMIT=%s\n' "$TEST_LIMIT"
+    printf 'TIMEOUT=%s\n' "$TIMEOUT"
+    printf 'WORKERS=%s\n' "$WORKERS"
+    printf 'STOP_ON_FAIL=%s\n' "$STOP_ON_FAIL"
     printf 'PYTHON=%s\n' "$(command -v python)"
     printf 'SLITHER=%s\n' "$(command -v slither)"
     printf 'SOLC=%s\n' "$(command -v solc)"
@@ -244,10 +292,11 @@ if grep -Eq 'results/formal|results/formal-b2|results/public-benchmarks|results/
 fi
 
 {
-    printf 'run_id\tcommit_sha\tmethod_version\tbenchmark\tmethod\tcontract_file\tcontract_name\tproperty\tconfig_file\tseed\tpython_version\tslither_version\tsolc_version\techidna_version\toutput_root\tstart_time\n'
-    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
-        "$RUN_ID" "$COMMIT_SHA" "Full-v1.0-restart" "noisy-four-step" "$METHOD" \
+    printf 'run_id\tcommit_sha\tmethod_version\tbenchmark\tmethod\tcontract_file\tcontract_name\tproperty\tconfig_file\tseed\ttest_limit\ttimeout\tworkers\tstop_on_fail\tpython_version\tslither_version\tsolc_version\techidna_version\toutput_root\tstart_time\n'
+    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+        "$RUN_ID" "$COMMIT_SHA" "$METHOD_VERSION" "$BENCHMARK" "$METHOD" \
         "$CONTRACT_FILE" "$CONTRACT_NAME" "$PROPERTY" "$CONFIG_FILE" "$SEED" \
+        "$TEST_LIMIT" "$TIMEOUT" "$WORKERS" "$STOP_ON_FAIL" \
         "$PYTHON_VERSION" "$SLITHER_VERSION" "$SOLC_VERSION" "$ECHIDNA_VERSION" \
         "$OUTPUT_ROOT" "$START_TIME"
 } > "$OUTPUT_ROOT/manifest.tsv"
@@ -339,6 +388,7 @@ run_pipeline() {
 : > "$RAW_LOG"
 {
     printf 'RUN_ID=%s\n' "$RUN_ID"
+    printf 'BENCHMARK=%s\n' "$BENCHMARK"
     printf 'METHOD=%s\n' "$METHOD"
     printf 'SEED=%s\n' "$SEED"
     printf 'START_TIME=%s\n' "$START_TIME"
