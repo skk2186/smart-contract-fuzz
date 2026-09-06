@@ -5,7 +5,7 @@ set -euo pipefail
 usage() {
     cat >&2 <<'USAGE'
 Usage:
-  bash scripts/run_v1_public_smoke_case.sh --mode preflight --benchmark <benchmark_id>
+  bash scripts/run_v1_public_smoke_case.sh --mode preflight --benchmark <benchmark_id> [--run-id <run_id>]
   bash scripts/run_v1_public_smoke_case.sh --mode smoke --run-id <run_id> --benchmark <benchmark_id> --method <original|full-k1|full-k5> --seed 1
 USAGE
 }
@@ -61,7 +61,8 @@ done
 [[ "$MODE" == "preflight" || "$MODE" == "smoke" ]] || fail "--mode must be preflight or smoke"
 [[ -n "$BENCHMARK" ]] || fail "--benchmark is required"
 if [[ "$MODE" == "preflight" ]]; then
-    [[ -z "$RUN_ID" && -z "$METHOD" && -z "$SEED" ]] || fail "preflight does not accept run-id, method, or seed"
+    [[ -z "$METHOD" && -z "$SEED" ]] || fail "preflight does not accept method or seed"
+    [[ -z "$RUN_ID" || "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
 else
     [[ -n "$RUN_ID" ]] || fail "--run-id is required for smoke"
     [[ "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
@@ -131,7 +132,11 @@ done
 mkdir -p "$PUBLIC_SMOKE_ROOT"
 
 if [[ "$MODE" == "preflight" ]]; then
-    OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight"
+    if [[ -n "$RUN_ID" ]]; then
+        OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight-$RUN_ID"
+    else
+        OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight"
+    fi
 else
     OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$RUN_ID"
 fi
@@ -206,7 +211,8 @@ write_command_record() {
             printf 'solc --allow-paths %q --bin %q\n' "$REPO_ROOT/contracts" "$SOURCE_ABS"
             printf 'python analyzer/extract_rw.py %q > %q\n' "$SOURCE_ABS" "$OUTPUT_ROOT/generated/rw.json"
             printf 'python analyzer/generate_repetition_aware_sequences.py %q 4 500 --contract %q --max-function-visits 2 > %q\n' "$OUTPUT_ROOT/generated/rw.json" "$CONTRACT_NAME" "$OUTPUT_ROOT/generated/repeat-property-sequences.json"
-            printf 'python analyzer/extract_value_constraints.py %q --contract %q > %q\n' "$SOURCE_ABS" "$CONTRACT_NAME"
+            printf 'python analyzer/extract_value_constraints.py %q --contract %q > %q\n' \
+  "$SOURCE_ABS" "$CONTRACT_NAME" "$OUTPUT_ROOT/generated/value-constraints.json"
             printf 'python analyzer/generate_value_guided_sequences.py %q %q --contract %q > %q\n' "$OUTPUT_ROOT/generated/repeat-property-sequences.json" "$OUTPUT_ROOT/generated/value-constraints.json" "$CONTRACT_NAME" "$OUTPUT_ROOT/generated/full-sequences.json"
             printf 'python analyzer/generate_harness_from_paths.py --source %q --sequences %q --target-contract %q --harness-contract %q --output %q --prefix full --top-k 1 --solidity-pragma %q\n' "$SOURCE_ABS" "$OUTPUT_ROOT/generated/full-sequences.json" "$CONTRACT_NAME" "$HARNESS_K1" "$OUTPUT_ROOT/generated/harness-k1.sol" "$COMPILER"
             printf 'python analyzer/generate_harness_from_paths.py --source %q --sequences %q --target-contract %q --harness-contract %q --output %q --prefix full --top-k 5 --solidity-pragma %q\n' "$SOURCE_ABS" "$OUTPUT_ROOT/generated/full-sequences.json" "$CONTRACT_NAME" "$HARNESS_K5" "$OUTPUT_ROOT/generated/harness-k5.sol" "$COMPILER"
@@ -227,7 +233,11 @@ write_manifest() {
 
 write_checksums() {
     {
-        sha256sum -- "$SOURCE_ABS" "$ORIGINAL_CONFIG" "$HARNESS_CONFIG" "$PREREGISTRATION" "$EXISTING_PATH_PREFLIGHT" "$PREVIOUS_APPLICABILITY" "$OUTPUT_ROOT/manifest.tsv" "$OUTPUT_ROOT/command.txt" "$OUTPUT_ROOT/environment.txt" "$OUTPUT_ROOT/status/status.env"
+        for checksum_path in "$SOURCE_ABS" "$ORIGINAL_CONFIG" "$HARNESS_CONFIG" "$PREREGISTRATION" "$EXISTING_PATH_PREFLIGHT" "$PREVIOUS_APPLICABILITY" "$OUTPUT_ROOT/manifest.tsv" "$OUTPUT_ROOT/command.txt" "$OUTPUT_ROOT/environment.txt" "$OUTPUT_ROOT/status/status.env"; do
+            if [[ -f "$checksum_path" ]]; then
+                sha256sum -- "$checksum_path"
+            fi
+        done
         if [[ -f "$REPO_ROOT/contracts/public-benchmarks/raw/exercise2/token.sol" ]]; then
             sha256sum -- "$REPO_ROOT/contracts/public-benchmarks/raw/exercise2/token.sol"
         fi
@@ -248,6 +258,14 @@ write_status() {
     } > "$OUTPUT_ROOT/status/status.env"
 }
 
+if ! solc-select use "$COMPILER" > "$OUTPUT_ROOT/raw/solc-select.log" 2>&1; then
+    FAILED_STAGE="solc_select"
+    EXIT_CODE=1
+    write_status "startup_error" 0 "$(date --iso-8601=seconds)"
+    write_checksums
+    exit 1
+fi
+
 write_environment
 write_command_record
 write_manifest
@@ -257,14 +275,6 @@ if grep -Eq 'results/formal|results/formal-b2|results/public-benchmarks/c1/|resu
     write_status "startup_error" 0 "$(date --iso-8601=seconds)"
     write_checksums
     fail "planned command leaks into a frozen output path"
-fi
-
-if ! solc-select use "$COMPILER" > "$OUTPUT_ROOT/raw/solc-select.log" 2>&1; then
-    FAILED_STAGE="solc_select"
-    EXIT_CODE=1
-    write_status "startup_error" 0 "$(date --iso-8601=seconds)"
-    write_checksums
-    exit 1
 fi
 
 if [[ "$MODE" == "preflight" ]]; then
