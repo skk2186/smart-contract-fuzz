@@ -1,0 +1,13 @@
+benchmark_id	benchmark_name	method	runs	falsified	budget_exhausted	startup_error	unknown_error	incomplete	parser_status_mismatch	checksum_pass	checksum_fail	falsification_rate	main_table_usable	notes
+PUB01	echidna-flags	Original	10	10	0	0	0	0	0	10	0	1.000000	conditional	
+PUB01	echidna-flags	Full-K1	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB01	echidna-flags	Full-K5	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB02	echidna-multi	Original	10	9	1	0	0	0	0	10	0	0.900000	conditional	budget_exhausted means no observed counterexample within the declared budget
+PUB02	echidna-multi	Full-K1	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB02	echidna-multi	Full-K5	10	9	1	0	0	0	0	10	0	0.900000	conditional	budget_exhausted means no observed counterexample within the declared budget; Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB03	smartbugs-multifunc	Original	10	10	0	0	0	0	0	10	0	1.000000	conditional	
+PUB03	smartbugs-multifunc	Full-K1	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB03	smartbugs-multifunc	Full-K5	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB04	smartbugs-onefunc	Original	10	10	0	0	0	0	0	10	0	1.000000	conditional	
+PUB04	smartbugs-onefunc	Full-K1	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
+PUB04	smartbugs-onefunc	Full-K5	10	10	0	0	0	0	0	10	0	1.000000	conditional	Harness wrapper caveat; no Original equivalence or Total calls speedup claim
