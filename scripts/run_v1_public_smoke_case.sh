@@ -5,6 +5,9 @@ set -euo pipefail
 usage() {
     cat >&2 <<'USAGE'
 Usage:
+  bash scripts/run_v1_public_smoke_case.sh --mode main10-preflight --run-id <run_id> --benchmark <benchmark_id> --method <Original|Full-K1|Full-K5> --seed <1..10>
+  bash scripts/run_v1_public_smoke_case.sh --mode main10-dry-run --run-id <run_id> --benchmark <benchmark_id> --method <Original|Full-K1|Full-K5> --seed <1..10>
+  # --mode main10 is reserved for the B4 execution phase; B3 never invokes it.
   bash scripts/run_v1_public_smoke_case.sh --mode preflight --benchmark <benchmark_id> [--run-id <run_id>]
   bash scripts/run_v1_public_smoke_case.sh --mode smoke --run-id <run_id> --benchmark <benchmark_id> --method <original|full-k1|full-k5> --seed 1
   bash scripts/run_v1_public_smoke_case.sh --mode pilot-preflight --benchmark <benchmark_id> [--run-id <run_id>]
@@ -60,9 +63,29 @@ while [[ "$#" -gt 0 ]]; do
     esac
 done
 
-[[ "$MODE" == "preflight" || "$MODE" == "smoke" || "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]] || fail "--mode must be preflight, smoke, pilot-preflight, or pilot"
+[[ "$MODE" == "preflight" || "$MODE" == "smoke" || "$MODE" == "pilot-preflight" || "$MODE" == "pilot" || "$MODE" == "main10-preflight" || "$MODE" == "main10-dry-run" || "$MODE" == "main10" ]] || fail "--mode must be preflight, smoke, pilot-preflight, pilot, main10-preflight, main10-dry-run, or main10"
 [[ -n "$BENCHMARK" ]] || fail "--benchmark is required"
-if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
+MAIN10_MODE=0
+SAFE_MAIN10_MODE=0
+if [[ "$MODE" == "main10-preflight" || "$MODE" == "main10-dry-run" || "$MODE" == "main10" ]]; then
+    MAIN10_MODE=1
+    [[ "$MODE" == "main10-preflight" || "$MODE" == "main10-dry-run" ]] && SAFE_MAIN10_MODE=1
+fi
+if (( MAIN10_MODE == 1 )); then
+    [[ -n "$RUN_ID" ]] || fail "--run-id is required for main10"
+    [[ "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
+    case "$METHOD" in
+        original|Original) METHOD="original" ;;
+        full-k1|Full-K1) METHOD="full-k1" ;;
+        full-k5|Full-K5) METHOD="full-k5" ;;
+        *) fail "main10 method must be Original, Full-K1, or Full-K5" ;;
+    esac
+    case "$SEED" in
+        1|2|3|4|5|6|7|8|9|10) ;;
+        11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30) fail "main10 explicitly rejects seed $SEED" ;;
+        *) fail "main10 only permits seeds 1 through 10" ;;
+    esac
+elif [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
     [[ -z "$METHOD" && -z "$SEED" ]] || fail "preflight does not accept method or seed"
     [[ -z "$RUN_ID" || "$RUN_ID" =~ ^[A-Za-z0-9._-]+$ ]] || fail "run-id contains unsafe characters"
 else
@@ -76,6 +99,16 @@ else
     fi
 fi
 
+if (( MAIN10_MODE == 1 )); then
+    case "$BENCHMARK" in
+        PUB06|PUB07|PUB08|alternative-path-internal|multi-property-internal|three-step-internal)
+            fail "main10 rejects excluded benchmark: $BENCHMARK"
+            ;;
+        matched-random-v1)
+            fail "main10 rejects matched-random-v1"
+            ;;
+    esac
+fi
 case "$BENCHMARK" in
     echidna-flags)
         COMPILER="0.8.20"
@@ -116,6 +149,31 @@ case "$BENCHMARK" in
         fail "unknown public C-1 benchmark: $BENCHMARK"
         ;;
 esac
+case "$BENCHMARK" in
+    echidna-flags) BENCHMARK_ID="PUB01" ;;
+    echidna-multi) BENCHMARK_ID="PUB02" ;;
+    smartbugs-multifunc) BENCHMARK_ID="PUB03" ;;
+    smartbugs-onefunc) BENCHMARK_ID="PUB04" ;;
+    exercise2-access-control) BENCHMARK_ID="PUB05" ;;
+esac
+if (( MAIN10_MODE == 1 )); then
+    case "$BENCHMARK" in
+        echidna-flags|echidna-multi|smartbugs-multifunc|smartbugs-onefunc)
+            ;;
+        exercise2-access-control)
+            fail "main10 rejects conditional benchmark: $BENCHMARK"
+            ;;
+        PUB06|PUB07|PUB08|alternative-path-internal|multi-property-internal|three-step-internal)
+            fail "main10 rejects excluded benchmark: $BENCHMARK"
+            ;;
+        matched-random-v1)
+            fail "main10 rejects matched-random-v1"
+            ;;
+        *)
+            fail "main10 benchmark is not preregistered and is not supported: $BENCHMARK"
+            ;;
+    esac
+fi
 if [[ "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]]; then
     case "$BENCHMARK" in
         echidna-flags|echidna-multi|smartbugs-multifunc|smartbugs-onefunc)
@@ -143,17 +201,29 @@ WORK_ROOT="$REPO_ROOT/work"
 RESTART_ROOT="$WORK_ROOT/v1-restart"
 PUBLIC_SMOKE_ROOT="$RESTART_ROOT/phase05-public-smoke"
 PHASE06A_ROOT="$RESTART_ROOT/phase06a-public-supported-3seed"
-for path in "$WORK_ROOT" "$RESTART_ROOT" "$PUBLIC_SMOKE_ROOT"; do
+B4_MAIN_ROOT="$RESTART_ROOT/b4-public-supported-10seed-main"
+B4_OUTPUT_REL_ROOT="work/v1-restart/b4-public-supported-10seed-main/"
+for path in "$WORK_ROOT" "$RESTART_ROOT"; do
     [[ ! -L "$path" ]] || fail "temporary output path must not be a symlink: $path"
     [[ ! -e "$path" || -d "$path" ]] || fail "temporary output path is not a directory: $path"
 done
-mkdir -p "$PUBLIC_SMOKE_ROOT"
-if [[ "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]]; then
-    [[ ! -L "$PHASE06A_ROOT" ]] || fail "temporary output path must not be a symlink: $PHASE06A_ROOT"
-    [[ ! -e "$PHASE06A_ROOT" || -d "$PHASE06A_ROOT" ]] || fail "temporary output path is not a directory: $PHASE06A_ROOT"
-    mkdir -p "$PHASE06A_ROOT"
+if (( MAIN10_MODE == 1 )); then
+    [[ ! -L "$B4_MAIN_ROOT" ]] || fail "temporary output path must not be a symlink: $B4_MAIN_ROOT"
+    [[ ! -e "$B4_MAIN_ROOT" || -d "$B4_MAIN_ROOT" ]] || fail "temporary output path is not a directory: $B4_MAIN_ROOT"
+    mkdir -p "$B4_MAIN_ROOT"
+else
+    [[ ! -L "$PUBLIC_SMOKE_ROOT" ]] || fail "temporary output path must not be a symlink: $PUBLIC_SMOKE_ROOT"
+    [[ ! -e "$PUBLIC_SMOKE_ROOT" || -d "$PUBLIC_SMOKE_ROOT" ]] || fail "temporary output path is not a directory: $PUBLIC_SMOKE_ROOT"
+    mkdir -p "$PUBLIC_SMOKE_ROOT"
+    if [[ "$MODE" == "pilot-preflight" || "$MODE" == "pilot" ]]; then
+        [[ ! -L "$PHASE06A_ROOT" ]] || fail "temporary output path must not be a symlink: $PHASE06A_ROOT"
+        [[ ! -e "$PHASE06A_ROOT" || -d "$PHASE06A_ROOT" ]] || fail "temporary output path is not a directory: $PHASE06A_ROOT"
+        mkdir -p "$PHASE06A_ROOT"
+    fi
 fi
-if [[ "$MODE" == "preflight" ]]; then
+if (( MAIN10_MODE == 1 )); then
+    OUTPUT_ROOT="$B4_MAIN_ROOT/$RUN_ID"
+elif [[ "$MODE" == "preflight" ]]; then
     if [[ -n "$RUN_ID" ]]; then
         OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$BENCHMARK-preflight-$RUN_ID"
     else
@@ -170,6 +240,8 @@ elif [[ "$MODE" == "pilot" ]]; then
 else
     OUTPUT_ROOT="$PUBLIC_SMOKE_ROOT/$RUN_ID"
 fi
+[[ "$OUTPUT_ROOT" == "$B4_MAIN_ROOT"/* || "$MODE" != "main10-preflight" && "$MODE" != "main10-dry-run" && "$MODE" != "main10" ]] || fail "main10 output root is not fixed to B4 root"
+[[ "$OUTPUT_ROOT" != *"/results/"* && "$OUTPUT_ROOT" != *"/paper-ready/"* && "$OUTPUT_ROOT" != *"/matched-random-v1/"* ]] || fail "main10 output path enters a forbidden evidence directory"
 [[ ! -e "$OUTPUT_ROOT" && ! -L "$OUTPUT_ROOT" ]] || fail "refusing to overwrite existing output: $OUTPUT_ROOT"
 mkdir "$OUTPUT_ROOT"
 mkdir -p "$OUTPUT_ROOT/generated" "$OUTPUT_ROOT/raw" "$OUTPUT_ROOT/parsed" "$OUTPUT_ROOT/summary" "$OUTPUT_ROOT/status"
@@ -177,7 +249,13 @@ mkdir -p "$OUTPUT_ROOT/generated" "$OUTPUT_ROOT/raw" "$OUTPUT_ROOT/parsed" "$OUT
 SOURCE_ABS="$REPO_ROOT/$SOURCE"
 ORIGINAL_CONFIG="$REPO_ROOT/configs/public-c1-original.yaml"
 HARNESS_CONFIG="$REPO_ROOT/configs/public-c1-harness.yaml"
-PREREGISTRATION="$REPO_ROOT/docs/v1-restart/phase05-public-preregistration.tsv"
+MAIN10_PREREGISTRATION="$REPO_ROOT/paper-ready/v1/main10_preregistration.tsv"
+MAIN10_EXPECTED_RUNS="$REPO_ROOT/paper-ready/v1/main10_expected_runs.tsv"
+if (( MAIN10_MODE == 1 )); then
+    PREREGISTRATION="$MAIN10_PREREGISTRATION"
+else
+    PREREGISTRATION="$REPO_ROOT/docs/v1-restart/phase05-public-preregistration.tsv"
+fi
 EXISTING_PATH_PREFLIGHT="$REPO_ROOT/results/public-benchmarks/c1/c1-path-preflight.csv"
 PREVIOUS_APPLICABILITY="$REPO_ROOT/results/semantic-applicability/v1/applicability.csv"
 START_TIME="$(date --iso-8601=seconds)"
@@ -190,16 +268,43 @@ INPUT_SOURCE="$SOURCE_ABS"
 [[ -f "$SOURCE_ABS" ]] || fail "contract not found: $SOURCE"
 [[ -f "$ORIGINAL_CONFIG" && -f "$HARNESS_CONFIG" ]] || fail "public C-1 config not found"
 [[ -f "$PREREGISTRATION" ]] || fail "Phase 05 preregistration manifest not found"
-[[ "$CONDA_DEFAULT_ENV" == "contract-fuzz" ]] || fail "active Conda environment must be contract-fuzz"
-[[ -n "$CONDA_PREFIX" && -d "$CONDA_PREFIX" ]] || fail "CONDA_PREFIX must point to the active contract-fuzz environment"
+if (( MAIN10_MODE == 1 )); then
+    EXPECTED_CONFIG_REL="configs/public-c1-harness.yaml"
+    [[ "$METHOD" == "original" ]] && EXPECTED_CONFIG_REL="configs/public-c1-original.yaml"
+    if (( SAFE_MAIN10_MODE == 1 )); then
+        [[ "$RUN_ID" =~ ^b3-main10-(preflight|dry-run)-[A-Za-z0-9._-]+$ ]] || fail "safe main10 run-id must start with b3-main10-preflight- or b3-main10-dry-run-"
+    else
+        [[ -f "$MAIN10_EXPECTED_RUNS" ]] || fail "B4 expected-runs registry not found"
+        if ! awk -F '\t' -v run_id="$RUN_ID" -v benchmark_id="$BENCHMARK_ID" -v benchmark="$BENCHMARK" -v method="$METHOD" -v seed="$SEED" -v source="$SOURCE" -v config="$EXPECTED_CONFIG_REL" -v output_dir="${B4_OUTPUT_REL_ROOT}${RUN_ID}/" 'NR == 1 { next } $1 == run_id && $2 == benchmark_id && $3 == benchmark && $4 == method && $5 == seed && $6 == source && $7 == config && $8 == output_dir && $10 == "preregistered" { found += 1 } END { exit found == 1 ? 0 : 1 }' "$MAIN10_EXPECTED_RUNS"; then
+            fail "run-id, benchmark, method, seed, config, output directory, or status is not exactly preregistered"
+        fi
+    fi
+elif (( SAFE_MAIN10_MODE == 0 )); then
+    [[ "$CONDA_DEFAULT_ENV" == "contract-fuzz" ]] || fail "active Conda environment must be contract-fuzz"
+    [[ -n "$CONDA_PREFIX" && -d "$CONDA_PREFIX" ]] || fail "CONDA_PREFIX must point to the active contract-fuzz environment"
+fi
 
-export PATH="$CONDA_PREFIX/bin:$PATH"
+if (( MAIN10_MODE == 1 )); then
+    if [[ "$METHOD" == "original" ]]; then
+        INPUT_CONTRACT="$CONTRACT_NAME"
+        CONFIG="$ORIGINAL_CONFIG"
+        INPUT_SOURCE="$SOURCE_ABS"
+    else
+        CONFIG="$HARNESS_CONFIG"
+        INPUT_CONTRACT="$HARNESS_K1"
+        [[ "$METHOD" == "full-k5" ]] && INPUT_CONTRACT="$HARNESS_K5"
+        INPUT_SOURCE="$PHASE06A_ROOT/$BENCHMARK-preflight/generated/harness-${METHOD#full-}.sol"
+    fi
+fi
+if [[ -n "${CONDA_PREFIX:-}" ]]; then export PATH="$CONDA_PREFIX/bin:$PATH"; fi
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPYCACHEPREFIX="$OUTPUT_ROOT/generated/pycache"
 
-for command_name in python slither solc solc-select echidna git sha256sum jq awk; do
-    command -v "$command_name" >/dev/null 2>&1 || fail "required command not found: $command_name"
-done
+if (( SAFE_MAIN10_MODE == 0 )); then
+    for command_name in python slither solc solc-select echidna git sha256sum jq awk; do
+        command -v "$command_name" >/dev/null 2>&1 || fail "required command not found: $command_name"
+    done
+fi
 
 write_environment() {
     {
@@ -219,6 +324,9 @@ write_environment() {
         printf 'ORIGINAL_CONFIG=configs/public-c1-original.yaml\n'
         printf 'HARNESS_CONFIG=configs/public-c1-harness.yaml\n'
         printf 'TEST_LIMIT=100000\nTIMEOUT=30s\nWORKERS=1\nSTOP_ON_FAIL=true\n'
+        if (( SAFE_MAIN10_MODE == 1 )); then
+            printf 'SAFE_MODE=main10-preflight-or-dry-run\nECHIDNA_INVOCATION=skipped\nSLITHER_INVOCATION=skipped\nSOLC_INVOCATION=skipped\n'
+        else
         printf 'PYTHON=%s\n' "$(command -v python)"
         printf 'SLITHER=%s\n' "$(command -v slither)"
         printf 'SOLC=%s\n' "$(command -v solc)"
@@ -229,6 +337,7 @@ write_environment() {
         printf 'SOLC_VERSION=%s\n' "$(solc --version 2>&1 | tr '\n' ' ')"
         printf 'ECHIDNA_VERSION=%s\n' "$(echidna --version 2>&1 | tr '\n' ' ')"
         printf 'SOLC_SELECT_VERSIONS=%s\n' "$(solc-select versions 2>&1 | tr '\n' '; ')"
+        fi
         printf 'START_TIME=%s\n' "$START_TIME"
     } > "$OUTPUT_ROOT/environment.txt"
 }
@@ -236,7 +345,12 @@ write_environment() {
 write_command_record() {
     {
         printf 'cd -- %q\n' "$REPO_ROOT"
-        printf 'solc-select use %q\n' "$COMPILER"
+        if (( SAFE_MAIN10_MODE == 1 )); then
+            printf '# main10 safe mode: no Echidna, Slither, solc, or solc-select invocation\n'
+            printf 'python analyzer/build_main10_preregistration.py --check\n'
+            printf 'planned_echidna_template=echidna %q --contract %q --config %q --seed %q\n' "$INPUT_SOURCE" "$INPUT_CONTRACT" "$CONFIG" "$SEED"
+        else
+            printf 'solc-select use %q\n' "$COMPILER"
         if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
             printf 'solc --allow-paths %q --bin %q\n' "$REPO_ROOT/contracts" "$SOURCE_ABS"
             printf 'python analyzer/extract_rw.py %q > %q\n' "$SOURCE_ABS" "$OUTPUT_ROOT/generated/rw.json"
@@ -251,6 +365,7 @@ write_command_record() {
         else
             printf 'echidna %q --contract %q --config %q --seed %q\n' "$INPUT_SOURCE" "$INPUT_CONTRACT" "$CONFIG" "$SEED"
         fi
+        fi
     } > "$OUTPUT_ROOT/command.txt"
 }
 
@@ -263,7 +378,7 @@ write_manifest() {
 
 write_checksums() {
     {
-        for checksum_path in "$SOURCE_ABS" "$ORIGINAL_CONFIG" "$HARNESS_CONFIG" "$PREREGISTRATION" "$EXISTING_PATH_PREFLIGHT" "$PREVIOUS_APPLICABILITY" "$OUTPUT_ROOT/manifest.tsv" "$OUTPUT_ROOT/command.txt" "$OUTPUT_ROOT/environment.txt" "$OUTPUT_ROOT/status/status.env"; do
+        for checksum_path in "$SOURCE_ABS" "$ORIGINAL_CONFIG" "$HARNESS_CONFIG" "$PREREGISTRATION" "$MAIN10_EXPECTED_RUNS" "$EXISTING_PATH_PREFLIGHT" "$PREVIOUS_APPLICABILITY" "$OUTPUT_ROOT/manifest.tsv" "$OUTPUT_ROOT/command.txt" "$OUTPUT_ROOT/environment.txt" "$OUTPUT_ROOT/status/status.env"; do
             if [[ -f "$checksum_path" ]]; then
                 sha256sum -- "$checksum_path"
             fi
@@ -287,6 +402,28 @@ write_status() {
         printf 'END_TIME=%s\n' "$3"
     } > "$OUTPUT_ROOT/status/status.env"
 }
+
+if (( SAFE_MAIN10_MODE == 1 )); then
+    write_environment
+    write_command_record
+    write_manifest
+    if grep -Eq 'results/formal|results/formal-b2|results/public-benchmarks/c1/|results/paper-data|results/matched-random-v1|contracts/harnesses/formal' "$OUTPUT_ROOT/command.txt"; then
+        FAILED_STAGE="path_safety"
+        EXIT_CODE=1
+        write_status "startup_error" 0 "$(date --iso-8601=seconds)"
+        write_checksums
+        fail "main10 safe-mode command leaks into a forbidden evidence path"
+    fi
+    printf 'main10 safe mode: Echidna fuzzing was not invoked.\n' > "$OUTPUT_ROOT/raw/dry-run.txt"
+    printf 'status\tnotes\n%s\tno_fuzzing_invoked\n' "$([[ "$MODE" == "main10-preflight" ]] && printf 'preflight_pass' || printf 'dry_run_pass')" > "$OUTPUT_ROOT/parsed/main10.tsv"
+    printf 'benchmark\tmethod\tseed\tstatus\texpected\n%s\t%s\t%s\t%s\tpreregistered\n' "$BENCHMARK" "$METHOD" "$SEED" "$([[ "$MODE" == "main10-preflight" ]] && printf 'preflight_pass' || printf 'dry_run_pass')" > "$OUTPUT_ROOT/summary/main10.tsv"
+    SAFE_STATUS="dry_run_pass"
+    [[ "$MODE" == "main10-preflight" ]] && SAFE_STATUS="preflight_pass"
+    write_status "$SAFE_STATUS" 1 "$(date --iso-8601=seconds)"
+    write_checksums
+    printf 'Main10 safe check finished: %s (%s)\n' "$OUTPUT_ROOT" "$SAFE_STATUS"
+    exit 0
+fi
 
 if ! solc-select use "$COMPILER" > "$OUTPUT_ROOT/raw/solc-select.log" 2>&1; then
     FAILED_STAGE="solc_select"
@@ -407,7 +544,7 @@ if [[ "$MODE" == "preflight" || "$MODE" == "pilot-preflight" ]]; then
     exit 0
 fi
 
-if [[ "$MODE" == "pilot" ]]; then
+if [[ "$MODE" == "pilot" || "$MODE" == "main10" ]]; then
     PREFLIGHT_ROOT="$PHASE06A_ROOT/$BENCHMARK-preflight"
     if [[ ! -f "$PREFLIGHT_ROOT/generated/harness-k1.sol" || ! -f "$PREFLIGHT_ROOT/generated/harness-k5.sol" ]]; then
         for candidate in "$PHASE06A_ROOT"/"$BENCHMARK-preflight-"*; do
