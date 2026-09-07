@@ -23,7 +23,8 @@
 - 是否生成完整中文初稿：是，生成 full_draft_zh.md。
 - 是否保留窄定位：是，正文将 V1 定位为 Echidna 之上的 property-directed Harness synthesis preprocessing。
 - 是否保留 semantic caveat：是，保留 caller、transaction atomicity、rollback scope、msg.value、区块环境、external call 和 reentrancy 边界。
-- 是否保留 forbidden claims：否；显著优越、Total calls speedup、Harness/Original 完全等价、budget_exhausted 等于通过或安全、四任务代表真实生态、普遍优于 Echidna/SMARTIAN/MuFuzz/IR-Fuzz 等表述均未作为论文主张写入。
+- 是否将 forbidden claims 作为论文主张写入：否。
+- 是否保留 forbidden-claim 检查与限制说明：是；显著优越、Total calls speedup、Harness/Original 完全等价、budget_exhausted 等于通过或安全、四任务代表真实生态、普遍优于 Echidna/SMARTIAN/MuFuzz/IR-Fuzz 等边界均已保留。
 
 ## 新增文件清单
 
