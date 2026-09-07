@@ -1,0 +1,26 @@
+term	preferred_form	chinese_form	first_use_rule	allowed_synonyms	disallowed_forms	notes
+PHS	PHS	PHS	首次出现写“属性定向 Harness 合成方法（Property-directed Harness Synthesis，PHS）”	属性定向 Harness 合成方法	V1 作为论文正文方法名	PHS 是正式方法名；v1 仅可出现在内部路径或证据文件名。
+Property-directed Harness Synthesis	Property-directed Harness Synthesis	属性定向 Harness 合成方法	与 PHS 首次定义同时出现	property-directed Harness synthesis	V1 method; V1 方法	统一大小写与连字符。
+属性定向 Harness 合成方法	属性定向 Harness 合成方法	属性定向 Harness 合成方法	中文正文优先使用，必要时附英文全称与 PHS	PHS	V1 方法	指论文方法定位，不指完整模糊测试器。
+safety property	safety property	安全属性	首次出现给出中文解释，后续保留 safety property	安全属性	property passed; contract safe	指待模糊测试的可判定属性，不暗示合约整体安全。
+transaction sequence	transaction sequence	交易序列	首次出现说明为有序交易调用序列	交易调用序列	交易路径（若会混淆）；测试用例（过宽）	保持与 stateful execution 的语义一致。
+Harness synthesis	Harness synthesis	Harness 合成	首次出现说明输出为 Solidity wrapper Harness 候选	Harness 生成（可作为非正式简称）	自动修复；新模糊测试器	PHS 的输出是候选 Harness，不是漏洞修复。
+Solidity wrapper Harness	Solidity wrapper Harness	Solidity wrapper Harness	首次出现解释 wrapper 函数如何组织候选调用	Solidity Harness；wrapper Harness	等价 Harness；原始交易回放	必须强调其执行语义是包装后的模型。
+wrapper execution model	wrapper execution model	wrapper 执行模型	在方法或语义边界小节定义	Harness wrapper 模型	Original 等价模型；完全等价	用于指代 Solidity wrapper 中的候选执行方式。
+Original multi-transaction model	Original multi-transaction model	Original 多交易模型	在实验方法首次对照时定义	Original 模型	原始模型与 Harness 等价	Original 是基线配置名，不表示绝对真实或语义完整。
+Full-K1	Full-K1	Full-K1	首次出现说明 K=1 的候选 Harness 条目配置	K1	Full-K1 等价于一条 Original 交易；K1 长度	K 表示 Harness 条目数量，不是 Original 等价交易长度。
+Full-K5	Full-K5	Full-K5	首次出现说明 K=5 的候选 Harness 条目配置	K5	Full-K5 等价于五笔 Original 交易；K5 长度	K 表示候选 Harness 条目数量。
+Top-K	Top-K	Top-K 候选	首次出现说明按可解释排序保留前 K 个候选	前 K 个候选	最优序列；全局最优	排序用于候选组织，不等同于全局最优证明。
+bounded repeat	bounded repeat	有界重复	首次出现说明对同一调用重复次数设置上限	有界重复调用	无限重复；必然触发	只表达搜索策略，不表达漏洞存在或安全性。
+lightweight value evidence	lightweight value evidence	轻量值证据	首次出现说明来自 require/比较条件的可解释值线索	轻量值约束证据	精确求解；完整符号执行	不应夸大为完整约束求解。
+budget_exhausted	budget_exhausted	预算耗尽（未观察到反例）	首次出现必须附带“未观察到反例”	预算耗尽	通过；属性通过；安全；无漏洞	budget_exhausted != property passed。
+falsified	falsified	属性被反例否证	首次出现说明观察到违反 property 的反例	发现反例	验证通过；合约不安全（泛化）	应区分属性层面的 falsification 与合约总体安全判断。
+provenance	provenance	证据来源链	首次出现解释输入、命令、环境、原始输出和派生结果的链条	可追溯性；来源链	可复现已证明	provenance 完整是报告属性，不是方法性能结论。
+checksum	checksum	校验和	首次出现解释用于校验文件完整性	SHA-256 校验	正确性证明	checksum pass 不等于实验结论成立。
+static gate	static gate	静态门控	首次出现明确说明仅为静态一致性或可回放门控	静态检查；静态回放门	native replay；完整 EVM replay	B2/static gate 不能写成完整 native EVM replay。
+native replay	native replay	原生 EVM 回放	首次出现说明需要真实 EVM 语义执行与调用者上下文	原生回放	static gate；伪回放	当前证据不得暗示已完成完整 native replay。
+supported public task	supported public task	受支持的公开任务	首次出现说明纳入的四个公开任务集合	四个受支持公开任务	真实生态；代表性生态	仅指 registry 规则下的四个任务。
+conditional task	conditional task	条件性任务	首次出现说明 exercise2-access-control 因语义条件单列	条件性 benchmark	受支持任务；supported pooled	不能并入四个 supported public tasks 的 pooled 结果。
+quarantine	quarantine	隔离	首次出现解释 provenance 不完整的结果不进入新主张	结果隔离；证据隔离	删除；修正原始日志	matched-random-v1 处于隔离状态。
+speedup	speedup	不作为当前结果术语	如需讨论仅写“未作效率结论”	无	加速；speedup 结果；效率优越	Total calls 不用于 speedup 主张。
+Original/Harness semantic relation	semantic difference	Original/Harness 语义差异	在首次比较时明确调用者、原子性和回滚差异	语义边界；语义不完全对齐	完全等价；等价模型	必须贯穿 Evaluation 与 Threats。
