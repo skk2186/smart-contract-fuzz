@@ -1,0 +1,19 @@
+issue_id	severity	section	problem	recommended_fix	blocking_for_submission
+C6-001	high	全文/引用	28 个 citation slots 仍为 TODO_VERIFY，没有 verified BibTeX	人工核验原始论文、官方文档、benchmark repository 和 artifact guidance；完成 marker-to-key 映射	yes
+C6-002	high	8 Related Work	Related Work 仍只能提供方向性定位，正式题名、作者、年份、venue 和方法边界未核验	逐条补正式来源；删除无法由来源支持的精确事实句；不填假字段	yes
+C6-003	high	图表	Figure 1--4 尚未制作或人工审图	按 figure_table_production_checklist 制作矢量图，复核 PHS/Echidna、Original/wrapper 和 quarantine 边界	yes
+C6-004	medium	图表/正文	Table 1--6 仍是草稿，正文 marker 和最终编号尚未统一	将 C5 表格草稿按目标 venue 排版，统一 caption、表注、正文交叉引用	yes
+C6-005	medium	术语	正文中中英文术语比例偏高，property-directed、Harness、transaction sequence、provenance 等混用影响阅读节奏	首次出现给出中文解释和英文术语，后续按 glossary 固定；删去不必要的英文重复	partial
+C6-006	medium	摘要	摘要同时包含方法、受控证据、120-run 结果、工件审计和语义限制，长度和信息密度偏高	按目标 venue 字数压缩；保留 PHS 定位、主要范围、118/2、conditional 与语义边界	partial
+C6-007	medium	1 引言	引言的限制说明较多，研究问题和方法动机容易被防守性句子分散	将问题定义、PHS 接口和四类机制前置；把重复限制合并到末段和 Threats	partial
+C6-008	medium	6 实验评估	Evaluation 仍带有较强审计报告口吻，运行目录字段占据较多正文空间	正文保留指标定义和关键 provenance 结论；manifest 字段、run-level 路径和校验细节移至附录	partial
+C6-009	medium	7 Threats to Validity	Threats 覆盖面完整但篇幅偏重，可能压低方法贡献的可见度	合并重复的 internal/construct/reproducibility 段落，使用 Table 6 承载细节，保留 semantic 和 external 核心限制	partial
+C6-010	medium	9 结论	结论为了避免过度主张而略弱，方法贡献、机制证据和可审计性之间的主线不够集中	用三句结构重写：方法定位、范围内证据、明确限制与下一步；不添加优越性结论	no
+C6-011	high	目标会议格式	尚未指定目标会议，因此页数、摘要字数、引用格式、图表位置、附录和匿名化要求未知	先确定目标 venue，再套用官方模板并做格式审查	yes
+C6-012	medium	英文版本	当前主要是中文正文，尚未形成可投稿英文版	在引用和图表稳定后进行英文改写，不逐句机械翻译；保留术语 glossary 和 claim boundary	yes
+C6-013	medium	实验范围	120-run、四任务、每组 10 seed 的实验规模对外部效度仍有限	保持当前结果不变；若时间允许，独立预登记 B5 补 2--4 个 public benchmark	partial
+C6-014	low	实验范围	是否补 B5 benchmark 尚未根据目标会议和时间做决策	将 B5 作为独立路线评估；不把未运行的 B5 写入正文或表格	no
+C6-015	high	语义边界	Original multi-transaction model 与 wrapper execution model 的差异需要在正文、Figure 3 和表注中同步	统一 caller、atomicity、rollback、msg.value、block context、external call 和 conditional wording	yes
+C6-016	medium	数字一致性	摘要、正文、Table 3/4 和 closeout 需要持续保持 120、118、2、120/120 和零错误计数一致	最终排版前从 main10_results_summary.tsv 逐项复核，不手工改写派生数字	yes
+C6-017	medium	禁用主张	最终排版、英文版和 caption 可能重新引入效率、等价、安全或生态代表性表述	对正文、图注、表注、摘要和 related work 再做 forbidden-claim scan	yes
+C6-018	low	附录	Appendix A1--A3 的 run-level、manifest 和 evidence index 版式尚未确定	仅展开真实源文件支持的字段；不凭空补齐不存在的 run-level 信息	partial

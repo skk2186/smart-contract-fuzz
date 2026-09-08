@@ -1,0 +1,29 @@
+citation_marker	candidate_work	required_source_type	current_status	bibtex_key_placeholder	verified_title	verified_authors	verified_year	verified_venue	doi_or_url	manual_notes
+[CITE:ECHIDNA]	Echidna	original_paper	TODO_VERIFY	TODO_ECHIDNA						核验原始论文；确认 property-based fuzzing 表述
+[CITE:ECHIDNA_DOC]	Echidna official documentation	official_documentation	TODO_VERIFY	TODO_ECHIDNA_DOC						核验版本化官方文档、property/assertion 和执行模型
+[CITE:HARVEY]	Harvey	original_paper	TODO_VERIFY	TODO_HARVEY						核验 stateful、多交易、ordering 和 branch 相关句子
+[CITE:CONFUZZIUS]	ConFuzzius	original_paper	TODO_VERIFY	TODO_CONFUZZIUS						核验交易序列和状态相关分析的准确范围
+[CITE:SMARTIAN]	SMARTIAN	original_paper	TODO_VERIFY	TODO_SMARTIAN						核验静态/动态数据流与工具边界；不写工具排名
+[CITE:IR_FUZZ]	IR-Fuzz	original_paper	TODO_VERIFY	TODO_IR_FUZZ						核验 IR、数据流和序列术语
+[CITE:HARVEY_ORDERING]	Harvey	original_paper	TODO_VERIFY	TODO_HARVEY_ORDERING						确认 invocation ordering 的具体出处
+[CITE:HARVEY_BRANCH]	Harvey	original_paper	TODO_VERIFY	TODO_HARVEY_BRANCH						确认 branch revisiting 是否可由原文支持
+[CITE:MUFUZZ]	MuFuzz	original_paper	TODO_VERIFY	TODO_MUFUZZ						核验 sequence-aware mutation 与多交易测试范围
+[CITE:SMARTEST]	SmarTest	original_paper	TODO_VERIFY	TODO_SMARTEST						核验符号执行与交易序列推理关系
+[CITE:MYTHRIL]	Mythril	official_documentation	TODO_VERIFY	TODO_MYTHRIL						选择官方文档或原始论文；限定为相邻方向
+[CITE:OYENTE]	Oyente	original_paper	TODO_VERIFY	TODO_OYENTE						核验早期符号分析背景
+[CITE:SMARTEST_LM]	SmarTest	original_paper	TODO_VERIFY	TODO_SMARTEST_LM						确认 language-model-assisted 描述是否准确
+[CITE:ILF]	ILF	original_paper	TODO_VERIFY	TODO_ILF						核验学习式输入生成的正式方法范围
+[CITE:CONTRACTFUZZER]	ContractFuzzer	original_paper	TODO_VERIFY	TODO_CONTRACTFUZZER						核验正式题名和历史定位
+[CITE:SFUZZ]	sFuzz	original_paper	TODO_VERIFY	TODO_SFUZZ						核验 coverage/feedback-guided 表述
+[CITE:ETHPLOIT]	EthPloit	original_paper	TODO_VERIFY	TODO_ETHPLOIT						核验是否适合 transaction/input generation 小节
+[CITE:SMARTBUGS]	SmartBugs	benchmark_repository	TODO_VERIFY	TODO_SMARTBUGS						核验来源、版本、许可证和任务映射
+[CITE:SMARTBUGS_CURATED]	SmartBugs Curated	benchmark_repository	TODO_VERIFY	TODO_SMARTBUGS_CURATED						核验 curated 数据集范围与任务映射
+[CITE:DAEDALUZZ]	Daedaluzz	original_paper	TODO_VERIFY	TODO_DAEDALUZZ						确认 benchmark generation 或 dataset 角色
+[CITE:ARTIFACT_EVALUATION]	artifact evaluation guidelines	survey_or_secondary	TODO_VERIFY	TODO_ARTIFACT_EVALUATION						选择目标 venue 可接受的正式指南
+[CITE:ECHIDNA_ARTIFACT]	Echidna artifact repository	artifact_repository	TODO_VERIFY	TODO_ECHIDNA_ARTIFACT						核验仓库、版本和执行平台引用方式
+[CITE:SMARTBUGS_REPO]	SmartBugs benchmark repository	benchmark_repository	TODO_VERIFY	TODO_SMARTBUGS_REPO						与 public_benchmark_registry.tsv 逐项对齐
+[CITE:CONTROLLED_BENCHMARK]	controlled benchmark sources	original_paper	TODO_VERIFY	TODO_CONTROLLED_BENCHMARK						核验 benchmark design 方法学来源；本地数字由本地证据支持
+[CITE:NATIVE_REPLAY]	native EVM replay documentation	official_documentation	TODO_VERIFY	TODO_NATIVE_REPLAY						核验 static gate 与 native replay 的区分
+[CITE:STATEFUL_FUZZING]	stateful fuzzing survey or primary works	survey_or_secondary	TODO_VERIFY	TODO_STATEFUL_SURVEY						优先核验原始工作；不写 state dependency 首创
+[CITE:MUFUZZ_HARVEY]	MuFuzz; Harvey	original_paper	TODO_VERIFY	TODO_MUFUZZ_HARVEY						拆分并分别核验 ordering 与 sequence mutation claim
+[CITE:ARTIFACT_REPORTING]	artifact and evidence reporting	artifact_evaluation	TODO_VERIFY	TODO_ARTIFACT_REPORTING						核验 provenance/artifact reporting 指南
