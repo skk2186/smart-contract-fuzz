@@ -1,0 +1,29 @@
+slot_id	candidate_work	required_source_type	current_status	blocking_for_submission	manual_action	acceptable_source	notes
+CIT-001	Echidna	original_paper	TODO_VERIFY	yes	核验原始论文题名、作者、年份、venue、DOI/稳定 URL 与本文对 property-based fuzzing 的实际表述	原始论文；必要时以官方文档补充	仓库无 verified BibTeX；仅有 TODO_ECHIDNA 占位
+CIT-002	Echidna official documentation	official_documentation	TODO_VERIFY	yes	核验文档版本、property/assertion、执行模型与稳定引用链接	官方版本化文档	不得把 references_todo.bib 视为正式文档引用
+CIT-003	Harvey	original_paper	TODO_VERIFY	yes	核验 stateful、多交易序列和本文句子能否由原文支持	原始论文	仅用于相关工作定位，不预设效果数字
+CIT-004	ConFuzzius	original_paper	TODO_VERIFY	yes	核验交易序列、状态相关分析和可比较抽象层次	原始论文	不得仅凭名称相近写精确差异
+CIT-005	SMARTIAN	original_paper	TODO_VERIFY	yes	核验静态/动态数据流、序列和工具边界	原始论文	不支持未经执行的工具级优越性
+CIT-006	IR-Fuzz	original_paper	TODO_VERIFY	yes	核验 IR、数据流与序列相关术语	原始论文	不支持与 PHS 的公平比较结论
+CIT-007	Harvey	original_paper	TODO_VERIFY	yes	核验 invocation ordering 的准确出处和措辞	原始论文	与 CIT-003 分开确认具体 claim
+CIT-008	Harvey	original_paper	TODO_VERIFY	yes	核验 branch revisiting 是否为原文可直接支持的术语	原始论文	避免把局部技术合并成泛化主张
+CIT-009	MuFuzz	original_paper	TODO_VERIFY	yes	核验 sequence-aware mutation 与多交易测试的正式描述	原始论文	不得写成 PHS 的替代或优越性
+CIT-010	SmarTest	original_paper	TODO_VERIFY	yes	核验符号执行和交易序列推理的关系	原始论文	不得编造作者、年份、venue 或实验数字
+CIT-011	Mythril	official_documentation	TODO_VERIFY	partial	核验正式来源应为论文、官方文档或项目页，并限定为相邻方向	官方文档或原始论文	不把轻量值证据写成符号执行能力
+CIT-012	Oyente	original_paper	TODO_VERIFY	partial	核验早期符号分析背景的准确来源	原始论文	仅作历史背景
+CIT-013	SmarTest	original_paper	TODO_VERIFY	partial	核验 language-model-assisted 描述是否准确	原始论文	不得把语言模型、普通学习式引导混称
+CIT-014	ILF	original_paper	TODO_VERIFY	partial	核验学习式输入生成的正式方法范围	原始论文	不得写未经来源支持的训练或效果细节
+CIT-015	ContractFuzzer	original_paper	TODO_VERIFY	partial	核验正式题名和适合的历史定位	原始论文	不写未经核验的检测能力或对比结果
+CIT-016	sFuzz	original_paper	TODO_VERIFY	partial	核验 coverage/feedback-guided 的准确表述	原始论文	只作互补方向定位
+CIT-017	EthPloit	original_paper	TODO_VERIFY	partial	核验是否适合 transaction/input generation 小节	原始论文	不扩展为与 PHS 的工具比较
+CIT-018	SmartBugs	benchmark_repository	TODO_VERIFY	yes	核验实际来源、版本、许可证和本文任务映射	正式 benchmark repository 或原始论文	不得把名称当作本文任务已验证的来源
+CIT-019	SmartBugs Curated	benchmark_repository	TODO_VERIFY	yes	核验 curated 数据集范围、版本和任务映射	正式 benchmark repository 或原始论文	不得把整个数据集等同于四个 supported tasks
+CIT-020	Daedaluzz	original_paper	TODO_VERIFY	partial	核验其是 benchmark generation、数据集还是测试资源工作	原始论文	角色确认前不能写成本文 benchmark 来源
+CIT-021	artifact evaluation guidelines	survey_or_secondary	TODO_VERIFY	partial	选择目标 venue 可接受的正式 reproducibility/artifact 指南	正式指南或原始方法学来源	不把指导原则写成实验结论
+CIT-022	Echidna artifact repository	artifact_repository	TODO_VERIFY	partial	核验仓库、版本和执行平台引用方式	版本化 artifact repository	仓库 provenance 不等于安全结论
+CIT-023	SmartBugs benchmark repository	benchmark_repository	TODO_VERIFY	yes	核验四个 supported tasks 的来源映射	正式 benchmark repository	需与 public_benchmark_registry.tsv 逐项对齐
+CIT-024	controlled benchmark sources	original_paper	TODO_VERIFY	partial	核验受控 benchmark 设计的可引用方法学依据	原始论文或正式 benchmark 方法来源	具体本地合约事实由本地证据文件支持
+CIT-025	native EVM replay documentation	official_documentation	TODO_VERIFY	partial	核验 static gate 与 native replay 区分所需的正式来源	官方文档或规范	不能把静态门控写成完整 native replay
+CIT-026	stateful fuzzing survey or primary works	survey_or_secondary	TODO_VERIFY	yes	优先选原始工作，补充综述只用于术语背景	原始论文；必要时正式综述	不把 state dependency 作为 PHS 首创
+CIT-027	MuFuzz; Harvey	original_paper	TODO_VERIFY	yes	拆分为准确引用并分别核验 ordering 与 sequence mutation claim	各自原始论文	不可用一个未经核验的复合条目替代
+CIT-028	artifact and evidence reporting	artifact_evaluation	TODO_VERIFY	yes	核验 provenance、artifact 和 evidence reporting 的正式指南	正式 artifact/reproducibility 指南	完整工件只支持可追溯性，不支持安全或优越性
