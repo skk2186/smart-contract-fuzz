@@ -1,0 +1,7 @@
+method_id	method_name	property_filter	repeat	value_evidence	k	role	implementation_status
+original	Original	no	no	no	NA	primary empirical baseline	executable; smoke pass
+dependency-only	Dependency-only	no	no	no	NA	C1 candidate-space ablation	executable; declared for C1
+full-k1	Full-K1	yes	yes	yes	1	primary PHS configuration	executable; smoke pass
+full-k5	Full-K5	yes	yes	yes	5	Top-K sensitivity configuration	executable; not run in smoke
+no-repeat	No-Repeat	yes	no	no	NA	C2 repeat ablation	executable; declared for C2
+no-value	No-Value	yes	yes	no	NA	C3 value ablation	executable; declared for C3

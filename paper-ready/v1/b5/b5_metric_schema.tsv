@@ -1,0 +1,28 @@
+metric	definition	scope	source	interpretation	forbidden_interpretation
+run_id	Unique isolated run identifier	run	manifest and parsed TSV	Provenance join key	Not a quality score
+scenario	Controlled scenario id	run	CLI and registry	C1/C2/C3 identifier	Not public-benchmark evidence
+method	Declared method configuration	run	CLI and method registry	Original or PHS ablation	Not external-fuzzer ranking
+seed	Echidna seed	run	CLI and manifest	Run randomization key	Not an independent contract sample
+budget	Declared Echidna testLimit	run	CLI and generated config	Common within-scenario budget	Not equal semantic work
+status	Failure-closed classification	run	parsed and status.env	falsified, budget_exhausted, or engineering error	budget_exhausted is not pass/safe
+property_falsified	Explicit property failure marker	run	Raw log parser	Oracle outcome	Not severity
+budget_exhausted	Budget marker without higher-priority falsification	run	Raw log parser	Right-censored no-observed-counterexample	Not property passed
+target_state_reached	Passive target observer falsified	run	Raw observer marker	Target reachability evidence	Not runtime guidance
+target_candidate_rank	1-based target skeleton rank	run	Selected JSON and registry	Interpretable candidate position	Not speedup
+top1_hit	Target rank equals 1	run	Derived rank	Top-1 retention	Not guaranteed falsification
+top5_hit	Target rank at most 5	run	Derived rank	Top-5 retention	Not universal K5 superiority
+dependency_candidate_count	Dependency candidate path count	run	generated/dependency.json	Pre-filter candidate size	Not end-to-end speedup
+property_candidate_count	Property candidate path count	run	generated/property.json	Post-filter candidate size	Not proof of acceleration
+candidate_reduction_ratio	(dependency - property) / dependency	run	Derived candidate JSON	Candidate-space mechanism metric	Never call speedup
+required_repeat_count	Frozen required repeat occurrences	scenario/run	Registry	C2 evaluation requirement	Not injected guidance
+observed_repeat_count	Max repeat occurrences in selected candidates	run	Selected JSON	Repeat preservation evidence	Not execution proof
+value_evidence_enabled	Lightweight value ranking flag	method/run	Registry and manifest	Component attribution	Not msg.value or symbolic execution
+repeat_enabled	Bounded repeat flag	method/run	Registry and manifest	Component attribution	Not reachability proof
+k	Recorded Harness Top-K	run	Registry and manifest	Retained-candidate configuration	Not budget
+time_to_falsify_seconds	Parser time to explicit property failure	run	Raw Echidna log	Only falsified runs	Do not set zero for censored runs
+fuzz_seconds	Parser fuzz interval	run	Raw log	Descriptive interval	Not equal-work comparison
+process_wall_seconds	/usr/bin/time wall duration	run	Raw log	Descriptive process time	Not normalized speedup
+preprocess_seconds	Analysis plus instrumentation time	run	Runner timing	Preparation overhead	Not total acceleration
+harness_compile_seconds	solc compile time	run	Runner timing	Generated-input compile overhead	Not fuzz time
+artifact_complete	Required artifacts and final metric fields present	run	Runner finalization	Provenance gate	Not property safety
+checksum_pass	Checksum verification after finalization	run	Checksum verification file	Integrity gate	Not semantic equivalence

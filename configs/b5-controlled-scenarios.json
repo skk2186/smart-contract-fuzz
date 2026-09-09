@@ -1,0 +1,41 @@
+{
+  "c1": {
+    "scenario_name": "Irrelevant-State Explosion",
+    "source_file": "contracts/benchmarks/b5-controlled/IrrelevantStateExplosion.sol",
+    "contract_name": "IrrelevantStateExplosion",
+    "property": "echidna_exposure_safe",
+    "target_sequence": ["initialize()", "configure()", "authorize()", "activate()", "expose(uint256)"],
+    "target_state_getter": "b5_target_state_reached",
+    "repeat_function": "",
+    "required_repeat_count": 0,
+    "max_path_length": 6,
+    "max_function_visits": 2,
+    "candidate_cap": 500
+  },
+  "c2": {
+    "scenario_name": "Deep Repeated Transition",
+    "source_file": "contracts/benchmarks/b5-controlled/DeepRepeatedTransition.sol",
+    "contract_name": "DeepRepeatedTransition",
+    "property": "echidna_exposure_safe",
+    "target_sequence": ["prepare()", "advance()", "advance()", "advance()", "unlock()", "trigger(uint256)"],
+    "target_state_getter": "b5_target_state_reached",
+    "repeat_function": "advance()",
+    "required_repeat_count": 3,
+    "max_path_length": 6,
+    "max_function_visits": 3,
+    "candidate_cap": 500
+  },
+  "c3": {
+    "scenario_name": "Value-Gated Competing Paths",
+    "source_file": "contracts/benchmarks/b5-controlled/ValueGatedCompetingPaths.sol",
+    "contract_name": "ValueGatedCompetingPaths",
+    "property": "echidna_exposure_safe",
+    "target_sequence": ["selectVerifiedRoute()", "unlock()", "activate()", "trigger(uint256)"],
+    "target_state_getter": "b5_target_state_reached",
+    "repeat_function": "",
+    "required_repeat_count": 0,
+    "max_path_length": 6,
+    "max_function_visits": 2,
+    "candidate_cap": 500
+  }
+}
