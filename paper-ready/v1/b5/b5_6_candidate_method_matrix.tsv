@@ -1,0 +1,13 @@
+candidate_id	method	rows	status_summary	falsified_count	budget_exhausted_count	compile_error_count	paper_usable_count	median_calls_to_failure	mean_calls_to_failure	median_sequence_length	mean_sequence_length	median_fuzz_seconds	mean_fuzz_seconds	median_wall_seconds	mean_wall_seconds
+b5-rs-echidna-flags	Original	10	falsified=10	10	0	0	10	5	4.9	5	4.9	2.48	2.57	2.522	2.603
+b5-rs-echidna-flags	Full-K1	10	falsified=10	10	0	0	10	1	1	1	1	2.495	2.337	2.522	2.372
+b5-rs-echidna-flags	Full-K5	10	falsified=10	10	0	0	10	1	1	1	1	2.44	2.294	2.472	2.326
+b5-rs-echidna-multi	Original	10	falsified=10	10	0	0	10	6	5.8	6	5.8	2.75	3.691	2.773	3.716
+b5-rs-echidna-multi	Full-K1	10	falsified=10	10	0	0	10	1	1	1	1	6.135	6.383	6.16	6.415
+b5-rs-echidna-multi	Full-K5	10	falsified=9;budget_exhausted=1	9	1	0	10	1	1	1	1	6.59	7.449	6.636	7.478
+b5-rs-smartbugs-multifunc	Original	10	falsified=10	10	0	0	10	3	3.4	3	3.4	1.42	1.436	1.469	1.479
+b5-rs-smartbugs-multifunc	Full-K1	10	compile_error=10	0	0	10	0	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+b5-rs-smartbugs-multifunc	Full-K5	10	compile_error=10	0	0	10	0	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+b5-rs-smartbugs-onefunc	Original	10	falsified=10	10	0	0	10	2	2.3	2	2.3	1.495	1.502	1.519	1.524
+b5-rs-smartbugs-onefunc	Full-K1	10	compile_error=10	0	0	10	0	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+b5-rs-smartbugs-onefunc	Full-K5	10	compile_error=10	0	0	10	0	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.

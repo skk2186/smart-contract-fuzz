@@ -1,0 +1,10 @@
+status	count	fraction_of_120	interpretation
+falsified	79	0.6583	Observed property violation under the declared execution model.
+budget_exhausted	1	0.0083	Right-censored: no counterexample observed within budget; not safe or passed.
+compile_error	40	0.3333	Engineering limitation; excluded from comparative outcomes.
+tool_error	0	0.0000	Tool/runner error; not observed in B5-5R.
+timeout	0	0.0000	Timeout; not observed in B5-5R.
+parser_error	0	0.0000	Parser error; not observed in B5-5R.
+incomplete	0	0.0000	Incomplete record; not observed in B5-5R.
+startup_error	0	0.0000	Startup error; not observed in B5-5R.
+unknown_error	0	0.0000	Unknown error; not observed in B5-5R.
