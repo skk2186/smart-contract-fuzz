@@ -1,12 +1,22 @@
 # B5-4 Decision
 
-Decision: GO_TO_B5_4R_FIX_GATE
+Decision: GO_TO_B5_5_FORMAL_REAL_SOURCE_EXECUTION
 
-Four supported candidates have pinned source packets, archived licenses, SHA-256 records, documented closures and a completed SmartBugs property review. The supported future registry has exactly 120 rows; the separate conditional plan has 30 and excludes exercise2.
+## Gate outcome
 
-Static source, hash, license, property and import checks pass. Deterministic replay is prepared but not executed. Explicit compiler preflight is blocked because solc is unavailable, so B5-5 minimum readiness is not satisfied.
+The four supported candidates have pinned source packets, archived licenses, matching original/adapted SHA-256 records, documented dependency closure and resolved property status. The SmartBugs label-to-property review is complete.
 
-Restore reproducible solc 0.8.20/0.4.25 and rerun the same gate without changing packets or inclusion. Review compile output before B5-5 authorization. Preserve any failure and do not select by PHS outcome.
+Compiler/preflight results:
+- Echidna flags: PASS under solc 0.8.20.
+- Echidna multi: PASS under solc 0.8.20.
+- SmartBugs multifunc: PASS under solc 0.4.25 using the legacy-compatible solc CLI.
+- SmartBugs onefunc: PASS under solc 0.4.25 using the legacy-compatible solc CLI.
 
-B5-4 does not change B5-Min, B4 or frozen evidence. C7 writing may continue with the external-validity limitation, but real-source execution is not complete. The four supported tasks may later be separately labeled adapted real-source evidence; exercise2 remains appendix-only after caller/replay review.
+The earlier 0.4.x error was caused by an unsupported --base-path option, not by the adapted source. The corrected gate-only retry used fresh non-overwriting run ids. Deterministic replay remains PREPARED_NOT_EXECUTED, and no formal fuzzing or formal result TSV was created.
+
+## Scope decisions
+
+The supported future registry contains exactly 120 rows. The conditional appendix plan contains 30 rows and excludes exercise2 from the supported pool. Exercise2 remains conditional because caller replay has not been executed.
+
+The minimum gate conditions for future B5-5 formal authorization are satisfied subject to researcher review and the separately frozen preregistration. B5-4 does not change B5-Min, B4 or frozen evidence. Future real-source results must remain separately labeled adapted real-source evidence. Budget exhaustion remains right-censored; Original and Harness are not claimed semantically equivalent.
 
