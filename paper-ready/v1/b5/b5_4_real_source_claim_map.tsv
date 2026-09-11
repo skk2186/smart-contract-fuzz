@@ -1,0 +1,8 @@
+claim_id	claim	supporting_candidates	evidence_type	status_after_b5_4	safe_wording	remaining_limitation	main_or_appendix
+RS1	PHS can be applied to archived/adapted public-source contracts.	four supported candidates	provenance and preregistration	partially_supported	PHS is prepared for four archived public-source/adapted candidates.	No formal outcome; SmartBugs entries are adapted.	main_with_appendix
+RS2	PHS preprocessing can generate ranked Harness candidates for real-source-style tasks.	four supported candidates	future planned method stratum	partially_supported	The protocol will measure ranked Harness candidates on declared adapted tasks.	No formal real-source result exists.	main_with_appendix
+RS3	SmartBugs adapted tasks provide vulnerability-label-derived property tests.	two SmartBugs candidates	property-construction review	partially_supported	Researcher-authored properties are derived from archived overflow/underflow labels.	Oracle validity and adaptation effects remain limitations.	main_with_appendix
+RS4	Echidna examples provide upstream-property external sanity checks.	two Echidna candidates	source/property provenance	partially_supported	Adapted candidates retain the declared upstream Echidna properties.	Examples are not broad ecosystem coverage.	main_with_appendix
+RS5	exercise2 remains caller-sensitive conditional evidence.	b5-rs-exercise2-access-control	caller/replay plan	SUPPORTED_AS_NO	Exercise2 is excluded from supported pooling and remains appendix-only pending replay.	Replay has not been executed.	appendix_only
+RS6	B5-4 does not prove ecosystem-wide superiority.	all	preregistration limitation	SUPPORTED_AS_NO	B5-4 assesses only declared candidates and execution models.	No ecosystem-wide or semantic-equivalence claim.	main_and_appendix
+
