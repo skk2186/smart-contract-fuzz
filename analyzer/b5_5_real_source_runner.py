@@ -30,6 +30,7 @@ ANALYZER = ROOT / "analyzer"
 RESULTS = ROOT / "paper-ready/v1/b5/b5_5_supported_real_source_results.tsv"
 SUMMARY = ROOT / "paper-ready/v1/b5/b5_5_supported_real_source_summary.md"
 DECISION = ROOT / "paper-ready/v1/b5/b5_5_decision.md"
+RETRY_OF_FIRST = "b5-4-rs-b5-rs-echidna-flags-original-s1"
 
 SUPPORTED = [
     "b5-rs-echidna-flags",
@@ -55,7 +56,8 @@ EXPECTED_FIELDS = [
     "expected",
 ]
 RESULT_FIELDS = [
-    "run_id", "prereg_row_id", "candidate_id", "stratum", "method", "seed",
+    "run_id", "prereg_row_id", "retry_of", "candidate_id", "stratum",
+    "method", "seed",
     "budget", "property", "solc_version", "echidna_version", "status",
     "falsified", "calls_to_failure", "sequence_length", "fuzz_seconds",
     "wall_seconds", "exit_code", "stdout_path", "stderr_path", "artifact_dir",
@@ -270,6 +272,7 @@ def run_one(
     provenance: dict[str, dict[str, str]],
     base_env: dict[str, str],
     echidna_version: str,
+    retry_of: str,
 ) -> dict[str, str]:
     candidate = row["candidate_id"]
     contract, prop, compiler, fallback = CANDIDATES[candidate]
@@ -288,11 +291,16 @@ def run_one(
     calls = ""
     sequence = ""
     notes = ["adapted_real_source_evidence", f"source_packet={candidate}", "target_rank_not_declared"]
+    source_path = ""
+    target = ""
+    config_name = ""
     env = base_env.copy()
     env["B5_5_RUN_ID"] = row["run_id"]
     env["B5_5_EXPERIMENT_CLASS"] = "formal"
+    started_at = datetime.now(timezone.utc).isoformat()
     try:
         source, source_hash = packet_source(candidate, provenance[candidate])
+        source_path = source.relative_to(ROOT).as_posix()
         notes.append(f"adapted_sha256={source_hash}")
         rc, out, err = capture(["solc-select", "use", compiler], ROOT, env, commands)
         (run_dir / "raw" / "solc_select.stdout").write_text(out, encoding="utf-8")
@@ -323,6 +331,7 @@ def run_one(
             rc, _, _ = run_logged(command, ROOT, env, output, run_dir / "raw" / error_name, commands)
             if rc:
                 raise RunFailure("tool_error", f"{Path(str(command[1])).name} failed", rc)
+        k, config_name = METHODS[method]
         if method == "Original":
             shutil.copyfile(dependency, selected)
             input_sol = generated / "input.sol"
@@ -330,7 +339,6 @@ def run_one(
             target = contract
             commands.append(f"copy {source} {input_sol}")
         else:
-            k, config_name = METHODS[method]
             rc, _, _ = run_logged(
                 [sys.executable, ANALYZER / "generate_value_guided_sequences.py", repeat, value, "--contract", contract, "--top-k", k],
                 ROOT, env, selected, run_dir / "raw" / "generate_value_guided.stderr", commands,
@@ -356,7 +364,6 @@ def run_one(
             input_sol = generated / "input.sol"
             shutil.copyfile(base_harness, input_sol)
             commands.append(f"copy {base_harness} {input_sol}")
-            config_name = config_name
         config = generated / "echidna.yaml"
         config_text = (ROOT / "configs" / config_name).read_text(encoding="utf-8")
         if len(re.findall(r"(?m)^testLimit:\s*\d+\s*$", config_text)) != 1:
@@ -402,9 +409,13 @@ def run_one(
         status = "unknown_error"
         notes.append(str(error))
         (run_dir / "raw" / "runner-error.txt").write_text(f"status={status}\nerror={error}\n", encoding="utf-8")
+    (run_dir / "raw" / "commands.txt").write_text("\n".join(commands) + "\n", encoding="utf-8")
     write_key_value = {
         "run_id": row["run_id"], "prereg_row_id": row["run_id"],
+        "retry_of": retry_of,
         "candidate_id": candidate, "stratum": row["stratum"], "method": method,
+        "source_path": source_path, "target_contract": target,
+        "config_name": config_name, "command_path": "raw/commands.txt",
         "seed": row["seed"], "budget": row["budget"], "property": prop,
         "solc_version": solc_version, "echidna_version": echidna_version,
         "experiment_class": "formal", "paper_usable": "pending",
@@ -428,6 +439,7 @@ def run_one(
         notes.append("artifact_checksum_failed")
     return {
         "run_id": row["run_id"], "prereg_row_id": row["run_id"],
+        "retry_of": retry_of,
         "candidate_id": candidate, "stratum": row["stratum"], "method": method,
         "seed": row["seed"], "budget": row["budget"], "property": prop,
         "solc_version": solc_version, "echidna_version": echidna_version,
@@ -453,7 +465,7 @@ def append(path: Path, row: dict[str, str]) -> None:
         os.fsync(handle.fileno())
 
 
-def write_summary(batch: Path, rows: list[dict[str, str]]) -> None:
+def write_summary(batch: Path, rows: list[dict[str, str]], summary_path: Path) -> None:
     lines = [
         "# B5-5 Supported Real-Source Summary", "",
         "Status: FORMAL_EXECUTION_COMPLETE" if len(rows) == 120 else "Status: PARTIAL_FORMAL_EXECUTION", "",
@@ -480,16 +492,29 @@ def write_summary(batch: Path, rows: list[dict[str, str]]) -> None:
         middle = len(ordered) // 2
         median = ordered[middle] if len(ordered) % 2 else (ordered[middle - 1] + ordered[middle]) / 2
         calls_text = f"median={median:g}; mean={sum(ordered) / len(ordered):g}; n={len(ordered)}"
+    discovered_sequences = [
+        float(row["sequence_length"])
+        for row in rows
+        if row["status"] == "falsified" and row["sequence_length"]
+    ]
+    sequence_text = "not available from preserved logs"
+    if discovered_sequences:
+        ordered = sorted(discovered_sequences)
+        middle = len(ordered) // 2
+        median = ordered[middle] if len(ordered) % 2 else (ordered[middle - 1] + ordered[middle]) / 2
+        sequence_text = f"median={median:g}; mean={sum(ordered) / len(ordered):g}; n={len(ordered)}"
     lines += [
-        "", f"Successful discovery calls-to-failure summary: {calls_text}.", "",
+        "", f"Successful discovery calls-to-failure summary: {calls_text}.",
+        f"Successful discovery sequence-length summary: {sequence_text}.", "",
         "A falsified row records an observed violation under the declared model. A budget_exhausted row is right-censored: no counterexample was observed within budget; it is not property passed or safe.", "",
         "Original and Harness are distinct execution models; no semantic equivalence is claimed. Total calls is not a speedup measure. Exercise2 is outside the supported pool.", "",
+        "The first B5-5R row is an explicitly labeled retry of the preserved B5-5 tool_error record; the B5-5 blocked artifact was not overwritten.", "",
         "If complete and parseable, this batch can support separately labeled adapted real-source external-validity analysis for the four preregistered candidates. It does not establish ecosystem-wide superiority.",
     ]
-    SUMMARY.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def write_decision(batch: Path, rows: list[dict[str, str]]) -> None:
+def write_decision(batch: Path, rows: list[dict[str, str]], decision_path: Path) -> None:
     unparseable = sum(row["status"] in {"incomplete", "unknown_error", "parser_error"} for row in rows)
     errors = sum(row["status"] in {"tool_error", "compile_error", "timeout", "startup_error"} for row in rows)
     if len(rows) < 120:
@@ -504,7 +529,7 @@ def write_decision(batch: Path, rows: list[dict[str, str]]) -> None:
     else:
         decision = "GO_TO_B5_6_REAL_SOURCE_ANALYSIS"
         reason = "All 120 frozen rows have preserved parseable records."
-    DECISION.write_text(
+    decision_path.write_text(
         "\n".join([
             "# B5-5 Decision", "", f"Decision: {decision}", "",
             f"Batch: {batch.relative_to(ROOT).as_posix()}",
@@ -523,12 +548,21 @@ def main() -> int:
     parser.add_argument("--batch-dir", type=Path)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--execute-formal", action="store_true")
+    parser.add_argument("--results", type=Path)
+    parser.add_argument("--summary", type=Path)
+    parser.add_argument("--decision", type=Path)
     args = parser.parse_args()
     registry = read_registry(args.registry)
     provenance = read_provenance()
     batch = args.batch_dir or (ROOT / "work" / "v1-restart" / datetime.now().strftime("b5-5-formal-real-source-%Y%m%d-%H%M%S"))
     if not batch.is_absolute():
         batch = ROOT / batch
+    results_path = args.results or RESULTS
+    summary_path = args.summary or SUMMARY
+    decision_path = args.decision or DECISION
+    results_path = results_path if results_path.is_absolute() else ROOT / results_path
+    summary_path = summary_path if summary_path.is_absolute() else ROOT / summary_path
+    decision_path = decision_path if decision_path.is_absolute() else ROOT / decision_path
     if not args.execute_formal or args.dry_run:
         print("B5-5 DRY_RUN")
         print(f"registry_rows={len(registry)}")
@@ -536,6 +570,8 @@ def main() -> int:
         print("methods=Original,Full-K1,Full-K5")
         print("seeds=1..10")
         print(f"budget={BUDGET}")
+        for method, (top_k, config_name) in METHODS.items():
+            print(f"method_config={method}:{config_name}:top_k={top_k}")
         print(f"planned_batch={batch}")
         print("exercise2=NOT_RUN")
         print("formal_execution=NOT_RUN")
@@ -544,7 +580,7 @@ def main() -> int:
         raise SystemExit("BLOCKED: B5_5_REAL_SOURCE_AUTHORIZED=1 is required")
     if batch.exists():
         raise SystemExit(f"REFUSED_COLLISION: batch directory exists: {batch}")
-    if RESULTS.exists() or SUMMARY.exists() or DECISION.exists():
+    if results_path.exists() or summary_path.exists() or decision_path.exists():
         raise SystemExit("REFUSED_OVERWRITE: B5-5 result/summary/decision exists")
     changed = subprocess.run(["git", "diff", "--name-only"], cwd=ROOT, capture_output=True, text=True, check=False).stdout.splitlines()
     forbidden = [path for path in changed if path.startswith("results/") or path.startswith("paper-ready/v1/main10_") or path.startswith("paper-ready/v1/b5/b5_results_")]
@@ -557,20 +593,25 @@ def main() -> int:
     commands: list[str] = []
     versions = write_env(batch, base_env, commands)
     (batch / "raw" / "batch_commands.txt").write_text("\n".join(commands) + "\n", encoding="utf-8")
-    with RESULTS.open("w", encoding="utf-8", newline="") as handle:
+    git_commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=False)
+    (batch / "raw" / "git_commit.txt").write_text(git_commit.stdout.strip() + "\n", encoding="utf-8")
+    (batch / "raw" / "formal_authorization.txt").write_text("B5_5_REAL_SOURCE_AUTHORIZED=1\n", encoding="utf-8")
+    results_path.parent.mkdir(parents=True, exist_ok=True)
+    with results_path.open("w", encoding="utf-8", newline="") as handle:
         csv.DictWriter(handle, fieldnames=RESULT_FIELDS, delimiter="\t").writeheader()
     output_rows = []
     for index, row in enumerate(registry, 1):
         print(f"[{index}/120] {row['run_id']}", flush=True)
-        result = run_one(row, batch, provenance, base_env, versions.get("echidna_version", ""))
-        append(RESULTS, result)
+        retry_of = RETRY_OF_FIRST if index == 1 else ""
+        result = run_one(row, batch, provenance, base_env, versions.get("echidna_version", ""), retry_of)
+        append(results_path, result)
         output_rows.append(result)
         print(f"  {result['status']}", flush=True)
-    write_summary(batch, output_rows)
-    write_decision(batch, output_rows)
-    print(f"results={RESULTS}")
-    print(f"summary={SUMMARY}")
-    print(f"decision={DECISION}")
+    write_summary(batch, output_rows, summary_path)
+    write_decision(batch, output_rows, decision_path)
+    print(f"results={results_path}")
+    print(f"summary={summary_path}")
+    print(f"decision={decision_path}")
     print(f"executed={len(output_rows)}/120")
     return 0 if len(output_rows) == 120 else 2
 
