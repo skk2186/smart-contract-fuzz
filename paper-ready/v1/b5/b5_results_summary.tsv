@@ -1,0 +1,13 @@
+scenario	method	runs	falsified_runs	budget_exhausted_runs	engineering_error_runs	falsification_rate	target_state_reached_runs	target_state_reach_rate	top1_hit_runs	top1_hit_rate	top5_hit_runs	top5_hit_rate	median_target_rank	target_rank_range	median_time_to_falsify_successful	median_process_wall_seconds	median_preprocess_seconds	median_harness_compile_seconds	artifact_complete_runs	checksum_pass_runs
+c1	original	10	5	5	0	0.500	8	0.800	10	1.000	10	1.000	1.000	1-1	8.340	10.535	1.106	0.122	10	10
+c1	dependency-only	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.530	3.080	1.418	0.111	10	10
+c1	full-k1	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.500	3.005	1.387	0.108	10	10
+c1	full-k5	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.520	3.055	1.394	0.108	10	10
+c2	original	10	10	0	0	1.000	10	1.000	0	0.000	0	0.000			3.775	6.130	0.953	0.108	10	10
+c2	no-repeat	10	0	10	0	0.000	0	0.000	0	0.000	0	0.000				19.150	1.369	0.108	10	10
+c2	full-k1	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.520	3.430	1.434	0.114	10	10
+c2	full-k5	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.540	3.550	1.503	0.117	10	10
+c3	original	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	1.560	3.095	1.001	0.113	10	10
+c3	no-value	10	10	0	0	1.000	10	1.000	0	0.000	10	1.000	3.000	3-3	0.525	2.885	1.377	0.113	10	10
+c3	full-k1	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.500	2.760	1.395	0.110	10	10
+c3	full-k5	10	10	0	0	1.000	10	1.000	10	1.000	10	1.000	1.000	1-1	0.515	2.835	1.388	0.110	10	10

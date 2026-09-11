@@ -1,0 +1,121 @@
+run_id	experiment_class	paper_usable	scenario	method	seed	budget	status	property_falsified	budget_exhausted	target_state_reached	target_candidate_rank	top1_hit	top5_hit	dependency_candidate_count	property_candidate_count	candidate_reduction_ratio	required_repeat_count	observed_repeat_count	value_evidence_enabled	repeat_enabled	k	time_to_falsify_seconds	fuzz_seconds	process_wall_seconds	preprocess_seconds	harness_compile_seconds	artifact_complete	checksum_pass
+b5-c1-original-s1	FORMAL	true	c1	original	1	100000	budget_exhausted	0	1	0	1	1	1	36	4	0.888889	0		0	0	0		12.08	12.64	1.301131	0.121783	true	pass
+b5-c1-original-s2	FORMAL	true	c1	original	2	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	10.4	11.86	12.35	1.077504	0.122666	true	pass
+b5-c1-original-s3	FORMAL	true	c1	original	3	100000	budget_exhausted	0	1	1	1	1	1	36	4	0.888889	0		0	0	0		11.82	12.35	1.341960	0.135417	true	pass
+b5-c1-original-s4	FORMAL	true	c1	original	4	100000	budget_exhausted	0	1	1	1	1	1	36	4	0.888889	0		0	0	0		9.04	9.49	1.222057	0.133878	true	pass
+b5-c1-original-s5	FORMAL	true	c1	original	5	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	9.91	11.52	12.10	1.217104	0.141339	true	pass
+b5-c1-original-s6	FORMAL	true	c1	original	6	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	8.34	9.74	10.19	1.134684	0.118729	true	pass
+b5-c1-original-s7	FORMAL	true	c1	original	7	100000	budget_exhausted	0	1	1	1	1	1	36	4	0.888889	0		0	0	0		8.85	9.24	0.908652	0.108660	true	pass
+b5-c1-original-s8	FORMAL	true	c1	original	8	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	3.53	4.86	5.25	0.913115	0.098873	true	pass
+b5-c1-original-s9	FORMAL	true	c1	original	9	100000	budget_exhausted	0	1	0	1	1	1	36	4	0.888889	0		0	0	0		9.98	10.43	0.900452	0.124714	true	pass
+b5-c1-original-s10	FORMAL	true	c1	original	10	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	7.49	10.2	10.64	0.978843	0.111304	true	pass
+b5-c1-dependency-only-s1	FORMAL	true	c1	dependency-only	1	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.53	2.54	3.00	1.538236	0.110946	true	pass
+b5-c1-dependency-only-s2	FORMAL	true	c1	dependency-only	2	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.52	2.8	3.23	1.403864	0.107906	true	pass
+b5-c1-dependency-only-s3	FORMAL	true	c1	dependency-only	3	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.66	2.42	2.90	1.458620	0.110196	true	pass
+b5-c1-dependency-only-s4	FORMAL	true	c1	dependency-only	4	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.53	2.7	3.14	1.427443	0.111570	true	pass
+b5-c1-dependency-only-s5	FORMAL	true	c1	dependency-only	5	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.63	2.47	3.08	1.366064	0.120969	true	pass
+b5-c1-dependency-only-s6	FORMAL	true	c1	dependency-only	6	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.58	2.37	2.87	1.500123	0.113446	true	pass
+b5-c1-dependency-only-s7	FORMAL	true	c1	dependency-only	7	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.52	2.21	2.67	1.428430	0.110277	true	pass
+b5-c1-dependency-only-s8	FORMAL	true	c1	dependency-only	8	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.53	3.04	3.59	1.389173	0.137182	true	pass
+b5-c1-dependency-only-s9	FORMAL	true	c1	dependency-only	9	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.54	2.68	3.12	1.383428	0.105827	true	pass
+b5-c1-dependency-only-s10	FORMAL	true	c1	dependency-only	10	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		0	0	0	0.52	2.64	3.08	1.407913	0.109133	true	pass
+b5-c1-full-k1-s1	FORMAL	true	c1	full-k1	1	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.48	2.54	3.00	1.379773	0.108013	true	pass
+b5-c1-full-k1-s2	FORMAL	true	c1	full-k1	2	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.54	2.25	2.70	1.393201	0.108313	true	pass
+b5-c1-full-k1-s3	FORMAL	true	c1	full-k1	3	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.49	2.54	3.00	1.382191	0.104331	true	pass
+b5-c1-full-k1-s4	FORMAL	true	c1	full-k1	4	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.5	2.39	2.82	1.387568	0.107667	true	pass
+b5-c1-full-k1-s5	FORMAL	true	c1	full-k1	5	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.5	2.1	2.54	1.386789	0.109093	true	pass
+b5-c1-full-k1-s6	FORMAL	true	c1	full-k1	6	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.5	2.57	3.02	1.389928	0.108297	true	pass
+b5-c1-full-k1-s7	FORMAL	true	c1	full-k1	7	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.49	2.57	3.01	1.381844	0.108504	true	pass
+b5-c1-full-k1-s8	FORMAL	true	c1	full-k1	8	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.51	2.91	3.36	1.394692	0.106262	true	pass
+b5-c1-full-k1-s9	FORMAL	true	c1	full-k1	9	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.5	2.63	3.07	1.410082	0.106638	true	pass
+b5-c1-full-k1-s10	FORMAL	true	c1	full-k1	10	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	1	0.5	2.66	3.11	1.381904	0.107583	true	pass
+b5-c1-full-k5-s1	FORMAL	true	c1	full-k5	1	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.51	2.64	3.09	1.389808	0.107834	true	pass
+b5-c1-full-k5-s2	FORMAL	true	c1	full-k5	2	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.53	2.65	3.11	1.384527	0.106869	true	pass
+b5-c1-full-k5-s3	FORMAL	true	c1	full-k5	3	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.52	2.18	2.63	1.388087	0.108923	true	pass
+b5-c1-full-k5-s4	FORMAL	true	c1	full-k5	4	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.57	2.62	3.07	1.406719	0.112360	true	pass
+b5-c1-full-k5-s5	FORMAL	true	c1	full-k5	5	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.52	2.57	3.03	1.392651	0.107826	true	pass
+b5-c1-full-k5-s6	FORMAL	true	c1	full-k5	6	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.51	2.59	3.04	1.392975	0.107601	true	pass
+b5-c1-full-k5-s7	FORMAL	true	c1	full-k5	7	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.51	2.61	3.09	1.430007	0.106546	true	pass
+b5-c1-full-k5-s8	FORMAL	true	c1	full-k5	8	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.54	2.5	2.96	1.483036	0.119134	true	pass
+b5-c1-full-k5-s9	FORMAL	true	c1	full-k5	9	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.51	2.64	3.10	1.395377	0.108867	true	pass
+b5-c1-full-k5-s10	FORMAL	true	c1	full-k5	10	100000	falsified	1	0	1	1	1	1	36	4	0.888889	0		1	1	5	0.54	2.17	2.60	1.395374	0.111963	true	pass
+b5-c2-original-s1	FORMAL	true	c2	original	1	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	2.75	4.66	5.08	0.953886	0.105540	true	pass
+b5-c2-original-s2	FORMAL	true	c2	original	2	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	8.24	10.21	10.64	0.937844	0.109317	true	pass
+b5-c2-original-s3	FORMAL	true	c2	original	3	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	5.86	7.8	8.24	0.958098	0.107918	true	pass
+b5-c2-original-s4	FORMAL	true	c2	original	4	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	5.48	7.43	7.85	0.938614	0.108069	true	pass
+b5-c2-original-s5	FORMAL	true	c2	original	5	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	4.54	6.46	6.89	0.954999	0.107103	true	pass
+b5-c2-original-s6	FORMAL	true	c2	original	6	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	2.7	4.63	5.06	0.940142	0.107643	true	pass
+b5-c2-original-s7	FORMAL	true	c2	original	7	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	2.52	4.43	4.91	0.965279	0.122271	true	pass
+b5-c2-original-s8	FORMAL	true	c2	original	8	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	3.97	5.92	6.34	0.947958	0.109407	true	pass
+b5-c2-original-s9	FORMAL	true	c2	original	9	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	1.04	4.64	5.08	1.061749	0.108757	true	pass
+b5-c2-original-s10	FORMAL	true	c2	original	10	100000	falsified	1	0	1		0	0	12	3	0.75	3	1	0	0	0	3.58	5.5	5.92	0.952028	0.106050	true	pass
+b5-c2-no-repeat-s1	FORMAL	true	c2	no-repeat	1	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.61	19.07	1.363545	0.106505	true	pass
+b5-c2-no-repeat-s2	FORMAL	true	c2	no-repeat	2	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.74	19.22	1.381739	0.125674	true	pass
+b5-c2-no-repeat-s3	FORMAL	true	c2	no-repeat	3	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		19.28	19.74	1.360351	0.107250	true	pass
+b5-c2-no-repeat-s4	FORMAL	true	c2	no-repeat	4	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.72	19.20	1.448856	0.110426	true	pass
+b5-c2-no-repeat-s5	FORMAL	true	c2	no-repeat	5	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.59	19.04	1.368062	0.108093	true	pass
+b5-c2-no-repeat-s6	FORMAL	true	c2	no-repeat	6	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.65	19.10	1.369649	0.108153	true	pass
+b5-c2-no-repeat-s7	FORMAL	true	c2	no-repeat	7	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.39	18.82	1.352835	0.107674	true	pass
+b5-c2-no-repeat-s8	FORMAL	true	c2	no-repeat	8	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		18.63	19.07	1.375828	0.107847	true	pass
+b5-c2-no-repeat-s9	FORMAL	true	c2	no-repeat	9	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		19.4	19.84	1.364544	0.105376	true	pass
+b5-c2-no-repeat-s10	FORMAL	true	c2	no-repeat	10	100000	budget_exhausted	0	1	0		0	0	12	3	0.75	3	1	0	0	0		21.6	22.05	1.382179	0.110835	true	pass
+b5-c2-full-k1-s1	FORMAL	true	c2	full-k1	1	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.51	3.03	3.48	1.433763	0.119264	true	pass
+b5-c2-full-k1-s2	FORMAL	true	c2	full-k1	2	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.57	2.52	2.98	1.433776	0.115304	true	pass
+b5-c2-full-k1-s3	FORMAL	true	c2	full-k1	3	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.52	3.16	3.61	1.437806	0.112571	true	pass
+b5-c2-full-k1-s4	FORMAL	true	c2	full-k1	4	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.52	2.91	3.38	1.428601	0.113394	true	pass
+b5-c2-full-k1-s5	FORMAL	true	c2	full-k1	5	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.53	2.45	2.91	1.428579	0.109347	true	pass
+b5-c2-full-k1-s6	FORMAL	true	c2	full-k1	6	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.51	3.04	3.50	1.432755	0.113057	true	pass
+b5-c2-full-k1-s7	FORMAL	true	c2	full-k1	7	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.52	2.64	3.09	1.427927	0.113655	true	pass
+b5-c2-full-k1-s8	FORMAL	true	c2	full-k1	8	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.51	3.07	3.53	1.447484	0.111865	true	pass
+b5-c2-full-k1-s9	FORMAL	true	c2	full-k1	9	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.55	3.19	3.67	1.502224	0.119230	true	pass
+b5-c2-full-k1-s10	FORMAL	true	c2	full-k1	10	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	1	0.54	2.68	3.16	1.545711	0.116622	true	pass
+b5-c2-full-k5-s1	FORMAL	true	c2	full-k5	1	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.58	2.65	3.13	1.511169	0.118169	true	pass
+b5-c2-full-k5-s2	FORMAL	true	c2	full-k5	2	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.57	3.3	3.80	1.513221	0.119514	true	pass
+b5-c2-full-k5-s3	FORMAL	true	c2	full-k5	3	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.63	2.67	3.16	1.507103	0.121264	true	pass
+b5-c2-full-k5-s4	FORMAL	true	c2	full-k5	4	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.55	3.14	3.64	1.498096	0.117512	true	pass
+b5-c2-full-k5-s5	FORMAL	true	c2	full-k5	5	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.57	3.06	3.58	1.510667	0.118465	true	pass
+b5-c2-full-k5-s6	FORMAL	true	c2	full-k5	6	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.53	3.06	3.52	1.529774	0.114101	true	pass
+b5-c2-full-k5-s7	FORMAL	true	c2	full-k5	7	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.52	3.15	3.63	1.426427	0.117283	true	pass
+b5-c2-full-k5-s8	FORMAL	true	c2	full-k5	8	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.53	3.02	3.50	1.407047	0.110788	true	pass
+b5-c2-full-k5-s9	FORMAL	true	c2	full-k5	9	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.53	3.14	3.62	1.433986	0.112828	true	pass
+b5-c2-full-k5-s10	FORMAL	true	c2	full-k5	10	100000	falsified	1	0	1	1	1	1	12	3	0.75	3	3	1	1	5	0.52	3.03	3.52	1.437236	0.113275	true	pass
+b5-c3-original-s1	FORMAL	true	c3	original	1	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.55	2.65	3.09	1.008764	0.112560	true	pass
+b5-c3-original-s2	FORMAL	true	c3	original	2	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.44	2.49	2.91	0.963763	0.112868	true	pass
+b5-c3-original-s3	FORMAL	true	c3	original	3	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.51	2.56	3.00	0.945429	0.104875	true	pass
+b5-c3-original-s4	FORMAL	true	c3	original	4	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.57	2.68	3.10	0.992403	0.111237	true	pass
+b5-c3-original-s5	FORMAL	true	c3	original	5	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	2.07	3.29	3.82	1.226417	0.134810	true	pass
+b5-c3-original-s6	FORMAL	true	c3	original	6	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	0.53	2.47	2.90	0.986065	0.106977	true	pass
+b5-c3-original-s7	FORMAL	true	c3	original	7	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.43	2.64	3.03	0.836912	0.091731	true	pass
+b5-c3-original-s8	FORMAL	true	c3	original	8	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.82	2.98	3.44	1.041635	0.130541	true	pass
+b5-c3-original-s9	FORMAL	true	c3	original	9	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.61	2.8	3.27	1.061056	0.128797	true	pass
+b5-c3-original-s10	FORMAL	true	c3	original	10	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		0	0	0	1.73	2.89	3.38	1.390251	0.139801	true	pass
+b5-c3-no-value-s1	FORMAL	true	c3	no-value	1	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.54	2.3	2.80	1.622189	0.114841	true	pass
+b5-c3-no-value-s2	FORMAL	true	c3	no-value	2	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.51	2.06	2.51	1.371413	0.108872	true	pass
+b5-c3-no-value-s3	FORMAL	true	c3	no-value	3	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.5	1.98	2.42	1.372365	0.110812	true	pass
+b5-c3-no-value-s4	FORMAL	true	c3	no-value	4	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.58	2.49	2.94	1.362653	0.111148	true	pass
+b5-c3-no-value-s5	FORMAL	true	c3	no-value	5	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.5	2.46	2.92	1.359411	0.108735	true	pass
+b5-c3-no-value-s6	FORMAL	true	c3	no-value	6	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.6	2.7	3.25	1.680609	0.126451	true	pass
+b5-c3-no-value-s7	FORMAL	true	c3	no-value	7	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.55	2.58	3.08	1.542877	0.124162	true	pass
+b5-c3-no-value-s8	FORMAL	true	c3	no-value	8	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.51	2.39	2.86	1.377055	0.113897	true	pass
+b5-c3-no-value-s9	FORMAL	true	c3	no-value	9	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.52	2.46	2.91	1.380117	0.110754	true	pass
+b5-c3-no-value-s10	FORMAL	true	c3	no-value	10	100000	falsified	1	0	1	3	0	1	21	5	0.761905	0		0	1	0	0.53	2.14	2.59	1.376965	0.131301	true	pass
+b5-c3-full-k1-s1	FORMAL	true	c3	full-k1	1	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.52	2.49	2.94	1.391623	0.109420	true	pass
+b5-c3-full-k1-s2	FORMAL	true	c3	full-k1	2	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.52	1.99	2.43	1.416036	0.109970	true	pass
+b5-c3-full-k1-s3	FORMAL	true	c3	full-k1	3	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.49	2.49	2.94	1.384896	0.109869	true	pass
+b5-c3-full-k1-s4	FORMAL	true	c3	full-k1	4	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.49	2.25	2.69	1.388797	0.111648	true	pass
+b5-c3-full-k1-s5	FORMAL	true	c3	full-k1	5	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.5	2.01	2.45	1.392607	0.108551	true	pass
+b5-c3-full-k1-s6	FORMAL	true	c3	full-k1	6	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.5	2.38	2.83	1.405715	0.108547	true	pass
+b5-c3-full-k1-s7	FORMAL	true	c3	full-k1	7	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.49	2.03	2.48	1.415888	0.106455	true	pass
+b5-c3-full-k1-s8	FORMAL	true	c3	full-k1	8	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.55	2.43	2.87	1.367656	0.111229	true	pass
+b5-c3-full-k1-s9	FORMAL	true	c3	full-k1	9	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.54	2.43	2.88	1.398784	0.111733	true	pass
+b5-c3-full-k1-s10	FORMAL	true	c3	full-k1	10	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	1	0.5	2.05	2.51	1.398098	0.112144	true	pass
+b5-c3-full-k5-s1	FORMAL	true	c3	full-k5	1	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.51	2.04	2.50	1.378335	0.109826	true	pass
+b5-c3-full-k5-s2	FORMAL	true	c3	full-k5	2	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.49	2.45	2.90	1.505380	0.119867	true	pass
+b5-c3-full-k5-s3	FORMAL	true	c3	full-k5	3	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.52	2.01	2.46	1.389137	0.107723	true	pass
+b5-c3-full-k5-s4	FORMAL	true	c3	full-k5	4	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.52	2.36	2.83	1.377361	0.119984	true	pass
+b5-c3-full-k5-s5	FORMAL	true	c3	full-k5	5	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.5	2.38	2.84	1.418105	0.110759	true	pass
+b5-c3-full-k5-s6	FORMAL	true	c3	full-k5	6	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.53	2.39	2.83	1.377344	0.109497	true	pass
+b5-c3-full-k5-s7	FORMAL	true	c3	full-k5	7	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.51	2.61	3.06	1.411933	0.111592	true	pass
+b5-c3-full-k5-s8	FORMAL	true	c3	full-k5	8	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.52	2.38	2.83	1.378297	0.111997	true	pass
+b5-c3-full-k5-s9	FORMAL	true	c3	full-k5	9	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.51	2.66	3.11	1.465886	0.107256	true	pass
+b5-c3-full-k5-s10	FORMAL	true	c3	full-k5	10	100000	falsified	1	0	1	1	1	1	21	5	0.761905	0		1	1	5	0.52	2.42	2.88	1.386932	0.110027	true	pass

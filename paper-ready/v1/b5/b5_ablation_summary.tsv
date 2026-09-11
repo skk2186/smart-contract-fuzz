@@ -1,0 +1,13 @@
+comparison	comparison_role	scenario	method	runs	dependency_candidate_count_median	property_candidate_count_median	candidate_reduction_ratio_median	required_repeat_count	observed_repeat_count_median	value_evidence_enabled	repeat_enabled	k	median_target_rank	target_rank_range	rank_delta_vs_full_k5	top1_hit_runs	top5_hit_runs	target_state_reached_runs	target_state_reach_rate	reachability_delta_vs_full_k5	falsified_runs	falsification_rate	trigger_delta_vs_full_k5	budget_exhausted_runs
+Dependency-only vs Full-K5	mechanism_ablation	c1	dependency-only	10	36.000	4.000	0.889	0		0	0	0	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+Dependency-only vs Full-K5	primary_full	c1	full-k5	10	36.000	4.000	0.889	0		1	1	5	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+Dependency-only vs Full-K5	external_baseline	c1	original	10	36.000	4.000	0.889	0		0	0	0	1.000	1-1	0.000	10	10	8	0.800	-0.200	5	0.500	-0.500	5
+Full-K1 vs Full-K5	top_k_sensitivity	c1	full-k1	10	36.000	4.000	0.889	0		1	1	1	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+No-Repeat vs Full-K5	mechanism_ablation	c2	no-repeat	10	12.000	3.000	0.750	3	1.000	0	0	0				0	0	0	0.000	-1.000	0	0.000	-1.000	10
+No-Repeat vs Full-K5	primary_full	c2	full-k5	10	12.000	3.000	0.750	3	3.000	1	1	5	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+No-Repeat vs Full-K5	external_baseline	c2	original	10	12.000	3.000	0.750	3	1.000	0	0	0				0	0	10	1.000	0.000	10	1.000	0.000	0
+Full-K1 vs Full-K5	top_k_sensitivity	c2	full-k1	10	12.000	3.000	0.750	3	3.000	1	1	1	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+No-Value vs Full-K5	mechanism_ablation	c3	no-value	10	21.000	5.000	0.762	0		0	1	0	3.000	3-3	-2.000	0	10	10	1.000	0.000	10	1.000	0.000	0
+No-Value vs Full-K5	primary_full	c3	full-k5	10	21.000	5.000	0.762	0		1	1	5	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+No-Value vs Full-K5	external_baseline	c3	original	10	21.000	5.000	0.762	0		0	0	0	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0
+Full-K1 vs Full-K5	top_k_sensitivity	c3	full-k1	10	21.000	5.000	0.762	0		1	1	1	1.000	1-1	0.000	10	10	10	1.000	0.000	10	1.000	0.000	0

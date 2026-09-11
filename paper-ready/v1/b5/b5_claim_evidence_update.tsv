@@ -1,0 +1,8 @@
+claim_id	claim	b5_evidence	status_after_b5	safe_wording	remaining_limitation
+C1	Property-directed filtering reduces irrelevant candidates.	C1 Full-K5 reduction ratio 0.889; candidate counts, rank and Top-K are reported.	supported	In controlled C1, property filtering reduced the candidate space under the declared ranking.	Controlled scenario; not end-to-end speedup.
+C2	Bounded repeat preserves a three-transition target.	No-Repeat reachability 0.000 vs Full-K5 1.000.	supported	In C2, bounded repeat preserved the required advance() occurrences.	One controlled repeated-transition pattern.
+C3	Value evidence improves route rank.	No-Value median rank 3.000 vs Full-K5 1.000.	supported	In C3, lightweight storage-value evidence improved target rank.	Not symbolic execution or a general value guarantee.
+C4	Top-K retention reduces single-rank loss risk.	Full-K1 and Full-K5 rank, Top-1/Top-5, reachability and outcomes are reported.	partially_supported	B5 measures when K1 and K5 differ; it assumes no monotonic K5 benefit.	Some cells may have K1=K5.
+C5	Combined PHS has joint mechanism value	Combination analysis: SUPPORTED; C1 relevance, C2 reachability, C3 rank.	supported	PHS combines mechanisms with scenario-specific gains.	Not individual novelty or semantic equivalence.
+C6	PHS applies to public/external contracts.	B5 is controlled/custom; no new public benchmark added.	partially_supported	Prior screened public evidence shows limited applicability.	B5 adds no external diversity.
+C7	PHS improves over Original.	Original, ablations, Full-K1 and Full-K5 are reported per scenario.	mixed	PHS changes targeted rank, reachability or relevance; no universal superiority claim.	Caller, atomicity, rollback and call boundaries differ.
