@@ -51,6 +51,51 @@ WRITE_KEYS = (
 )
 
 
+def is_property_function(name: str) -> bool:
+    return name.startswith("echidna_")
+
+
+def property_function_base_name(name: str) -> str:
+    return name.split("(", 1)[0]
+
+
+def resolve_property_function(
+    functions: dict[str, dict[str, set[str]]],
+    requested: str,
+) -> str:
+    requested = requested.strip()
+
+    if not requested:
+        raise ValueError("--property must not be empty")
+
+    candidates = [
+        name
+        for name in functions
+        if is_property_function(name)
+        and (
+            name == requested
+            or property_function_base_name(name)
+            == property_function_base_name(requested)
+        )
+    ]
+
+    if not candidates:
+        raise ValueError(
+            f"Property function {requested!r} not found"
+        )
+
+    if requested in candidates:
+        return requested
+
+    if len(candidates) > 1:
+        raise ValueError(
+            f"Property function {requested!r} is ambiguous: "
+            f"{', '.join(sorted(candidates))}"
+        )
+
+    return candidates[0]
+
+
 def load_json(path: Path) -> dict[str, Any]:
     if not path.is_file():
         raise FileNotFoundError(f"JSON file not found: {path}")
@@ -391,6 +436,15 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--property",
+        dest="property_function",
+        help=(
+            "Explicit echidna_ property function. This enables "
+            "property-specific planning."
+        ),
+    )
+
+    parser.add_argument(
         "--max-function-visits",
         type=int,
         default=2,
@@ -469,7 +523,7 @@ def main() -> None:
     property_functions = sorted(
         function_name
         for function_name in functions
-        if function_name.startswith("echidna_")
+        if is_property_function(function_name)
     )
 
     if not property_functions:
@@ -479,9 +533,28 @@ def main() -> None:
         )
         raise SystemExit(1)
 
+    try:
+        selected_property = (
+            resolve_property_function(
+                functions,
+                arguments.property_function,
+            )
+            if arguments.property_function is not None
+            else None
+        )
+    except ValueError as error:
+        print(f"Error: {error}", file=sys.stderr)
+        raise SystemExit(1) from error
+
+    selected_properties = (
+        [selected_property]
+        if selected_property is not None
+        else property_functions
+    )
+
     property_variables: set[str] = set()
 
-    for property_function in property_functions:
+    for property_function in selected_properties:
         property_variables.update(
             functions[property_function]["reads"]
         )
@@ -517,6 +590,10 @@ def main() -> None:
         max_expansions=arguments.max_expansions,
     )
 
+    if selected_property is not None:
+        for path in paths:
+            path["property_function"] = selected_property
+
     retained_paths = paths[:arguments.max_paths]
 
     for rank, path in enumerate(
@@ -525,22 +602,26 @@ def main() -> None:
     ):
         path["repeat_rank"] = rank
 
+    contract_output = {
+        "property_variables": sorted(property_variables),
+        "target_functions": target_functions,
+        "max_path_length": arguments.max_path_length,
+        "max_function_visits": (
+            arguments.max_function_visits
+        ),
+        "generated_path_count": len(paths),
+        "retained_path_count": len(retained_paths),
+        "dfs_expansions": expansions,
+        "paths": retained_paths,
+    }
+
+    if selected_property is None:
+        contract_output["property_functions"] = property_functions
+    else:
+        contract_output["property_function"] = selected_property
+
     output = {
-        contract_name: {
-            "property_functions": property_functions,
-            "property_variables": sorted(
-                property_variables
-            ),
-            "target_functions": target_functions,
-            "max_path_length": arguments.max_path_length,
-            "max_function_visits": (
-                arguments.max_function_visits
-            ),
-            "generated_path_count": len(paths),
-            "retained_path_count": len(retained_paths),
-            "dfs_expansions": expansions,
-            "paths": retained_paths,
-        }
+        contract_name: contract_output
     }
 
     json.dump(

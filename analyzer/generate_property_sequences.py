@@ -1,4 +1,5 @@
 import json
+import argparse
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -7,6 +8,49 @@ from typing import Any
 
 def is_property_function(name: str) -> bool:
     return name.startswith("echidna_")
+
+
+def property_function_base_name(name: str) -> str:
+    """Return the function name without its full-name signature suffix."""
+    return name.split("(", 1)[0]
+
+
+def resolve_property_function(
+    functions: dict[str, dict[str, Any]],
+    requested: str,
+) -> str:
+    """Resolve a CLI property name against rw-data function keys."""
+    requested = requested.strip()
+
+    if not requested:
+        raise ValueError("--property must not be empty")
+
+    candidates = [
+        name
+        for name in functions
+        if is_property_function(name)
+        and (
+            name == requested
+            or property_function_base_name(name)
+            == property_function_base_name(requested)
+        )
+    ]
+
+    if not candidates:
+        raise ValueError(
+            f"Property function {requested!r} not found"
+        )
+
+    if requested in candidates:
+        return requested
+
+    if len(candidates) > 1:
+        raise ValueError(
+            f"Property function {requested!r} is ambiguous: "
+            f"{', '.join(sorted(candidates))}"
+        )
+
+    return candidates[0]
 
 
 def build_edges(
@@ -55,6 +99,13 @@ def find_property_variables(
             variables.update(info.get("read", []))
 
     return variables
+
+
+def find_selected_property_variables(
+    functions: dict[str, dict[str, Any]],
+    property_function: str,
+) -> set[str]:
+    return set(functions[property_function].get("read", []))
 
 
 def find_target_functions(
@@ -164,11 +215,45 @@ def analyze(
     rw_data: dict[str, Any],
     max_length: int,
     top_k: int,
+    property_function: str | None = None,
 ) -> dict[str, Any]:
     result = {}
 
-    for contract_name, functions in rw_data.items():
-        property_variables = find_property_variables(functions)
+    if property_function is None:
+        contract_items = list(rw_data.items())
+    else:
+        contract_items = []
+
+        for contract_name, functions in rw_data.items():
+            try:
+                resolve_property_function(
+                    functions,
+                    property_function,
+                )
+            except ValueError:
+                continue
+
+            contract_items.append((contract_name, functions))
+
+        if not contract_items:
+            raise ValueError(
+                f"Property function {property_function!r} not found"
+            )
+
+    for contract_name, functions in contract_items:
+        selected_property = None
+
+        if property_function is None:
+            property_variables = find_property_variables(functions)
+        else:
+            selected_property = resolve_property_function(
+                functions,
+                property_function,
+            )
+            property_variables = find_selected_property_variables(
+                functions,
+                selected_property,
+            )
 
         target_functions = find_target_functions(
             functions,
@@ -183,27 +268,49 @@ def analyze(
             max_length,
         )
 
-        result[contract_name] = {
-            "property_variables": sorted(property_variables),
-            "target_functions": sorted(target_functions),
-            "paths": paths[:top_k],
-        }
+        if selected_property is not None:
+            for path in paths:
+                path["property_function"] = selected_property
+
+            result[contract_name] = {
+                "property_function": selected_property,
+                "property_variables": sorted(property_variables),
+                "target_functions": sorted(target_functions),
+                "paths": paths[:top_k],
+            }
+        else:
+            result[contract_name] = {
+                "property_variables": sorted(property_variables),
+                "target_functions": sorted(target_functions),
+                "paths": paths[:top_k],
+            }
 
     return result
 
 
 def main() -> None:
-    if len(sys.argv) < 2:
-        print(
-            "Usage: python generate_property_sequences.py "
-            "<rw.json> [max_length] [top_k]",
-            file=sys.stderr,
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate property-relevant transaction sequences. "
+            "Without --property, retain legacy union-property mode."
         )
-        raise SystemExit(1)
+    )
+    parser.add_argument("rw_json", type=Path)
+    parser.add_argument("max_length", type=int, nargs="?", default=4)
+    parser.add_argument("top_k", type=int, nargs="?", default=20)
+    parser.add_argument(
+        "--property",
+        dest="property_function",
+        help=(
+            "Explicit echidna_ property function. This enables "
+            "property-specific planning."
+        ),
+    )
+    arguments = parser.parse_args()
 
-    input_path = Path(sys.argv[1])
-    max_length = int(sys.argv[2]) if len(sys.argv) >= 3 else 4
-    top_k = int(sys.argv[3]) if len(sys.argv) >= 4 else 20
+    input_path = arguments.rw_json
+    max_length = arguments.max_length
+    top_k = arguments.top_k
 
     if not input_path.is_file():
         print(
@@ -215,11 +322,16 @@ def main() -> None:
     with input_path.open("r", encoding="utf-8") as file:
         rw_data = json.load(file)
 
-    result = analyze(
-        rw_data,
-        max_length,
-        top_k,
-    )
+    try:
+        result = analyze(
+            rw_data,
+            max_length,
+            top_k,
+            property_function=arguments.property_function,
+        )
+    except (KeyError, ValueError) as error:
+        print(f"Error: {error}", file=sys.stderr)
+        raise SystemExit(1) from error
 
     print(json.dumps(result, indent=2, ensure_ascii=False))
 

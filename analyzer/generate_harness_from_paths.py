@@ -65,6 +65,29 @@ def sanitize_identifier(value: str) -> str:
     return result
 
 
+def property_function_base_name(name: str) -> str:
+    return name.split("(", 1)[0]
+
+
+def property_function_names_match(
+    left: str,
+    right: str,
+) -> bool:
+    left = left.strip()
+    right = right.strip()
+
+    if left == right:
+        return True
+
+    if "(" not in left:
+        return left == property_function_base_name(right)
+
+    if "(" not in right:
+        return right == property_function_base_name(left)
+
+    return False
+
+
 def parameter_declaration(
     solidity_type: str,
     parameter_name: str,
@@ -148,6 +171,52 @@ def collect_target_functions(contract) -> dict[str, Any]:
 
 def build_function_map(contract) -> dict[str, Any]:
     return collect_target_functions(contract)
+
+
+def resolve_property_function(
+    function_map: dict[str, Any],
+    requested: str,
+) -> tuple[str, Any]:
+    candidates = []
+
+    for full_name, function in function_map.items():
+        function_name = getattr(function, "name", "")
+        if not (
+            full_name.startswith("echidna_")
+            or function_name.startswith("echidna_")
+        ):
+            continue
+
+        if (
+            property_function_names_match(full_name, requested)
+            or property_function_names_match(function_name, requested)
+        ):
+            candidates.append((full_name, function))
+
+    if not candidates:
+        raise ValueError(
+            f"Requested property {requested!r} was not found "
+            "in the target contract"
+        )
+
+    if len(candidates) > 1:
+        names = ", ".join(
+            full_name
+            for full_name, _ in candidates
+        )
+        raise ValueError(
+            f"Requested property {requested!r} is ambiguous: {names}"
+        )
+
+    full_name, function = candidates[0]
+
+    if function.parameters:
+        raise ValueError(
+            f"Selected property {full_name} has parameters; "
+            "the current Harness does not support property parameters"
+        )
+
+    return full_name, function
 
 
 def find_property_functions(contract) -> list[Any]:
@@ -244,6 +313,7 @@ def load_paths(
     sequence_json: Path,
     contract_name: str,
     top_k: int,
+    property_function: str | None = None,
 ) -> list[list[str]]:
     with sequence_json.open(
         "r",
@@ -265,15 +335,56 @@ def load_paths(
             f"No paths found for {contract_name}"
         )
 
+    if property_function is not None:
+        sequence_property = contract_data.get("property_function")
+
+        if not isinstance(sequence_property, str):
+            raise ValueError(
+                "Per-property sequence JSON must record "
+                "property_function"
+            )
+
+        if not property_function_names_match(
+            sequence_property,
+            property_function,
+        ):
+            raise ValueError(
+                "Sequence JSON property_function "
+                f"{sequence_property!r} does not match "
+                f"requested property {property_function!r}"
+            )
+
     paths = []
 
-    for entry in path_entries[:top_k]:
+    for entry in path_entries:
+        if property_function is not None:
+            entry_property = entry.get("property_function")
+
+            if not isinstance(entry_property, str):
+                raise ValueError(
+                    "Per-property sequence path is missing "
+                    "property_function"
+                )
+
+            if not property_function_names_match(
+                entry_property,
+                property_function,
+            ):
+                raise ValueError(
+                    "Sequence path property_function "
+                    f"{entry_property!r} does not match "
+                    f"requested property {property_function!r}"
+                )
+
         sequence = entry.get("sequence", [])
 
         if len(sequence) < 2:
             continue
 
         paths.append(sequence)
+
+        if len(paths) >= top_k:
+            break
 
     if not paths:
         raise ValueError(
@@ -309,6 +420,7 @@ def generate_harness(
     function_prefix: str,
     top_k: int,
     solidity_pragma: str | None = None,
+    property_function: str | None = None,
 ) -> None:
     slither = Slither(str(source_file))
     target_contract = find_contract(
@@ -325,19 +437,32 @@ def generate_harness(
         )
 
     function_map = build_function_map(target_contract)
-    property_functions = find_property_functions(
-        target_contract
-    )
 
-    if not property_functions:
-        raise ValueError(
-            "No zero-argument echidna_ property found"
+    selected_property_name = None
+
+    if property_function is not None:
+        selected_property_name, selected_property = (
+            resolve_property_function(
+                function_map,
+                property_function,
+            )
         )
+        property_functions = [selected_property]
+    else:
+        property_functions = find_property_functions(
+            target_contract
+        )
+
+        if not property_functions:
+            raise ValueError(
+                "No zero-argument echidna_ property found"
+            )
 
     paths = load_paths(
         sequence_json,
         target_contract_name,
         top_k,
+        property_function=selected_property_name,
     )
 
     sequence_functions = []
@@ -370,13 +495,19 @@ def generate_harness(
         harness_contract_name
     )
 
+    target_property_comment = ""
+    if selected_property_name is not None:
+        target_property_comment = (
+            f"    // Target property: {selected_property_name}\n"
+        )
+
     source = f"""// SPDX-License-Identifier: MIT
 pragma solidity {pragma_expression};
 
 import "{import_path}";
 
 contract {harness_contract_name} {{
-    {target_contract_name} public target;
+{target_property_comment}    {target_contract_name} public target;
 
     constructor() {{
         target = new {target_contract_name}();
@@ -454,6 +585,14 @@ def parse_arguments() -> argparse.Namespace:
             "source file has no pragma"
         ),
     )
+    parser.add_argument(
+        "--property",
+        dest="property_function",
+        help=(
+            "Generate only the proxy and paths for this explicit "
+            "echidna_ property."
+        ),
+    )
 
     return parser.parse_args()
 
@@ -473,6 +612,7 @@ def main() -> None:
         function_prefix=args.prefix,
         top_k=args.top_k,
         solidity_pragma=args.solidity_pragma,
+        property_function=args.property_function,
     )
 
 

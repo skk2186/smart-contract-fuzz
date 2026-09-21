@@ -329,6 +329,33 @@ def sort_key(path: dict[str, Any]) -> tuple[Any, ...]:
     )
 
 
+def validate_property_provenance(
+    contract_sequences: dict[str, Any],
+    paths: list[Any],
+) -> None:
+    """Reject mixed-property paths in an explicit per-property input."""
+    property_function = contract_sequences.get("property_function")
+
+    if property_function is None:
+        return
+
+    if not isinstance(property_function, str):
+        raise ValueError(
+            "Per-property sequence JSON property_function "
+            "must be a string"
+        )
+
+    for path in paths:
+        if (
+            not isinstance(path, dict)
+            or path.get("property_function") != property_function
+        ):
+            raise ValueError(
+                "Per-property sequence JSON contains a path with "
+                "a different or missing property_function"
+            )
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -426,6 +453,15 @@ def main() -> None:
             file=sys.stderr,
         )
         raise SystemExit(1)
+
+    try:
+        validate_property_provenance(
+            contract_sequences,
+            paths,
+        )
+    except ValueError as error:
+        print(f"Error: {error}", file=sys.stderr)
+        raise SystemExit(1) from error
 
     functions = constraint_data[contract_name].get(
         "functions",
