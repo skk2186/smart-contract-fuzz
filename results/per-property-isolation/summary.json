@@ -1,0 +1,64 @@
+{
+  "benchmark": "MultiPropertyInterference",
+  "benchmark_path": "contracts/benchmarks/MultiPropertyInterference.sol",
+  "benchmark_sha256": "7873afd3f86b9f96dc2b211e973ce0871789d0c48661678e08d6bd3b6e4e5463",
+  "contract": "MultiPropertyInterference",
+  "target_property": "echidna_target_safe()",
+  "expected_sequence": [
+    "prepareTarget()",
+    "triggerTarget()"
+  ],
+  "git_commit": "6eb391db53087470c2d272e5bd4def16e70032d0",
+  "planner": {
+    "name": "generate_property_sequences",
+    "max_length": 6,
+    "top_k": 1000,
+    "path_builder": "build_relevant_paths"
+  },
+  "legacy_union": {
+    "property_variable_count": 3,
+    "property_variables": [
+      "MultiPropertyInterference.distractorAValue",
+      "MultiPropertyInterference.distractorBValue",
+      "MultiPropertyInterference.targetValue"
+    ],
+    "target_function_count": 3,
+    "target_functions": [
+      "triggerDistractorA()",
+      "triggerDistractorB()",
+      "triggerTarget()"
+    ],
+    "candidate_count": 8,
+    "related_candidate_count": 1,
+    "irrelevant_candidate_count": 7,
+    "irrelevant_candidate_ratio": 0.875,
+    "expected_sequence_rank": 6,
+    "target_rank": 6,
+    "top1_hit": false,
+    "top3_hit": false,
+    "top5_hit": false,
+    "configured_top_k": 1000,
+    "retained_candidate_count": 8
+  },
+  "per_property": {
+    "property_variable_count": 1,
+    "property_variables": [
+      "MultiPropertyInterference.targetValue"
+    ],
+    "target_function_count": 1,
+    "target_functions": [
+      "triggerTarget()"
+    ],
+    "candidate_count": 1,
+    "related_candidate_count": 1,
+    "irrelevant_candidate_count": 0,
+    "irrelevant_candidate_ratio": 0.0,
+    "expected_sequence_rank": 1,
+    "target_rank": 1,
+    "top1_hit": true,
+    "top3_hit": true,
+    "top5_hit": true,
+    "configured_top_k": 1000,
+    "retained_candidate_count": 1
+  }
+}

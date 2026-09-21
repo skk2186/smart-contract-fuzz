@@ -1,0 +1,49 @@
+{
+  "benchmark": "MultiPropertyInterference",
+  "benchmark_path": "contracts/benchmarks/MultiPropertyInterference.sol",
+  "benchmark_sha256": "7873afd3f86b9f96dc2b211e973ce0871789d0c48661678e08d6bd3b6e4e5463",
+  "contract": "MultiPropertyInterference",
+  "target_property": "echidna_target_safe()",
+  "expected_sequence": [
+    "prepareTarget()",
+    "triggerTarget()"
+  ],
+  "git_commit": "6eb391db53087470c2d272e5bd4def16e70032d0",
+  "planner": {
+    "name": "generate_property_sequences",
+    "max_length": 6,
+    "top_k": 1000,
+    "path_builder": "build_relevant_paths"
+  },
+  "method": "PER_PROPERTY",
+  "candidates": {
+    "property_function": "echidna_target_safe()",
+    "property_functions": [
+      "echidna_target_safe()"
+    ],
+    "property_variables": [
+      "MultiPropertyInterference.targetValue"
+    ],
+    "target_functions": [
+      "triggerTarget()"
+    ],
+    "max_length": 6,
+    "configured_top_k": 1000,
+    "candidate_count": 1,
+    "retained_candidate_count": 1,
+    "paths": [
+      {
+        "sequence": [
+          "prepareTarget()",
+          "triggerTarget()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "MultiPropertyInterference.targetReady"
+        ],
+        "target_function": "triggerTarget()"
+      }
+    ]
+  }
+}

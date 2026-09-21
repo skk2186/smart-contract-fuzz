@@ -70,22 +70,19 @@ def property_function_base_name(name: str) -> str:
 
 
 def property_function_names_match(
-    left: str,
-    right: str,
+    candidate: str,
+    requested: str,
 ) -> bool:
-    left = left.strip()
-    right = right.strip()
+    candidate = candidate.strip()
+    requested = requested.strip()
 
-    if left == right:
-        return True
+    if "(" in requested:
+        return candidate == requested
 
-    if "(" not in left:
-        return left == property_function_base_name(right)
-
-    if "(" not in right:
-        return right == property_function_base_name(left)
-
-    return False
+    return (
+        candidate == requested
+        or property_function_base_name(candidate) == requested
+    )
 
 
 def parameter_declaration(
@@ -187,10 +184,17 @@ def resolve_property_function(
         ):
             continue
 
-        if (
-            property_function_names_match(full_name, requested)
-            or property_function_names_match(function_name, requested)
-        ):
+        if "(" in requested:
+            matches = full_name == requested
+        else:
+            matches = (
+                full_name == requested
+                or property_function_base_name(full_name)
+                == requested
+                or function_name == requested
+            )
+
+        if matches:
             candidates.append((full_name, function))
 
     if not candidates:

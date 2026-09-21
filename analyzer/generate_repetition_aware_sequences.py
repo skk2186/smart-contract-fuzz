@@ -68,24 +68,28 @@ def resolve_property_function(
     if not requested:
         raise ValueError("--property must not be empty")
 
+    if "(" in requested:
+        if (
+            requested in functions
+            and is_property_function(requested)
+        ):
+            return requested
+
+        raise ValueError(
+            f"Property function {requested!r} not found"
+        )
+
     candidates = [
         name
         for name in functions
         if is_property_function(name)
-        and (
-            name == requested
-            or property_function_base_name(name)
-            == property_function_base_name(requested)
-        )
+        and property_function_base_name(name) == requested
     ]
 
     if not candidates:
         raise ValueError(
             f"Property function {requested!r} not found"
         )
-
-    if requested in candidates:
-        return requested
 
     if len(candidates) > 1:
         raise ValueError(

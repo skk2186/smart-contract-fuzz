@@ -1,0 +1,157 @@
+{
+  "benchmark": "MultiPropertyInterference",
+  "benchmark_path": "contracts/benchmarks/MultiPropertyInterference.sol",
+  "benchmark_sha256": "7873afd3f86b9f96dc2b211e973ce0871789d0c48661678e08d6bd3b6e4e5463",
+  "contract": "MultiPropertyInterference",
+  "target_property": "echidna_target_safe()",
+  "expected_sequence": [
+    "prepareTarget()",
+    "triggerTarget()"
+  ],
+  "git_commit": "6eb391db53087470c2d272e5bd4def16e70032d0",
+  "planner": {
+    "name": "generate_property_sequences",
+    "max_length": 6,
+    "top_k": 1000,
+    "path_builder": "build_relevant_paths"
+  },
+  "method": "LEGACY_UNION",
+  "candidates": {
+    "property_function": null,
+    "property_functions": [
+      "echidna_distractor_a_safe()",
+      "echidna_distractor_b_safe()",
+      "echidna_target_safe()"
+    ],
+    "property_variables": [
+      "MultiPropertyInterference.distractorAValue",
+      "MultiPropertyInterference.distractorBValue",
+      "MultiPropertyInterference.targetValue"
+    ],
+    "target_functions": [
+      "triggerDistractorA()",
+      "triggerDistractorB()",
+      "triggerTarget()"
+    ],
+    "max_length": 6,
+    "configured_top_k": 1000,
+    "candidate_count": 8,
+    "retained_candidate_count": 8,
+    "paths": [
+      {
+        "sequence": [
+          "prepareDistractorB()",
+          "stepDistractorB1()",
+          "stepDistractorB2()",
+          "stepDistractorB3()",
+          "triggerDistractorB()"
+        ],
+        "length": 5,
+        "score": 8,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorBReady",
+          "MultiPropertyInterference.distractorBStage1",
+          "MultiPropertyInterference.distractorBStage2",
+          "MultiPropertyInterference.distractorBStage3"
+        ],
+        "target_function": "triggerDistractorB()"
+      },
+      {
+        "sequence": [
+          "prepareDistractorA()",
+          "stepDistractorA1()",
+          "stepDistractorA2()",
+          "triggerDistractorA()"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorAReady",
+          "MultiPropertyInterference.distractorAStage1",
+          "MultiPropertyInterference.distractorAStage2"
+        ],
+        "target_function": "triggerDistractorA()"
+      },
+      {
+        "sequence": [
+          "stepDistractorB1()",
+          "stepDistractorB2()",
+          "stepDistractorB3()",
+          "triggerDistractorB()"
+        ],
+        "length": 4,
+        "score": 6,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorBStage1",
+          "MultiPropertyInterference.distractorBStage2",
+          "MultiPropertyInterference.distractorBStage3"
+        ],
+        "target_function": "triggerDistractorB()"
+      },
+      {
+        "sequence": [
+          "stepDistractorA1()",
+          "stepDistractorA2()",
+          "triggerDistractorA()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorAStage1",
+          "MultiPropertyInterference.distractorAStage2"
+        ],
+        "target_function": "triggerDistractorA()"
+      },
+      {
+        "sequence": [
+          "stepDistractorB2()",
+          "stepDistractorB3()",
+          "triggerDistractorB()"
+        ],
+        "length": 3,
+        "score": 4,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorBStage2",
+          "MultiPropertyInterference.distractorBStage3"
+        ],
+        "target_function": "triggerDistractorB()"
+      },
+      {
+        "sequence": [
+          "prepareTarget()",
+          "triggerTarget()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "MultiPropertyInterference.targetReady"
+        ],
+        "target_function": "triggerTarget()"
+      },
+      {
+        "sequence": [
+          "stepDistractorA2()",
+          "triggerDistractorA()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorAStage2"
+        ],
+        "target_function": "triggerDistractorA()"
+      },
+      {
+        "sequence": [
+          "stepDistractorB3()",
+          "triggerDistractorB()"
+        ],
+        "length": 2,
+        "score": 2,
+        "dependency_variables": [
+          "MultiPropertyInterference.distractorBStage3"
+        ],
+        "target_function": "triggerDistractorB()"
+      }
+    ]
+  }
+}

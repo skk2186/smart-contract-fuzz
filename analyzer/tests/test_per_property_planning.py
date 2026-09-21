@@ -3,6 +3,7 @@ import os
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from pathlib import Path
 
 
@@ -56,6 +57,91 @@ def build_rw_data() -> dict:
 
 
 class PerPropertyPlanningTests(unittest.TestCase):
+    def test_property_identity_requires_exact_full_signatures(self):
+        single = {
+            PROPERTY_A: {
+                "read": ["x"],
+                "write": [],
+            }
+        }
+
+        for resolver in (
+            property_generator.resolve_property_function,
+            repetition_generator.resolve_property_function,
+        ):
+            self.assertEqual(
+                resolver(single, "echidna_property_a"),
+                PROPERTY_A,
+            )
+            self.assertEqual(
+                resolver(single, PROPERTY_A),
+                PROPERTY_A,
+            )
+            with self.assertRaisesRegex(
+                ValueError,
+                "not found",
+            ):
+                resolver(single, "echidna_property_a(uint256)")
+
+        function_map = {
+            PROPERTY_A: SimpleNamespace(
+                name="echidna_property_a",
+                parameters=[],
+            )
+        }
+        self.assertEqual(
+            harness_generator.resolve_property_function(
+                function_map,
+                "echidna_property_a",
+            )[0],
+            PROPERTY_A,
+        )
+        self.assertEqual(
+            harness_generator.resolve_property_function(
+                function_map,
+                PROPERTY_A,
+            )[0],
+            PROPERTY_A,
+        )
+        with self.assertRaisesRegex(ValueError, "was not found"):
+            harness_generator.resolve_property_function(
+                function_map,
+                "echidna_property_a(uint256)",
+            )
+
+        overloaded = {
+            PROPERTY_A: {
+                "read": ["x"],
+                "write": [],
+            },
+            "echidna_property_a(uint256)": {
+                "read": ["x"],
+                "write": [],
+            },
+        }
+        for resolver in (
+            property_generator.resolve_property_function,
+            repetition_generator.resolve_property_function,
+        ):
+            with self.assertRaisesRegex(ValueError, "ambiguous"):
+                resolver(overloaded, "echidna_property_a")
+
+        overloaded_map = {
+            PROPERTY_A: SimpleNamespace(
+                name="echidna_property_a",
+                parameters=[],
+            ),
+            "echidna_property_a(uint256)": SimpleNamespace(
+                name="echidna_property_a",
+                parameters=[object()],
+            ),
+        }
+        with self.assertRaisesRegex(ValueError, "ambiguous"):
+            harness_generator.resolve_property_function(
+                overloaded_map,
+                "echidna_property_a",
+            )
+
     def test_property_sequences_are_isolated(self):
         legacy = property_generator.analyze(
             build_rw_data(),
